@@ -1,6 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { supabase } from "@/lib/supabase";
+import type { User } from "@supabase/supabase-js";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -31,6 +34,7 @@ const i18n = {
     add: "+ 记录",
     exportCsv: "导出 CSV",
     langToggle: "EN",
+    signOut: "退出",
     nav: { home: "记录", stats: "统计", recap: "年度" },
     form: {
       title: "记录新 Gig",
@@ -81,15 +85,15 @@ const i18n = {
     },
     empty: "还没有记录，点右上角开始吧 🎸",
     noResults: "没有找到相关演出",
-    noYear: "这年没有演出记录",
-    dark: "🌙",
-    light: "☀️",
+    loading: "加载中...",
+    dark: "🌙", light: "☀️",
   },
   en: {
     appName: "Gig Tracker",
     add: "+ Add",
     exportCsv: "Export CSV",
     langToggle: "中文",
+    signOut: "Sign out",
     nav: { home: "Log", stats: "Stats", recap: "Recap" },
     form: {
       title: "Log a Gig",
@@ -140,36 +144,59 @@ const i18n = {
     },
     empty: "No gigs yet. Tap + Add to start 🎸",
     noResults: "No gigs match your search",
-    noYear: "No shows this year",
-    dark: "🌙",
-    light: "☀️",
+    loading: "Loading...",
+    dark: "🌙", light: "☀️",
   },
 } as const;
 
 // ─── Constants ───────────────────────────────────────────────────────────────
 
-const STORAGE_KEY = "gig-tracker-v2";
 const CURRENCIES = ["CNY", "USD", "GBP", "EUR", "HKD", "JPY", "AUD", "SGD"];
 const PRESET_TAGS = ["rock", "pop", "jazz", "classical", "electronic", "hip-hop", "folk", "metal", "indie", "r&b", "punk", "soul"];
 
-// ─── Storage helpers ─────────────────────────────────────────────────────────
+// ─── Supabase helpers ─────────────────────────────────────────────────────────
 
-function loadGigs(): Gig[] {
-  if (typeof window === "undefined") return [];
-  try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"); }
-  catch { return []; }
+async function fetchGigs(): Promise<Gig[]> {
+  const { data, error } = await supabase
+    .from("gigs")
+    .select("*")
+    .order("date", { ascending: false });
+  if (error) { console.error(error); return []; }
+  return (data ?? []).map(row => ({
+    id: row.id,
+    artist: row.artist,
+    venue: row.venue ?? "",
+    date: row.date,
+    city: row.city ?? "",
+    country: row.country ?? "",
+    tags: row.tags ?? [],
+    rating: row.rating ?? 5,
+    notes: row.notes ?? "",
+    price: row.price ?? undefined,
+    currency: row.currency ?? "CNY",
+    companions: row.companions ?? [],
+    setlist: row.setlist ?? [],
+  }));
 }
 
-function persistGigs(gigs: Gig[]) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(gigs));
+async function insertGig(gig: Omit<Gig, "id">, userId: string): Promise<Gig | null> {
+  const { data, error } = await supabase
+    .from("gigs")
+    .insert({ ...gig, user_id: userId })
+    .select()
+    .single();
+  if (error) { console.error(error); return null; }
+  return { ...gig, id: data.id };
+}
+
+async function deleteGigById(id: string) {
+  await supabase.from("gigs").delete().eq("id", id);
 }
 
 function exportCSV(gigs: Gig[], lang: Lang) {
-  const t = i18n[lang];
   const headers = lang === "zh"
     ? ["日期", "艺人", "场馆", "城市", "国家", "评分", "票价", "货币", "标签", "同行", "歌单", "笔记"]
     : ["Date", "Artist", "Venue", "City", "Country", "Rating", "Price", "Currency", "Tags", "Companions", "Setlist", "Notes"];
-  void t;
   const rows = gigs.map(g => [
     g.date, g.artist, g.venue, g.city, g.country, g.rating,
     g.price ?? "", g.currency, g.tags.join(";"), g.companions.join(";"),
@@ -234,7 +261,9 @@ function ChipInput({ values, onChange, placeholder }: {
 
 // ─── GigForm ─────────────────────────────────────────────────────────────────
 
-function GigForm({ onSave, onCancel, lang }: { onSave: (g: Gig) => void; onCancel: () => void; lang: Lang }) {
+function GigForm({ onSave, onCancel, lang }: {
+  onSave: (g: Omit<Gig, "id">) => void; onCancel: () => void; lang: Lang;
+}) {
   const t = i18n[lang].form;
   const [form, setForm] = useState<Omit<Gig, "id">>({
     artist: "", venue: "", date: "", city: "", country: "",
@@ -247,14 +276,13 @@ function GigForm({ onSave, onCancel, lang }: { onSave: (g: Gig) => void; onCance
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.artist.trim() || !form.date) return;
-    onSave({ ...form, id: Date.now().toString() });
+    onSave(form);
   };
 
   return (
     <form onSubmit={handleSubmit} className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-5 space-y-4">
       <h2 className="text-lg font-bold">{t.title}</h2>
 
-      {/* Basic info */}
       <div className="grid grid-cols-2 gap-3">
         <div className="col-span-2 sm:col-span-1">
           <label className="text-xs text-gray-500 dark:text-slate-400">{t.artist}</label>
@@ -283,12 +311,9 @@ function GigForm({ onSave, onCancel, lang }: { onSave: (g: Gig) => void; onCance
         </div>
       </div>
 
-      {/* Tags */}
       <div>
         <label className="text-xs text-gray-500 dark:text-slate-400">{t.tags}</label>
-        <div className="mt-1">
-          <ChipInput values={form.tags} onChange={v => set("tags", v)} placeholder={t.tagsPlaceholder} />
-        </div>
+        <div className="mt-1"><ChipInput values={form.tags} onChange={v => set("tags", v)} placeholder={t.tagsPlaceholder} /></div>
         <div className="flex flex-wrap gap-1 mt-2">
           <span className="text-xs text-gray-400 dark:text-slate-500 mr-1">{t.presetTags}:</span>
           {PRESET_TAGS.map(tag => (
@@ -301,7 +326,6 @@ function GigForm({ onSave, onCancel, lang }: { onSave: (g: Gig) => void; onCance
         </div>
       </div>
 
-      {/* Rating + Price */}
       <div className="grid grid-cols-2 gap-3">
         <div>
           <label className="text-xs text-gray-500 dark:text-slate-400">{t.rating}</label>
@@ -314,29 +338,23 @@ function GigForm({ onSave, onCancel, lang }: { onSave: (g: Gig) => void; onCance
               value={form.currency} onChange={e => set("currency", e.target.value)}>
               {CURRENCIES.map(c => <option key={c}>{c}</option>)}
             </select>
-            <input type="number" min="0" placeholder="0" className="flex-1 border dark:border-slate-600 rounded-lg px-3 py-2 text-sm bg-white dark:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            <input type="number" min="0" placeholder="0"
+              className="flex-1 border dark:border-slate-600 rounded-lg px-3 py-2 text-sm bg-white dark:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-400"
               value={form.price ?? ""} onChange={e => set("price", e.target.value ? Number(e.target.value) : undefined)} />
           </div>
         </div>
       </div>
 
-      {/* Companions */}
       <div>
         <label className="text-xs text-gray-500 dark:text-slate-400">{t.companions}</label>
-        <div className="mt-1">
-          <ChipInput values={form.companions} onChange={v => set("companions", v)} placeholder={t.companionsPlaceholder} />
-        </div>
+        <div className="mt-1"><ChipInput values={form.companions} onChange={v => set("companions", v)} placeholder={t.companionsPlaceholder} /></div>
       </div>
 
-      {/* Setlist */}
       <div>
         <label className="text-xs text-gray-500 dark:text-slate-400">{t.setlist}</label>
-        <div className="mt-1">
-          <ChipInput values={form.setlist} onChange={v => set("setlist", v)} placeholder={t.setlistPlaceholder} />
-        </div>
+        <div className="mt-1"><ChipInput values={form.setlist} onChange={v => set("setlist", v)} placeholder={t.setlistPlaceholder} /></div>
       </div>
 
-      {/* Notes */}
       <div>
         <label className="text-xs text-gray-500 dark:text-slate-400">{t.notes}</label>
         <textarea className="w-full mt-1 border dark:border-slate-600 rounded-lg px-3 py-2 text-sm h-20 resize-none bg-white dark:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-400"
@@ -368,7 +386,9 @@ function GigCard({ gig, onDelete, lang }: { gig: Gig; onDelete: () => void; lang
           </p>
         </div>
         <div className="text-right shrink-0">
-          <p className="text-xs text-gray-400 dark:text-slate-500">{new Date(gig.date + "T00:00:00").toLocaleDateString(lang === "zh" ? "zh-CN" : "en-GB")}</p>
+          <p className="text-xs text-gray-400 dark:text-slate-500">
+            {new Date(gig.date + "T00:00:00").toLocaleDateString(lang === "zh" ? "zh-CN" : "en-GB")}
+          </p>
           <StarRating value={gig.rating} />
         </div>
       </div>
@@ -378,7 +398,9 @@ function GigCard({ gig, onDelete, lang }: { gig: Gig; onDelete: () => void; lang
           <span key={tag} className="text-xs bg-indigo-50 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-400 px-2 py-0.5 rounded-full">{tag}</span>
         ))}
         {gig.price != null && (
-          <span className="text-xs bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-0.5 rounded-full">{t.paid}: {gig.currency} {gig.price}</span>
+          <span className="text-xs bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-0.5 rounded-full">
+            {t.paid}: {gig.currency} {gig.price}
+          </span>
         )}
       </div>
 
@@ -414,9 +436,10 @@ function GigCard({ gig, onDelete, lang }: { gig: Gig; onDelete: () => void; lang
 
 // ─── HomeTab ─────────────────────────────────────────────────────────────────
 
-function HomeTab({ gigs, setGigs, lang, showForm, setShowForm }: {
+function HomeTab({ gigs, setGigs, lang, showForm, setShowForm, user }: {
   gigs: Gig[]; setGigs: (g: Gig[]) => void;
   lang: Lang; showForm: boolean; setShowForm: (v: boolean) => void;
+  user: User;
 }) {
   const t = i18n[lang];
   const [search, setSearch] = useState("");
@@ -431,29 +454,32 @@ function HomeTab({ gigs, setGigs, lang, showForm, setShowForm }: {
     return matchSearch && matchTag;
   }).sort((a, b) => b.date.localeCompare(a.date));
 
-  // Group by year
   const byYear: Record<string, Gig[]> = {};
-  filtered.forEach(g => {
-    const year = g.date.slice(0, 4);
-    (byYear[year] ||= []).push(g);
-  });
+  filtered.forEach(g => { const year = g.date.slice(0, 4); (byYear[year] ||= []).push(g); });
   const years = Object.keys(byYear).sort((a, b) => Number(b) - Number(a));
 
-  const addGig = (gig: Gig) => { setGigs([gig, ...gigs]); setShowForm(false); };
-  const deleteGig = (id: string) => setGigs(gigs.filter(g => g.id !== id));
+  const addGig = async (gigData: Omit<Gig, "id">) => {
+    const saved = await insertGig(gigData, user.id);
+    if (saved) setGigs([saved, ...gigs]);
+    setShowForm(false);
+  };
+
+  const removeGig = async (id: string) => {
+    await deleteGigById(id);
+    setGigs(gigs.filter(g => g.id !== id));
+  };
 
   return (
     <div className="space-y-4">
       {showForm && <GigForm lang={lang} onSave={addGig} onCancel={() => setShowForm(false)} />}
 
-      {/* Search + filter */}
       <div className="space-y-2">
         <input
           className="w-full border dark:border-slate-700 rounded-xl px-4 py-2.5 text-sm bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-400"
           placeholder={t.search} value={search} onChange={e => setSearch(e.target.value)}
         />
         {allTags.length > 0 && (
-          <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
+          <div className="flex gap-2 overflow-x-auto pb-1">
             <button onClick={() => setFilterTag("")}
               className={`shrink-0 text-xs px-3 py-1 rounded-full border transition-colors ${!filterTag ? "bg-indigo-600 text-white border-indigo-600" : "border-gray-300 dark:border-slate-600 text-gray-500 dark:text-slate-400"}`}>
               {t.allTags}
@@ -468,7 +494,6 @@ function HomeTab({ gigs, setGigs, lang, showForm, setShowForm }: {
         )}
       </div>
 
-      {/* Gig list */}
       {gigs.length === 0 ? (
         <div className="text-center py-20 text-gray-400 dark:text-slate-500">{t.empty}</div>
       ) : filtered.length === 0 ? (
@@ -476,10 +501,12 @@ function HomeTab({ gigs, setGigs, lang, showForm, setShowForm }: {
       ) : (
         years.map(year => (
           <div key={year}>
-            <h2 className="text-sm font-bold text-gray-400 dark:text-slate-500 mb-2 px-1">{year} · {byYear[year].length}{lang === "zh" ? " 场" : " shows"}</h2>
+            <h2 className="text-sm font-bold text-gray-400 dark:text-slate-500 mb-2 px-1">
+              {year} · {byYear[year].length}{lang === "zh" ? " 场" : " shows"}
+            </h2>
             <div className="space-y-3">
               {byYear[year].map(gig => (
-                <GigCard key={gig.id} gig={gig} onDelete={() => deleteGig(gig.id)} lang={lang} />
+                <GigCard key={gig.id} gig={gig} onDelete={() => removeGig(gig.id)} lang={lang} />
               ))}
             </div>
           </div>
@@ -498,28 +525,23 @@ function StatsTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
   const artists = new Set(gigs.map(g => g.artist)).size;
   const cities = new Set(gigs.map(g => g.city).filter(Boolean)).size;
   const avgRating = (gigs.reduce((s, g) => s + g.rating, 0) / gigs.length).toFixed(1);
-  const withPrice = gigs.filter(g => g.price != null);
 
-  // Cities breakdown
   const cityCount: Record<string, number> = {};
   gigs.forEach(g => { if (g.city) cityCount[g.city] = (cityCount[g.city] || 0) + 1; });
   const citiesSorted = Object.entries(cityCount).sort((a, b) => b[1] - a[1]);
 
-  // Spend by currency
   const spend: Record<string, number> = {};
-  withPrice.forEach(g => { spend[g.currency] = (spend[g.currency] || 0) + (g.price ?? 0); });
-
-  const statCards = [
-    { label: t.total, value: gigs.length },
-    { label: t.artists, value: artists },
-    { label: t.cities, value: cities },
-    { label: t.avgRating, value: avgRating + " ★" },
-  ];
+  gigs.filter(g => g.price != null).forEach(g => { spend[g.currency] = (spend[g.currency] || 0) + (g.price ?? 0); });
 
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-2 gap-3">
-        {statCards.map(({ label, value }) => (
+        {[
+          { label: t.total, value: gigs.length },
+          { label: t.artists, value: artists },
+          { label: t.cities, value: cities },
+          { label: t.avgRating, value: avgRating + " ★" },
+        ].map(({ label, value }) => (
           <div key={label} className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm border border-gray-100 dark:border-slate-700 text-center">
             <div className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">{value}</div>
             <div className="text-xs text-gray-500 dark:text-slate-400 mt-1">{label}</div>
@@ -565,24 +587,15 @@ function RecapTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
 
   const yearGigs = gigs.filter(g => g.date.startsWith(selectedYear));
 
-  const topArtist = (() => {
+  const topOf = (arr: string[]) => {
     const cnt: Record<string, number> = {};
-    yearGigs.forEach(g => { cnt[g.artist] = (cnt[g.artist] || 0) + 1; });
+    arr.forEach(x => { if (x) cnt[x] = (cnt[x] || 0) + 1; });
     return Object.entries(cnt).sort((a, b) => b[1] - a[1])[0];
-  })();
+  };
 
-  const topCity = (() => {
-    const cnt: Record<string, number> = {};
-    yearGigs.forEach(g => { if (g.city) cnt[g.city] = (cnt[g.city] || 0) + 1; });
-    return Object.entries(cnt).sort((a, b) => b[1] - a[1])[0];
-  })();
-
-  const topTag = (() => {
-    const cnt: Record<string, number> = {};
-    yearGigs.flatMap(g => g.tags).forEach(tag => { cnt[tag] = (cnt[tag] || 0) + 1; });
-    return Object.entries(cnt).sort((a, b) => b[1] - a[1])[0];
-  })();
-
+  const topArtist = topOf(yearGigs.map(g => g.artist));
+  const topCity = topOf(yearGigs.map(g => g.city));
+  const topTag = topOf(yearGigs.flatMap(g => g.tags));
   const bestShow = [...yearGigs].sort((a, b) => b.rating - a.rating)[0];
 
   const spend: Record<string, number> = {};
@@ -592,7 +605,6 @@ function RecapTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
 
   return (
     <div className="space-y-4">
-      {/* Year selector */}
       <div className="flex gap-2 overflow-x-auto pb-1">
         {years.map(y => (
           <button key={y} onClick={() => setSelectedYear(y)}
@@ -606,43 +618,24 @@ function RecapTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
         <div className="text-center py-12 text-gray-400 dark:text-slate-500">{t.noData}</div>
       ) : (
         <>
-          {/* Hero stat */}
           <div className="bg-indigo-600 rounded-2xl p-6 text-white text-center">
             <div className="text-5xl font-bold">{yearGigs.length}</div>
             <div className="text-indigo-200 mt-1">{selectedYear} {t.total}</div>
           </div>
-
           <div className="grid grid-cols-2 gap-3">
-            {topArtist && (
-              <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm border border-gray-100 dark:border-slate-700">
-                <div className="text-xs text-gray-400 dark:text-slate-500 mb-1">{t.topArtist}</div>
-                <div className="font-bold truncate">{topArtist[0]}</div>
-                <div className="text-xs text-indigo-500 mt-0.5">{topArtist[1]} {t.times}</div>
+            {[
+              topArtist && { label: t.topArtist, value: topArtist[0], sub: `${topArtist[1]} ${t.times}` },
+              topCity && { label: t.topCity, value: topCity[0], sub: `${topCity[1]} ${t.times}` },
+              bestShow && { label: t.bestShow, value: bestShow.artist, sub: "★".repeat(bestShow.rating) },
+              topTag && { label: t.topTag, value: topTag[0], sub: `${topTag[1]} ${t.times}` },
+            ].filter(Boolean).map((card) => card && (
+              <div key={card.label} className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm border border-gray-100 dark:border-slate-700">
+                <div className="text-xs text-gray-400 dark:text-slate-500 mb-1">{card.label}</div>
+                <div className="font-bold truncate">{card.value}</div>
+                <div className="text-xs text-indigo-500 mt-0.5">{card.sub}</div>
               </div>
-            )}
-            {topCity && (
-              <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm border border-gray-100 dark:border-slate-700">
-                <div className="text-xs text-gray-400 dark:text-slate-500 mb-1">{t.topCity}</div>
-                <div className="font-bold truncate">{topCity[0]}</div>
-                <div className="text-xs text-indigo-500 mt-0.5">{topCity[1]} {t.times}</div>
-              </div>
-            )}
-            {bestShow && (
-              <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm border border-gray-100 dark:border-slate-700">
-                <div className="text-xs text-gray-400 dark:text-slate-500 mb-1">{t.bestShow}</div>
-                <div className="font-bold truncate">{bestShow.artist}</div>
-                <div className="text-xs text-yellow-500 mt-0.5">{"★".repeat(bestShow.rating)}</div>
-              </div>
-            )}
-            {topTag && (
-              <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm border border-gray-100 dark:border-slate-700">
-                <div className="text-xs text-gray-400 dark:text-slate-500 mb-1">{t.topTag}</div>
-                <div className="font-bold truncate">{topTag[0]}</div>
-                <div className="text-xs text-indigo-500 mt-0.5">{topTag[1]} {t.times}</div>
-              </div>
-            )}
+            ))}
           </div>
-
           {Object.keys(spend).length > 0 && (
             <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm border border-gray-100 dark:border-slate-700">
               <div className="text-xs text-gray-400 dark:text-slate-500 mb-2">{t.totalSpent}</div>
@@ -663,7 +656,11 @@ function RecapTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
 // ─── App ─────────────────────────────────────────────────────────────────────
 
 export default function App() {
-  const [gigs, setGigsState] = useState<Gig[]>([]);
+  const router = useRouter();
+  const [user, setUser] = useState<User | null>(null);
+  const [gigs, setGigs] = useState<Gig[]>([]);
+  const [loadingAuth, setLoadingAuth] = useState(true);
+  const [loadingGigs, setLoadingGigs] = useState(false);
   const [lang, setLang] = useState<Lang>("zh");
   const [dark, setDark] = useState(false);
   const [tab, setTab] = useState<Tab>("home");
@@ -672,22 +669,38 @@ export default function App() {
   const t = i18n[lang];
 
   useEffect(() => {
-    setGigsState(loadGigs());
+    // Restore preferences
     const savedLang = localStorage.getItem("gig-lang") as Lang;
     const savedDark = localStorage.getItem("gig-dark");
     if (savedLang) setLang(savedLang);
     if (savedDark === "1") { setDark(true); document.documentElement.classList.add("dark"); }
-  }, []);
 
-  const setGigs = (updated: Gig[]) => {
-    setGigsState(updated);
-    persistGigs(updated);
-  };
+    // Check auth
+    supabase.auth.getSession().then(({ data }) => {
+      const u = data.session?.user ?? null;
+      setUser(u);
+      setLoadingAuth(false);
+      if (!u) router.replace("/login");
+    });
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      const u = session?.user ?? null;
+      setUser(u);
+      if (!u) router.replace("/login");
+    });
+
+    return () => subscription.unsubscribe();
+  }, [router]);
+
+  useEffect(() => {
+    if (!user) return;
+    setLoadingGigs(true);
+    fetchGigs().then(data => { setGigs(data); setLoadingGigs(false); });
+  }, [user]);
 
   const toggleLang = () => {
     const next: Lang = lang === "zh" ? "en" : "zh";
-    setLang(next);
-    localStorage.setItem("gig-lang", next);
+    setLang(next); localStorage.setItem("gig-lang", next);
   };
 
   const toggleDark = () => {
@@ -696,6 +709,17 @@ export default function App() {
     document.documentElement.classList.toggle("dark", next);
     localStorage.setItem("gig-dark", next ? "1" : "0");
   };
+
+  const signOut = async () => {
+    await supabase.auth.signOut();
+    router.replace("/login");
+  };
+
+  if (loadingAuth) {
+    return <div className="min-h-screen flex items-center justify-center text-gray-400 dark:text-slate-500">{t.loading}</div>;
+  }
+
+  if (!user) return null;
 
   const navItems: { key: Tab; label: string }[] = [
     { key: "home", label: t.nav.home },
@@ -708,7 +732,7 @@ export default function App() {
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <h1 className="text-xl font-bold">{t.appName}</h1>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5 flex-wrap justify-end">
           <button onClick={() => exportCSV(gigs, lang)}
             className="text-xs text-gray-500 dark:text-slate-400 border border-gray-300 dark:border-slate-600 px-2 py-1 rounded-lg hover:border-indigo-400 transition-colors">
             {t.exportCsv}
@@ -721,6 +745,10 @@ export default function App() {
             className="text-xs text-gray-500 dark:text-slate-400 border border-gray-300 dark:border-slate-600 px-2 py-1 rounded-lg hover:border-indigo-400 transition-colors">
             {t.langToggle}
           </button>
+          <button onClick={signOut}
+            className="text-xs text-gray-500 dark:text-slate-400 border border-gray-300 dark:border-slate-600 px-2 py-1 rounded-lg hover:border-red-400 hover:text-red-400 transition-colors">
+            {t.signOut}
+          </button>
           {tab === "home" && (
             <button onClick={() => setShowForm(v => !v)}
               className="text-sm bg-indigo-600 text-white px-3 py-1.5 rounded-xl hover:bg-indigo-700 font-medium shadow">
@@ -730,10 +758,15 @@ export default function App() {
         </div>
       </div>
 
-      {/* Content */}
-      {tab === "home" && <HomeTab gigs={gigs} setGigs={setGigs} lang={lang} showForm={showForm} setShowForm={setShowForm} />}
-      {tab === "stats" && <StatsTab gigs={gigs} lang={lang} />}
-      {tab === "recap" && <RecapTab gigs={gigs} lang={lang} />}
+      {loadingGigs ? (
+        <div className="text-center py-20 text-gray-400 dark:text-slate-500">{t.loading}</div>
+      ) : (
+        <>
+          {tab === "home" && <HomeTab gigs={gigs} setGigs={setGigs} lang={lang} showForm={showForm} setShowForm={setShowForm} user={user} />}
+          {tab === "stats" && <StatsTab gigs={gigs} lang={lang} />}
+          {tab === "recap" && <RecapTab gigs={gigs} lang={lang} />}
+        </>
+      )}
 
       {/* Bottom nav */}
       <nav className="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-800 border-t border-gray-200 dark:border-slate-700 flex">
