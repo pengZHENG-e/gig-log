@@ -161,7 +161,7 @@ async function fetchGigs(): Promise<Gig[]> {
     .from("gigs")
     .select("*")
     .order("date", { ascending: false });
-  if (error) { console.error(error); return []; }
+  if (error) { console.error("fetchGigs error:", error.message, error.code, error.details); return []; }
   return (data ?? []).map(row => ({
     id: row.id,
     artist: row.artist,
