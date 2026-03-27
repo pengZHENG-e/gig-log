@@ -1199,12 +1199,67 @@ function HomeTab({ gigs, setGigs, lang, showForm, setShowForm, user, profile }: 
   );
 }
 
+// ─── ArtistGigsModal ──────────────────────────────────────────────────────────
+
+function ArtistGigsModal({ artist, gigs, lang, onClose }: {
+  artist: string; gigs: Gig[]; lang: Lang; onClose: () => void;
+}) {
+  const artistGigs = gigs.filter(g => g.artist === artist).sort((a, b) => b.date.localeCompare(a.date));
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center" onClick={onClose}>
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+      <div className="relative bg-white dark:bg-slate-800 rounded-t-3xl sm:rounded-2xl w-full max-w-lg max-h-[85vh] flex flex-col shadow-2xl" onClick={e => e.stopPropagation()}>
+        <div className="flex justify-center pt-3 pb-1 sm:hidden shrink-0">
+          <div className="w-10 h-1 bg-gray-200 dark:bg-slate-600 rounded-full" />
+        </div>
+        <div className="px-6 pt-4 pb-3 shrink-0 border-b border-gray-100 dark:border-slate-700">
+          <div className="flex items-center justify-between">
+            <div>
+              <h2 className="text-lg font-bold">{artist}</h2>
+              <p className="text-xs text-gray-400 dark:text-slate-500 mt-0.5">{artistGigs.length}{lang === "zh" ? " 场" : " shows"}</p>
+            </div>
+            <button onClick={onClose} className="text-gray-400 hover:text-gray-600 dark:hover:text-slate-200 text-2xl w-9 h-9 flex items-center justify-center">×</button>
+          </div>
+        </div>
+        <div className="overflow-y-auto px-6 py-4 space-y-2.5">
+          {artistGigs.map((gig, i) => (
+            <div key={gig.id} className="flex items-start gap-3 bg-gray-50 dark:bg-slate-700/50 rounded-xl p-3.5">
+              <span className="text-xs text-gray-300 dark:text-slate-600 w-5 text-right shrink-0 pt-0.5">{i + 1}</span>
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-medium">
+                  {new Date(gig.date + "T00:00:00").toLocaleDateString(lang === "zh" ? "zh-CN" : "en-GB", { year: "numeric", month: "long", day: "numeric" })}
+                </p>
+                {(gig.venue || gig.city) && (
+                  <p className="text-xs text-gray-400 dark:text-slate-500 mt-0.5 truncate">
+                    {[gig.venue, gig.city, gig.country].filter(Boolean).join(" · ")}
+                  </p>
+                )}
+                {gig.tags.length > 0 && (
+                  <div className="flex flex-wrap gap-1 mt-1.5">
+                    {gig.tags.map(tag => (
+                      <span key={tag} className="text-xs bg-indigo-50 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-400 px-2 py-0.5 rounded-full">{tag}</span>
+                    ))}
+                  </div>
+                )}
+                {gig.notes && <p className="text-xs text-gray-400 dark:text-slate-500 mt-1.5 line-clamp-2">{gig.notes}</p>}
+              </div>
+              <StarRating value={gig.rating} size="sm" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ─── StatsTab ─────────────────────────────────────────────────────────────────
 
 function StatsTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
   const t = i18n[lang].stats;
   const [rankYear, setRankYear] = useState("");
   const [rankMonth, setRankMonth] = useState("");
+  const [selectedArtist, setSelectedArtist] = useState<string | null>(null);
   const [activityYear, setActivityYear] = useState("");
 
   if (gigs.length === 0) return <div className="text-center py-24 text-gray-400 dark:text-slate-500">{i18n[lang].empty}</div>;
@@ -1325,7 +1380,8 @@ function StatsTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
         ) : (
           <div className="space-y-0 mt-2">
             {ranking.map(([artist, { count, lastDate }], i) => (
-              <div key={artist} className="flex items-center gap-3 py-2.5 border-b border-gray-50 dark:border-slate-700/50 last:border-0">
+              <div key={artist} onClick={() => setSelectedArtist(artist)}
+                className="flex items-center gap-3 py-2.5 border-b border-gray-50 dark:border-slate-700/50 last:border-0 cursor-pointer hover:bg-gray-50 dark:hover:bg-slate-700/40 -mx-2 px-2 rounded-xl transition-colors">
                 <span className={`text-sm font-bold w-6 text-center shrink-0 ${i === 0 ? "text-yellow-400" : i === 1 ? "text-gray-400" : i === 2 ? "text-amber-600" : "text-gray-300 dark:text-slate-600"}`}>
                   {i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : `${i + 1}`}
                 </span>
@@ -1351,6 +1407,15 @@ function StatsTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
             ))}
           </div>
         </div>
+      )}
+
+      {selectedArtist && (
+        <ArtistGigsModal
+          artist={selectedArtist}
+          gigs={gigs}
+          lang={lang}
+          onClose={() => setSelectedArtist(null)}
+        />
       )}
 
       {/* Spend */}
