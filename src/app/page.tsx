@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import type { User } from "@supabase/supabase-js";
@@ -99,7 +100,10 @@ const i18n = {
       artistRanking: "艺人排行", lastSeen: "上次",
       activity: "月份活跃度", allYears: "全部年份",
       allMonths: "全月", times: "次",
+      trend: "演出趋势", trendYearly: "按年", trendMonthly: "按月",
+      clickYearHint: "点击年份查看月度详情",
       months: ["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],
+      monthsShort: ["1","2","3","4","5","6","7","8","9","10","11","12"],
     },
     recap: {
       total: "场演出", topArtist: "最常看", topCity: "常去城市",
@@ -202,7 +206,10 @@ const i18n = {
       artistRanking: "Artist Ranking", lastSeen: "Last seen",
       activity: "Monthly Activity", allYears: "All time",
       allMonths: "All months", times: "shows",
+      trend: "Show Trends", trendYearly: "Yearly", trendMonthly: "Monthly",
+      clickYearHint: "Click a year to see monthly breakdown",
       months: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+      monthsShort: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
     },
     recap: {
       total: "shows", topArtist: "Most Seen", topCity: "Top City",
@@ -1304,7 +1311,7 @@ function StatsTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
   const [rankMonth, setRankMonth] = useState("");
   const [selectedArtist, setSelectedArtist] = useState<string | null>(null);
   const [selectedVenue, setSelectedVenue] = useState<string | null>(null);
-  const [activityYear, setActivityYear] = useState("");
+  const [trendDrillYear, setTrendDrillYear] = useState<string | null>(null);
 
   if (gigs.length === 0) return <div className="text-center py-24 text-gray-400 dark:text-slate-500">{i18n[lang].empty}</div>;
 
@@ -1317,15 +1324,17 @@ function StatsTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
   const spend: Record<string, number> = {};
   gigs.filter(g => g.price != null).forEach(g => { spend[g.currency] = (spend[g.currency] || 0) + (g.price ?? 0); });
 
-  // ── Activity chart ──
-  const activityGigs = activityYear ? gigs.filter(g => g.date.startsWith(activityYear)) : gigs;
-  const activityData: { label: string; count: number }[] = activityYear
-    ? t.months.map((m, i) => ({
+  // ── Trend chart ──
+  const yearlyData = [...years].reverse().map(y => ({
+    label: y,
+    count: gigs.filter(g => g.date.startsWith(y)).length,
+  }));
+  const monthlyData = trendDrillYear
+    ? t.monthsShort.map((m, i) => ({
         label: m,
-        count: activityGigs.filter(g => parseInt(g.date.slice(5, 7)) === i + 1).length,
+        count: gigs.filter(g => g.date.startsWith(trendDrillYear) && parseInt(g.date.slice(5, 7)) === i + 1).length,
       }))
-    : years.map(y => ({ label: y, count: gigs.filter(g => g.date.startsWith(y)).length }));
-  const maxActivity = Math.max(...activityData.map(d => d.count), 1);
+    : [];
 
   // ── Artist ranking ──
   const rankGigs = gigs.filter(g => {
@@ -1378,30 +1387,60 @@ function StatsTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
         ))}
       </div>
 
-      {/* Activity chart */}
+      {/* Trend line chart */}
       <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-slate-700">
-        <div className="flex items-center justify-between mb-4">
-          <p className="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wide">{t.activity}</p>
-          <div className="flex gap-1.5 overflow-x-auto">
-            <button onClick={() => { setActivityYear(""); }} className={pillCls(!activityYear)}>{t.allYears}</button>
-            {years.map(y => <button key={y} onClick={() => setActivityYear(y)} className={pillCls(activityYear === y)}>{y}</button>)}
+        <div className="flex items-center justify-between mb-1">
+          <p className="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wide">{t.trend}</p>
+          {trendDrillYear && (
+            <button onClick={() => setTrendDrillYear(null)}
+              className="text-xs text-indigo-500 hover:text-indigo-700 flex items-center gap-1">
+              ← {t.trendYearly}
+            </button>
+          )}
+        </div>
+
+        <p className="text-xs text-gray-300 dark:text-slate-600 mb-4">
+          {trendDrillYear ? trendDrillYear : t.clickYearHint}
+        </p>
+
+        <ResponsiveContainer width="100%" height={180}>
+          <AreaChart
+            data={trendDrillYear ? monthlyData : yearlyData}
+            margin={{ top: 4, right: 4, left: -28, bottom: 0 }}
+            onClick={trendDrillYear ? undefined : (e) => {
+              if (e?.activePayload?.[0]) setTrendDrillYear(e.activePayload[0].payload.label);
+            }}
+          >
+            <defs>
+              <linearGradient id="trendGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#4f46e5" stopOpacity={0.2} />
+                <stop offset="95%" stopColor="#4f46e5" stopOpacity={0} />
+              </linearGradient>
+            </defs>
+            <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" strokeOpacity={0.5} />
+            <XAxis dataKey="label" tick={{ fontSize: 11, fill: "#9ca3af" }} axisLine={false} tickLine={false} />
+            <YAxis tick={{ fontSize: 11, fill: "#9ca3af" }} axisLine={false} tickLine={false} allowDecimals={false} />
+            <Tooltip
+              contentStyle={{ borderRadius: "12px", border: "none", boxShadow: "0 4px 20px rgba(0,0,0,0.1)", fontSize: 13 }}
+              formatter={(v: number) => [v, lang === "zh" ? "场" : "shows"]}
+            />
+            <Area
+              type="monotone" dataKey="count" stroke="#4f46e5" strokeWidth={2.5}
+              fill="url(#trendGrad)" dot={{ fill: "#4f46e5", r: 4, strokeWidth: 0 }}
+              activeDot={trendDrillYear ? { r: 5 } : { r: 6, cursor: "pointer" }}
+            />
+          </AreaChart>
+        </ResponsiveContainer>
+
+        {!trendDrillYear && years.length > 1 && (
+          <div className="flex flex-wrap gap-1.5 mt-3 justify-center">
+            {years.map(y => (
+              <button key={y} onClick={() => setTrendDrillYear(y)} className={pillCls(false)}>
+                {y}
+              </button>
+            ))}
           </div>
-        </div>
-        <div className="space-y-1.5">
-          {activityData.map(({ label, count }) => (
-            <div key={label} className="flex items-center gap-2">
-              <span className="text-xs text-gray-400 dark:text-slate-500 w-8 text-right shrink-0">{label}</span>
-              <div className="flex-1 bg-gray-100 dark:bg-slate-700 rounded-full h-5 overflow-hidden">
-                <div
-                  className="h-full bg-indigo-500 dark:bg-indigo-500 rounded-full transition-all duration-500 flex items-center justify-end pr-2"
-                  style={{ width: count === 0 ? "0%" : `${Math.max(8, (count / maxActivity) * 100)}%` }}>
-                  {count > 0 && <span className="text-white text-xs font-medium">{count}</span>}
-                </div>
-              </div>
-              {count === 0 && <span className="text-xs text-gray-300 dark:text-slate-600">—</span>}
-            </div>
-          ))}
-        </div>
+        )}
       </div>
 
       {/* Artist ranking */}
