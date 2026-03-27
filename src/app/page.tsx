@@ -1423,7 +1423,7 @@ function StatsTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
             <YAxis tick={{ fontSize: 11, fill: "#9ca3af" }} axisLine={false} tickLine={false} allowDecimals={false} />
             <Tooltip
               contentStyle={{ borderRadius: "12px", border: "none", boxShadow: "0 4px 20px rgba(0,0,0,0.1)", fontSize: 13 }}
-              formatter={(v: number) => [v, lang === "zh" ? "场" : "shows"]}
+              formatter={(v) => [v, lang === "zh" ? "场" : "shows"]}
             />
             <Area
               type="monotone" dataKey="count" stroke="#4f46e5" strokeWidth={2.5}
