@@ -1407,8 +1407,9 @@ function StatsTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
           <AreaChart
             data={trendDrillYear ? monthlyData : yearlyData}
             margin={{ top: 4, right: 4, left: -28, bottom: 0 }}
-            onClick={trendDrillYear ? undefined : (e) => {
-              if (e?.activePayload?.[0]) setTrendDrillYear(e.activePayload[0].payload.label);
+            onClick={trendDrillYear ? undefined : (e: unknown) => {
+              const ev = e as { activePayload?: { payload: { label: string } }[] };
+              if (ev?.activePayload?.[0]) setTrendDrillYear(ev.activePayload[0].payload.label);
             }}
           >
             <defs>
