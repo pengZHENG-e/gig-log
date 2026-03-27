@@ -117,6 +117,23 @@ const i18n = {
       save: "保存",
       saved: "已保存 ✓",
     },
+    import: {
+      menu: "导入数据",
+      title: "批量导入",
+      desc: "上传 CSV 或 JSON 文件，支持从 Excel / Google Sheets 导出的 CSV。",
+      downloadTemplate: "下载 CSV 模板",
+      dropzone: "点击选择文件，或拖拽到此处",
+      accepts: "支持 .csv 和 .json",
+      preview: "预览（前5条）",
+      total: "共",
+      valid: "条有效记录",
+      invalid: "条跳过（缺少艺人或日期）",
+      confirm: "确认导入",
+      importing: "导入中...",
+      done: "✓ 导入完成",
+      error: "文件解析失败，请检查格式",
+      cancel: "取消",
+    },
     dark: "🌙", light: "☀️",
   },
   en: {
@@ -195,6 +212,23 @@ const i18n = {
       save: "Save",
       saved: "Saved ✓",
     },
+    import: {
+      menu: "Import data",
+      title: "Bulk import",
+      desc: "Upload a CSV or JSON file. CSV can be exported from Excel or Google Sheets.",
+      downloadTemplate: "Download CSV template",
+      dropzone: "Click to choose a file, or drag & drop",
+      accepts: "Supports .csv and .json",
+      preview: "Preview (first 5)",
+      total: "",
+      valid: "valid records found",
+      invalid: "skipped (missing artist or date)",
+      confirm: "Import all",
+      importing: "Importing...",
+      done: "✓ Done",
+      error: "Failed to parse file — please check the format",
+      cancel: "Cancel",
+    },
     empty: "No gigs yet. Tap + Add to start 🎸",
     noResults: "No gigs match your search",
     loading: "Loading...",
@@ -262,6 +296,106 @@ async function upsertProfile(userId: string, profile: Profile): Promise<boolean>
   const { error } = await supabase.from("profiles").upsert({ id: userId, ...profile, updated_at: new Date().toISOString() });
   if (error) { console.error("upsertProfile:", error.message); return false; }
   return true;
+}
+
+async function bulkInsertGigs(gigs: Omit<Gig, "id">[], userId: string): Promise<number> {
+  const rows = gigs.map(g => ({ ...g, user_id: userId }));
+  // Supabase insert limit ~1000 per call; chunk just in case
+  let count = 0;
+  for (let i = 0; i < rows.length; i += 500) {
+    const { error } = await supabase.from("gigs").insert(rows.slice(i, i + 500));
+    if (!error) count += Math.min(500, rows.length - i);
+  }
+  return count;
+}
+
+// ─── CSV / JSON parse ─────────────────────────────────────────────────────────
+
+function parseCSVLine(line: string): string[] {
+  const result: string[] = [];
+  let cur = "", inQ = false;
+  for (let i = 0; i < line.length; i++) {
+    if (line[i] === '"') {
+      if (inQ && line[i + 1] === '"') { cur += '"'; i++; }
+      else inQ = !inQ;
+    } else if (line[i] === ',' && !inQ) {
+      result.push(cur); cur = "";
+    } else cur += line[i];
+  }
+  result.push(cur);
+  return result;
+}
+
+// Map flexible header names → canonical field names
+const HEADER_MAP: Record<string, keyof Omit<Gig, "id">> = {
+  date: "date", "日期": "date",
+  artist: "artist", "艺人": "artist", band: "artist", "乐队": "artist",
+  venue: "venue", "场馆": "venue",
+  city: "city", "城市": "city",
+  country: "country", "国家": "country",
+  rating: "rating", "评分": "rating",
+  price: "price", "票价": "price",
+  currency: "currency", "货币": "currency",
+  tags: "tags", "标签": "tags",
+  companions: "companions", "同行": "companions",
+  setlist: "setlist", "歌单": "setlist",
+  notes: "notes", "笔记": "notes",
+};
+
+function rowToImportGig(row: Record<string, string>): Omit<Gig, "id"> | null {
+  const g: Partial<Omit<Gig, "id">> & { artist?: string; date?: string } = {};
+  for (const [key, val] of Object.entries(row)) {
+    const field = HEADER_MAP[key.trim().toLowerCase()] ?? HEADER_MAP[key.trim()];
+    if (!field) continue;
+    const v = val.trim();
+    if (field === "rating") g.rating = Math.min(5, Math.max(1, Number(v) || 5));
+    else if (field === "price") g.price = v ? Number(v) : undefined;
+    else if (field === "tags" || field === "companions" || field === "setlist")
+      (g as Record<string, string[]>)[field] = v ? v.split(";").map(s => s.trim()).filter(Boolean) : [];
+    else (g as Record<string, string>)[field] = v;
+  }
+  if (!g.artist?.trim() || !g.date?.trim()) return null;
+  return {
+    artist: g.artist, date: g.date,
+    venue: g.venue ?? "", city: g.city ?? "", country: g.country ?? "",
+    rating: g.rating ?? 5, notes: g.notes ?? "",
+    price: g.price, currency: g.currency ?? "CNY",
+    tags: g.tags ?? [], companions: g.companions ?? [], setlist: g.setlist ?? [],
+  };
+}
+
+function parseImportFile(text: string, filename: string): { valid: Omit<Gig, "id">[]; skipped: number } {
+  let rows: Record<string, string>[] = [];
+  if (filename.endsWith(".json")) {
+    const parsed = JSON.parse(text);
+    rows = Array.isArray(parsed) ? parsed : [];
+  } else {
+    const lines = text.trim().split(/\r?\n/);
+    if (lines.length < 2) return { valid: [], skipped: 0 };
+    const headers = parseCSVLine(lines[0]);
+    rows = lines.slice(1).filter(l => l.trim()).map(l => {
+      const vals = parseCSVLine(l);
+      return Object.fromEntries(headers.map((h, i) => [h.trim(), vals[i]?.trim() ?? ""]));
+    });
+  }
+  const valid: Omit<Gig, "id">[] = [];
+  let skipped = 0;
+  for (const row of rows) {
+    const g = rowToImportGig(row);
+    if (g) valid.push(g); else skipped++;
+  }
+  return { valid, skipped };
+}
+
+function downloadCSVTemplate() {
+  const headers = ["date", "artist", "venue", "city", "country", "rating", "price", "currency", "tags", "companions", "setlist", "notes"];
+  const example = ["2024-06-15", "Arctic Monkeys", "O2 Arena", "London", "UK", "5", "80", "GBP", "rock;indie", "Alice;Bob", "R U Mine?;Do I Wanna Know?", "Amazing show!"];
+  const csv = [headers, example].map(r => r.map(v => `"${v}"`).join(",")).join("\n");
+  const blob = new Blob([csv], { type: "text/csv" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url; a.download = "gig-tracker-template.csv"; a.click();
+  URL.revokeObjectURL(url);
 }
 
 function exportCSV(gigs: Gig[], lang: Lang) {
@@ -630,6 +764,129 @@ function GigCard({ gig, onClick, lang }: { gig: Gig; onClick: () => void; lang: 
   );
 }
 
+// ─── ImportModal ─────────────────────────────────────────────────────────────
+
+function ImportModal({ user, lang, onImported, onClose }: {
+  user: User; lang: Lang; onImported: (gigs: Gig[]) => void; onClose: () => void;
+}) {
+  const t = i18n[lang].import;
+  const [parsed, setParsed] = useState<{ valid: Omit<Gig, "id">[]; skipped: number } | null>(null);
+  const [parseError, setParseError] = useState("");
+  const [importing, setImporting] = useState(false);
+  const [done, setDone] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const handleFile = (file: File) => {
+    setParseError(""); setParsed(null); setDone(false);
+    const reader = new FileReader();
+    reader.onload = e => {
+      try {
+        const result = parseImportFile(e.target?.result as string, file.name);
+        setParsed(result);
+      } catch {
+        setParseError(t.error);
+      }
+    };
+    reader.readAsText(file);
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    const file = e.dataTransfer.files[0];
+    if (file) handleFile(file);
+  };
+
+  const handleImport = async () => {
+    if (!parsed?.valid.length) return;
+    setImporting(true);
+    const count = await bulkInsertGigs(parsed.valid, user.id);
+    // Refetch to get proper IDs
+    const { data } = await supabase.from("gigs").select("*").order("date", { ascending: false }).limit(count + 10);
+    const newGigs = (data ?? []).slice(0, count).map(rowToGig);
+    onImported(newGigs);
+    setImporting(false);
+    setDone(true);
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center" onClick={onClose}>
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+      <div className="relative bg-white dark:bg-slate-800 rounded-t-3xl sm:rounded-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto shadow-2xl" onClick={e => e.stopPropagation()}>
+        <div className="flex justify-center pt-3 pb-1 sm:hidden">
+          <div className="w-10 h-1 bg-gray-200 dark:bg-slate-600 rounded-full" />
+        </div>
+        <div className="px-6 pb-8 pt-4 space-y-4">
+          <div className="flex items-center justify-between">
+            <h2 className="text-lg font-bold">{t.title}</h2>
+            <button onClick={onClose} className="text-gray-400 hover:text-gray-600 dark:hover:text-slate-200 text-2xl">×</button>
+          </div>
+
+          <p className="text-sm text-gray-500 dark:text-slate-400">{t.desc}</p>
+
+          <button onClick={downloadCSVTemplate}
+            className="text-sm text-indigo-600 dark:text-indigo-400 underline underline-offset-2 hover:text-indigo-700">
+            ↓ {t.downloadTemplate}
+          </button>
+
+          {/* Drop zone */}
+          <div
+            onDrop={handleDrop} onDragOver={e => e.preventDefault()}
+            onClick={() => inputRef.current?.click()}
+            className="border-2 border-dashed border-gray-200 dark:border-slate-600 rounded-2xl p-8 text-center cursor-pointer hover:border-indigo-400 transition-colors">
+            <p className="text-sm text-gray-500 dark:text-slate-400">{t.dropzone}</p>
+            <p className="text-xs text-gray-400 dark:text-slate-500 mt-1">{t.accepts}</p>
+            <input ref={inputRef} type="file" accept=".csv,.json" className="hidden"
+              onChange={e => { const f = e.target.files?.[0]; if (f) handleFile(f); }} />
+          </div>
+
+          {parseError && <p className="text-sm text-red-500 bg-red-50 dark:bg-red-900/20 rounded-xl px-3 py-2">{parseError}</p>}
+
+          {parsed && (
+            <div className="space-y-3">
+              {/* Summary */}
+              <div className="bg-gray-50 dark:bg-slate-700/50 rounded-xl p-3 text-sm space-y-1">
+                <p className="text-green-600 dark:text-green-400 font-medium">✓ {lang === "zh" ? `共 ${parsed.valid.length} ${t.valid}` : `${parsed.valid.length} ${t.valid}`}</p>
+                {parsed.skipped > 0 && <p className="text-gray-400 dark:text-slate-500">{parsed.skipped} {t.invalid}</p>}
+              </div>
+
+              {/* Preview */}
+              {parsed.valid.length > 0 && (
+                <div>
+                  <p className="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wide mb-2">{t.preview}</p>
+                  <div className="space-y-1.5">
+                    {parsed.valid.slice(0, 5).map((g, i) => (
+                      <div key={i} className="flex gap-3 text-sm bg-white dark:bg-slate-800 rounded-xl px-3 py-2 border border-gray-100 dark:border-slate-700">
+                        <span className="font-medium truncate flex-1">{g.artist}</span>
+                        <span className="text-gray-400 dark:text-slate-500 shrink-0">{g.date}</span>
+                        <span className="text-gray-400 dark:text-slate-500 shrink-0">{"★".repeat(g.rating)}</span>
+                      </div>
+                    ))}
+                    {parsed.valid.length > 5 && (
+                      <p className="text-xs text-center text-gray-400 dark:text-slate-500">... {parsed.valid.length - 5} {lang === "zh" ? "条更多" : "more"}</p>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              <div className="flex gap-2">
+                <button onClick={onClose} className="flex-1 py-2.5 text-sm border border-gray-200 dark:border-slate-600 rounded-xl text-gray-500 hover:text-gray-700">{t.cancel}</button>
+                {!done ? (
+                  <button onClick={handleImport} disabled={importing || parsed.valid.length === 0}
+                    className="flex-1 py-2.5 text-sm bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 disabled:opacity-50 font-medium">
+                    {importing ? t.importing : t.confirm}
+                  </button>
+                ) : (
+                  <button onClick={onClose} className="flex-1 py-2.5 text-sm bg-green-500 text-white rounded-xl font-medium">{t.done}</button>
+                )}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ─── ProfileModal ─────────────────────────────────────────────────────────────
 
 function ProfileModal({ user, profile, lang, onSave, onClose }: {
@@ -704,10 +961,10 @@ function ProfileModal({ user, profile, lang, onSave, onClose }: {
 
 // ─── SettingsMenu ─────────────────────────────────────────────────────────────
 
-function SettingsMenu({ lang, dark, onToggleLang, onToggleDark, onExport, onSignOut, onProfile }: {
+function SettingsMenu({ lang, dark, onToggleLang, onToggleDark, onExport, onSignOut, onProfile, onImport }: {
   lang: Lang; dark: boolean;
   onToggleLang: () => void; onToggleDark: () => void;
-  onExport: () => void; onSignOut: () => void; onProfile: () => void;
+  onExport: () => void; onSignOut: () => void; onProfile: () => void; onImport: () => void;
 }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -729,6 +986,7 @@ function SettingsMenu({ lang, dark, onToggleLang, onToggleDark, onExport, onSign
         <div className="absolute right-0 top-11 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-gray-100 dark:border-slate-700 py-2 w-44 z-40">
           {[
             { label: t.profile.menu, action: onProfile },
+            { label: t.import.menu, action: onImport },
             { label: `${dark ? t.light : t.dark} ${t.darkMode}`, action: onToggleDark },
             { label: t.langToggle, action: onToggleLang },
             { label: t.exportCsv, action: onExport },
@@ -1078,6 +1336,7 @@ export default function App() {
   const [gigs, setGigs] = useState<Gig[]>([]);
   const [profile, setProfile] = useState<Profile>(DEFAULT_PROFILE);
   const [showProfile, setShowProfile] = useState(false);
+  const [showImport, setShowImport] = useState(false);
   const [loadingAuth, setLoadingAuth] = useState(true);
   const [loadingGigs, setLoadingGigs] = useState(false);
   const [lang, setLang] = useState<Lang>("zh");
@@ -1151,6 +1410,7 @@ export default function App() {
             onExport={() => exportCSV(gigs, lang)}
             onSignOut={signOut}
             onProfile={() => setShowProfile(true)}
+            onImport={() => setShowImport(true)}
           />
           {tab === "home" && (
             <button onClick={() => setShowForm(v => !v)}
@@ -1170,6 +1430,14 @@ export default function App() {
           {tab === "stats" && <StatsTab gigs={gigs} lang={lang} />}
           {tab === "recap" && <RecapTab gigs={gigs} lang={lang} />}
         </>
+      )}
+
+      {showImport && user && (
+        <ImportModal
+          user={user} lang={lang}
+          onImported={newGigs => { setGigs(prev => [...newGigs, ...prev]); setShowImport(false); }}
+          onClose={() => setShowImport(false)}
+        />
       )}
 
       {showProfile && user && (
