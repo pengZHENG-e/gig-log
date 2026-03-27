@@ -96,6 +96,10 @@ const i18n = {
       total: "总场次", artists: "艺人数", cities: "城市数",
       avgRating: "平均评分", totalSpent: "总花费",
       citiesTitle: "去过的城市", shows: "场",
+      artistRanking: "艺人排行", lastSeen: "上次",
+      activity: "月份活跃度", allYears: "全部年份",
+      allMonths: "全月", times: "次",
+      months: ["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],
     },
     recap: {
       total: "场演出", topArtist: "最常看", topCity: "常去城市",
@@ -195,6 +199,10 @@ const i18n = {
       total: "Total Shows", artists: "Artists", cities: "Cities",
       avgRating: "Avg Rating", totalSpent: "Total Spent",
       citiesTitle: "Cities Visited", shows: "shows",
+      artistRanking: "Artist Ranking", lastSeen: "Last seen",
+      activity: "Monthly Activity", allYears: "All time",
+      allMonths: "All months", times: "shows",
+      months: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
     },
     recap: {
       total: "shows", topArtist: "Most Seen", topCity: "Top City",
@@ -1195,21 +1203,56 @@ function HomeTab({ gigs, setGigs, lang, showForm, setShowForm, user, profile }: 
 
 function StatsTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
   const t = i18n[lang].stats;
+  const [rankYear, setRankYear] = useState("");
+  const [rankMonth, setRankMonth] = useState("");
+  const [activityYear, setActivityYear] = useState("");
+
   if (gigs.length === 0) return <div className="text-center py-24 text-gray-400 dark:text-slate-500">{i18n[lang].empty}</div>;
 
+  const years = Array.from(new Set(gigs.map(g => g.date.slice(0, 4)))).sort((a, b) => Number(b) - Number(a));
+
+  // ── Key metrics (all time) ──
   const artists = new Set(gigs.map(g => g.artist)).size;
   const cities = new Set(gigs.map(g => g.city).filter(Boolean)).size;
   const avgRating = (gigs.reduce((s, g) => s + g.rating, 0) / gigs.length).toFixed(1);
+  const spend: Record<string, number> = {};
+  gigs.filter(g => g.price != null).forEach(g => { spend[g.currency] = (spend[g.currency] || 0) + (g.price ?? 0); });
 
+  // ── Activity chart ──
+  const activityGigs = activityYear ? gigs.filter(g => g.date.startsWith(activityYear)) : gigs;
+  const activityData: { label: string; count: number }[] = activityYear
+    ? t.months.map((m, i) => ({
+        label: m,
+        count: activityGigs.filter(g => parseInt(g.date.slice(5, 7)) === i + 1).length,
+      }))
+    : years.map(y => ({ label: y, count: gigs.filter(g => g.date.startsWith(y)).length }));
+  const maxActivity = Math.max(...activityData.map(d => d.count), 1);
+
+  // ── Artist ranking ──
+  const rankGigs = gigs.filter(g => {
+    if (rankYear && !g.date.startsWith(rankYear)) return false;
+    if (rankMonth && g.date.slice(5, 7) !== rankMonth) return false;
+    return true;
+  });
+  const artistCount: Record<string, { count: number; lastDate: string }> = {};
+  rankGigs.forEach(g => {
+    if (!artistCount[g.artist]) artistCount[g.artist] = { count: 0, lastDate: g.date };
+    artistCount[g.artist].count++;
+    if (g.date > artistCount[g.artist].lastDate) artistCount[g.artist].lastDate = g.date;
+  });
+  const ranking = Object.entries(artistCount).sort((a, b) => b[1].count - a[1].count || b[1].lastDate.localeCompare(a[1].lastDate));
+
+  // ── Cities ──
   const cityCount: Record<string, number> = {};
   gigs.forEach(g => { if (g.city) cityCount[g.city] = (cityCount[g.city] || 0) + 1; });
   const citiesSorted = Object.entries(cityCount).sort((a, b) => b[1] - a[1]);
 
-  const spend: Record<string, number> = {};
-  gigs.filter(g => g.price != null).forEach(g => { spend[g.currency] = (spend[g.currency] || 0) + (g.price ?? 0); });
+  const pillCls = (active: boolean) =>
+    `shrink-0 text-xs px-3 py-1.5 rounded-lg border transition-colors ${active ? "bg-indigo-600 text-white border-indigo-600" : "border-gray-200 dark:border-slate-600 text-gray-500 dark:text-slate-400 hover:border-indigo-400"}`;
 
   return (
     <div className="space-y-6">
+      {/* Key metrics */}
       <div className="grid grid-cols-2 gap-3">
         {[
           { label: t.total, value: gigs.length },
@@ -1224,18 +1267,78 @@ function StatsTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
         ))}
       </div>
 
-      {Object.keys(spend).length > 0 && (
-        <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-slate-700">
-          <p className="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wide mb-3">{t.totalSpent}</p>
-          {Object.entries(spend).map(([cur, amt]) => (
-            <div key={cur} className="flex justify-between items-center py-1">
-              <span className="text-sm text-gray-500 dark:text-slate-400">{cur}</span>
-              <span className="text-base font-bold">{amt.toLocaleString()}</span>
+      {/* Activity chart */}
+      <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-slate-700">
+        <div className="flex items-center justify-between mb-4">
+          <p className="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wide">{t.activity}</p>
+          <div className="flex gap-1.5 overflow-x-auto">
+            <button onClick={() => { setActivityYear(""); }} className={pillCls(!activityYear)}>{t.allYears}</button>
+            {years.map(y => <button key={y} onClick={() => setActivityYear(y)} className={pillCls(activityYear === y)}>{y}</button>)}
+          </div>
+        </div>
+        <div className="space-y-1.5">
+          {activityData.map(({ label, count }) => (
+            <div key={label} className="flex items-center gap-2">
+              <span className="text-xs text-gray-400 dark:text-slate-500 w-8 text-right shrink-0">{label}</span>
+              <div className="flex-1 bg-gray-100 dark:bg-slate-700 rounded-full h-5 overflow-hidden">
+                <div
+                  className="h-full bg-indigo-500 dark:bg-indigo-500 rounded-full transition-all duration-500 flex items-center justify-end pr-2"
+                  style={{ width: count === 0 ? "0%" : `${Math.max(8, (count / maxActivity) * 100)}%` }}>
+                  {count > 0 && <span className="text-white text-xs font-medium">{count}</span>}
+                </div>
+              </div>
+              {count === 0 && <span className="text-xs text-gray-300 dark:text-slate-600">—</span>}
             </div>
           ))}
         </div>
-      )}
+      </div>
 
+      {/* Artist ranking */}
+      <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-slate-700">
+        <p className="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wide mb-3">{t.artistRanking}</p>
+
+        {/* Year filter */}
+        <div className="flex gap-1.5 overflow-x-auto pb-2">
+          <button onClick={() => { setRankYear(""); setRankMonth(""); }} className={pillCls(!rankYear)}>{t.allYears}</button>
+          {years.map(y => (
+            <button key={y} onClick={() => { setRankYear(y); setRankMonth(""); }} className={pillCls(rankYear === y)}>{y}</button>
+          ))}
+        </div>
+
+        {/* Month filter (only when year selected) */}
+        {rankYear && (
+          <div className="flex gap-1.5 overflow-x-auto pb-2 mt-2">
+            <button onClick={() => setRankMonth("")} className={pillCls(!rankMonth)}>{t.allMonths}</button>
+            {t.months.map((m, i) => {
+              const mm = String(i + 1).padStart(2, "0");
+              const hasGigs = gigs.some(g => g.date.startsWith(rankYear + "-" + mm));
+              return hasGigs ? (
+                <button key={mm} onClick={() => setRankMonth(mm === rankMonth ? "" : mm)} className={pillCls(rankMonth === mm)}>{m}</button>
+              ) : null;
+            })}
+          </div>
+        )}
+
+        {/* Ranking list */}
+        {ranking.length === 0 ? (
+          <p className="text-sm text-gray-400 dark:text-slate-500 text-center py-4">{i18n[lang].noResults}</p>
+        ) : (
+          <div className="space-y-0 mt-2">
+            {ranking.map(([artist, { count, lastDate }], i) => (
+              <div key={artist} className="flex items-center gap-3 py-2.5 border-b border-gray-50 dark:border-slate-700/50 last:border-0">
+                <span className={`text-sm font-bold w-6 text-center shrink-0 ${i === 0 ? "text-yellow-400" : i === 1 ? "text-gray-400" : i === 2 ? "text-amber-600" : "text-gray-300 dark:text-slate-600"}`}>
+                  {i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : `${i + 1}`}
+                </span>
+                <span className="flex-1 text-sm font-medium truncate">{artist}</span>
+                <span className="text-xs text-gray-400 dark:text-slate-500 shrink-0">{t.lastSeen} {new Date(lastDate + "T00:00:00").toLocaleDateString(lang === "zh" ? "zh-CN" : "en-GB", { month: "short", day: "numeric", year: "2-digit" })}</span>
+                <span className="text-sm font-bold text-indigo-600 dark:text-indigo-400 shrink-0 w-10 text-right">{count}×</span>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Cities */}
       {citiesSorted.length > 0 && (
         <div>
           <p className="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wide mb-3">{t.citiesTitle}</p>
@@ -1247,6 +1350,19 @@ function StatsTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
               </div>
             ))}
           </div>
+        </div>
+      )}
+
+      {/* Spend */}
+      {Object.keys(spend).length > 0 && (
+        <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-slate-700">
+          <p className="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wide mb-3">{t.totalSpent}</p>
+          {Object.entries(spend).map(([cur, amt]) => (
+            <div key={cur} className="flex justify-between items-center py-1">
+              <span className="text-sm text-gray-500 dark:text-slate-400">{cur}</span>
+              <span className="text-base font-bold">{amt.toLocaleString()}</span>
+            </div>
+          ))}
         </div>
       )}
     </div>
