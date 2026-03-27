@@ -1383,7 +1383,7 @@ function StatsTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
           <p className="text-sm text-gray-400 dark:text-slate-500 text-center py-4">{i18n[lang].noResults}</p>
         ) : (
           <div className="space-y-0 mt-2">
-            {ranking.map(([artist, { count, lastDate }], i) => (
+            {ranking.map(([, { count, lastDate, displayName }], i) => (
               <div key={artist} onClick={() => setSelectedArtist(displayName)}
                 className="flex items-center gap-3 py-2.5 border-b border-gray-50 dark:border-slate-700/50 last:border-0 cursor-pointer hover:bg-gray-50 dark:hover:bg-slate-700/40 -mx-2 px-2 rounded-xl transition-colors">
                 <span className={`text-sm font-bold w-6 text-center shrink-0 ${i === 0 ? "text-yellow-400" : i === 1 ? "text-gray-400" : i === 2 ? "text-amber-600" : "text-gray-300 dark:text-slate-600"}`}>
