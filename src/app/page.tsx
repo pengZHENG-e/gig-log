@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import type { User } from "@supabase/supabase-js";
@@ -9,6 +9,7 @@ import type { User } from "@supabase/supabase-js";
 
 type Lang = "zh" | "en";
 type Tab = "home" | "stats" | "recap";
+type SortBy = "date-desc" | "date-asc" | "rating-desc";
 
 interface Gig {
   id: string;
@@ -32,12 +33,28 @@ const i18n = {
   zh: {
     appName: "Gig Tracker",
     add: "+ 记录",
-    exportCsv: "导出 CSV",
     langToggle: "EN",
-    signOut: "退出",
+    signOut: "退出登录",
+    exportCsv: "导出 CSV",
+    darkMode: "深色模式",
+    settings: "设置",
     nav: { home: "记录", stats: "统计", recap: "年度" },
+    filter: {
+      search: "搜索艺人、场馆、城市...",
+      title: "筛选",
+      year: "年份",
+      genre: "风格",
+      venue: "场馆",
+      sort: "排序",
+      all: "全部",
+      newest: "最新",
+      oldest: "最早",
+      topRated: "评分最高",
+      reset: "重置",
+    },
     form: {
-      title: "记录新 Gig",
+      createTitle: "记录新 Gig",
+      editTitle: "编辑 Gig",
       artist: "艺人 / 乐队 *",
       date: "日期 *",
       venue: "场馆",
@@ -56,47 +73,59 @@ const i18n = {
       notes: "笔记 / 感受",
       notesPlaceholder: "写下你的感受...",
       save: "保存",
+      saveChanges: "保存修改",
       cancel: "取消",
     },
-    card: { delete: "删除", setlist: "歌单", companions: "同行", paid: "票价" },
-    search: "搜索艺人、场馆、城市...",
-    allTags: "全部",
+    detail: {
+      edit: "编辑",
+      delete: "删除",
+      confirmDelete: "确定要删除这条记录吗？",
+      setlist: "歌单",
+      companions: "同行",
+      paid: "票价",
+      notes: "笔记",
+    },
     stats: {
-      title: "统计",
-      total: "总场次",
-      artists: "艺人数",
-      cities: "城市数",
-      avgRating: "平均评分",
-      totalSpent: "总花费",
-      citiesTitle: "去过的城市",
-      shows: "场",
+      total: "总场次", artists: "艺人数", cities: "城市数",
+      avgRating: "平均评分", totalSpent: "总花费",
+      citiesTitle: "去过的城市", shows: "场",
     },
     recap: {
-      title: "年度回顾",
-      selectYear: "选择年份",
-      total: "场演出",
-      topArtist: "最常看",
-      topCity: "常去城市",
-      bestShow: "最佳演出",
-      totalSpent: "总花费",
-      topTag: "最爱类型",
-      times: "次",
-      noData: "这年没有记录",
+      total: "场演出", topArtist: "最常看", topCity: "常去城市",
+      bestShow: "最佳演出", totalSpent: "总花费", topTag: "最爱类型",
+      times: "次", noData: "这年没有记录",
     },
     empty: "还没有记录，点右上角开始吧 🎸",
     noResults: "没有找到相关演出",
     loading: "加载中...",
+    shows: "场",
     dark: "🌙", light: "☀️",
   },
   en: {
     appName: "Gig Tracker",
     add: "+ Add",
-    exportCsv: "Export CSV",
     langToggle: "中文",
     signOut: "Sign out",
+    exportCsv: "Export CSV",
+    darkMode: "Dark mode",
+    settings: "Settings",
     nav: { home: "Log", stats: "Stats", recap: "Recap" },
+    filter: {
+      search: "Search artist, venue, city...",
+      title: "Filter",
+      year: "Year",
+      genre: "Genre",
+      venue: "Venue",
+      sort: "Sort",
+      all: "All",
+      newest: "Newest",
+      oldest: "Oldest",
+      topRated: "Top rated",
+      reset: "Reset",
+    },
     form: {
-      title: "Log a Gig",
+      createTitle: "Log a Gig",
+      editTitle: "Edit Gig",
       artist: "Artist / Band *",
       date: "Date *",
       venue: "Venue",
@@ -115,36 +144,32 @@ const i18n = {
       notes: "Notes",
       notesPlaceholder: "How was it?",
       save: "Save",
+      saveChanges: "Save changes",
       cancel: "Cancel",
     },
-    card: { delete: "Delete", setlist: "Setlist", companions: "With", paid: "Paid" },
-    search: "Search artist, venue, city...",
-    allTags: "All",
+    detail: {
+      edit: "Edit",
+      delete: "Delete",
+      confirmDelete: "Delete this gig?",
+      setlist: "Setlist",
+      companions: "Went with",
+      paid: "Paid",
+      notes: "Notes",
+    },
     stats: {
-      title: "Stats",
-      total: "Total Shows",
-      artists: "Artists",
-      cities: "Cities",
-      avgRating: "Avg Rating",
-      totalSpent: "Total Spent",
-      citiesTitle: "Cities Visited",
-      shows: "shows",
+      total: "Total Shows", artists: "Artists", cities: "Cities",
+      avgRating: "Avg Rating", totalSpent: "Total Spent",
+      citiesTitle: "Cities Visited", shows: "shows",
     },
     recap: {
-      title: "Year in Review",
-      selectYear: "Select year",
-      total: "shows",
-      topArtist: "Most Seen",
-      topCity: "Top City",
-      bestShow: "Best Show",
-      totalSpent: "Total Spent",
-      topTag: "Top Genre",
-      times: "times",
-      noData: "No gigs this year",
+      total: "shows", topArtist: "Most Seen", topCity: "Top City",
+      bestShow: "Best Show", totalSpent: "Total Spent", topTag: "Top Genre",
+      times: "times", noData: "No gigs this year",
     },
     empty: "No gigs yet. Tap + Add to start 🎸",
     noResults: "No gigs match your search",
     loading: "Loading...",
+    shows: "shows",
     dark: "🌙", light: "☀️",
   },
 } as const;
@@ -154,39 +179,42 @@ const i18n = {
 const CURRENCIES = ["CNY", "USD", "GBP", "EUR", "HKD", "JPY", "AUD", "SGD"];
 const PRESET_TAGS = ["rock", "pop", "jazz", "classical", "electronic", "hip-hop", "folk", "metal", "indie", "r&b", "punk", "soul"];
 
-// ─── Supabase helpers ─────────────────────────────────────────────────────────
+// ─── Supabase ─────────────────────────────────────────────────────────────────
+
+function rowToGig(row: Record<string, unknown>): Gig {
+  return {
+    id: row.id as string,
+    artist: row.artist as string,
+    venue: (row.venue as string) ?? "",
+    date: row.date as string,
+    city: (row.city as string) ?? "",
+    country: (row.country as string) ?? "",
+    tags: (row.tags as string[]) ?? [],
+    rating: (row.rating as number) ?? 5,
+    notes: (row.notes as string) ?? "",
+    price: row.price != null ? (row.price as number) : undefined,
+    currency: (row.currency as string) ?? "CNY",
+    companions: (row.companions as string[]) ?? [],
+    setlist: (row.setlist as string[]) ?? [],
+  };
+}
 
 async function fetchGigs(): Promise<Gig[]> {
-  const { data, error } = await supabase
-    .from("gigs")
-    .select("*")
-    .order("date", { ascending: false });
-  if (error) { console.error("fetchGigs error:", error.message, error.code, error.details); return []; }
-  return (data ?? []).map(row => ({
-    id: row.id,
-    artist: row.artist,
-    venue: row.venue ?? "",
-    date: row.date,
-    city: row.city ?? "",
-    country: row.country ?? "",
-    tags: row.tags ?? [],
-    rating: row.rating ?? 5,
-    notes: row.notes ?? "",
-    price: row.price ?? undefined,
-    currency: row.currency ?? "CNY",
-    companions: row.companions ?? [],
-    setlist: row.setlist ?? [],
-  }));
+  const { data, error } = await supabase.from("gigs").select("*").order("date", { ascending: false });
+  if (error) { console.error("fetchGigs:", error.message); return []; }
+  return (data ?? []).map(rowToGig);
 }
 
 async function insertGig(gig: Omit<Gig, "id">, userId: string): Promise<Gig | null> {
-  const { data, error } = await supabase
-    .from("gigs")
-    .insert({ ...gig, user_id: userId })
-    .select()
-    .single();
-  if (error) { console.error(error); return null; }
-  return { ...gig, id: data.id };
+  const { data, error } = await supabase.from("gigs").insert({ ...gig, user_id: userId }).select().single();
+  if (error) { console.error("insertGig:", error.message); return null; }
+  return rowToGig(data);
+}
+
+async function updateGigById(id: string, gig: Omit<Gig, "id">): Promise<boolean> {
+  const { error } = await supabase.from("gigs").update(gig).eq("id", id);
+  if (error) { console.error("updateGig:", error.message); return false; }
+  return true;
 }
 
 async function deleteGigById(id: string) {
@@ -202,9 +230,7 @@ function exportCSV(gigs: Gig[], lang: Lang) {
     g.price ?? "", g.currency, g.tags.join(";"), g.companions.join(";"),
     g.setlist.join(";"), g.notes,
   ]);
-  const csv = [headers, ...rows]
-    .map(r => r.map(v => `"${String(v).replace(/"/g, '""')}"`).join(","))
-    .join("\n");
+  const csv = [headers, ...rows].map(r => r.map(v => `"${String(v).replace(/"/g, '""')}"`).join(",")).join("\n");
   const blob = new Blob(["\ufeff" + csv], { type: "text/csv;charset=utf-8;" });
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
@@ -214,12 +240,15 @@ function exportCSV(gigs: Gig[], lang: Lang) {
 
 // ─── StarRating ───────────────────────────────────────────────────────────────
 
-function StarRating({ value, onChange }: { value: number; onChange?: (v: number) => void }) {
+function StarRating({ value, onChange, size = "md" }: {
+  value: number; onChange?: (v: number) => void; size?: "sm" | "md" | "lg";
+}) {
+  const sz = size === "sm" ? "text-base" : size === "lg" ? "text-3xl" : "text-xl";
   return (
-    <div className="flex gap-1">
+    <div className="flex gap-0.5">
       {[1, 2, 3, 4, 5].map(s => (
         <button key={s} type="button" onClick={() => onChange?.(s)}
-          className={`text-xl ${s <= value ? "text-yellow-400" : "text-gray-300 dark:text-slate-600"} ${onChange ? "cursor-pointer hover:scale-110" : "cursor-default"} transition-transform`}>
+          className={`${sz} ${s <= value ? "text-yellow-400" : "text-gray-200 dark:text-slate-700"} ${onChange ? "cursor-pointer hover:scale-110" : "cursor-default"} transition-transform`}>
           ★
         </button>
       ))}
@@ -239,17 +268,19 @@ function ChipInput({ values, onChange, placeholder }: {
     setInput("");
   };
   return (
-    <div>
-      <div className="flex flex-wrap gap-1 mb-1">
-        {values.map(v => (
-          <span key={v} className="flex items-center gap-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 text-xs px-2 py-0.5 rounded-full">
-            {v}
-            <button type="button" onClick={() => onChange(values.filter(x => x !== v))} className="hover:text-red-500">×</button>
-          </span>
-        ))}
-      </div>
+    <div className="space-y-1.5">
+      {values.length > 0 && (
+        <div className="flex flex-wrap gap-1">
+          {values.map(v => (
+            <span key={v} className="flex items-center gap-1 bg-indigo-100 dark:bg-indigo-900/60 text-indigo-700 dark:text-indigo-300 text-xs px-2.5 py-1 rounded-full">
+              {v}
+              <button type="button" onClick={() => onChange(values.filter(x => x !== v))} className="hover:text-red-500 ml-0.5">×</button>
+            </span>
+          ))}
+        </div>
+      )}
       <input
-        className="w-full border dark:border-slate-600 rounded-lg px-3 py-2 text-sm bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+        className="w-full border dark:border-slate-600 rounded-xl px-3 py-2 text-sm bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-400"
         value={input} placeholder={placeholder}
         onChange={e => setInput(e.target.value)}
         onKeyDown={e => { if (e.key === "Enter") { e.preventDefault(); add(); } }}
@@ -261,16 +292,20 @@ function ChipInput({ values, onChange, placeholder }: {
 
 // ─── GigForm ─────────────────────────────────────────────────────────────────
 
-function GigForm({ onSave, onCancel, lang }: {
-  onSave: (g: Omit<Gig, "id">) => void; onCancel: () => void; lang: Lang;
+function GigForm({ initial, onSave, onCancel, lang, editMode = false }: {
+  initial?: Omit<Gig, "id">;
+  onSave: (g: Omit<Gig, "id">) => void;
+  onCancel: () => void;
+  lang: Lang;
+  editMode?: boolean;
 }) {
   const t = i18n[lang].form;
-  const [form, setForm] = useState<Omit<Gig, "id">>({
+  const blank: Omit<Gig, "id"> = {
     artist: "", venue: "", date: "", city: "", country: "",
     tags: [], rating: 5, notes: "", price: undefined, currency: "CNY",
     companions: [], setlist: [],
-  });
-
+  };
+  const [form, setForm] = useState<Omit<Gig, "id">>(initial ?? blank);
   const set = <K extends keyof typeof form>(k: K, v: typeof form[K]) => setForm(f => ({ ...f, [k]: v }));
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -279,157 +314,317 @@ function GigForm({ onSave, onCancel, lang }: {
     onSave(form);
   };
 
-  return (
-    <form onSubmit={handleSubmit} className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-5 space-y-4">
-      <h2 className="text-lg font-bold">{t.title}</h2>
+  const inputCls = "w-full border dark:border-slate-600 rounded-xl px-3 py-2.5 text-sm bg-white dark:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-400";
 
+  return (
+    <form onSubmit={handleSubmit} className="space-y-5">
+      {/* Basic */}
       <div className="grid grid-cols-2 gap-3">
         <div className="col-span-2 sm:col-span-1">
-          <label className="text-xs text-gray-500 dark:text-slate-400">{t.artist}</label>
-          <input required className="w-full mt-1 border dark:border-slate-600 rounded-lg px-3 py-2 text-sm bg-white dark:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-            value={form.artist} onChange={e => set("artist", e.target.value)} />
+          <label className="text-xs font-medium text-gray-500 dark:text-slate-400">{t.artist}</label>
+          <input required className={`${inputCls} mt-1.5`} value={form.artist} onChange={e => set("artist", e.target.value)} />
         </div>
         <div className="col-span-2 sm:col-span-1">
-          <label className="text-xs text-gray-500 dark:text-slate-400">{t.date}</label>
-          <input required type="date" className="w-full mt-1 border dark:border-slate-600 rounded-lg px-3 py-2 text-sm bg-white dark:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-            value={form.date} onChange={e => set("date", e.target.value)} />
+          <label className="text-xs font-medium text-gray-500 dark:text-slate-400">{t.date}</label>
+          <input required type="date" className={`${inputCls} mt-1.5`} value={form.date} onChange={e => set("date", e.target.value)} />
         </div>
         <div>
-          <label className="text-xs text-gray-500 dark:text-slate-400">{t.venue}</label>
-          <input className="w-full mt-1 border dark:border-slate-600 rounded-lg px-3 py-2 text-sm bg-white dark:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-            value={form.venue} onChange={e => set("venue", e.target.value)} />
+          <label className="text-xs font-medium text-gray-500 dark:text-slate-400">{t.venue}</label>
+          <input className={`${inputCls} mt-1.5`} value={form.venue} onChange={e => set("venue", e.target.value)} />
         </div>
         <div>
-          <label className="text-xs text-gray-500 dark:text-slate-400">{t.city}</label>
-          <input className="w-full mt-1 border dark:border-slate-600 rounded-lg px-3 py-2 text-sm bg-white dark:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-            value={form.city} onChange={e => set("city", e.target.value)} />
+          <label className="text-xs font-medium text-gray-500 dark:text-slate-400">{t.city}</label>
+          <input className={`${inputCls} mt-1.5`} value={form.city} onChange={e => set("city", e.target.value)} />
         </div>
         <div className="col-span-2">
-          <label className="text-xs text-gray-500 dark:text-slate-400">{t.country}</label>
-          <input className="w-full mt-1 border dark:border-slate-600 rounded-lg px-3 py-2 text-sm bg-white dark:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-            value={form.country} onChange={e => set("country", e.target.value)} />
+          <label className="text-xs font-medium text-gray-500 dark:text-slate-400">{t.country}</label>
+          <input className={`${inputCls} mt-1.5`} value={form.country} onChange={e => set("country", e.target.value)} />
         </div>
       </div>
 
+      {/* Rating + Price */}
+      <div className="grid grid-cols-2 gap-3">
+        <div>
+          <label className="text-xs font-medium text-gray-500 dark:text-slate-400">{t.rating}</label>
+          <div className="mt-2"><StarRating value={form.rating} onChange={v => set("rating", v)} /></div>
+        </div>
+        <div>
+          <label className="text-xs font-medium text-gray-500 dark:text-slate-400">{t.price}</label>
+          <div className="flex gap-1.5 mt-1.5">
+            <select className="border dark:border-slate-600 rounded-xl px-2 py-2.5 text-sm bg-white dark:bg-slate-700 focus:outline-none"
+              value={form.currency} onChange={e => set("currency", e.target.value)}>
+              {CURRENCIES.map(c => <option key={c}>{c}</option>)}
+            </select>
+            <input type="number" min="0" placeholder="0"
+              className="flex-1 border dark:border-slate-600 rounded-xl px-3 py-2.5 text-sm bg-white dark:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+              value={form.price ?? ""} onChange={e => set("price", e.target.value ? Number(e.target.value) : undefined)} />
+          </div>
+        </div>
+      </div>
+
+      {/* Tags */}
       <div>
-        <label className="text-xs text-gray-500 dark:text-slate-400">{t.tags}</label>
-        <div className="mt-1"><ChipInput values={form.tags} onChange={v => set("tags", v)} placeholder={t.tagsPlaceholder} /></div>
-        <div className="flex flex-wrap gap-1 mt-2">
-          <span className="text-xs text-gray-400 dark:text-slate-500 mr-1">{t.presetTags}:</span>
+        <label className="text-xs font-medium text-gray-500 dark:text-slate-400">{t.tags}</label>
+        <div className="mt-1.5"><ChipInput values={form.tags} onChange={v => set("tags", v)} placeholder={t.tagsPlaceholder} /></div>
+        <div className="flex flex-wrap gap-1.5 mt-2">
+          <span className="text-xs text-gray-400 dark:text-slate-500">{t.presetTags}:</span>
           {PRESET_TAGS.map(tag => (
-            <button key={tag} type="button"
-              onClick={() => !form.tags.includes(tag) && set("tags", [...form.tags, tag])}
-              className={`text-xs px-2 py-0.5 rounded-full border transition-colors ${form.tags.includes(tag) ? "bg-indigo-600 text-white border-indigo-600" : "border-gray-300 dark:border-slate-600 hover:border-indigo-400 text-gray-500 dark:text-slate-400"}`}>
+            <button key={tag} type="button" onClick={() => !form.tags.includes(tag) && set("tags", [...form.tags, tag])}
+              className={`text-xs px-2.5 py-1 rounded-full border transition-colors ${form.tags.includes(tag) ? "bg-indigo-600 text-white border-indigo-600" : "border-gray-200 dark:border-slate-600 hover:border-indigo-400 text-gray-500 dark:text-slate-400"}`}>
               {tag}
             </button>
           ))}
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-3">
-        <div>
-          <label className="text-xs text-gray-500 dark:text-slate-400">{t.rating}</label>
-          <div className="mt-1"><StarRating value={form.rating} onChange={v => set("rating", v)} /></div>
-        </div>
-        <div>
-          <label className="text-xs text-gray-500 dark:text-slate-400">{t.price}</label>
-          <div className="flex gap-1 mt-1">
-            <select className="border dark:border-slate-600 rounded-lg px-2 py-2 text-sm bg-white dark:bg-slate-700 focus:outline-none"
-              value={form.currency} onChange={e => set("currency", e.target.value)}>
-              {CURRENCIES.map(c => <option key={c}>{c}</option>)}
-            </select>
-            <input type="number" min="0" placeholder="0"
-              className="flex-1 border dark:border-slate-600 rounded-lg px-3 py-2 text-sm bg-white dark:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-              value={form.price ?? ""} onChange={e => set("price", e.target.value ? Number(e.target.value) : undefined)} />
-          </div>
-        </div>
+      {/* Companions */}
+      <div>
+        <label className="text-xs font-medium text-gray-500 dark:text-slate-400">{t.companions}</label>
+        <div className="mt-1.5"><ChipInput values={form.companions} onChange={v => set("companions", v)} placeholder={t.companionsPlaceholder} /></div>
       </div>
 
+      {/* Setlist */}
       <div>
-        <label className="text-xs text-gray-500 dark:text-slate-400">{t.companions}</label>
-        <div className="mt-1"><ChipInput values={form.companions} onChange={v => set("companions", v)} placeholder={t.companionsPlaceholder} /></div>
+        <label className="text-xs font-medium text-gray-500 dark:text-slate-400">{t.setlist}</label>
+        <div className="mt-1.5"><ChipInput values={form.setlist} onChange={v => set("setlist", v)} placeholder={t.setlistPlaceholder} /></div>
       </div>
 
+      {/* Notes */}
       <div>
-        <label className="text-xs text-gray-500 dark:text-slate-400">{t.setlist}</label>
-        <div className="mt-1"><ChipInput values={form.setlist} onChange={v => set("setlist", v)} placeholder={t.setlistPlaceholder} /></div>
-      </div>
-
-      <div>
-        <label className="text-xs text-gray-500 dark:text-slate-400">{t.notes}</label>
-        <textarea className="w-full mt-1 border dark:border-slate-600 rounded-lg px-3 py-2 text-sm h-20 resize-none bg-white dark:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+        <label className="text-xs font-medium text-gray-500 dark:text-slate-400">{t.notes}</label>
+        <textarea className="w-full mt-1.5 border dark:border-slate-600 rounded-xl px-3 py-2.5 text-sm h-24 resize-none bg-white dark:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-400"
           value={form.notes} onChange={e => set("notes", e.target.value)} placeholder={t.notesPlaceholder} />
       </div>
 
-      <div className="flex gap-2 justify-end pt-1">
-        <button type="button" onClick={onCancel} className="px-4 py-2 text-sm text-gray-500 dark:text-slate-400 hover:text-gray-700">{t.cancel}</button>
-        <button type="submit" className="px-5 py-2 text-sm bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 font-medium">{t.save}</button>
+      <div className="flex gap-2 justify-end">
+        <button type="button" onClick={onCancel} className="px-4 py-2.5 text-sm text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:hover:text-slate-200 rounded-xl border border-gray-200 dark:border-slate-600">
+          {t.cancel}
+        </button>
+        <button type="submit" className="px-6 py-2.5 text-sm bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 font-medium">
+          {editMode ? t.saveChanges : t.save}
+        </button>
       </div>
     </form>
   );
 }
 
-// ─── GigCard ─────────────────────────────────────────────────────────────────
+// ─── GigDetailModal ───────────────────────────────────────────────────────────
 
-function GigCard({ gig, onDelete, lang }: { gig: Gig; onDelete: () => void; lang: Lang }) {
-  const t = i18n[lang].card;
-  const [expanded, setExpanded] = useState(false);
-  const hasExtra = gig.notes || gig.setlist.length > 0 || gig.companions.length > 0;
+function GigDetailModal({ gig, lang, onClose, onUpdate, onDelete }: {
+  gig: Gig; lang: Lang;
+  onClose: () => void;
+  onUpdate: (updated: Gig) => void;
+  onDelete: (id: string) => void;
+}) {
+  const t = i18n[lang];
+  const dt = t.detail;
+  const [editing, setEditing] = useState(false);
+  const [confirming, setConfirming] = useState(false);
+  const [saving, setSaving] = useState(false);
+
+  const dateStr = new Date(gig.date + "T00:00:00").toLocaleDateString(lang === "zh" ? "zh-CN" : "en-GB", {
+    year: "numeric", month: "long", day: "numeric",
+  });
+
+  const handleUpdate = async (data: Omit<Gig, "id">) => {
+    setSaving(true);
+    const ok = await updateGigById(gig.id, data);
+    if (ok) onUpdate({ ...data, id: gig.id });
+    setSaving(false);
+    setEditing(false);
+  };
+
+  const handleDelete = async () => {
+    await deleteGigById(gig.id);
+    onDelete(gig.id);
+    onClose();
+  };
 
   return (
-    <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-4 space-y-2 border border-gray-100 dark:border-slate-700">
-      <div className="flex justify-between items-start gap-2">
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center" onClick={onClose}>
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+      <div
+        className="relative bg-white dark:bg-slate-800 rounded-t-3xl sm:rounded-2xl w-full max-w-lg max-h-[92vh] overflow-y-auto shadow-2xl"
+        onClick={e => e.stopPropagation()}
+      >
+        {/* Handle bar (mobile) */}
+        <div className="flex justify-center pt-3 pb-1 sm:hidden">
+          <div className="w-10 h-1 bg-gray-200 dark:bg-slate-600 rounded-full" />
+        </div>
+
+        <div className="px-6 pb-8 pt-4">
+          {editing ? (
+            <>
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-lg font-bold">{t.form.editTitle}</h2>
+                <button onClick={() => setEditing(false)} className="text-gray-400 hover:text-gray-600 dark:hover:text-slate-200 text-xl">×</button>
+              </div>
+              <GigForm
+                lang={lang}
+                initial={{ artist: gig.artist, venue: gig.venue, date: gig.date, city: gig.city, country: gig.country, tags: gig.tags, rating: gig.rating, notes: gig.notes, price: gig.price, currency: gig.currency, companions: gig.companions, setlist: gig.setlist }}
+                onSave={handleUpdate}
+                onCancel={() => setEditing(false)}
+                editMode
+              />
+              {saving && <p className="text-center text-sm text-gray-400 mt-2">{t.loading}</p>}
+            </>
+          ) : (
+            <>
+              {/* Header */}
+              <div className="flex items-start justify-between mb-1">
+                <h2 className="text-2xl font-bold pr-4">{gig.artist}</h2>
+                <button onClick={onClose} className="text-gray-400 hover:text-gray-600 dark:hover:text-slate-200 text-2xl shrink-0">×</button>
+              </div>
+
+              <p className="text-gray-500 dark:text-slate-400 text-sm mb-3">
+                {[dateStr, gig.venue, gig.city, gig.country].filter(Boolean).join("  ·  ")}
+              </p>
+
+              <StarRating value={gig.rating} size="lg" />
+
+              {/* Tags + price */}
+              {(gig.tags.length > 0 || gig.price != null) && (
+                <div className="flex flex-wrap gap-1.5 mt-4">
+                  {gig.tags.map(tag => (
+                    <span key={tag} className="text-sm bg-indigo-50 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-400 px-3 py-1 rounded-full">{tag}</span>
+                  ))}
+                  {gig.price != null && (
+                    <span className="text-sm bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-3 py-1 rounded-full">{dt.paid}: {gig.currency} {gig.price}</span>
+                  )}
+                </div>
+              )}
+
+              {/* Companions */}
+              {gig.companions.length > 0 && (
+                <div className="mt-5">
+                  <p className="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wide mb-1.5">{dt.companions}</p>
+                  <p className="text-sm text-gray-700 dark:text-slate-300">{gig.companions.join(", ")}</p>
+                </div>
+              )}
+
+              {/* Notes */}
+              {gig.notes && (
+                <div className="mt-5">
+                  <p className="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wide mb-1.5">{dt.notes}</p>
+                  <p className="text-sm text-gray-700 dark:text-slate-300 leading-relaxed">{gig.notes}</p>
+                </div>
+              )}
+
+              {/* Setlist */}
+              {gig.setlist.length > 0 && (
+                <div className="mt-5">
+                  <p className="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wide mb-2">{dt.setlist}</p>
+                  <ol className="space-y-1">
+                    {gig.setlist.map((song, i) => (
+                      <li key={i} className="flex gap-3 text-sm">
+                        <span className="text-gray-300 dark:text-slate-600 w-5 text-right shrink-0">{i + 1}</span>
+                        <span className="text-gray-700 dark:text-slate-300">{song}</span>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              )}
+
+              {/* Actions */}
+              <div className="flex gap-2 mt-8">
+                {confirming ? (
+                  <>
+                    <p className="flex-1 text-sm text-gray-600 dark:text-slate-400 flex items-center">{dt.confirmDelete}</p>
+                    <button onClick={() => setConfirming(false)} className="px-4 py-2 text-sm border border-gray-200 dark:border-slate-600 rounded-xl text-gray-500 hover:text-gray-700">{t.form.cancel}</button>
+                    <button onClick={handleDelete} className="px-4 py-2 text-sm bg-red-500 text-white rounded-xl hover:bg-red-600">{dt.delete}</button>
+                  </>
+                ) : (
+                  <>
+                    <button onClick={() => setConfirming(true)} className="px-4 py-2 text-sm border border-gray-200 dark:border-slate-600 rounded-xl text-red-400 hover:text-red-600 hover:border-red-300 transition-colors">
+                      {dt.delete}
+                    </button>
+                    <button onClick={() => setEditing(true)} className="flex-1 py-2 text-sm bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 font-medium">
+                      {dt.edit}
+                    </button>
+                  </>
+                )}
+              </div>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── GigCard ─────────────────────────────────────────────────────────────────
+
+function GigCard({ gig, onClick, lang }: { gig: Gig; onClick: () => void; lang: Lang }) {
+  const dateStr = new Date(gig.date + "T00:00:00").toLocaleDateString(lang === "zh" ? "zh-CN" : "en-GB", {
+    year: "numeric", month: "short", day: "numeric",
+  });
+
+  return (
+    <button onClick={onClick} className="w-full text-left bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-4 border border-gray-100 dark:border-slate-700 hover:border-indigo-300 dark:hover:border-indigo-600 hover:shadow-md transition-all active:scale-[0.99]">
+      <div className="flex justify-between items-start gap-3">
         <div className="flex-1 min-w-0">
-          <h3 className="font-bold text-base truncate">{gig.artist}</h3>
-          <p className="text-sm text-gray-500 dark:text-slate-400 truncate">
-            {[gig.venue, gig.city, gig.country].filter(Boolean).join(" · ")}
+          <p className="font-bold text-base leading-snug truncate">{gig.artist}</p>
+          <p className="text-sm text-gray-400 dark:text-slate-500 truncate mt-0.5">
+            {[gig.venue, gig.city].filter(Boolean).join(" · ")}
           </p>
         </div>
         <div className="text-right shrink-0">
-          <p className="text-xs text-gray-400 dark:text-slate-500">
-            {new Date(gig.date + "T00:00:00").toLocaleDateString(lang === "zh" ? "zh-CN" : "en-GB")}
-          </p>
-          <StarRating value={gig.rating} />
+          <p className="text-xs text-gray-400 dark:text-slate-500">{dateStr}</p>
+          <StarRating value={gig.rating} size="sm" />
         </div>
       </div>
-
-      <div className="flex flex-wrap gap-1">
-        {gig.tags.map(tag => (
-          <span key={tag} className="text-xs bg-indigo-50 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-400 px-2 py-0.5 rounded-full">{tag}</span>
-        ))}
-        {gig.price != null && (
-          <span className="text-xs bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-0.5 rounded-full">
-            {t.paid}: {gig.currency} {gig.price}
-          </span>
-        )}
-      </div>
-
-      {hasExtra && (
-        <button onClick={() => setExpanded(v => !v)} className="text-xs text-gray-400 dark:text-slate-500 hover:text-indigo-500 transition-colors">
-          {expanded ? "▲" : "▼"} {expanded ? (lang === "zh" ? "收起" : "collapse") : (lang === "zh" ? "展开详情" : "show details")}
-        </button>
-      )}
-
-      {expanded && (
-        <div className="space-y-2 pt-1 border-t dark:border-slate-700">
-          {gig.companions.length > 0 && (
-            <p className="text-sm text-gray-600 dark:text-slate-400"><span className="font-medium">{t.companions}:</span> {gig.companions.join(", ")}</p>
-          )}
-          {gig.notes && <p className="text-sm text-gray-600 dark:text-slate-400">{gig.notes}</p>}
-          {gig.setlist.length > 0 && (
-            <div>
-              <p className="text-xs font-medium text-gray-500 dark:text-slate-400 mb-1">{t.setlist}</p>
-              <ol className="text-sm text-gray-600 dark:text-slate-400 space-y-0.5">
-                {gig.setlist.map((song, i) => <li key={i}>{i + 1}. {song}</li>)}
-              </ol>
-            </div>
+      {(gig.tags.length > 0 || gig.price != null) && (
+        <div className="flex flex-wrap gap-1 mt-2.5">
+          {gig.tags.map(tag => (
+            <span key={tag} className="text-xs bg-indigo-50 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-400 px-2 py-0.5 rounded-full">{tag}</span>
+          ))}
+          {gig.price != null && (
+            <span className="text-xs bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-0.5 rounded-full">{gig.currency} {gig.price}</span>
           )}
         </div>
       )}
+    </button>
+  );
+}
 
-      <div className="flex justify-end">
-        <button onClick={onDelete} className="text-xs text-red-400 hover:text-red-600 transition-colors">{t.delete}</button>
-      </div>
+// ─── SettingsMenu ─────────────────────────────────────────────────────────────
+
+function SettingsMenu({ lang, dark, onToggleLang, onToggleDark, onExport, onSignOut }: {
+  lang: Lang; dark: boolean;
+  onToggleLang: () => void; onToggleDark: () => void;
+  onExport: () => void; onSignOut: () => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const t = i18n[lang];
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => { if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false); };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  return (
+    <div className="relative" ref={ref}>
+      <button onClick={() => setOpen(v => !v)}
+        className="w-9 h-9 flex items-center justify-center rounded-xl border border-gray-200 dark:border-slate-600 text-gray-500 dark:text-slate-400 hover:border-indigo-400 transition-colors">
+        ⚙
+      </button>
+      {open && (
+        <div className="absolute right-0 top-11 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-gray-100 dark:border-slate-700 py-2 w-44 z-40">
+          {[
+            { label: `${dark ? t.light : t.dark} ${t.darkMode}`, action: onToggleDark },
+            { label: t.langToggle, action: onToggleLang },
+            { label: t.exportCsv, action: onExport },
+            { label: t.signOut, action: onSignOut, danger: true },
+          ].map(({ label, action, danger }) => (
+            <button key={label} onClick={() => { action(); setOpen(false); }}
+              className={`w-full text-left px-4 py-2.5 text-sm hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors ${danger ? "text-red-400 hover:text-red-500" : "text-gray-700 dark:text-slate-300"}`}>
+              {label}
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -438,79 +633,180 @@ function GigCard({ gig, onDelete, lang }: { gig: Gig; onDelete: () => void; lang
 
 function HomeTab({ gigs, setGigs, lang, showForm, setShowForm, user }: {
   gigs: Gig[]; setGigs: (g: Gig[]) => void;
-  lang: Lang; showForm: boolean; setShowForm: (v: boolean) => void;
-  user: User;
+  lang: Lang; showForm: boolean; setShowForm: (v: boolean) => void; user: User;
 }) {
   const t = i18n[lang];
+  const ft = t.filter;
+
   const [search, setSearch] = useState("");
+  const [filterOpen, setFilterOpen] = useState(false);
+  const [filterYear, setFilterYear] = useState("");
   const [filterTag, setFilterTag] = useState("");
+  const [filterVenue, setFilterVenue] = useState("");
+  const [sortBy, setSortBy] = useState<SortBy>("date-desc");
+  const [selectedGig, setSelectedGig] = useState<Gig | null>(null);
 
+  const years = Array.from(new Set(gigs.map(g => g.date.slice(0, 4)))).sort((a, b) => Number(b) - Number(a));
   const allTags = Array.from(new Set(gigs.flatMap(g => g.tags)));
+  const allVenues = Array.from(new Set(gigs.map(g => g.venue).filter(Boolean)));
 
-  const filtered = gigs.filter(g => {
-    const q = search.toLowerCase();
-    const matchSearch = !q || g.artist.toLowerCase().includes(q) || g.venue.toLowerCase().includes(q) || g.city.toLowerCase().includes(q);
-    const matchTag = !filterTag || g.tags.includes(filterTag);
-    return matchSearch && matchTag;
-  }).sort((a, b) => b.date.localeCompare(a.date));
+  const hasActiveFilter = !!(filterYear || filterTag || filterVenue || sortBy !== "date-desc");
+
+  const filtered = gigs
+    .filter(g => {
+      const q = search.toLowerCase();
+      return (
+        (!q || g.artist.toLowerCase().includes(q) || g.venue.toLowerCase().includes(q) || g.city.toLowerCase().includes(q) || g.country.toLowerCase().includes(q)) &&
+        (!filterYear || g.date.startsWith(filterYear)) &&
+        (!filterTag || g.tags.includes(filterTag)) &&
+        (!filterVenue || g.venue === filterVenue)
+      );
+    })
+    .sort((a, b) => {
+      if (sortBy === "date-asc") return a.date.localeCompare(b.date);
+      if (sortBy === "rating-desc") return b.rating - a.rating || b.date.localeCompare(a.date);
+      return b.date.localeCompare(a.date);
+    });
 
   const byYear: Record<string, Gig[]> = {};
-  filtered.forEach(g => { const year = g.date.slice(0, 4); (byYear[year] ||= []).push(g); });
-  const years = Object.keys(byYear).sort((a, b) => Number(b) - Number(a));
+  if (sortBy === "date-desc" || sortBy === "date-asc") {
+    filtered.forEach(g => { const y = g.date.slice(0, 4); (byYear[y] ||= []).push(g); });
+  }
+  const groupedYears = Object.keys(byYear).sort((a, b) => sortBy === "date-asc" ? Number(a) - Number(b) : Number(b) - Number(a));
 
-  const addGig = async (gigData: Omit<Gig, "id">) => {
-    const saved = await insertGig(gigData, user.id);
+  const resetFilters = () => { setFilterYear(""); setFilterTag(""); setFilterVenue(""); setSortBy("date-desc"); };
+
+  const addGig = async (data: Omit<Gig, "id">) => {
+    const saved = await insertGig(data, user.id);
     if (saved) setGigs([saved, ...gigs]);
     setShowForm(false);
   };
 
-  const removeGig = async (id: string) => {
-    await deleteGigById(id);
+  const handleUpdate = (updated: Gig) => {
+    setGigs(gigs.map(g => g.id === updated.id ? updated : g));
+    setSelectedGig(updated);
+  };
+
+  const handleDelete = (id: string) => {
     setGigs(gigs.filter(g => g.id !== id));
+    setSelectedGig(null);
   };
 
   return (
-    <div className="space-y-4">
-      {showForm && <GigForm lang={lang} onSave={addGig} onCancel={() => setShowForm(false)} />}
-
-      <div className="space-y-2">
-        <input
-          className="w-full border dark:border-slate-700 rounded-xl px-4 py-2.5 text-sm bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-          placeholder={t.search} value={search} onChange={e => setSearch(e.target.value)}
-        />
-        {allTags.length > 0 && (
-          <div className="flex gap-2 overflow-x-auto pb-1">
-            <button onClick={() => setFilterTag("")}
-              className={`shrink-0 text-xs px-3 py-1 rounded-full border transition-colors ${!filterTag ? "bg-indigo-600 text-white border-indigo-600" : "border-gray-300 dark:border-slate-600 text-gray-500 dark:text-slate-400"}`}>
-              {t.allTags}
-            </button>
-            {allTags.map(tag => (
-              <button key={tag} onClick={() => setFilterTag(tag === filterTag ? "" : tag)}
-                className={`shrink-0 text-xs px-3 py-1 rounded-full border transition-colors ${filterTag === tag ? "bg-indigo-600 text-white border-indigo-600" : "border-gray-300 dark:border-slate-600 text-gray-500 dark:text-slate-400"}`}>
-                {tag}
-              </button>
-            ))}
+    <div className="space-y-3">
+      {/* Create form */}
+      {showForm && (
+        <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-5">
+          <div className="flex items-center justify-between mb-5">
+            <h2 className="text-lg font-bold">{t.form.createTitle}</h2>
+            <button onClick={() => setShowForm(false)} className="text-gray-400 hover:text-gray-600 text-xl">×</button>
           </div>
-        )}
+          <GigForm lang={lang} onSave={addGig} onCancel={() => setShowForm(false)} />
+        </div>
+      )}
+
+      {/* Search */}
+      <div className="flex gap-2">
+        <input
+          className="flex-1 border dark:border-slate-700 rounded-xl px-4 py-2.5 text-sm bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+          placeholder={ft.search} value={search} onChange={e => setSearch(e.target.value)}
+        />
+        <button onClick={() => setFilterOpen(v => !v)}
+          className={`px-3.5 py-2.5 rounded-xl border text-sm font-medium transition-colors ${filterOpen || hasActiveFilter ? "bg-indigo-600 text-white border-indigo-600" : "bg-white dark:bg-slate-800 border-gray-200 dark:border-slate-600 text-gray-500 dark:text-slate-400"}`}>
+          {ft.title}{hasActiveFilter ? " •" : ""}
+        </button>
       </div>
 
-      {gigs.length === 0 ? (
-        <div className="text-center py-20 text-gray-400 dark:text-slate-500">{t.empty}</div>
-      ) : filtered.length === 0 ? (
-        <div className="text-center py-12 text-gray-400 dark:text-slate-500">{t.noResults}</div>
-      ) : (
-        years.map(year => (
-          <div key={year}>
-            <h2 className="text-sm font-bold text-gray-400 dark:text-slate-500 mb-2 px-1">
-              {year} · {byYear[year].length}{lang === "zh" ? " 场" : " shows"}
-            </h2>
-            <div className="space-y-3">
-              {byYear[year].map(gig => (
-                <GigCard key={gig.id} gig={gig} onDelete={() => removeGig(gig.id)} lang={lang} />
+      {/* Filter panel */}
+      {filterOpen && (
+        <div className="bg-white dark:bg-slate-800 rounded-2xl border border-gray-100 dark:border-slate-700 p-4 space-y-4 shadow-sm">
+          {/* Year */}
+          {years.length > 0 && (
+            <div>
+              <p className="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wide mb-2">{ft.year}</p>
+              <div className="flex flex-wrap gap-1.5">
+                <button onClick={() => setFilterYear("")} className={`text-xs px-3 py-1.5 rounded-lg border transition-colors ${!filterYear ? "bg-indigo-600 text-white border-indigo-600" : "border-gray-200 dark:border-slate-600 text-gray-500 dark:text-slate-400"}`}>{ft.all}</button>
+                {years.map(y => (
+                  <button key={y} onClick={() => setFilterYear(y === filterYear ? "" : y)} className={`text-xs px-3 py-1.5 rounded-lg border transition-colors ${filterYear === y ? "bg-indigo-600 text-white border-indigo-600" : "border-gray-200 dark:border-slate-600 text-gray-500 dark:text-slate-400"}`}>{y}</button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Genre */}
+          {allTags.length > 0 && (
+            <div>
+              <p className="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wide mb-2">{ft.genre}</p>
+              <div className="flex flex-wrap gap-1.5">
+                <button onClick={() => setFilterTag("")} className={`text-xs px-3 py-1.5 rounded-lg border transition-colors ${!filterTag ? "bg-indigo-600 text-white border-indigo-600" : "border-gray-200 dark:border-slate-600 text-gray-500 dark:text-slate-400"}`}>{ft.all}</button>
+                {allTags.map(tag => (
+                  <button key={tag} onClick={() => setFilterTag(tag === filterTag ? "" : tag)} className={`text-xs px-3 py-1.5 rounded-lg border transition-colors ${filterTag === tag ? "bg-indigo-600 text-white border-indigo-600" : "border-gray-200 dark:border-slate-600 text-gray-500 dark:text-slate-400"}`}>{tag}</button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Venue */}
+          {allVenues.length > 0 && (
+            <div>
+              <p className="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wide mb-2">{ft.venue}</p>
+              <select className="w-full border dark:border-slate-600 rounded-xl px-3 py-2 text-sm bg-white dark:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                value={filterVenue} onChange={e => setFilterVenue(e.target.value)}>
+                <option value="">{ft.all}</option>
+                {allVenues.map(v => <option key={v} value={v}>{v}</option>)}
+              </select>
+            </div>
+          )}
+
+          {/* Sort */}
+          <div>
+            <p className="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wide mb-2">{ft.sort}</p>
+            <div className="flex gap-1.5">
+              {([["date-desc", ft.newest], ["date-asc", ft.oldest], ["rating-desc", ft.topRated]] as [SortBy, string][]).map(([val, label]) => (
+                <button key={val} onClick={() => setSortBy(val)} className={`flex-1 text-xs py-1.5 rounded-lg border transition-colors ${sortBy === val ? "bg-indigo-600 text-white border-indigo-600" : "border-gray-200 dark:border-slate-600 text-gray-500 dark:text-slate-400"}`}>{label}</button>
               ))}
             </div>
           </div>
+
+          {hasActiveFilter && (
+            <button onClick={resetFilters} className="w-full py-2 text-xs text-red-400 hover:text-red-500 border border-dashed border-red-200 dark:border-red-900 rounded-xl transition-colors">
+              {ft.reset}
+            </button>
+          )}
+        </div>
+      )}
+
+      {/* Gig list */}
+      {gigs.length === 0 ? (
+        <div className="text-center py-24 text-gray-400 dark:text-slate-500">{t.empty}</div>
+      ) : filtered.length === 0 ? (
+        <div className="text-center py-16 text-gray-400 dark:text-slate-500">{t.noResults}</div>
+      ) : sortBy === "rating-desc" ? (
+        <div className="space-y-2.5">
+          {filtered.map(gig => <GigCard key={gig.id} gig={gig} onClick={() => setSelectedGig(gig)} lang={lang} />)}
+        </div>
+      ) : (
+        groupedYears.map(year => (
+          <div key={year}>
+            <p className="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wide mb-2 px-1">
+              {year} · {byYear[year].length} {t.shows}
+            </p>
+            <div className="space-y-2.5">
+              {byYear[year].map(gig => <GigCard key={gig.id} gig={gig} onClick={() => setSelectedGig(gig)} lang={lang} />)}
+            </div>
+          </div>
         ))
+      )}
+
+      {/* Detail modal */}
+      {selectedGig && (
+        <GigDetailModal
+          gig={selectedGig}
+          lang={lang}
+          onClose={() => setSelectedGig(null)}
+          onUpdate={handleUpdate}
+          onDelete={handleDelete}
+        />
       )}
     </div>
   );
@@ -520,7 +816,7 @@ function HomeTab({ gigs, setGigs, lang, showForm, setShowForm, user }: {
 
 function StatsTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
   const t = i18n[lang].stats;
-  if (gigs.length === 0) return <div className="text-center py-20 text-gray-400 dark:text-slate-500">{i18n[lang].empty}</div>;
+  if (gigs.length === 0) return <div className="text-center py-24 text-gray-400 dark:text-slate-500">{i18n[lang].empty}</div>;
 
   const artists = new Set(gigs.map(g => g.artist)).size;
   const cities = new Set(gigs.map(g => g.city).filter(Boolean)).size;
@@ -542,20 +838,20 @@ function StatsTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
           { label: t.cities, value: cities },
           { label: t.avgRating, value: avgRating + " ★" },
         ].map(({ label, value }) => (
-          <div key={label} className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm border border-gray-100 dark:border-slate-700 text-center">
-            <div className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">{value}</div>
-            <div className="text-xs text-gray-500 dark:text-slate-400 mt-1">{label}</div>
+          <div key={label} className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-slate-700 text-center">
+            <div className="text-3xl font-bold text-indigo-600 dark:text-indigo-400">{value}</div>
+            <div className="text-xs text-gray-400 dark:text-slate-500 mt-1.5">{label}</div>
           </div>
         ))}
       </div>
 
       {Object.keys(spend).length > 0 && (
-        <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm border border-gray-100 dark:border-slate-700">
-          <h3 className="text-sm font-bold mb-2">{t.totalSpent}</h3>
+        <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-slate-700">
+          <p className="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wide mb-3">{t.totalSpent}</p>
           {Object.entries(spend).map(([cur, amt]) => (
-            <div key={cur} className="flex justify-between text-sm">
-              <span className="text-gray-500 dark:text-slate-400">{cur}</span>
-              <span className="font-medium">{amt.toLocaleString()}</span>
+            <div key={cur} className="flex justify-between items-center py-1">
+              <span className="text-sm text-gray-500 dark:text-slate-400">{cur}</span>
+              <span className="text-base font-bold">{amt.toLocaleString()}</span>
             </div>
           ))}
         </div>
@@ -563,12 +859,12 @@ function StatsTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
 
       {citiesSorted.length > 0 && (
         <div>
-          <h3 className="text-sm font-bold mb-3">{t.citiesTitle}</h3>
+          <p className="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wide mb-3">{t.citiesTitle}</p>
           <div className="grid grid-cols-2 gap-2">
             {citiesSorted.map(([city, count]) => (
-              <div key={city} className="bg-white dark:bg-slate-800 rounded-xl p-3 shadow-sm border border-gray-100 dark:border-slate-700 flex justify-between items-center">
+              <div key={city} className="bg-white dark:bg-slate-800 rounded-xl p-3.5 shadow-sm border border-gray-100 dark:border-slate-700 flex justify-between items-center">
                 <span className="text-sm font-medium truncate">{city}</span>
-                <span className="text-xs bg-indigo-50 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-400 px-2 py-0.5 rounded-full shrink-0 ml-1">{count} {t.shows}</span>
+                <span className="text-xs bg-indigo-50 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-400 px-2 py-0.5 rounded-full shrink-0 ml-2">{count} {t.shows}</span>
               </div>
             ))}
           </div>
@@ -601,7 +897,7 @@ function RecapTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
   const spend: Record<string, number> = {};
   yearGigs.filter(g => g.price != null).forEach(g => { spend[g.currency] = (spend[g.currency] || 0) + (g.price ?? 0); });
 
-  if (gigs.length === 0) return <div className="text-center py-20 text-gray-400 dark:text-slate-500">{i18n[lang].empty}</div>;
+  if (gigs.length === 0) return <div className="text-center py-24 text-gray-400 dark:text-slate-500">{i18n[lang].empty}</div>;
 
   return (
     <div className="space-y-4">
@@ -615,11 +911,11 @@ function RecapTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
       </div>
 
       {yearGigs.length === 0 ? (
-        <div className="text-center py-12 text-gray-400 dark:text-slate-500">{t.noData}</div>
+        <div className="text-center py-16 text-gray-400 dark:text-slate-500">{t.noData}</div>
       ) : (
         <>
-          <div className="bg-indigo-600 rounded-2xl p-6 text-white text-center">
-            <div className="text-5xl font-bold">{yearGigs.length}</div>
+          <div className="bg-gradient-to-br from-indigo-600 to-indigo-700 rounded-2xl p-6 text-white text-center shadow-lg">
+            <div className="text-6xl font-bold">{yearGigs.length}</div>
             <div className="text-indigo-200 mt-1">{selectedYear} {t.total}</div>
           </div>
           <div className="grid grid-cols-2 gap-3">
@@ -628,17 +924,17 @@ function RecapTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
               topCity && { label: t.topCity, value: topCity[0], sub: `${topCity[1]} ${t.times}` },
               bestShow && { label: t.bestShow, value: bestShow.artist, sub: "★".repeat(bestShow.rating) },
               topTag && { label: t.topTag, value: topTag[0], sub: `${topTag[1]} ${t.times}` },
-            ].filter(Boolean).map((card) => card && (
+            ].filter(Boolean).map(card => card && (
               <div key={card.label} className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm border border-gray-100 dark:border-slate-700">
-                <div className="text-xs text-gray-400 dark:text-slate-500 mb-1">{card.label}</div>
-                <div className="font-bold truncate">{card.value}</div>
-                <div className="text-xs text-indigo-500 mt-0.5">{card.sub}</div>
+                <p className="text-xs text-gray-400 dark:text-slate-500 mb-1">{card.label}</p>
+                <p className="font-bold truncate">{card.value}</p>
+                <p className="text-xs text-indigo-500 mt-0.5">{card.sub}</p>
               </div>
             ))}
           </div>
           {Object.keys(spend).length > 0 && (
             <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm border border-gray-100 dark:border-slate-700">
-              <div className="text-xs text-gray-400 dark:text-slate-500 mb-2">{t.totalSpent}</div>
+              <p className="text-xs text-gray-400 dark:text-slate-500 mb-2">{t.totalSpent}</p>
               {Object.entries(spend).map(([cur, amt]) => (
                 <div key={cur} className="flex justify-between text-sm">
                   <span className="text-gray-500 dark:text-slate-400">{cur}</span>
@@ -669,13 +965,11 @@ export default function App() {
   const t = i18n[lang];
 
   useEffect(() => {
-    // Restore preferences
     const savedLang = localStorage.getItem("gig-lang") as Lang;
     const savedDark = localStorage.getItem("gig-dark");
     if (savedLang) setLang(savedLang);
     if (savedDark === "1") { setDark(true); document.documentElement.classList.add("dark"); }
 
-    // Check auth
     supabase.auth.getSession().then(({ data }) => {
       const u = data.session?.user ?? null;
       setUser(u);
@@ -683,7 +977,7 @@ export default function App() {
       if (!u) router.replace("/login");
     });
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_e, session) => {
       const u = session?.user ?? null;
       setUser(u);
       if (!u) router.replace("/login");
@@ -710,56 +1004,38 @@ export default function App() {
     localStorage.setItem("gig-dark", next ? "1" : "0");
   };
 
-  const signOut = async () => {
-    await supabase.auth.signOut();
-    router.replace("/login");
-  };
+  const signOut = async () => { await supabase.auth.signOut(); router.replace("/login"); };
 
-  if (loadingAuth) {
-    return <div className="min-h-screen flex items-center justify-center text-gray-400 dark:text-slate-500">{t.loading}</div>;
-  }
-
+  if (loadingAuth) return (
+    <div className="min-h-screen flex items-center justify-center text-gray-400 dark:text-slate-500">{t.loading}</div>
+  );
   if (!user) return null;
 
-  const navItems: { key: Tab; label: string }[] = [
-    { key: "home", label: t.nav.home },
-    { key: "stats", label: t.nav.stats },
-    { key: "recap", label: t.nav.recap },
-  ];
-
   return (
-    <div className="max-w-2xl mx-auto px-4 pb-24 pt-4 min-h-screen">
+    <div className="max-w-xl mx-auto px-4 pb-24 pt-5 min-h-screen">
       {/* Header */}
-      <div className="flex items-center justify-between mb-4">
-        <h1 className="text-xl font-bold">{t.appName}</h1>
-        <div className="flex items-center gap-1.5 flex-wrap justify-end">
-          <button onClick={() => exportCSV(gigs, lang)}
-            className="text-xs text-gray-500 dark:text-slate-400 border border-gray-300 dark:border-slate-600 px-2 py-1 rounded-lg hover:border-indigo-400 transition-colors">
-            {t.exportCsv}
-          </button>
-          <button onClick={toggleDark}
-            className="text-xs text-gray-500 dark:text-slate-400 border border-gray-300 dark:border-slate-600 px-2 py-1 rounded-lg hover:border-indigo-400 transition-colors">
-            {dark ? t.light : t.dark}
-          </button>
-          <button onClick={toggleLang}
-            className="text-xs text-gray-500 dark:text-slate-400 border border-gray-300 dark:border-slate-600 px-2 py-1 rounded-lg hover:border-indigo-400 transition-colors">
-            {t.langToggle}
-          </button>
-          <button onClick={signOut}
-            className="text-xs text-gray-500 dark:text-slate-400 border border-gray-300 dark:border-slate-600 px-2 py-1 rounded-lg hover:border-red-400 hover:text-red-400 transition-colors">
-            {t.signOut}
-          </button>
+      <div className="flex items-center justify-between mb-5">
+        <h1 className="text-xl font-bold tracking-tight">{t.appName}</h1>
+        <div className="flex items-center gap-2">
+          <SettingsMenu
+            lang={lang} dark={dark}
+            onToggleLang={toggleLang}
+            onToggleDark={toggleDark}
+            onExport={() => exportCSV(gigs, lang)}
+            onSignOut={signOut}
+          />
           {tab === "home" && (
             <button onClick={() => setShowForm(v => !v)}
-              className="text-sm bg-indigo-600 text-white px-3 py-1.5 rounded-xl hover:bg-indigo-700 font-medium shadow">
+              className="h-9 px-4 bg-indigo-600 text-white rounded-xl text-sm font-medium hover:bg-indigo-700 shadow-sm transition-colors">
               {t.add}
             </button>
           )}
         </div>
       </div>
 
+      {/* Content */}
       {loadingGigs ? (
-        <div className="text-center py-20 text-gray-400 dark:text-slate-500">{t.loading}</div>
+        <div className="text-center py-24 text-gray-400 dark:text-slate-500">{t.loading}</div>
       ) : (
         <>
           {tab === "home" && <HomeTab gigs={gigs} setGigs={setGigs} lang={lang} showForm={showForm} setShowForm={setShowForm} user={user} />}
@@ -769,10 +1045,10 @@ export default function App() {
       )}
 
       {/* Bottom nav */}
-      <nav className="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-800 border-t border-gray-200 dark:border-slate-700 flex">
-        {navItems.map(({ key, label }) => (
+      <nav className="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-slate-800/90 backdrop-blur border-t border-gray-200 dark:border-slate-700 flex safe-bottom">
+        {([["home", t.nav.home], ["stats", t.nav.stats], ["recap", t.nav.recap]] as [Tab, string][]).map(([key, label]) => (
           <button key={key} onClick={() => { setTab(key); if (key !== "home") setShowForm(false); }}
-            className={`flex-1 py-3 text-sm font-medium transition-colors ${tab === key ? "text-indigo-600 dark:text-indigo-400" : "text-gray-400 dark:text-slate-500"}`}>
+            className={`flex-1 py-3.5 text-sm font-medium transition-colors ${tab === key ? "text-indigo-600 dark:text-indigo-400" : "text-gray-400 dark:text-slate-500"}`}>
             {label}
           </button>
         ))}
