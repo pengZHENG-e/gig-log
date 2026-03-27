@@ -560,7 +560,7 @@ function GigCard({ gig, onClick, lang }: { gig: Gig; onClick: () => void; lang: 
   });
 
   return (
-    <button onClick={onClick} className="w-full text-left bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-4 border border-gray-100 dark:border-slate-700 hover:border-indigo-300 dark:hover:border-indigo-600 hover:shadow-md transition-all active:scale-[0.99]">
+    <div onClick={onClick} className="w-full text-left bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-4 border border-gray-100 dark:border-slate-700 hover:border-indigo-300 dark:hover:border-indigo-600 hover:shadow-md transition-all active:scale-[0.99] cursor-pointer">
       <div className="flex justify-between items-start gap-3">
         <div className="flex-1 min-w-0">
           <p className="font-bold text-base leading-snug truncate">{gig.artist}</p>
@@ -583,7 +583,7 @@ function GigCard({ gig, onClick, lang }: { gig: Gig; onClick: () => void; lang: 
           )}
         </div>
       )}
-    </button>
+    </div>
   );
 }
 
