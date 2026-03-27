@@ -1204,7 +1204,7 @@ function HomeTab({ gigs, setGigs, lang, showForm, setShowForm, user, profile }: 
 function ArtistGigsModal({ artist, gigs, lang, onClose }: {
   artist: string; gigs: Gig[]; lang: Lang; onClose: () => void;
 }) {
-  const artistGigs = gigs.filter(g => g.artist === artist).sort((a, b) => b.date.localeCompare(a.date));
+  const artistGigs = gigs.filter(g => g.artist.toLowerCase() === artist.toLowerCase()).sort((a, b) => b.date.localeCompare(a.date));
 
   return (
     <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center" onClick={onClose}>
@@ -1289,11 +1289,15 @@ function StatsTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
     if (rankMonth && g.date.slice(5, 7) !== rankMonth) return false;
     return true;
   });
-  const artistCount: Record<string, { count: number; lastDate: string }> = {};
+  const artistCount: Record<string, { count: number; lastDate: string; displayName: string }> = {};
   rankGigs.forEach(g => {
-    if (!artistCount[g.artist]) artistCount[g.artist] = { count: 0, lastDate: g.date };
-    artistCount[g.artist].count++;
-    if (g.date > artistCount[g.artist].lastDate) artistCount[g.artist].lastDate = g.date;
+    const key = g.artist.toLowerCase();
+    if (!artistCount[key]) artistCount[key] = { count: 0, lastDate: g.date, displayName: g.artist };
+    artistCount[key].count++;
+    if (g.date > artistCount[key].lastDate) {
+      artistCount[key].lastDate = g.date;
+      artistCount[key].displayName = g.artist; // keep most recent spelling
+    }
   });
   const ranking = Object.entries(artistCount).sort((a, b) => b[1].count - a[1].count || b[1].lastDate.localeCompare(a[1].lastDate));
 
@@ -1380,12 +1384,12 @@ function StatsTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
         ) : (
           <div className="space-y-0 mt-2">
             {ranking.map(([artist, { count, lastDate }], i) => (
-              <div key={artist} onClick={() => setSelectedArtist(artist)}
+              <div key={artist} onClick={() => setSelectedArtist(displayName)}
                 className="flex items-center gap-3 py-2.5 border-b border-gray-50 dark:border-slate-700/50 last:border-0 cursor-pointer hover:bg-gray-50 dark:hover:bg-slate-700/40 -mx-2 px-2 rounded-xl transition-colors">
                 <span className={`text-sm font-bold w-6 text-center shrink-0 ${i === 0 ? "text-yellow-400" : i === 1 ? "text-gray-400" : i === 2 ? "text-amber-600" : "text-gray-300 dark:text-slate-600"}`}>
                   {i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : `${i + 1}`}
                 </span>
-                <span className="flex-1 text-sm font-medium truncate">{artist}</span>
+                <span className="flex-1 text-sm font-medium truncate">{displayName}</span>
                 <span className="text-xs text-gray-400 dark:text-slate-500 shrink-0">{t.lastSeen} {new Date(lastDate + "T00:00:00").toLocaleDateString(lang === "zh" ? "zh-CN" : "en-GB", { month: "short", day: "numeric", year: "2-digit" })}</span>
                 <span className="text-sm font-bold text-indigo-600 dark:text-indigo-400 shrink-0 w-10 text-right">{count}×</span>
               </div>
