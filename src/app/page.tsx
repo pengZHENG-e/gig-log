@@ -95,7 +95,7 @@ const i18n = {
     stats: {
       total: "总场次", artists: "艺人数", cities: "城市数",
       avgRating: "平均评分", totalSpent: "总花费",
-      citiesTitle: "去过的城市", shows: "场",
+      citiesTitle: "去过的城市", venueRanking: "场馆排行", shows: "场",
       artistRanking: "艺人排行", lastSeen: "上次",
       activity: "月份活跃度", allYears: "全部年份",
       allMonths: "全月", times: "次",
@@ -198,7 +198,7 @@ const i18n = {
     stats: {
       total: "Total Shows", artists: "Artists", cities: "Cities",
       avgRating: "Avg Rating", totalSpent: "Total Spent",
-      citiesTitle: "Cities Visited", shows: "shows",
+      citiesTitle: "Cities Visited", venueRanking: "Venue Ranking", shows: "shows",
       artistRanking: "Artist Ranking", lastSeen: "Last seen",
       activity: "Monthly Activity", allYears: "All time",
       allMonths: "All months", times: "shows",
@@ -1253,6 +1253,49 @@ function ArtistGigsModal({ artist, gigs, lang, onClose }: {
   );
 }
 
+// ─── VenueGigsModal ───────────────────────────────────────────────────────────
+
+function VenueGigsModal({ venue, gigs, lang, onClose }: {
+  venue: string; gigs: Gig[]; lang: Lang; onClose: () => void;
+}) {
+  const venueGigs = gigs.filter(g => g.venue.toLowerCase() === venue.toLowerCase()).sort((a, b) => b.date.localeCompare(a.date));
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center" onClick={onClose}>
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+      <div className="relative bg-white dark:bg-slate-800 rounded-t-3xl sm:rounded-2xl w-full max-w-lg max-h-[85vh] flex flex-col shadow-2xl" onClick={e => e.stopPropagation()}>
+        <div className="flex justify-center pt-3 pb-1 sm:hidden shrink-0">
+          <div className="w-10 h-1 bg-gray-200 dark:bg-slate-600 rounded-full" />
+        </div>
+        <div className="px-6 pt-4 pb-3 shrink-0 border-b border-gray-100 dark:border-slate-700">
+          <div className="flex items-center justify-between">
+            <div>
+              <h2 className="text-lg font-bold">{venue}</h2>
+              <p className="text-xs text-gray-400 dark:text-slate-500 mt-0.5">{venueGigs[0]?.city && `${venueGigs[0].city} · `}{venueGigs.length}{lang === "zh" ? " 场" : " shows"}</p>
+            </div>
+            <button onClick={onClose} className="text-gray-400 hover:text-gray-600 dark:hover:text-slate-200 text-2xl w-9 h-9 flex items-center justify-center">×</button>
+          </div>
+        </div>
+        <div className="overflow-y-auto px-6 py-4 space-y-2.5">
+          {venueGigs.map((gig, i) => (
+            <div key={gig.id} className="flex items-start gap-3 bg-gray-50 dark:bg-slate-700/50 rounded-xl p-3.5">
+              <span className="text-xs text-gray-300 dark:text-slate-600 w-5 text-right shrink-0 pt-0.5">{i + 1}</span>
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-medium">{gig.artist}</p>
+                <p className="text-xs text-gray-400 dark:text-slate-500 mt-0.5">
+                  {new Date(gig.date + "T00:00:00").toLocaleDateString(lang === "zh" ? "zh-CN" : "en-GB", { year: "numeric", month: "long", day: "numeric" })}
+                </p>
+                {gig.notes && <p className="text-xs text-gray-400 dark:text-slate-500 mt-1 line-clamp-1">{gig.notes}</p>}
+              </div>
+              <StarRating value={gig.rating} size="sm" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ─── StatsTab ─────────────────────────────────────────────────────────────────
 
 function StatsTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
@@ -1260,6 +1303,7 @@ function StatsTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
   const [rankYear, setRankYear] = useState("");
   const [rankMonth, setRankMonth] = useState("");
   const [selectedArtist, setSelectedArtist] = useState<string | null>(null);
+  const [selectedVenue, setSelectedVenue] = useState<string | null>(null);
   const [activityYear, setActivityYear] = useState("");
 
   if (gigs.length === 0) return <div className="text-center py-24 text-gray-400 dark:text-slate-500">{i18n[lang].empty}</div>;
@@ -1305,6 +1349,14 @@ function StatsTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
   const cityCount: Record<string, number> = {};
   gigs.forEach(g => { if (g.city) cityCount[g.city] = (cityCount[g.city] || 0) + 1; });
   const citiesSorted = Object.entries(cityCount).sort((a, b) => b[1] - a[1]);
+
+  const venueCount: Record<string, { count: number; displayName: string; city: string }> = {};
+  gigs.filter(g => g.venue).forEach(g => {
+    const key = g.venue.toLowerCase();
+    if (!venueCount[key]) venueCount[key] = { count: 0, displayName: g.venue, city: g.city };
+    venueCount[key].count++;
+  });
+  const venuesSorted = Object.entries(venueCount).sort((a, b) => b[1].count - a[1].count);
 
   const pillCls = (active: boolean) =>
     `shrink-0 text-xs px-3 py-1.5 rounded-lg border transition-colors ${active ? "bg-indigo-600 text-white border-indigo-600" : "border-gray-200 dark:border-slate-600 text-gray-500 dark:text-slate-400 hover:border-indigo-400"}`;
@@ -1413,13 +1465,33 @@ function StatsTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
         </div>
       )}
 
+      {/* Venue ranking */}
+      {venuesSorted.length > 0 && (
+        <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-slate-700">
+          <p className="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wide mb-3">{t.venueRanking}</p>
+          <div className="space-y-0">
+            {venuesSorted.map(([, { count, displayName, city }], i) => (
+              <div key={displayName} onClick={() => setSelectedVenue(displayName)}
+                className="flex items-center gap-3 py-2.5 border-b border-gray-50 dark:border-slate-700/50 last:border-0 cursor-pointer hover:bg-gray-50 dark:hover:bg-slate-700/40 -mx-2 px-2 rounded-xl transition-colors">
+                <span className={`text-sm font-bold w-6 text-center shrink-0 ${i === 0 ? "text-yellow-400" : i === 1 ? "text-gray-400" : i === 2 ? "text-amber-600" : "text-gray-300 dark:text-slate-600"}`}>
+                  {i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : `${i + 1}`}
+                </span>
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm font-medium truncate">{displayName}</p>
+                  {city && <p className="text-xs text-gray-400 dark:text-slate-500">{city}</p>}
+                </div>
+                <span className="text-sm font-bold text-indigo-600 dark:text-indigo-400 shrink-0">{count}×</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {selectedArtist && (
-        <ArtistGigsModal
-          artist={selectedArtist}
-          gigs={gigs}
-          lang={lang}
-          onClose={() => setSelectedArtist(null)}
-        />
+        <ArtistGigsModal artist={selectedArtist} gigs={gigs} lang={lang} onClose={() => setSelectedArtist(null)} />
+      )}
+      {selectedVenue && (
+        <VenueGigsModal venue={selectedVenue} gigs={gigs} lang={lang} onClose={() => setSelectedVenue(null)} />
       )}
 
       {/* Spend */}
