@@ -11,6 +11,13 @@ type Lang = "zh" | "en";
 type Tab = "home" | "stats" | "recap";
 type SortBy = "date-desc" | "date-asc" | "rating-desc";
 
+interface Profile {
+  display_name: string;
+  city: string;
+  country: string;
+  currency: string;
+}
+
 interface Gig {
   id: string;
   artist: string;
@@ -99,6 +106,17 @@ const i18n = {
     noResults: "没有找到相关演出",
     loading: "加载中...",
     shows: "场",
+    profile: {
+      title: "个人资料",
+      menu: "个人资料",
+      displayName: "昵称",
+      city: "默认城市",
+      country: "默认国家",
+      currency: "默认货币",
+      email: "邮箱",
+      save: "保存",
+      saved: "已保存 ✓",
+    },
     dark: "🌙", light: "☀️",
   },
   en: {
@@ -166,6 +184,17 @@ const i18n = {
       bestShow: "Best Show", totalSpent: "Total Spent", topTag: "Top Genre",
       times: "times", noData: "No gigs this year",
     },
+    profile: {
+      title: "Profile",
+      menu: "Profile",
+      displayName: "Display name",
+      city: "Default city",
+      country: "Default country",
+      currency: "Default currency",
+      email: "Email",
+      save: "Save",
+      saved: "Saved ✓",
+    },
     empty: "No gigs yet. Tap + Add to start 🎸",
     noResults: "No gigs match your search",
     loading: "Loading...",
@@ -219,6 +248,20 @@ async function updateGigById(id: string, gig: Omit<Gig, "id">): Promise<boolean>
 
 async function deleteGigById(id: string) {
   await supabase.from("gigs").delete().eq("id", id);
+}
+
+const DEFAULT_PROFILE: Profile = { display_name: "", city: "", country: "", currency: "CNY" };
+
+async function fetchProfile(userId: string): Promise<Profile> {
+  const { data } = await supabase.from("profiles").select("*").eq("id", userId).single();
+  if (!data) return DEFAULT_PROFILE;
+  return { display_name: data.display_name ?? "", city: data.city ?? "", country: data.country ?? "", currency: data.currency ?? "CNY" };
+}
+
+async function upsertProfile(userId: string, profile: Profile): Promise<boolean> {
+  const { error } = await supabase.from("profiles").upsert({ id: userId, ...profile, updated_at: new Date().toISOString() });
+  if (error) { console.error("upsertProfile:", error.message); return false; }
+  return true;
 }
 
 function exportCSV(gigs: Gig[], lang: Lang) {
@@ -587,12 +630,84 @@ function GigCard({ gig, onClick, lang }: { gig: Gig; onClick: () => void; lang: 
   );
 }
 
+// ─── ProfileModal ─────────────────────────────────────────────────────────────
+
+function ProfileModal({ user, profile, lang, onSave, onClose }: {
+  user: User; profile: Profile; lang: Lang;
+  onSave: (p: Profile) => void; onClose: () => void;
+}) {
+  const t = i18n[lang].profile;
+  const [form, setForm] = useState<Profile>(profile);
+  const [saving, setSaving] = useState(false);
+  const [saved, setSaved] = useState(false);
+  const set = <K extends keyof Profile>(k: K, v: Profile[K]) => { setForm(f => ({ ...f, [k]: v })); setSaved(false); };
+
+  const inputCls = "w-full border dark:border-slate-600 rounded-xl px-3 py-2.5 text-sm bg-white dark:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-400";
+
+  const handleSave = async () => {
+    setSaving(true);
+    const ok = await upsertProfile(user.id, form);
+    if (ok) { onSave(form); setSaved(true); }
+    setSaving(false);
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center" onClick={onClose}>
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+      <div className="relative bg-white dark:bg-slate-800 rounded-t-3xl sm:rounded-2xl w-full max-w-lg shadow-2xl" onClick={e => e.stopPropagation()}>
+        <div className="flex justify-center pt-3 pb-1 sm:hidden">
+          <div className="w-10 h-1 bg-gray-200 dark:bg-slate-600 rounded-full" />
+        </div>
+        <div className="px-6 pb-8 pt-4 space-y-4">
+          <div className="flex items-center justify-between">
+            <h2 className="text-lg font-bold">{t.title}</h2>
+            <button onClick={onClose} className="text-gray-400 hover:text-gray-600 dark:hover:text-slate-200 text-2xl">×</button>
+          </div>
+
+          <div>
+            <label className="text-xs font-medium text-gray-400 dark:text-slate-500">{t.email}</label>
+            <p className="mt-1 text-sm text-gray-500 dark:text-slate-400 bg-gray-50 dark:bg-slate-700 rounded-xl px-3 py-2.5">{user.email}</p>
+          </div>
+
+          <div>
+            <label className="text-xs font-medium text-gray-500 dark:text-slate-400">{t.displayName}</label>
+            <input className={`${inputCls} mt-1.5`} value={form.display_name} onChange={e => set("display_name", e.target.value)} placeholder="Your name" />
+          </div>
+
+          <div className="grid grid-cols-2 gap-3">
+            <div>
+              <label className="text-xs font-medium text-gray-500 dark:text-slate-400">{t.city}</label>
+              <input className={`${inputCls} mt-1.5`} value={form.city} onChange={e => set("city", e.target.value)} placeholder="London" />
+            </div>
+            <div>
+              <label className="text-xs font-medium text-gray-500 dark:text-slate-400">{t.country}</label>
+              <input className={`${inputCls} mt-1.5`} value={form.country} onChange={e => set("country", e.target.value)} placeholder="UK" />
+            </div>
+          </div>
+
+          <div>
+            <label className="text-xs font-medium text-gray-500 dark:text-slate-400">{t.currency}</label>
+            <select className={`${inputCls} mt-1.5`} value={form.currency} onChange={e => set("currency", e.target.value)}>
+              {CURRENCIES.map(c => <option key={c}>{c}</option>)}
+            </select>
+          </div>
+
+          <button onClick={handleSave} disabled={saving}
+            className="w-full py-2.5 bg-indigo-600 text-white rounded-xl font-medium hover:bg-indigo-700 disabled:opacity-50 transition-colors">
+            {saving ? "..." : saved ? t.saved : t.save}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ─── SettingsMenu ─────────────────────────────────────────────────────────────
 
-function SettingsMenu({ lang, dark, onToggleLang, onToggleDark, onExport, onSignOut }: {
+function SettingsMenu({ lang, dark, onToggleLang, onToggleDark, onExport, onSignOut, onProfile }: {
   lang: Lang; dark: boolean;
   onToggleLang: () => void; onToggleDark: () => void;
-  onExport: () => void; onSignOut: () => void;
+  onExport: () => void; onSignOut: () => void; onProfile: () => void;
 }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -613,6 +728,7 @@ function SettingsMenu({ lang, dark, onToggleLang, onToggleDark, onExport, onSign
       {open && (
         <div className="absolute right-0 top-11 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-gray-100 dark:border-slate-700 py-2 w-44 z-40">
           {[
+            { label: t.profile.menu, action: onProfile },
             { label: `${dark ? t.light : t.dark} ${t.darkMode}`, action: onToggleDark },
             { label: t.langToggle, action: onToggleLang },
             { label: t.exportCsv, action: onExport },
@@ -631,9 +747,9 @@ function SettingsMenu({ lang, dark, onToggleLang, onToggleDark, onExport, onSign
 
 // ─── HomeTab ─────────────────────────────────────────────────────────────────
 
-function HomeTab({ gigs, setGigs, lang, showForm, setShowForm, user }: {
+function HomeTab({ gigs, setGigs, lang, showForm, setShowForm, user, profile }: {
   gigs: Gig[]; setGigs: (g: Gig[]) => void;
-  lang: Lang; showForm: boolean; setShowForm: (v: boolean) => void; user: User;
+  lang: Lang; showForm: boolean; setShowForm: (v: boolean) => void; user: User; profile: Profile;
 }) {
   const t = i18n[lang];
   const ft = t.filter;
@@ -701,7 +817,12 @@ function HomeTab({ gigs, setGigs, lang, showForm, setShowForm, user }: {
             <h2 className="text-lg font-bold">{t.form.createTitle}</h2>
             <button onClick={() => setShowForm(false)} className="text-gray-400 hover:text-gray-600 text-xl">×</button>
           </div>
-          <GigForm lang={lang} onSave={addGig} onCancel={() => setShowForm(false)} />
+          <GigForm
+            lang={lang}
+            onSave={addGig}
+            onCancel={() => setShowForm(false)}
+            initial={{ artist: "", venue: "", date: "", city: profile.city, country: profile.country, tags: [], rating: 5, notes: "", price: undefined, currency: profile.currency, companions: [], setlist: [] }}
+          />
         </div>
       )}
 
@@ -955,6 +1076,8 @@ export default function App() {
   const router = useRouter();
   const [user, setUser] = useState<User | null>(null);
   const [gigs, setGigs] = useState<Gig[]>([]);
+  const [profile, setProfile] = useState<Profile>(DEFAULT_PROFILE);
+  const [showProfile, setShowProfile] = useState(false);
   const [loadingAuth, setLoadingAuth] = useState(true);
   const [loadingGigs, setLoadingGigs] = useState(false);
   const [lang, setLang] = useState<Lang>("zh");
@@ -989,7 +1112,11 @@ export default function App() {
   useEffect(() => {
     if (!user) return;
     setLoadingGigs(true);
-    fetchGigs().then(data => { setGigs(data); setLoadingGigs(false); });
+    Promise.all([fetchGigs(), fetchProfile(user.id)]).then(([gigsData, profileData]) => {
+      setGigs(gigsData);
+      setProfile(profileData);
+      setLoadingGigs(false);
+    });
   }, [user]);
 
   const toggleLang = () => {
@@ -1023,6 +1150,7 @@ export default function App() {
             onToggleDark={toggleDark}
             onExport={() => exportCSV(gigs, lang)}
             onSignOut={signOut}
+            onProfile={() => setShowProfile(true)}
           />
           {tab === "home" && (
             <button onClick={() => setShowForm(v => !v)}
@@ -1038,10 +1166,18 @@ export default function App() {
         <div className="text-center py-24 text-gray-400 dark:text-slate-500">{t.loading}</div>
       ) : (
         <>
-          {tab === "home" && <HomeTab gigs={gigs} setGigs={setGigs} lang={lang} showForm={showForm} setShowForm={setShowForm} user={user} />}
+          {tab === "home" && <HomeTab gigs={gigs} setGigs={setGigs} lang={lang} showForm={showForm} setShowForm={setShowForm} user={user} profile={profile} />}
           {tab === "stats" && <StatsTab gigs={gigs} lang={lang} />}
           {tab === "recap" && <RecapTab gigs={gigs} lang={lang} />}
         </>
+      )}
+
+      {showProfile && user && (
+        <ProfileModal
+          user={user} profile={profile} lang={lang}
+          onSave={p => setProfile(p)}
+          onClose={() => setShowProfile(false)}
+        />
       )}
 
       {/* Bottom nav */}
