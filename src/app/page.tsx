@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, BarChart, Bar } from "recharts";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import type { User } from "@supabase/supabase-js";
@@ -59,6 +59,13 @@ const i18n = {
       oldest: "最早",
       topRated: "评分最高",
       reset: "重置",
+      rating: "最低评分",
+      ratingAny: "不限",
+      quick: "快速筛选",
+      hasNotes: "有笔记",
+      hasSetlist: "有歌单",
+      activeChip: "已应用筛选",
+      clearAll: "清除全部",
     },
     form: {
       createTitle: "记录新 Gig",
@@ -102,6 +109,11 @@ const i18n = {
       allMonths: "全月", times: "次",
       trend: "演出趋势", trendYearly: "按年", trendMonthly: "按月",
       clickYearHint: "点击年份查看月度详情",
+      heatmap: "演出日历", heatmapHint: "悬停查看，点击进入当日",
+      genreDist: "风格分布", ratingDist: "评分分布",
+      noTags: "还没有标签",
+      stars: ["1 ★","2 ★","3 ★","4 ★","5 ★"],
+      other: "其他",
       months: ["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],
       monthsShort: ["1","2","3","4","5","6","7","8","9","10","11","12"],
     },
@@ -109,6 +121,12 @@ const i18n = {
       total: "场演出", topArtist: "最常看", topCity: "常去城市",
       bestShow: "最佳演出", totalSpent: "总花费", topTag: "最爱类型",
       times: "次", noData: "这年没有记录",
+    },
+    cmdk: {
+      placeholder: "搜索艺人、场馆、城市、笔记、歌单、同行...",
+      noResults: "没有匹配",
+      hint: "↑↓ 选择 · ↵ 打开 · esc 关闭",
+      sectionMatch: "匹配",
     },
     empty: "还没有记录，点右上角开始吧 🎸",
     noResults: "没有找到相关演出",
@@ -165,6 +183,13 @@ const i18n = {
       oldest: "Oldest",
       topRated: "Top rated",
       reset: "Reset",
+      rating: "Min rating",
+      ratingAny: "Any",
+      quick: "Quick filters",
+      hasNotes: "Has notes",
+      hasSetlist: "Has setlist",
+      activeChip: "Active filters",
+      clearAll: "Clear all",
     },
     form: {
       createTitle: "Log a Gig",
@@ -208,6 +233,11 @@ const i18n = {
       allMonths: "All months", times: "shows",
       trend: "Show Trends", trendYearly: "Yearly", trendMonthly: "Monthly",
       clickYearHint: "Click a year to see monthly breakdown",
+      heatmap: "Activity Calendar", heatmapHint: "Hover to peek, click to open",
+      genreDist: "Genre Breakdown", ratingDist: "Rating Distribution",
+      noTags: "No tags yet",
+      stars: ["1 ★","2 ★","3 ★","4 ★","5 ★"],
+      other: "Other",
       months: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
       monthsShort: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
     },
@@ -243,6 +273,12 @@ const i18n = {
       done: "✓ Done",
       error: "Failed to parse file — please check the format",
       cancel: "Cancel",
+    },
+    cmdk: {
+      placeholder: "Search artists, venues, cities, notes, setlists, companions...",
+      noResults: "No matches",
+      hint: "↑↓ navigate · ↵ open · esc close",
+      sectionMatch: "Matched in",
     },
     empty: "No gigs yet. Tap + Add to start 🎸",
     noResults: "No gigs match your search",
@@ -1030,8 +1066,11 @@ function HomeTab({ gigs, setGigs, lang, showForm, setShowForm, user, profile }: 
   const [search, setSearch] = useState("");
   const [filterOpen, setFilterOpen] = useState(false);
   const [filterYear, setFilterYear] = useState("");
-  const [filterTag, setFilterTag] = useState("");
+  const [filterTags, setFilterTags] = useState<string[]>([]);
   const [filterVenue, setFilterVenue] = useState("");
+  const [ratingMin, setRatingMin] = useState(0);
+  const [hasNotes, setHasNotes] = useState(false);
+  const [hasSetlist, setHasSetlist] = useState(false);
   const [sortBy, setSortBy] = useState<SortBy>("date-desc");
   const [selectedGig, setSelectedGig] = useState<Gig | null>(null);
 
@@ -1039,7 +1078,7 @@ function HomeTab({ gigs, setGigs, lang, showForm, setShowForm, user, profile }: 
   const allTags = Array.from(new Set(gigs.flatMap(g => g.tags)));
   const allVenues = Array.from(new Set(gigs.map(g => g.venue).filter(Boolean)));
 
-  const hasActiveFilter = !!(filterYear || filterTag || filterVenue || sortBy !== "date-desc");
+  const hasActiveFilter = !!(filterYear || filterTags.length || filterVenue || ratingMin > 0 || hasNotes || hasSetlist || sortBy !== "date-desc");
 
   const filtered = gigs
     .filter(g => {
@@ -1047,8 +1086,11 @@ function HomeTab({ gigs, setGigs, lang, showForm, setShowForm, user, profile }: 
       return (
         (!q || g.artist.toLowerCase().includes(q) || g.venue.toLowerCase().includes(q) || g.city.toLowerCase().includes(q) || g.country.toLowerCase().includes(q)) &&
         (!filterYear || g.date.startsWith(filterYear)) &&
-        (!filterTag || g.tags.includes(filterTag)) &&
-        (!filterVenue || g.venue === filterVenue)
+        (filterTags.length === 0 || filterTags.every(t => g.tags.includes(t))) &&
+        (!filterVenue || g.venue === filterVenue) &&
+        (ratingMin === 0 || g.rating >= ratingMin) &&
+        (!hasNotes || g.notes.trim().length > 0) &&
+        (!hasSetlist || g.setlist.length > 0)
       );
     })
     .sort((a, b) => {
@@ -1063,7 +1105,23 @@ function HomeTab({ gigs, setGigs, lang, showForm, setShowForm, user, profile }: 
   }
   const groupedYears = Object.keys(byYear).sort((a, b) => sortBy === "date-asc" ? Number(a) - Number(b) : Number(b) - Number(a));
 
-  const resetFilters = () => { setFilterYear(""); setFilterTag(""); setFilterVenue(""); setSortBy("date-desc"); };
+  const resetFilters = () => {
+    setFilterYear(""); setFilterTags([]); setFilterVenue("");
+    setRatingMin(0); setHasNotes(false); setHasSetlist(false);
+    setSortBy("date-desc");
+  };
+  const toggleTag = (tag: string) => setFilterTags(prev => prev.includes(tag) ? prev.filter(x => x !== tag) : [...prev, tag]);
+
+  // Active filter chips for display above search
+  const sortLabel: Record<SortBy, string> = { "date-desc": ft.newest, "date-asc": ft.oldest, "rating-desc": ft.topRated };
+  const activeChips: { key: string; label: string; onRemove: () => void }[] = [];
+  if (filterYear) activeChips.push({ key: `y:${filterYear}`, label: filterYear, onRemove: () => setFilterYear("") });
+  filterTags.forEach(tag => activeChips.push({ key: `t:${tag}`, label: tag, onRemove: () => toggleTag(tag) }));
+  if (filterVenue) activeChips.push({ key: `v:${filterVenue}`, label: filterVenue, onRemove: () => setFilterVenue("") });
+  if (ratingMin > 0) activeChips.push({ key: `r:${ratingMin}`, label: `${"★".repeat(ratingMin)}+`, onRemove: () => setRatingMin(0) });
+  if (hasNotes) activeChips.push({ key: "hn", label: ft.hasNotes, onRemove: () => setHasNotes(false) });
+  if (hasSetlist) activeChips.push({ key: "hs", label: ft.hasSetlist, onRemove: () => setHasSetlist(false) });
+  if (sortBy !== "date-desc") activeChips.push({ key: `s:${sortBy}`, label: sortLabel[sortBy], onRemove: () => setSortBy("date-desc") });
 
   const addGig = async (data: Omit<Gig, "id">) => {
     const saved = await insertGig(data, user.id);
@@ -1107,9 +1165,24 @@ function HomeTab({ gigs, setGigs, lang, showForm, setShowForm, user, profile }: 
         />
         <button onClick={() => setFilterOpen(v => !v)}
           className={`px-3.5 py-2.5 rounded-xl border text-sm font-medium transition-colors ${filterOpen || hasActiveFilter ? "bg-indigo-600 text-white border-indigo-600" : "bg-white dark:bg-slate-800 border-gray-200 dark:border-slate-600 text-gray-500 dark:text-slate-400"}`}>
-          {ft.title}{hasActiveFilter ? " •" : ""}
+          {ft.title}{hasActiveFilter ? ` · ${activeChips.length}` : ""}
         </button>
       </div>
+
+      {/* Active filter chips */}
+      {activeChips.length > 0 && (
+        <div className="flex flex-wrap items-center gap-1.5">
+          {activeChips.map(chip => (
+            <span key={chip.key} className="inline-flex items-center gap-1 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 text-xs px-2.5 py-1 rounded-full">
+              {chip.label}
+              <button onClick={chip.onRemove} className="hover:text-red-500 -mr-0.5">×</button>
+            </span>
+          ))}
+          <button onClick={resetFilters} className="text-xs text-gray-400 dark:text-slate-500 hover:text-red-500 px-2 py-1">
+            {ft.clearAll}
+          </button>
+        </div>
+      )}
 
       {/* Filter panel */}
       {filterOpen && (
@@ -1127,18 +1200,40 @@ function HomeTab({ gigs, setGigs, lang, showForm, setShowForm, user, profile }: 
             </div>
           )}
 
-          {/* Genre */}
+          {/* Genre (multi-select) */}
           {allTags.length > 0 && (
             <div>
               <p className="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wide mb-2">{ft.genre}</p>
               <div className="flex flex-wrap gap-1.5">
-                <button onClick={() => setFilterTag("")} className={`text-xs px-3 py-1.5 rounded-lg border transition-colors ${!filterTag ? "bg-indigo-600 text-white border-indigo-600" : "border-gray-200 dark:border-slate-600 text-gray-500 dark:text-slate-400"}`}>{ft.all}</button>
+                <button onClick={() => setFilterTags([])} className={`text-xs px-3 py-1.5 rounded-lg border transition-colors ${filterTags.length === 0 ? "bg-indigo-600 text-white border-indigo-600" : "border-gray-200 dark:border-slate-600 text-gray-500 dark:text-slate-400"}`}>{ft.all}</button>
                 {allTags.map(tag => (
-                  <button key={tag} onClick={() => setFilterTag(tag === filterTag ? "" : tag)} className={`text-xs px-3 py-1.5 rounded-lg border transition-colors ${filterTag === tag ? "bg-indigo-600 text-white border-indigo-600" : "border-gray-200 dark:border-slate-600 text-gray-500 dark:text-slate-400"}`}>{tag}</button>
+                  <button key={tag} onClick={() => toggleTag(tag)} className={`text-xs px-3 py-1.5 rounded-lg border transition-colors ${filterTags.includes(tag) ? "bg-indigo-600 text-white border-indigo-600" : "border-gray-200 dark:border-slate-600 text-gray-500 dark:text-slate-400"}`}>{tag}</button>
                 ))}
               </div>
             </div>
           )}
+
+          {/* Rating min */}
+          <div>
+            <p className="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wide mb-2">{ft.rating}</p>
+            <div className="flex flex-wrap gap-1.5">
+              <button onClick={() => setRatingMin(0)} className={`text-xs px-3 py-1.5 rounded-lg border transition-colors ${ratingMin === 0 ? "bg-indigo-600 text-white border-indigo-600" : "border-gray-200 dark:border-slate-600 text-gray-500 dark:text-slate-400"}`}>{ft.ratingAny}</button>
+              {[1, 2, 3, 4, 5].map(r => (
+                <button key={r} onClick={() => setRatingMin(r === ratingMin ? 0 : r)} className={`text-xs px-3 py-1.5 rounded-lg border transition-colors ${ratingMin === r ? "bg-indigo-600 text-white border-indigo-600" : "border-gray-200 dark:border-slate-600 text-gray-500 dark:text-slate-400"}`}>
+                  {"★".repeat(r)}+
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Quick filters */}
+          <div>
+            <p className="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wide mb-2">{ft.quick}</p>
+            <div className="flex flex-wrap gap-1.5">
+              <button onClick={() => setHasNotes(v => !v)} className={`text-xs px-3 py-1.5 rounded-lg border transition-colors ${hasNotes ? "bg-indigo-600 text-white border-indigo-600" : "border-gray-200 dark:border-slate-600 text-gray-500 dark:text-slate-400"}`}>{ft.hasNotes}</button>
+              <button onClick={() => setHasSetlist(v => !v)} className={`text-xs px-3 py-1.5 rounded-lg border transition-colors ${hasSetlist ? "bg-indigo-600 text-white border-indigo-600" : "border-gray-200 dark:border-slate-600 text-gray-500 dark:text-slate-400"}`}>{ft.hasSetlist}</button>
+            </div>
+          </div>
 
           {/* Venue */}
           {allVenues.length > 0 && (
@@ -1305,17 +1400,318 @@ function VenueGigsModal({ venue, gigs, lang, onClose }: {
 
 // ─── StatsTab ─────────────────────────────────────────────────────────────────
 
-function StatsTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
+// ─── CalendarHeatmap ─────────────────────────────────────────────────────────
+
+function fmtDate(d: Date): string {
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+}
+
+function CalendarHeatmap({ gigs, year, lang, onDayClick }: {
+  gigs: Gig[]; year: string; lang: Lang; onDayClick: (date: string) => void;
+}) {
+  const yearNum = Number(year);
+  const t = i18n[lang].stats;
+
+  const dayCount: Record<string, number> = {};
+  gigs.forEach(g => {
+    if (g.date.startsWith(year)) dayCount[g.date] = (dayCount[g.date] || 0) + 1;
+  });
+
+  const startDow = new Date(yearNum, 0, 1).getDay();
+  const daysInYear = ((yearNum % 4 === 0 && yearNum % 100 !== 0) || yearNum % 400 === 0) ? 366 : 365;
+  const cells: { date: string | null; count: number; month: number }[] = [];
+  for (let i = 0; i < startDow; i++) cells.push({ date: null, count: 0, month: -1 });
+  const cur = new Date(yearNum, 0, 1);
+  for (let i = 0; i < daysInYear; i++) {
+    const dateStr = fmtDate(cur);
+    cells.push({ date: dateStr, count: dayCount[dateStr] || 0, month: cur.getMonth() });
+    cur.setDate(cur.getDate() + 1);
+  }
+  const totalCols = Math.ceil(cells.length / 7);
+
+  // Find leftmost column where each month label should start
+  const monthLabelCols: (number | null)[] = Array(12).fill(null);
+  for (let col = 0; col < totalCols; col++) {
+    const firstRow = cells[col * 7];
+    if (!firstRow || firstRow.month < 0) continue;
+    if (monthLabelCols[firstRow.month] === null) monthLabelCols[firstRow.month] = col;
+  }
+
+  const colorOf = (count: number) => {
+    if (count === 0) return "bg-gray-100 dark:bg-slate-700/40";
+    if (count === 1) return "bg-indigo-200 dark:bg-indigo-900/70";
+    if (count === 2) return "bg-indigo-400 dark:bg-indigo-600";
+    return "bg-indigo-600 dark:bg-indigo-400";
+  };
+
+  return (
+    <div>
+      <div className="overflow-x-auto -mx-1 px-1">
+        <div className="inline-block min-w-full">
+          {/* Month labels */}
+          <div className="grid gap-[2px] mb-1 text-[10px] text-gray-400 dark:text-slate-500" style={{ gridTemplateColumns: `repeat(${totalCols}, minmax(0, 1fr))` }}>
+            {Array.from({ length: totalCols }, (_, col) => {
+              const monthIdx = monthLabelCols.indexOf(col);
+              return <div key={col} className="text-left">{monthIdx >= 0 ? t.monthsShort[monthIdx] : ""}</div>;
+            })}
+          </div>
+          {/* Cells */}
+          <div className="grid grid-flow-col gap-[2px]" style={{ gridTemplateRows: "repeat(7, minmax(0, 1fr))", gridTemplateColumns: `repeat(${totalCols}, minmax(0, 1fr))` }}>
+            {cells.map((c, i) => (
+              <div
+                key={i}
+                onClick={() => c.date && c.count > 0 && onDayClick(c.date)}
+                className={`aspect-square rounded-[2px] ${c.date ? colorOf(c.count) : "bg-transparent"} ${c.count > 0 ? "cursor-pointer hover:ring-2 hover:ring-indigo-400" : ""}`}
+                title={c.date ? `${c.date}${c.count > 0 ? ` · ${c.count} ${i18n[lang].shows}` : ""}` : ""}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+      {/* Legend */}
+      <div className="flex items-center justify-end gap-1.5 mt-3 text-[10px] text-gray-400 dark:text-slate-500">
+        <span>0</span>
+        <div className="w-3 h-3 rounded-[2px] bg-gray-100 dark:bg-slate-700/40" />
+        <div className="w-3 h-3 rounded-[2px] bg-indigo-200 dark:bg-indigo-900/70" />
+        <div className="w-3 h-3 rounded-[2px] bg-indigo-400 dark:bg-indigo-600" />
+        <div className="w-3 h-3 rounded-[2px] bg-indigo-600 dark:bg-indigo-400" />
+        <span>3+</span>
+      </div>
+    </div>
+  );
+}
+
+// ─── DayGigsModal ────────────────────────────────────────────────────────────
+
+function DayGigsModal({ date, gigs, lang, onClose, onPick }: {
+  date: string; gigs: Gig[]; lang: Lang; onClose: () => void; onPick: (g: Gig) => void;
+}) {
+  const dayGigs = gigs.filter(g => g.date === date);
+  const dateStr = new Date(date + "T00:00:00").toLocaleDateString(lang === "zh" ? "zh-CN" : "en-GB", {
+    year: "numeric", month: "long", day: "numeric", weekday: "long",
+  });
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center" onClick={onClose}>
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+      <div className="relative bg-white dark:bg-slate-800 rounded-t-3xl sm:rounded-2xl w-full max-w-lg max-h-[85vh] flex flex-col shadow-2xl" onClick={e => e.stopPropagation()}>
+        <div className="flex justify-center pt-3 pb-1 sm:hidden shrink-0">
+          <div className="w-10 h-1 bg-gray-200 dark:bg-slate-600 rounded-full" />
+        </div>
+        <div className="px-6 pt-3 pb-4 border-b border-gray-100 dark:border-slate-700 shrink-0">
+          <div className="flex items-start justify-between gap-3">
+            <div className="min-w-0">
+              <p className="text-xs text-gray-400 dark:text-slate-500 uppercase tracking-wide">{dateStr}</p>
+              <p className="text-sm font-semibold text-gray-700 dark:text-slate-300 mt-0.5">{dayGigs.length} {i18n[lang].shows}</p>
+            </div>
+            <button onClick={onClose} className="text-gray-400 hover:text-gray-600 text-xl shrink-0">×</button>
+          </div>
+        </div>
+        <div className="overflow-y-auto px-4 py-4 space-y-2.5">
+          {dayGigs.map(g => (
+            <GigCard key={g.id} gig={g} onClick={() => onPick(g)} lang={lang} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── CommandPalette (⌘K) ─────────────────────────────────────────────────────
+
+interface CmdResult {
+  gig: Gig;
+  matchField: string; // human-readable name of where it matched
+  snippet?: string;    // contextual snippet for notes/setlist matches
+  score: number;
+}
+
+function searchGigs(gigs: Gig[], q: string, lang: Lang): CmdResult[] {
+  const query = q.trim().toLowerCase();
+  if (!query) return [];
+  const fields: { key: string; get: (g: Gig) => string | undefined; label: string; weight: number }[] = [
+    { key: "artist",  get: g => g.artist,  label: i18n[lang].form.artist.replace(" *",""), weight: 100 },
+    { key: "venue",   get: g => g.venue,   label: i18n[lang].form.venue, weight: 80 },
+    { key: "city",    get: g => g.city,    label: i18n[lang].form.city, weight: 60 },
+    { key: "country", get: g => g.country, label: i18n[lang].form.country, weight: 50 },
+  ];
+
+  const results: CmdResult[] = [];
+  for (const g of gigs) {
+    let best: CmdResult | null = null;
+
+    for (const f of fields) {
+      const v = (f.get(g) ?? "").toLowerCase();
+      if (!v) continue;
+      const idx = v.indexOf(query);
+      if (idx < 0) continue;
+      const score = f.weight + (idx === 0 ? 20 : 0) - idx;
+      if (!best || score > best.score) best = { gig: g, matchField: f.label, score };
+    }
+
+    // tags
+    const tagHit = g.tags.find(t => t.toLowerCase().includes(query));
+    if (tagHit) {
+      const score = 70 - (tagHit.toLowerCase().indexOf(query));
+      if (!best || score > best.score) best = { gig: g, matchField: i18n[lang].filter.genre, score, snippet: tagHit };
+    }
+
+    // companions
+    const compHit = g.companions.find(c => c.toLowerCase().includes(query));
+    if (compHit) {
+      const score = 65;
+      if (!best || score > best.score) best = { gig: g, matchField: i18n[lang].detail.companions, score, snippet: compHit };
+    }
+
+    // setlist
+    const songHit = g.setlist.find(s => s.toLowerCase().includes(query));
+    if (songHit) {
+      const score = 55;
+      if (!best || score > best.score) best = { gig: g, matchField: i18n[lang].detail.setlist, score, snippet: songHit };
+    }
+
+    // notes
+    if (g.notes) {
+      const v = g.notes.toLowerCase();
+      const idx = v.indexOf(query);
+      if (idx >= 0) {
+        const start = Math.max(0, idx - 20);
+        const end = Math.min(g.notes.length, idx + query.length + 30);
+        const snippet = (start > 0 ? "…" : "") + g.notes.slice(start, end) + (end < g.notes.length ? "…" : "");
+        const score = 40;
+        if (!best || score > best.score) best = { gig: g, matchField: i18n[lang].detail.notes, score, snippet };
+      }
+    }
+
+    // date (YYYY or YYYY-MM)
+    if (g.date.includes(query)) {
+      const score = 45;
+      if (!best || score > best.score) best = { gig: g, matchField: i18n[lang].form.date.replace(" *",""), score };
+    }
+
+    if (best) results.push(best);
+  }
+
+  return results.sort((a, b) => b.score - a.score || b.gig.date.localeCompare(a.gig.date)).slice(0, 30);
+}
+
+function CommandPalette({ gigs, lang, setGigs, onClose }: {
+  gigs: Gig[]; lang: Lang; setGigs: (g: Gig[]) => void; onClose: () => void;
+}) {
+  const t = i18n[lang];
+  const [query, setQuery] = useState("");
+  const [active, setActive] = useState(0);
+  const [picked, setPicked] = useState<Gig | null>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => { inputRef.current?.focus(); }, []);
+
+  const results = searchGigs(gigs, query, lang);
+
+  useEffect(() => {
+    if (!listRef.current) return;
+    const el = listRef.current.querySelector<HTMLElement>(`[data-idx="${active}"]`);
+    el?.scrollIntoView({ block: "nearest" });
+  }, [active]);
+
+  const handleKey = (e: React.KeyboardEvent) => {
+    if (e.key === "ArrowDown") { e.preventDefault(); setActive(a => Math.min(results.length - 1, a + 1)); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); setActive(a => Math.max(0, a - 1)); }
+    else if (e.key === "Enter") { e.preventDefault(); if (results[active]) setPicked(results[active].gig); }
+    else if (e.key === "Escape") { e.preventDefault(); onClose(); }
+  };
+
+  if (picked) {
+    return (
+      <GigDetailModal
+        gig={picked} lang={lang}
+        onClose={() => setPicked(null)}
+        onUpdate={updated => { setGigs(gigs.map(g => g.id === updated.id ? updated : g)); setPicked(updated); }}
+        onDelete={id => { setGigs(gigs.filter(g => g.id !== id)); setPicked(null); onClose(); }}
+      />
+    );
+  }
+
+  const dateOf = (g: Gig) => new Date(g.date + "T00:00:00").toLocaleDateString(lang === "zh" ? "zh-CN" : "en-GB", { year: "numeric", month: "short", day: "numeric" });
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-start justify-center pt-16 sm:pt-24 px-4" onClick={onClose}>
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+      <div className="relative w-full max-w-xl bg-white dark:bg-slate-800 rounded-2xl shadow-2xl overflow-hidden flex flex-col" onClick={e => e.stopPropagation()} onKeyDown={handleKey}>
+        <div className="flex items-center gap-2 px-4 py-3 border-b border-gray-100 dark:border-slate-700">
+          <span className="text-gray-400 dark:text-slate-500">⌕</span>
+          <input
+            ref={inputRef}
+            value={query}
+            onChange={e => { setQuery(e.target.value); setActive(0); }}
+            placeholder={t.cmdk.placeholder}
+            className="flex-1 bg-transparent outline-none text-sm placeholder:text-gray-300 dark:placeholder:text-slate-500"
+          />
+          <kbd className="hidden sm:inline text-[10px] text-gray-400 dark:text-slate-500 border border-gray-200 dark:border-slate-600 rounded px-1.5 py-0.5">esc</kbd>
+        </div>
+
+        <div ref={listRef} className="max-h-[60vh] overflow-y-auto">
+          {!query ? (
+            <div className="px-4 py-10 text-center text-xs text-gray-400 dark:text-slate-500">{t.cmdk.hint}</div>
+          ) : results.length === 0 ? (
+            <div className="px-4 py-10 text-center text-sm text-gray-400 dark:text-slate-500">{t.cmdk.noResults}</div>
+          ) : (
+            <ul>
+              {results.map((r, i) => (
+                <li
+                  key={r.gig.id}
+                  data-idx={i}
+                  onMouseEnter={() => setActive(i)}
+                  onClick={() => setPicked(r.gig)}
+                  className={`flex items-center gap-3 px-4 py-2.5 cursor-pointer border-l-2 ${active === i ? "bg-indigo-50 dark:bg-indigo-900/30 border-indigo-500" : "border-transparent"}`}
+                >
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-baseline gap-2">
+                      <p className="text-sm font-semibold truncate">{r.gig.artist}</p>
+                      <p className="text-xs text-gray-400 dark:text-slate-500 shrink-0">{dateOf(r.gig)}</p>
+                    </div>
+                    <p className="text-xs text-gray-500 dark:text-slate-400 truncate mt-0.5">
+                      {[r.gig.venue, r.gig.city].filter(Boolean).join(" · ") || "—"}
+                    </p>
+                    {r.snippet && (
+                      <p className="text-xs text-gray-400 dark:text-slate-500 truncate mt-0.5">
+                        <span className="text-indigo-500 dark:text-indigo-400">{r.matchField}:</span> {r.snippet}
+                      </p>
+                    )}
+                  </div>
+                  {!r.snippet && (
+                    <span className="text-[10px] text-gray-400 dark:text-slate-500 shrink-0 uppercase tracking-wide">{r.matchField}</span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+
+        <div className="hidden sm:flex items-center justify-between px-4 py-2 border-t border-gray-100 dark:border-slate-700 text-[10px] text-gray-400 dark:text-slate-500">
+          <span>{t.cmdk.hint}</span>
+          {results.length > 0 && <span>{results.length}</span>}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function StatsTab({ gigs, lang, onPickGig }: { gigs: Gig[]; lang: Lang; onPickGig: (g: Gig) => void }) {
   const t = i18n[lang].stats;
   const [rankYear, setRankYear] = useState("");
   const [rankMonth, setRankMonth] = useState("");
   const [selectedArtist, setSelectedArtist] = useState<string | null>(null);
   const [selectedVenue, setSelectedVenue] = useState<string | null>(null);
   const [trendDrillYear, setTrendDrillYear] = useState<string | null>(null);
+  const [heatmapYear, setHeatmapYear] = useState("");
+  const [selectedDay, setSelectedDay] = useState<string | null>(null);
 
   if (gigs.length === 0) return <div className="text-center py-24 text-gray-400 dark:text-slate-500">{i18n[lang].empty}</div>;
 
   const years = Array.from(new Set(gigs.map(g => g.date.slice(0, 4)))).sort((a, b) => Number(b) - Number(a));
+  const activeHeatmapYear = heatmapYear || years[0];
 
   // ── Key metrics (all time) ──
   const artists = new Set(gigs.map(g => g.artist)).size;
@@ -1366,6 +1762,23 @@ function StatsTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
     venueCount[key].count++;
   });
   const venuesSorted = Object.entries(venueCount).sort((a, b) => b[1].count - a[1].count);
+
+  // ── Genre distribution (top 6 + other) ──
+  const tagTotals: Record<string, number> = {};
+  gigs.forEach(g => g.tags.forEach(tag => { tagTotals[tag] = (tagTotals[tag] || 0) + 1; }));
+  const tagEntries = Object.entries(tagTotals).sort((a, b) => b[1] - a[1]);
+  const TOP_GENRES = 6;
+  const topGenres = tagEntries.slice(0, TOP_GENRES);
+  const otherTotal = tagEntries.slice(TOP_GENRES).reduce((s, [, n]) => s + n, 0);
+  const genreData = topGenres.map(([name, value]) => ({ name, value }));
+  if (otherTotal > 0) genreData.push({ name: t.other, value: otherTotal });
+  const GENRE_COLORS = ["#4f46e5", "#7c3aed", "#ec4899", "#f59e0b", "#10b981", "#06b6d4", "#94a3b8"];
+
+  // ── Rating distribution ──
+  const ratingData = [1, 2, 3, 4, 5].map(r => ({
+    rating: t.stars[r - 1],
+    count: gigs.filter(g => g.rating === r).length,
+  }));
 
   const pillCls = (active: boolean) =>
     `shrink-0 text-xs px-3 py-1.5 rounded-lg border transition-colors ${active ? "bg-indigo-600 text-white border-indigo-600" : "border-gray-200 dark:border-slate-600 text-gray-500 dark:text-slate-400 hover:border-indigo-400"}`;
@@ -1442,6 +1855,66 @@ function StatsTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
             ))}
           </div>
         )}
+      </div>
+
+      {/* Calendar heatmap */}
+      <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-slate-700">
+        <div className="flex items-center justify-between mb-1">
+          <p className="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wide">{t.heatmap}</p>
+          <p className="text-[10px] text-gray-300 dark:text-slate-600">{t.heatmapHint}</p>
+        </div>
+        <div className="flex gap-1.5 overflow-x-auto pb-3 mt-2">
+          {years.map(y => (
+            <button key={y} onClick={() => setHeatmapYear(y)} className={pillCls(activeHeatmapYear === y)}>{y}</button>
+          ))}
+        </div>
+        <CalendarHeatmap gigs={gigs} year={activeHeatmapYear} lang={lang} onDayClick={d => setSelectedDay(d)} />
+      </div>
+
+      {/* Genre + rating side by side on wide */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {/* Genre donut */}
+        <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-slate-700">
+          <p className="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wide mb-3">{t.genreDist}</p>
+          {genreData.length === 0 ? (
+            <p className="text-sm text-gray-400 dark:text-slate-500 text-center py-8">{t.noTags}</p>
+          ) : (
+            <>
+              <ResponsiveContainer width="100%" height={180}>
+                <PieChart>
+                  <Pie data={genreData} dataKey="value" nameKey="name" innerRadius={42} outerRadius={70} paddingAngle={2}>
+                    {genreData.map((_, i) => <Cell key={i} fill={GENRE_COLORS[i % GENRE_COLORS.length]} />)}
+                  </Pie>
+                  <Tooltip contentStyle={{ borderRadius: "12px", border: "none", boxShadow: "0 4px 20px rgba(0,0,0,0.1)", fontSize: 12 }} />
+                </PieChart>
+              </ResponsiveContainer>
+              <div className="grid grid-cols-2 gap-x-2 gap-y-1 mt-2">
+                {genreData.map((g, i) => (
+                  <div key={g.name} className="flex items-center gap-1.5 text-xs">
+                    <span className="w-2.5 h-2.5 rounded-sm shrink-0" style={{ background: GENRE_COLORS[i % GENRE_COLORS.length] }} />
+                    <span className="truncate text-gray-500 dark:text-slate-400">{g.name}</span>
+                    <span className="ml-auto text-gray-400 dark:text-slate-500">{g.value}</span>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+
+        {/* Rating distribution */}
+        <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-slate-700">
+          <p className="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wide mb-3">{t.ratingDist}</p>
+          <ResponsiveContainer width="100%" height={180}>
+            <BarChart data={ratingData} margin={{ top: 4, right: 4, left: -28, bottom: 0 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" strokeOpacity={0.4} vertical={false} />
+              <XAxis dataKey="rating" tick={{ fontSize: 11, fill: "#9ca3af" }} axisLine={false} tickLine={false} />
+              <YAxis tick={{ fontSize: 11, fill: "#9ca3af" }} axisLine={false} tickLine={false} allowDecimals={false} />
+              <Tooltip contentStyle={{ borderRadius: "12px", border: "none", boxShadow: "0 4px 20px rgba(0,0,0,0.1)", fontSize: 13 }}
+                formatter={(v) => [v, lang === "zh" ? "场" : "shows"]} />
+              <Bar dataKey="count" fill="#4f46e5" radius={[6, 6, 0, 0]} />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
       </div>
 
       {/* Artist ranking */}
@@ -1532,6 +2005,10 @@ function StatsTab({ gigs, lang }: { gigs: Gig[]; lang: Lang }) {
       )}
       {selectedVenue && (
         <VenueGigsModal venue={selectedVenue} gigs={gigs} lang={lang} onClose={() => setSelectedVenue(null)} />
+      )}
+      {selectedDay && (
+        <DayGigsModal date={selectedDay} gigs={gigs} lang={lang} onClose={() => setSelectedDay(null)}
+          onPick={g => { setSelectedDay(null); onPickGig(g); }} />
       )}
 
       {/* Spend */}
@@ -1640,8 +2117,21 @@ export default function App() {
   const [dark, setDark] = useState(false);
   const [tab, setTab] = useState<Tab>("home");
   const [showForm, setShowForm] = useState(false);
+  const [cmdkOpen, setCmdkOpen] = useState(false);
+  const [globalGig, setGlobalGig] = useState<Gig | null>(null);
 
   const t = i18n[lang];
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        setCmdkOpen(v => !v);
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   useEffect(() => {
     const savedLang = localStorage.getItem("gig-lang") as Lang;
@@ -1700,6 +2190,10 @@ export default function App() {
       <div className="flex items-center justify-between mb-5">
         <h1 className="text-xl font-bold tracking-tight">{t.appName}</h1>
         <div className="flex items-center gap-2">
+          <button onClick={() => setCmdkOpen(true)} aria-label="Search"
+            className="h-9 w-9 flex items-center justify-center bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 text-gray-500 dark:text-slate-400 rounded-xl hover:border-indigo-400 transition-colors">
+            ⌕
+          </button>
           <SettingsMenu
             lang={lang} dark={dark}
             onToggleLang={toggleLang}
@@ -1724,7 +2218,7 @@ export default function App() {
       ) : (
         <>
           {tab === "home" && <HomeTab gigs={gigs} setGigs={setGigs} lang={lang} showForm={showForm} setShowForm={setShowForm} user={user} profile={profile} />}
-          {tab === "stats" && <StatsTab gigs={gigs} lang={lang} />}
+          {tab === "stats" && <StatsTab gigs={gigs} lang={lang} onPickGig={g => setGlobalGig(g)} />}
           {tab === "recap" && <RecapTab gigs={gigs} lang={lang} />}
         </>
       )}
@@ -1742,6 +2236,19 @@ export default function App() {
           user={user} profile={profile} lang={lang}
           onSave={p => setProfile(p)}
           onClose={() => setShowProfile(false)}
+        />
+      )}
+
+      {cmdkOpen && (
+        <CommandPalette gigs={gigs} lang={lang} setGigs={setGigs} onClose={() => setCmdkOpen(false)} />
+      )}
+
+      {globalGig && (
+        <GigDetailModal
+          gig={globalGig} lang={lang}
+          onClose={() => setGlobalGig(null)}
+          onUpdate={updated => { setGigs(gigs.map(g => g.id === updated.id ? updated : g)); setGlobalGig(updated); }}
+          onDelete={id => { setGigs(gigs.filter(g => g.id !== id)); setGlobalGig(null); }}
         />
       )}
 
