@@ -112,6 +112,7 @@ const i18n = {
       heatmap: "演出日历", heatmapHint: "悬停查看，点击进入当日",
       genreDist: "风格分布", ratingDist: "评分分布",
       noTags: "还没有标签",
+      searchArtist: "搜索艺人...",
       stars: ["1 ★","2 ★","3 ★","4 ★","5 ★"],
       other: "其他",
       months: ["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],
@@ -236,6 +237,7 @@ const i18n = {
       heatmap: "Activity Calendar", heatmapHint: "Hover to peek, click to open",
       genreDist: "Genre Breakdown", ratingDist: "Rating Distribution",
       noTags: "No tags yet",
+      searchArtist: "Search artists...",
       stars: ["1 ★","2 ★","3 ★","4 ★","5 ★"],
       other: "Other",
       months: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
@@ -1702,6 +1704,7 @@ function StatsTab({ gigs, lang, onPickGig }: { gigs: Gig[]; lang: Lang; onPickGi
   const t = i18n[lang].stats;
   const [rankYear, setRankYear] = useState("");
   const [rankMonth, setRankMonth] = useState("");
+  const [rankSearch, setRankSearch] = useState("");
   const [selectedArtist, setSelectedArtist] = useState<string | null>(null);
   const [selectedVenue, setSelectedVenue] = useState<string | null>(null);
   const [trendDrillYear, setTrendDrillYear] = useState<string | null>(null);
@@ -1748,7 +1751,11 @@ function StatsTab({ gigs, lang, onPickGig }: { gigs: Gig[]; lang: Lang; onPickGi
       artistCount[key].displayName = g.artist; // keep most recent spelling
     }
   });
-  const ranking = Object.entries(artistCount).sort((a, b) => b[1].count - a[1].count || b[1].lastDate.localeCompare(a[1].lastDate));
+  const rankingAll = Object.entries(artistCount).sort((a, b) => b[1].count - a[1].count || b[1].lastDate.localeCompare(a[1].lastDate));
+  const rankSearchQ = rankSearch.trim().toLowerCase();
+  const ranking = rankSearchQ
+    ? rankingAll.filter(([, v]) => v.displayName.toLowerCase().includes(rankSearchQ))
+    : rankingAll;
 
   // ── Cities ──
   const cityCount: Record<string, number> = {};
@@ -1920,6 +1927,21 @@ function StatsTab({ gigs, lang, onPickGig }: { gigs: Gig[]; lang: Lang; onPickGi
       {/* Artist ranking */}
       <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-slate-700">
         <p className="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wide mb-3">{t.artistRanking}</p>
+
+        {/* Search */}
+        <div className="relative mb-2">
+          <input
+            value={rankSearch}
+            onChange={e => setRankSearch(e.target.value)}
+            placeholder={t.searchArtist}
+            className="w-full border dark:border-slate-700 rounded-xl pl-8 pr-8 py-2 text-sm bg-white dark:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+          />
+          <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-gray-300 dark:text-slate-500 text-sm pointer-events-none">⌕</span>
+          {rankSearch && (
+            <button onClick={() => setRankSearch("")} aria-label="Clear"
+              className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-red-500 text-base">×</button>
+          )}
+        </div>
 
         {/* Year filter */}
         <div className="flex gap-1.5 overflow-x-auto pb-2">
