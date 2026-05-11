@@ -879,7 +879,7 @@ function ArtistAvatar({ name, size = 40 }: { name: string; size?: number }) {
 
 // ─── GigCard ─────────────────────────────────────────────────────────────────
 
-function GigCard({ gig, onClick, lang }: { gig: Gig; onClick: () => void; lang: Lang }) {
+function GigCard({ gig, onClick, lang, hideDate }: { gig: Gig; onClick: () => void; lang: Lang; hideDate?: boolean }) {
   const dateStr = new Date(gig.date + "T00:00:00").toLocaleDateString(lang === "zh" ? "zh-CN" : "en-GB", {
     weekday: "short", year: "numeric", month: "short", day: "numeric",
   });
@@ -895,7 +895,7 @@ function GigCard({ gig, onClick, lang }: { gig: Gig; onClick: () => void; lang: 
           </p>
         </div>
         <div className="text-right shrink-0">
-          <p className="text-xs text-gray-400 dark:text-slate-500">{dateStr}</p>
+          {!hideDate && <p className="text-xs text-gray-400 dark:text-slate-500">{dateStr}</p>}
           <StarRating value={gig.rating} size="sm" />
         </div>
       </div>
@@ -1165,6 +1165,12 @@ function weekStartOf(dateStr: string): string {
   return `${y}-${m}-${day}`;
 }
 
+function dayHeaderLabel(dateStr: string, lang: Lang): string {
+  const d = new Date(dateStr + "T00:00:00");
+  const locale = lang === "zh" ? "zh-CN" : "en-GB";
+  return d.toLocaleDateString(locale, { weekday: "long", day: "numeric", month: "short" });
+}
+
 function weekRangeLabel(weekStart: string, lang: Lang): string {
   const start = new Date(weekStart + "T00:00:00");
   const end = new Date(start);
@@ -1227,13 +1233,14 @@ function HomeTab({ gigs, setGigs, lang, showForm, setShowForm, user, profile }: 
       return b.date.localeCompare(a.date);
     });
 
-  type WeekBucket = { weekStart: string; gigs: Gig[] };
+  type DayBucket = { date: string; gigs: Gig[] };
+  type WeekBucket = { weekStart: string; days: DayBucket[]; count: number };
   type MonthBucket = { month: number; weeks: WeekBucket[]; count: number };
   type YearBucket = { year: string; months: MonthBucket[]; count: number };
   const grouped: YearBucket[] = [];
   if (sortBy === "date-desc" || sortBy === "date-asc") {
     const asc = sortBy === "date-asc";
-    const yMap = new Map<string, Map<number, Map<string, Gig[]>>>();
+    const yMap = new Map<string, Map<number, Map<string, Map<string, Gig[]>>>>();
     for (const g of filtered) {
       const y = g.date.slice(0, 4);
       const m = Number(g.date.slice(5, 7)) - 1;
@@ -1242,8 +1249,10 @@ function HomeTab({ gigs, setGigs, lang, showForm, setShowForm, user, profile }: 
       const mMap = yMap.get(y)!;
       if (!mMap.has(m)) mMap.set(m, new Map());
       const wMap = mMap.get(m)!;
-      if (!wMap.has(ws)) wMap.set(ws, []);
-      wMap.get(ws)!.push(g);
+      if (!wMap.has(ws)) wMap.set(ws, new Map());
+      const dMap = wMap.get(ws)!;
+      if (!dMap.has(g.date)) dMap.set(g.date, []);
+      dMap.get(g.date)!.push(g);
     }
     const cmp = <T extends string | number>(a: T, b: T) =>
       (a < b ? -1 : a > b ? 1 : 0) * (asc ? 1 : -1);
@@ -1256,9 +1265,16 @@ function HomeTab({ gigs, setGigs, lang, showForm, setShowForm, user, profile }: 
         const weeks: WeekBucket[] = [];
         let monthCount = 0;
         for (const ws of [...wMap.keys()].sort(cmp)) {
-          const gigs = wMap.get(ws)!;
-          weeks.push({ weekStart: ws, gigs });
-          monthCount += gigs.length;
+          const dMap = wMap.get(ws)!;
+          const days: DayBucket[] = [];
+          let weekCount = 0;
+          for (const d of [...dMap.keys()].sort(cmp)) {
+            const gigs = dMap.get(d)!;
+            days.push({ date: d, gigs });
+            weekCount += gigs.length;
+          }
+          weeks.push({ weekStart: ws, days, count: weekCount });
+          monthCount += weekCount;
         }
         months.push({ month: m, weeks, count: monthCount });
         yearCount += monthCount;
@@ -1448,11 +1464,18 @@ function HomeTab({ gigs, setGigs, lang, showForm, setShowForm, user, profile }: 
                   <p className="text-xs font-semibold text-gray-500 dark:text-slate-400 uppercase tracking-wide px-1">
                     {t.stats.months[month]} <span className="text-gray-300 dark:text-slate-600 normal-case font-normal">· {monthCount} {t.shows}</span>
                   </p>
-                  {weeks.map(({ weekStart, gigs }) => (
+                  {weeks.map(({ weekStart, days }) => (
                     <div key={weekStart} className="space-y-2">
                       <p className="text-[11px] text-gray-300 dark:text-slate-600 px-1">{weekRangeLabel(weekStart, lang)}</p>
-                      <div className="space-y-2.5">
-                        {gigs.map(gig => <GigCard key={gig.id} gig={gig} onClick={() => setSelectedGig(gig)} lang={lang} />)}
+                      <div className="space-y-3">
+                        {days.map(({ date, gigs }) => (
+                          <div key={date} className="space-y-1.5">
+                            <p className="text-xs font-medium text-gray-500 dark:text-slate-400 px-1">{dayHeaderLabel(date, lang)}</p>
+                            <div className="space-y-2.5">
+                              {gigs.map(gig => <GigCard key={gig.id} gig={gig} onClick={() => setSelectedGig(gig)} lang={lang} hideDate />)}
+                            </div>
+                          </div>
+                        ))}
                       </div>
                     </div>
                   ))}
