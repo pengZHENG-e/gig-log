@@ -244,7 +244,9 @@
   "Bande a Part": {
     "name": "Bande a Part",
     "genres": [],
-    "source": "error"
+    "source": "mb-only",
+    "mbid": "9befe40f-027c-4cc3-a6fe-fcda65ea95db",
+    "type": "Group"
   },
   "Bar Italia": {
     "name": "Bar Italia",
@@ -1102,9 +1104,13 @@
   "Dim Imagery": {
     "name": "Dim Imagery",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "062df1ca-55c9-43bc-a54c-9205fefa44a1",
-    "type": null
+    "type": null,
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb51180162fcb3528cbb88166f",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17851180162fcb3528cbb88166f",
+    "spotifyId": "39tTsndtVkggyHUTE18Nfa",
+    "spotifyUrl": "https://open.spotify.com/artist/39tTsndtVkggyHUTE18Nfa"
   },
   "Divorce": {
     "name": "Divorce",
@@ -1121,9 +1127,13 @@
     "genres": [
       "indie rock"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "9689f21c-bd22-4619-9129-bab9199d7e2b",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb9214aecb0658a53da38cf5e5",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1789214aecb0658a53da38cf5e5",
+    "spotifyId": "36Ar4uCS5iNCgQLMFrWKyA",
+    "spotifyUrl": "https://open.spotify.com/artist/36Ar4uCS5iNCgQLMFrWKyA"
   },
   "Do Nothing": {
     "name": "Do Nothing",
@@ -1131,11 +1141,15 @@
       "indie rock",
       "post-punk revival"
     ],
-    "source": "wiki-direct-en",
+    "source": "wiki-direct-en+spotify",
     "mbid": "5fabd96a-db39-4698-8098-b9de5062ee79",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eba0827b10a2734f6ca3818b56",
     "summary": "Do Nothing are an English post-punk band which formed in Nottingham in 2012.",
-    "wiki": "https://en.wikipedia.org/wiki/Do_Nothing_(band)"
+    "wiki": "https://en.wikipedia.org/wiki/Do_Nothing_(band)",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178a0827b10a2734f6ca3818b56",
+    "spotifyId": "73N7cGNNww6Uod1d3IiBKP",
+    "spotifyUrl": "https://open.spotify.com/artist/73N7cGNNww6Uod1d3IiBKP"
   },
   "Dog Sports": {
     "name": "Dog Sports",
@@ -1169,11 +1183,15 @@
   "Driving Dead Girl": {
     "name": "Driving Dead Girl",
     "genres": [],
-    "source": "mb-wikidata-fr",
+    "source": "mb-wikidata-fr+spotify",
     "mbid": "9e5d6721-8bc7-451a-8ad9-7f8311b1f144",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebea3bf001185d80468813115c",
     "summary": "Driving Dead Girl est un groupe belge de rock",
-    "wiki": "https://fr.wikipedia.org/wiki/Driving_Dead_Girl"
+    "wiki": "https://fr.wikipedia.org/wiki/Driving_Dead_Girl",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178ea3bf001185d80468813115c",
+    "spotifyId": "0CuLh9c31rGgMd0VeOIREI",
+    "spotifyUrl": "https://open.spotify.com/artist/0CuLh9c31rGgMd0VeOIREI"
   },
   "Dry Cleaning": {
     "name": "Dry Cleaning",
@@ -1194,9 +1212,13 @@
   "Duck Wax": {
     "name": "Duck Wax",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "0c838a25-b963-46b8-9452-24476ae77ce3",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb4fbbb47c5d322d4a1e6dffff",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1784fbbb47c5d322d4a1e6dffff",
+    "spotifyId": "68ozhXnlweXnkxfUTFh1B1",
+    "spotifyUrl": "https://open.spotify.com/artist/68ozhXnlweXnkxfUTFh1B1"
   },
   "Dust": {
     "name": "Dust",
@@ -1214,16 +1236,24 @@
   "EBBB": {
     "name": "EBBB",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "efaf62b6-0f94-4a1b-a82a-dc386a7fd947",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb1803984513e68678f281f536",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1781803984513e68678f281f536",
+    "spotifyId": "2LikjKVyI5gqANlB9S7DNW",
+    "spotifyUrl": "https://open.spotify.com/artist/2LikjKVyI5gqANlB9S7DNW"
   },
   "Ebbb": {
     "name": "Ebbb",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "efaf62b6-0f94-4a1b-a82a-dc386a7fd947",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb1803984513e68678f281f536",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1781803984513e68678f281f536",
+    "spotifyId": "2LikjKVyI5gqANlB9S7DNW",
+    "spotifyUrl": "https://open.spotify.com/artist/2LikjKVyI5gqANlB9S7DNW"
   },
   "Elias Bender Rønnenfelt": {
     "name": "Elias Bender Rønnenfelt",
@@ -1236,9 +1266,13 @@
       "art punk",
       "post-punk"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "1cf52485-c52f-458f-b957-7b6ec9bc53d3",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb7545948d0f4276a1ffcee843",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1787545948d0f4276a1ffcee843",
+    "spotifyId": "3IW8WBsi0vGrcdMNsXS6Bi",
+    "spotifyUrl": "https://open.spotify.com/artist/3IW8WBsi0vGrcdMNsXS6Bi"
   },
   "En Attend Anna": {
     "name": "En Attend Anna",
@@ -1255,9 +1289,13 @@
       "krautrock",
       "neo-psychedelia"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "d5170ebd-e4bc-4554-9327-170ed2a52a0e",
-    "type": "Person"
+    "type": "Person",
+    "photo": "https://i.scdn.co/image/ab67616d0000b273e897802bdf4aa2d9537e89d9",
+    "photoSmall": "https://i.scdn.co/image/ab67616d00004851e897802bdf4aa2d9537e89d9",
+    "spotifyId": "6hNPyeArswCPuaz88LGuPG",
+    "spotifyUrl": "https://open.spotify.com/artist/6hNPyeArswCPuaz88LGuPG"
   },
   "English Teacher": {
     "name": "English Teacher",
@@ -1319,9 +1357,13 @@
   "Eyesore & The Jinx": {
     "name": "Eyesore & The Jinx",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "1aebb81a-d285-4b20-9c1f-c5124384bc89",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebcf17ad47ec230efc4c8dda7f",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178cf17ad47ec230efc4c8dda7f",
+    "spotifyId": "2qNU7hcbWCqecz5EpDmUiZ",
+    "spotifyUrl": "https://open.spotify.com/artist/2qNU7hcbWCqecz5EpDmUiZ"
   },
   "FEET": {
     "name": "FEET",
@@ -1343,11 +1385,15 @@
       "postpunk",
       "shoegaze"
     ],
-    "source": "mb-wikidata-en",
+    "source": "mb-wikidata-en+spotify",
     "mbid": "b0aaad28-a3a2-472d-b016-11b498cf717e",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb6dfc0f4a77cf7b2c2e6d7322",
     "summary": "Fews are an American-English-Swedish rock band, formed in 2014 in Malmö, Sweden. They were based in London around the release of their debut album. Self described as post-punk, with motorik elements of krautrock and noise pop, the band blends this sound with elements of neo-psychedelia.",
-    "wiki": "https://en.wikipedia.org/wiki/Fews"
+    "wiki": "https://en.wikipedia.org/wiki/Fews",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1786dfc0f4a77cf7b2c2e6d7322",
+    "spotifyId": "0UAwcG0xu1yFjVknsEV4mu",
+    "spotifyUrl": "https://open.spotify.com/artist/0UAwcG0xu1yFjVknsEV4mu"
   },
   "Famous": {
     "name": "Famous",
@@ -1357,16 +1403,23 @@
       "indie rock",
       "post-punk"
     ],
-    "source": "mb-only",
+    "source": "wiki-direct-en",
     "mbid": "58fce927-d15b-4d5d-9fc5-9f4a22c7acfd",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Bud_Shank.jpg/330px-Bud_Shank.jpg",
+    "summary": "Clifford Everett \"Bud\" Shank Jr. was an American alto saxophonist and flautist. He rose to prominence in the early 1950s playing lead alto and flute in Stan Kenton's Innovations in Modern Music Orchestra and throughout the decade worked in various small jazz combos. He spent the 1960s as a first-call studio musician in Hollywood. In the 1970s and 1980s, he performed regularly with the L. A. Four. Shank ultimately abandoned the flute to focus exclusively on playing jazz on the alto saxophone. He also recorded on tenor and baritone sax. His most famous recording is probably the version of \"Harlem Nocturne\" used as the theme song in Mickey Spillane's Mike Hammer. He is also known for the soundtrack recordings with his group to the surfing films of Bruce Brown in the late 1950s and early 1960s, and for the alto flute solo on the song \"California Dreamin'\" recorded by the Mamas & the Papas in 1965.",
+    "wiki": "https://en.wikipedia.org/wiki/Bud_Shank"
   },
   "FREAK IT OUT": {
     "name": "FREAK IT OUT",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "730284cc-8e7e-4e9e-83c6-ef489499c79d",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb70225491b093b2946dfcbfd3",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17870225491b093b2946dfcbfd3",
+    "spotifyId": "3ixtW4ZHSwjKgaus3kJNIv",
+    "spotifyUrl": "https://open.spotify.com/artist/3ixtW4ZHSwjKgaus3kJNIv"
   },
   "Fat Dog": {
     "name": "Fat Dog",
@@ -1414,9 +1467,13 @@
   "Fiep": {
     "name": "Fiep",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "dd9046a6-1e09-4192-9aa1-06d2a461e94a",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb261b94b6d22f594f69c469c5",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178261b94b6d22f594f69c469c5",
+    "spotifyId": "04Kgrs5trKvcEdER3P6319",
+    "spotifyUrl": "https://open.spotify.com/artist/04Kgrs5trKvcEdER3P6319"
   },
   "Findom": {
     "name": "Findom",
@@ -1424,39 +1481,59 @@
       "no wave",
       "post-punk"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "bd3ea6b9-07bf-4be8-b54f-b30007bddb37",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab67616d0000b273d3482a8de291e993e53d1528",
+    "photoSmall": "https://i.scdn.co/image/ab67616d00004851d3482a8de291e993e53d1528",
+    "spotifyId": "48eV5ICf83MPVbKLrO6Fas",
+    "spotifyUrl": "https://open.spotify.com/artist/48eV5ICf83MPVbKLrO6Fas"
   },
   "Film Noir": {
     "name": "Film Noir",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "81e4e5dd-b89d-48c7-82dd-631386d99c67",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb38dd60eaefc43c7d57791a8c",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17838dd60eaefc43c7d57791a8c",
+    "spotifyId": "4NqnRdAUEh7RGoB7MAxCIU",
+    "spotifyUrl": "https://open.spotify.com/artist/4NqnRdAUEh7RGoB7MAxCIU"
   },
   "Flat Party": {
     "name": "Flat Party",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "e63dc9f0-55c5-4f25-b792-8e4677c20dce",
-    "type": null
+    "type": null,
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb098795cf2be284a2012d516b",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178098795cf2be284a2012d516b",
+    "spotifyId": "0LEQNISkhGE62KwVeheQ4p",
+    "spotifyUrl": "https://open.spotify.com/artist/0LEQNISkhGE62KwVeheQ4p"
   },
   "Flip Top Head": {
     "name": "Flip Top Head",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "cd020aaf-216f-4693-a082-cb5eb2e8476b",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb102df65bcc4d156a03658d6b",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178102df65bcc4d156a03658d6b",
+    "spotifyId": "3wvfYm6zG9B5o7eGY5zcLu",
+    "spotifyUrl": "https://open.spotify.com/artist/3wvfYm6zG9B5o7eGY5zcLu"
   },
   "Floodlights": {
     "name": "Floodlights",
     "genres": [],
-    "source": "wiki-direct-en",
+    "source": "wiki-direct-en+spotify",
     "mbid": "31b575d4-11ce-472a-a892-4cc847f8f5f0",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebd9345ac53972cc0032474df7",
     "summary": "Floodlights are an Australian rock band from Melbourne, Victoria, formed in 2018. The group are composed of Louis Parsons, Ashlee Kehoe, Joe Draffen, Archie Shannon and Sarah Hellyer.",
-    "wiki": "https://en.wikipedia.org/wiki/Floodlights_(band)"
+    "wiki": "https://en.wikipedia.org/wiki/Floodlights_(band)",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178d9345ac53972cc0032474df7",
+    "spotifyId": "5gQvIK95LKrgtgkBPlH3XI",
+    "spotifyUrl": "https://open.spotify.com/artist/5gQvIK95LKrgtgkBPlH3XI"
   },
   "Florence Road": {
     "name": "Florence Road",
@@ -1473,18 +1550,26 @@
   "Flytrap": {
     "name": "Flytrap",
     "genres": [],
-    "source": "wiki-direct-en",
+    "source": "wiki-direct-en+spotify",
     "mbid": "70a64d68-efc4-4e69-a500-8969d6cadc00",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb777c346ca7aaaeee099a5487",
     "summary": "Venus Flytrap was a Thai pop music group made up of five young transgender women. The members were selected from 200 applicants during an audition in 2005 by Sony BMG Music Entertainment, which also promotes the group and provided it with a recording contract.",
-    "wiki": "https://en.wikipedia.org/wiki/Venus_Flytrap_(group)"
+    "wiki": "https://en.wikipedia.org/wiki/Venus_Flytrap_(group)",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178777c346ca7aaaeee099a5487",
+    "spotifyId": "1IXGH0mY6qgjTYTKo0nN3O",
+    "spotifyUrl": "https://open.spotify.com/artist/1IXGH0mY6qgjTYTKo0nN3O"
   },
   "Flora Hibberd": {
     "name": "Flora Hibberd",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "9cc2de62-59a2-46d3-ba2b-37c96796e630",
-    "type": "Person"
+    "type": "Person",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebb4d739360bca82deb5a208a1",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178b4d739360bca82deb5a208a1",
+    "spotifyId": "5EFG7rqfVfdyaXiRZbRkpS",
+    "spotifyUrl": "https://open.spotify.com/artist/5EFG7rqfVfdyaXiRZbRkpS"
   },
   "Folly Group": {
     "name": "Folly Group",
@@ -1551,12 +1636,20 @@
   "Frances and The Majesties": {
     "name": "Frances and The Majesties",
     "genres": [],
-    "source": "none"
+    "source": "spotify",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb9246859d6b07be8602f2bf90",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1789246859d6b07be8602f2bf90",
+    "spotifyId": "6Yx4tUPG1oHCVJEBRHcLI5",
+    "spotifyUrl": "https://open.spotify.com/artist/6Yx4tUPG1oHCVJEBRHcLI5"
   },
   "Fulvous": {
     "name": "Fulvous",
     "genres": [],
-    "source": "none"
+    "source": "spotify",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb13fa2c17919ab073061c6d55",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17813fa2c17919ab073061c6d55",
+    "spotifyId": "14CdnTKMFxrWaQQsQBldG6",
+    "spotifyUrl": "https://open.spotify.com/artist/14CdnTKMFxrWaQQsQBldG6"
   },
   "Former Champ": {
     "name": "Former Champ",
@@ -1564,16 +1657,24 @@
       "indie rock",
       "power pop"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "739af113-4b8a-498a-923b-6708bb69b03a",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb34ae749169e69d3f081c7951",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17834ae749169e69d3f081c7951",
+    "spotifyId": "1ntDd3adPrsrlLpiJBPfzM",
+    "spotifyUrl": "https://open.spotify.com/artist/1ntDd3adPrsrlLpiJBPfzM"
   },
   "Funhaus": {
     "name": "Funhaus",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "e695eda1-6cd6-41c5-bdbf-25e2d7895809",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb4361fcf567127230e9912356",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1784361fcf567127230e9912356",
+    "spotifyId": "21YB1yr7Otwjjfvu6Aevvp",
+    "spotifyUrl": "https://open.spotify.com/artist/21YB1yr7Otwjjfvu6Aevvp"
   },
   "Geese": {
     "name": "Geese",
@@ -1628,11 +1729,15 @@
       "art pop",
       "disco"
     ],
-    "source": "mb-wikidata-en",
+    "source": "mb-wikidata-en+spotify",
     "mbid": "ca57dd61-590f-4605-85ec-72e947a6148b",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebda9e9fae3c031ea49a960daa",
     "summary": "Getdown Services is a British rock and pop duo that has produced eight releases since 2022.",
-    "wiki": "https://en.wikipedia.org/wiki/Getdown_Services"
+    "wiki": "https://en.wikipedia.org/wiki/Getdown_Services",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178da9e9fae3c031ea49a960daa",
+    "spotifyId": "4OTD2AbOu5iBqSWk3NfwG5",
+    "spotifyUrl": "https://open.spotify.com/artist/4OTD2AbOu5iBqSWk3NfwG5"
   },
   "Ghostwoman": {
     "name": "Ghostwoman",
@@ -1641,9 +1746,13 @@
       "psychedelic rock",
       "stoner rock"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "3136f4a3-f711-4729-a722-363610056681",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eba3831458786e62fc8bd1df70",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178a3831458786e62fc8bd1df70",
+    "spotifyId": "4IEpQR24sUgq6BQw2MdZIy",
+    "spotifyUrl": "https://open.spotify.com/artist/4IEpQR24sUgq6BQw2MdZIy"
   },
   "Gilla Band": {
     "name": "Gilla Band",
@@ -1665,9 +1774,13 @@
   "Gingerella": {
     "name": "Gingerella",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "435a9a09-0a53-4ccf-8a68-288f0a07a66a",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb63207143eae515b8bda79d3d",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17863207143eae515b8bda79d3d",
+    "spotifyId": "7pTvvqpjOcSHKBr9ScFzKX",
+    "spotifyUrl": "https://open.spotify.com/artist/7pTvvqpjOcSHKBr9ScFzKX"
   },
   "Girl Scout": {
     "name": "Girl Scout",
@@ -1675,18 +1788,26 @@
       "indie rock",
       "sweden"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "6d5ce39c-2508-44ab-a83c-2bb5ce4315f3",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebe97626af3304b51a95d57345",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178e97626af3304b51a95d57345",
+    "spotifyId": "4CbghtwTo6bvxk5QacvRrE",
+    "spotifyUrl": "https://open.spotify.com/artist/4CbghtwTo6bvxk5QacvRrE"
   },
   "Gloop Unit": {
     "name": "Gloop Unit",
     "genres": [
       "jazz punk"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "8dbe3b04-1912-41ff-ae90-37f4cdadb71d",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb9f3aa71691c4d07afd6b6cc1",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1789f3aa71691c4d07afd6b6cc1",
+    "spotifyId": "4WlCrVsjDvtNQQ5JDlsks0",
+    "spotifyUrl": "https://open.spotify.com/artist/4WlCrVsjDvtNQQ5JDlsks0"
   },
   "Goat Girl": {
     "name": "Goat Girl",
@@ -1708,18 +1829,26 @@
   "Godcaster": {
     "name": "Godcaster",
     "genres": [],
-    "source": "wiki-direct-en",
+    "source": "wiki-direct-en+spotify",
     "mbid": "6570d5e0-9dbf-4998-9212-aefe30d5be6b",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb8dff5d3cf8c28b3a06a9bfc4",
     "summary": "Godcaster is an American indie rock band from Brooklyn, New York.",
-    "wiki": "https://en.wikipedia.org/wiki/Godcaster"
+    "wiki": "https://en.wikipedia.org/wiki/Godcaster",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1788dff5d3cf8c28b3a06a9bfc4",
+    "spotifyId": "0Vk7eJGOn9jys3qDnSPzaZ",
+    "spotifyUrl": "https://open.spotify.com/artist/0Vk7eJGOn9jys3qDnSPzaZ"
   },
   "Good Looks": {
     "name": "Good Looks",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "64d57dc4-ad42-4489-b62e-572d8c7f1334",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebc891216d4a04f72b76e5dbe4",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178c891216d4a04f72b76e5dbe4",
+    "spotifyId": "0ba3O2a1JNxb3oXbF74KcG",
+    "spotifyUrl": "https://open.spotify.com/artist/0ba3O2a1JNxb3oXbF74KcG"
   },
   "Goo": {
     "name": "Goo",
@@ -1734,23 +1863,35 @@
   "Grandmas House": {
     "name": "Grandmas House",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "96c2b1c6-bb57-4677-ba8e-6fe810d3aafe",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb030f23e3c531b5328324339b",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178030f23e3c531b5328324339b",
+    "spotifyId": "6BFppN7DZ1DR7zFyNTj7Nv",
+    "spotifyUrl": "https://open.spotify.com/artist/6BFppN7DZ1DR7zFyNTj7Nv"
   },
   "Graywave": {
     "name": "Graywave",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "cde87040-5225-4ae8-b188-7dbcf25ba815",
-    "type": "Person"
+    "type": "Person",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebc5a60554cfb65b3faa07ff07",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178c5a60554cfb65b3faa07ff07",
+    "spotifyId": "4jN7TcBXppAcw0mc7yn9xR",
+    "spotifyUrl": "https://open.spotify.com/artist/4jN7TcBXppAcw0mc7yn9xR"
   },
   "Guimauve": {
     "name": "Guimauve",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "748ca9c6-eff2-40e9-bc30-c9e6d56708bb",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab67616d0000b273ddbed3d0eed2b185cab502e0",
+    "photoSmall": "https://i.scdn.co/image/ab67616d00004851ddbed3d0eed2b185cab502e0",
+    "spotifyId": "1sVdVsCojQtf0QXZBc3Qg3",
+    "spotifyUrl": "https://open.spotify.com/artist/1sVdVsCojQtf0QXZBc3Qg3"
   },
   "Ha the Unclear": {
     "name": "Ha the Unclear",
@@ -1769,30 +1910,46 @@
       "indie rock",
       "post-punk"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "b3e28883-d118-4180-b458-568a18bc239d",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb73d017c63c3a65f671a29968",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17873d017c63c3a65f671a29968",
+    "spotifyId": "0bPAi2zCrxUrPBREWdetZ5",
+    "spotifyUrl": "https://open.spotify.com/artist/0bPAi2zCrxUrPBREWdetZ5"
   },
   "Hallan": {
     "name": "Hallan",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "a36f921f-c30b-4ae5-8255-e1743d5b64e4",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb395ea8ef3caacac4b6f44719",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178395ea8ef3caacac4b6f44719",
+    "spotifyId": "2cVFmKTidTQi4wVOWYcWi6",
+    "spotifyUrl": "https://open.spotify.com/artist/2cVFmKTidTQi4wVOWYcWi6"
   },
   "Hammok": {
     "name": "Hammok",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "1f2268d8-67e4-4291-b12a-2f2df4467b3f",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebba1e5be39fa265a438ba4fc7",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178ba1e5be39fa265a438ba4fc7",
+    "spotifyId": "5R1AfWkXVaAraHY3Tk9bMY",
+    "spotifyUrl": "https://open.spotify.com/artist/5R1AfWkXVaAraHY3Tk9bMY"
   },
   "Handcuff": {
     "name": "Handcuff",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "3eefeee6-12d5-41a8-88fe-ee1c5da3576c",
-    "type": null
+    "type": null,
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb88fdd602583f42ed0a0ca695",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17888fdd602583f42ed0a0ca695",
+    "spotifyId": "3wL4I0B6JR2c8oKppTkaUE",
+    "spotifyUrl": "https://open.spotify.com/artist/3wL4I0B6JR2c8oKppTkaUE"
   },
   "Heartworms": {
     "name": "Heartworms",
@@ -1875,9 +2032,13 @@
       "rock",
       "rock and roll"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "07136810-624a-4632-91a3-35f89194d179",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb35c2d312adca12eba446bfda",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17835c2d312adca12eba446bfda",
+    "spotifyId": "4zmrLVufAWS6bWdSfXfaB7",
+    "spotifyUrl": "https://open.spotify.com/artist/4zmrLVufAWS6bWdSfXfaB7"
   },
   "Horse Lords": {
     "name": "Horse Lords",
@@ -1889,18 +2050,26 @@
       "experimental rock",
       "krautrock"
     ],
-    "source": "mb-wikidata-en",
+    "source": "mb-wikidata-en+spotify",
     "mbid": "6efe2782-6926-41f6-b246-bdd60f997b8b",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eba363c74b4f7a0ca4812c4670",
     "summary": "Horse Lords is an American experimental rock band from Baltimore.",
-    "wiki": "https://en.wikipedia.org/wiki/Horse_Lords"
+    "wiki": "https://en.wikipedia.org/wiki/Horse_Lords",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178a363c74b4f7a0ca4812c4670",
+    "spotifyId": "0Oslq5zLftqRVwKseBJ7MV",
+    "spotifyUrl": "https://open.spotify.com/artist/0Oslq5zLftqRVwKseBJ7MV"
   },
   "Hot Face": {
     "name": "Hot Face",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "b75f0d72-53cc-4120-9381-2c53281ea9f5",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb67fb436aec68633ba0e45e7b",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17867fb436aec68633ba0e45e7b",
+    "spotifyId": "42uDv2iDELwbdlk45yUt1a",
+    "spotifyUrl": "https://open.spotify.com/artist/42uDv2iDELwbdlk45yUt1a"
   },
   "Hot Wax": {
     "name": "Hot Wax",
@@ -1915,9 +2084,13 @@
   "Hotel Lux": {
     "name": "Hotel Lux",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "1838ad59-1008-4db8-aede-3c75195fd40b",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebadeefc7c151612a5eec1465b",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178adeefc7c151612a5eec1465b",
+    "spotifyId": "6tdX8iW13i9uRwGzyfRFMR",
+    "spotifyUrl": "https://open.spotify.com/artist/6tdX8iW13i9uRwGzyfRFMR"
   },
   "Human The Moon": {
     "name": "Human The Moon",
@@ -1927,9 +2100,13 @@
   "House Arrest": {
     "name": "House Arrest",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "0ea834d9-3fc1-47d0-9c47-24138108cef5",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebafd5e2e24e258482c315d944",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178afd5e2e24e258482c315d944",
+    "spotifyId": "4sUz4AM5mtWkNPwKSWclJa",
+    "spotifyUrl": "https://open.spotify.com/artist/4sUz4AM5mtWkNPwKSWclJa"
   },
   "Human Interest": {
     "name": "Human Interest",
@@ -1937,9 +2114,13 @@
       "art rock",
       "indie rock"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "3140d565-a48b-471f-8656-d62f0565b381",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebc5a6d4c9fec946639f4c0bb4",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178c5a6d4c9fec946639f4c0bb4",
+    "spotifyId": "7whqwnuFmUxP5ZdBzyFsKc",
+    "spotifyUrl": "https://open.spotify.com/artist/7whqwnuFmUxP5ZdBzyFsKc"
   },
   "Hutch": {
     "name": "Hutch",
@@ -1983,25 +2164,37 @@
   "Ideal Living": {
     "name": "Ideal Living",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "df8e86ae-1adb-4b24-bdc9-0961d5da0e0e",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb08caaae55a82d878dfd538c6",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17808caaae55a82d878dfd538c6",
+    "spotifyId": "0O2bPynYyvkMlm2Qqmupt8",
+    "spotifyUrl": "https://open.spotify.com/artist/0O2bPynYyvkMlm2Qqmupt8"
   },
   "Japanese Television": {
     "name": "Japanese Television",
     "genres": [],
-    "source": "wiki-direct-en",
+    "source": "wiki-direct-en+spotify",
     "mbid": "b08f1f0d-cd7a-4c40-8bdd-f73244d6c616",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebec8e41fbc28b4215e2fca0e7",
     "summary": "Television in Japan was introduced in 1939. However, experiments date back to the 1920s, with Kenjiro Takayanagi's pioneering experiments in electronic television. Television broadcasting was halted by World War II, after which regular television broadcasting began in 1950. After Japan developed the first HDTV systems in the 1960s, MUSE/Hi-Vision was introduced in the 1970s.",
-    "wiki": "https://en.wikipedia.org/wiki/Television_in_Japan"
+    "wiki": "https://en.wikipedia.org/wiki/Television_in_Japan",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178ec8e41fbc28b4215e2fca0e7",
+    "spotifyId": "5LLn18vxU1UTY1ypouVGNW",
+    "spotifyUrl": "https://open.spotify.com/artist/5LLn18vxU1UTY1ypouVGNW"
   },
   "Infecticide": {
     "name": "Infecticide",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "16768f54-ed97-4117-958a-8cf92f8000e5",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab67616d0000b273cb9f9b461b08b21ab93fb130",
+    "photoSmall": "https://i.scdn.co/image/ab67616d00004851cb9f9b461b08b21ab93fb130",
+    "spotifyId": "6QFYDoe7orrx3By5MwUKtg",
+    "spotifyUrl": "https://open.spotify.com/artist/6QFYDoe7orrx3By5MwUKtg"
   },
   "Jeff Rosenstock": {
     "name": "Jeff Rosenstock",
@@ -2023,9 +2216,13 @@
   "Italia 90": {
     "name": "Italia 90",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "cd33f87d-1ce5-4f5d-8ff7-931db36e0f4a",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb1e8bd77e04eb5d05fe462161",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1781e8bd77e04eb5d05fe462161",
+    "spotifyId": "4NArCLoaLaa9cQkm2dk3PP",
+    "spotifyUrl": "https://open.spotify.com/artist/4NArCLoaLaa9cQkm2dk3PP"
   },
   "Jockstrap": {
     "name": "Jockstrap",
@@ -2057,9 +2254,13 @@
   "Joe Unknown": {
     "name": "Joe Unknown",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "dee6ad59-2087-4034-89c9-84e49728be5e",
-    "type": "Person"
+    "type": "Person",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eba5053e56c493c6a5507d2ff3",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178a5053e56c493c6a5507d2ff3",
+    "spotifyId": "4worwwIR65GOR5LpY0YtcJ",
+    "spotifyUrl": "https://open.spotify.com/artist/4worwwIR65GOR5LpY0YtcJ"
   },
   "John": {
     "name": "John",
@@ -2100,11 +2301,15 @@
     "genres": [
       "alternative r&b"
     ],
-    "source": "wiki-direct-en",
+    "source": "wiki-direct-en+spotify",
     "mbid": "86da1981-9d9a-49d5-b2f2-f968132e2a46",
     "type": "Person",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb837feea87934d904b8fa116e",
     "summary": "Jonah Yano is a Canadian musician. He is most noted as a two-time SOCAN Songwriting Prize nominee, receiving nods in 2021 for \"Delicate\" and in 2023 for \"Always\".",
-    "wiki": "https://en.wikipedia.org/wiki/Jonah_Yano"
+    "wiki": "https://en.wikipedia.org/wiki/Jonah_Yano",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178837feea87934d904b8fa116e",
+    "spotifyId": "4Js9qeA7KMFyjBYHEjFaeJ",
+    "spotifyUrl": "https://open.spotify.com/artist/4Js9qeA7KMFyjBYHEjFaeJ"
   },
   "Jon K": {
     "name": "Jon K",
@@ -2121,34 +2326,50 @@
   "KEG": {
     "name": "KEG",
     "genres": [],
-    "source": "wiki-direct-en",
+    "source": "wiki-direct-en+spotify",
     "mbid": "e447dc02-d59c-442e-b2eb-1cdd6c230867",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb0dc9278260ec4e146607c731",
     "summary": "Frederic Homer Johnson, known professionally as Keg Johnson, was an American jazz trombonist.",
-    "wiki": "https://en.wikipedia.org/wiki/Keg_Johnson"
+    "wiki": "https://en.wikipedia.org/wiki/Keg_Johnson",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1780dc9278260ec4e146607c731",
+    "spotifyId": "5CiQ9m8dPZ3eEV8c2DdHuq",
+    "spotifyUrl": "https://open.spotify.com/artist/5CiQ9m8dPZ3eEV8c2DdHuq"
   },
   "Joyeria": {
     "name": "Joyeria",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "40a88d5a-274a-4210-8e21-4af69885a0de",
-    "type": "Person"
+    "type": "Person",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebf393d97cf2c41baee0bd873f",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178f393d97cf2c41baee0bd873f",
+    "spotifyId": "4mECc7MwRyuIDdZdXRi5SB",
+    "spotifyUrl": "https://open.spotify.com/artist/4mECc7MwRyuIDdZdXRi5SB"
   },
   "Kickboy": {
     "name": "Kickboy",
     "genres": [],
-    "source": "wiki-direct-en",
+    "source": "wiki-direct-en+spotify",
     "mbid": "fb57371f-56d3-444a-9e5d-c44df59bab6d",
     "type": null,
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebd1cccbb56ba566c4f9845e4e",
     "summary": "Claude Bessy, also known as Kickboy Face, was a French writer, magazine editor, singer, video producer, and painter. He is noted as an early organizer in the Los Angeles punk scene in the mid-1970s and was involved in the British post-punk scene in the 1980s.",
-    "wiki": "https://en.wikipedia.org/wiki/Claude_Bessy_(writer)"
+    "wiki": "https://en.wikipedia.org/wiki/Claude_Bessy_(writer)",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178d1cccbb56ba566c4f9845e4e",
+    "spotifyId": "5mQg1OqLe4tAlSnHn1jbFM",
+    "spotifyUrl": "https://open.spotify.com/artist/5mQg1OqLe4tAlSnHn1jbFM"
   },
   "Kissing Gate": {
     "name": "Kissing Gate",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "67c379d5-85f0-49af-9a5b-9b8718ae0b21",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb3f5eef65d6c62aba8a8ec820",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1783f5eef65d6c62aba8a8ec820",
+    "spotifyId": "49TSmhwknSZt4S587md0x1",
+    "spotifyUrl": "https://open.spotify.com/artist/49TSmhwknSZt4S587md0x1"
   },
   "Kneecap": {
     "name": "Kneecap",
@@ -2224,9 +2445,13 @@
   "LES ATLANTIDES": {
     "name": "LES ATLANTIDES",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "5a0e94b8-f3e5-4260-9003-88c86180c1f9",
-    "type": null
+    "type": null,
+    "photo": "https://i.scdn.co/image/ab67616d0000b273f83087c3ebe21ac21efdcc04",
+    "photoSmall": "https://i.scdn.co/image/ab67616d00004851f83087c3ebe21ac21efdcc04",
+    "spotifyId": "75Ez8xHeI91ZTiWLgZPkrV",
+    "spotifyUrl": "https://open.spotify.com/artist/75Ez8xHeI91ZTiWLgZPkrV"
   },
   "LOSTBOY": {
     "name": "LOSTBOY",
@@ -2257,9 +2482,13 @@
       "pop punk",
       "punk"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "65feec89-20e8-4e3a-bca5-00420ef69827",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb17cbed3609e4e5088e2e3130",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17817cbed3609e4e5088e2e3130",
+    "spotifyId": "53QzpIpt70ltDI48lIudc5",
+    "spotifyUrl": "https://open.spotify.com/artist/53QzpIpt70ltDI48lIudc5"
   },
   "La Securite": {
     "name": "La Securite",
@@ -2301,9 +2530,13 @@
   "LaFrange": {
     "name": "LaFrange",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "396b0d65-c9e1-436f-8cad-da27169906ff",
-    "type": "Person"
+    "type": "Person",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebdf46aabd2c83edb0b30b34e0",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178df46aabd2c83edb0b30b34e0",
+    "spotifyId": "01JzjhkwqYIQXYQKZpg5hP",
+    "spotifyUrl": "https://open.spotify.com/artist/01JzjhkwqYIQXYQKZpg5hP"
   },
   "Lang Lang": {
     "name": "Lang Lang",
@@ -2333,48 +2566,72 @@
   "Lea Petges": {
     "name": "Lea Petges",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "fefdf81d-e73c-41eb-ab89-c5d5171c4656",
-    "type": "Person"
+    "type": "Person",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb3ac339fdf6d865d7d8dbdcd4",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1783ac339fdf6d865d7d8dbdcd4",
+    "spotifyId": "0LfvybPdUDIetVqotYqEeQ",
+    "spotifyUrl": "https://open.spotify.com/artist/0LfvybPdUDIetVqotYqEeQ"
   },
   "Les Clopes": {
     "name": "Les Clopes",
     "genres": [
       "alternative rock"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "1ed80fc0-e00a-4b2c-868d-e20aec909308",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab67616d0000b2731f8a591f694aea7e3237b5b1",
+    "photoSmall": "https://i.scdn.co/image/ab67616d000048511f8a591f694aea7e3237b5b1",
+    "spotifyId": "3hyFh3a07azAfvMgbZLl6p",
+    "spotifyUrl": "https://open.spotify.com/artist/3hyFh3a07azAfvMgbZLl6p"
   },
   "Lice": {
     "name": "Lice",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "bb64bb70-7a0b-4491-8ca2-0c4bf2e57fe6",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebf903d9b989fbf6c8d2f1c00f",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178f903d9b989fbf6c8d2f1c00f",
+    "spotifyId": "7xi1we0hljoGZPbxKTYzwp",
+    "spotifyUrl": "https://open.spotify.com/artist/7xi1we0hljoGZPbxKTYzwp"
   },
   "Lifts": {
     "name": "Lifts",
     "genres": [
       "art rock"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "fd2e84ee-0486-4b77-9e64-743dc876daba",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb996a2910ea94a43184f3cc9b",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178996a2910ea94a43184f3cc9b",
+    "spotifyId": "63kG4WX1tjrHDaSqNJvn7V",
+    "spotifyUrl": "https://open.spotify.com/artist/63kG4WX1tjrHDaSqNJvn7V"
   },
   "Les Lullies": {
     "name": "Les Lullies",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "359e2b43-09f2-4829-a448-6db3e06153dd",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebf7fe715ee87da6148b35704a",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178f7fe715ee87da6148b35704a",
+    "spotifyId": "6bsK7FaVan7M1Hh6xUyVbL",
+    "spotifyUrl": "https://open.spotify.com/artist/6bsK7FaVan7M1Hh6xUyVbL"
   },
   "Lip Filler": {
     "name": "Lip Filler",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "9fe14671-7b6a-4124-a146-9fedca3596e3",
-    "type": null
+    "type": null,
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb7d62eaf57f086d871912baf6",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1787d62eaf57f086d871912baf6",
+    "spotifyId": "0hPY5LO0VQyjgop1JBsKfQ",
+    "spotifyUrl": "https://open.spotify.com/artist/0hPY5LO0VQyjgop1JBsKfQ"
   },
   "Liz Lawrence": {
     "name": "Liz Lawrence",
@@ -2406,9 +2663,13 @@
     "genres": [
       "punk"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "12009c0e-61be-4adc-b631-18bfa444fc3e",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb8e69b8e4b5ad50c2243a8e3b",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1788e69b8e4b5ad50c2243a8e3b",
+    "spotifyId": "07NWIkIKcZnWWmebfHcOxT",
+    "spotifyUrl": "https://open.spotify.com/artist/07NWIkIKcZnWWmebfHcOxT"
   },
   "Los Bitchos": {
     "name": "Los Bitchos",
@@ -2429,9 +2690,13 @@
   "Lumer": {
     "name": "Lumer",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "0e9d7bbd-7fb9-42db-ad70-6a0a4a29d6eb",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb914be58df4ed43c8e7b8fcb8",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178914be58df4ed43c8e7b8fcb8",
+    "spotifyId": "1HYfeK27HDtxQ0rCcoaGtX",
+    "spotifyUrl": "https://open.spotify.com/artist/1HYfeK27HDtxQ0rCcoaGtX"
   },
   "Lucid Express": {
     "name": "Lucid Express",
@@ -2439,9 +2704,13 @@
       "dream pop",
       "shoegaze"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "c64ed7a6-fff8-4487-b590-21870d444c74",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebf7261a57b48a6168c8ee012a",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178f7261a57b48a6168c8ee012a",
+    "spotifyId": "0WwjT0WO2JQSXIq7EeDxXf",
+    "spotifyUrl": "https://open.spotify.com/artist/0WwjT0WO2JQSXIq7EeDxXf"
   },
   "M83": {
     "name": "M83",
@@ -2466,9 +2735,13 @@
       "free jazz",
       "noise rock"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "da08fa56-7311-4008-8592-d25aa4dd23ff",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb21c61c9a729c9a2bcbc3cc1c",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17821c61c9a729c9a2bcbc3cc1c",
+    "spotifyId": "1j3MgTGdEPOg24YXGJd9gP",
+    "spotifyUrl": "https://open.spotify.com/artist/1j3MgTGdEPOg24YXGJd9gP"
   },
   "MODEL/ACTRIZ": {
     "name": "MODEL/ACTRIZ",
@@ -2498,9 +2771,13 @@
     "genres": [
       "post-punk"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "2bc5a8a2-a5da-4ab2-8edb-0983b2fd9065",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb9848a4fe1b32498693408e8e",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1789848a4fe1b32498693408e8e",
+    "spotifyId": "64eXjwiYuMUVSpJ3pP6FNH",
+    "spotifyUrl": "https://open.spotify.com/artist/64eXjwiYuMUVSpJ3pP6FNH"
   },
   "ManWomanChainsaw": {
     "name": "ManWomanChainsaw",
@@ -2516,11 +2793,15 @@
       "electro-industrial",
       "indie"
     ],
-    "source": "mb-wikidata-en",
+    "source": "mb-wikidata-en+spotify",
     "mbid": "9ed67b68-9fa7-471a-99eb-483139293274",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebd2c55daccc620cee44c65da0",
     "summary": "Mandy, Indiana are an English–French noise rock band based between Manchester and Berlin, formed in 2018. The band's lineup consists of vocalist and lyricist Valentine Caulfield, guitarist and producer Scott Fair, synth player Simon Catling, and drummer Alex Macdougall.",
-    "wiki": "https://en.wikipedia.org/wiki/Mandy%2C_Indiana"
+    "wiki": "https://en.wikipedia.org/wiki/Mandy%2C_Indiana",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178d2c55daccc620cee44c65da0",
+    "spotifyId": "2nDJxXJ7PtW7eLpFXcGH3u",
+    "spotifyUrl": "https://open.spotify.com/artist/2nDJxXJ7PtW7eLpFXcGH3u"
   },
   "Man/Woman/Chainsaw": {
     "name": "Man/Woman/Chainsaw",
@@ -2528,18 +2809,26 @@
       "art punk",
       "indie rock"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "e72f0b0e-fe8e-405a-942e-633edd84c998",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb6b58a122f4ededbb2cb749e9",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1786b58a122f4ededbb2cb749e9",
+    "spotifyId": "0KheksMhWogVV4frHAihPJ",
+    "spotifyUrl": "https://open.spotify.com/artist/0KheksMhWogVV4frHAihPJ"
   },
   "Marathon": {
     "name": "Marathon",
     "genres": [
       "crossover prog"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "9a31c1d0-8efd-4f96-98e7-0b06216f2199",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebd99472725745f88e8d117c47",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178d99472725745f88e8d117c47",
+    "spotifyId": "4AmPhWuKz1UIdx2Mvt4yAw",
+    "spotifyUrl": "https://open.spotify.com/artist/4AmPhWuKz1UIdx2Mvt4yAw"
   },
   "Mardi Jazz": {
     "name": "Mardi Jazz",
@@ -2564,34 +2853,50 @@
   "Maripool": {
     "name": "Maripool",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "43a7d2ea-d4cc-480e-9f17-30c4e38ce894",
-    "type": null
+    "type": null,
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb737f4278d0908c78e4c292ca",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178737f4278d0908c78e4c292ca",
+    "spotifyId": "2Lmop7bq7RxW1Ue2GQsgSf",
+    "spotifyUrl": "https://open.spotify.com/artist/2Lmop7bq7RxW1Ue2GQsgSf"
   },
   "Marketplace": {
     "name": "Marketplace",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "ce805d5d-830d-436e-8a65-b62f3890a71b",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb36c022f6f2019e62d87e7768",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17836c022f6f2019e62d87e7768",
+    "spotifyId": "5oraEz0H7QrmVWl0Aj5TMT",
+    "spotifyUrl": "https://open.spotify.com/artist/5oraEz0H7QrmVWl0Aj5TMT"
   },
   "Martial Arts": {
     "name": "Martial Arts",
     "genres": [],
-    "source": "wiki-direct-en",
+    "source": "wiki-direct-en+spotify",
     "mbid": "17bc5a71-547d-440d-85a5-16ed0d55e4f3",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebc144fb7ae0c7ada7c989d40f",
     "summary": "Robin Black is a Canadian combat analyst and sports commentator. He formerly competed in mixed martial arts, and previously had a career as a glam rock musician. Robin Black has commentated for most major combat sports organizations in the world such as Bellator MMA, ONE Championship, Brave Combat Federation, Karate Combat, World Lethwei Championship in Myanmar and ACB in Russia.",
-    "wiki": "https://en.wikipedia.org/wiki/Robin_Black"
+    "wiki": "https://en.wikipedia.org/wiki/Robin_Black",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178c144fb7ae0c7ada7c989d40f",
+    "spotifyId": "6Io0X7BBqmDmJLaKbEq14E",
+    "spotifyUrl": "https://open.spotify.com/artist/6Io0X7BBqmDmJLaKbEq14E"
   },
   "Mary in the Junkyard": {
     "name": "Mary in the Junkyard",
     "genres": [],
-    "source": "wiki-direct-en",
+    "source": "wiki-direct-en+spotify",
     "mbid": "64367341-4bc2-493c-8e5d-ce17841c8a7a",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb04190998ec730c0f67d72f9c",
     "summary": "Mary in the Junkyard is a British band from London. The band consists of vocalist and guitarist Clari Freeman-Taylor, viola and bass player Saya Barbaglia and drummer David Addison. The band are signed with All My Friends (AMF) Records",
-    "wiki": "https://en.wikipedia.org/wiki/Mary_in_the_Junkyard"
+    "wiki": "https://en.wikipedia.org/wiki/Mary_in_the_Junkyard",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17804190998ec730c0f67d72f9c",
+    "spotifyId": "48Kc3HRodbvm5ropMf9B6M",
+    "spotifyUrl": "https://open.spotify.com/artist/48Kc3HRodbvm5ropMf9B6M"
   },
   "Maruja": {
     "name": "Maruja",
@@ -2619,16 +2924,24 @@
       "dance-pop",
       "experimental electronic"
     ],
-    "source": "wiki-direct-en",
+    "source": "wiki-direct-en+spotify",
     "mbid": "b130500a-a0d0-4eb5-a764-66b1233e35d6",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebb4253d66d994918bec5e5ade",
     "summary": "Mermaid Chunky is a London-based duo, Moina Moin and Freya Tate, signed to DFA Records. Moin plays saxophone, Tate plays keyboards and drives the drum machine. Pitchfork named their second LP, Slif Slaf Slof one of the \"10 New Albums You Should Listen To Now\" in 2024 and NME called Slif Slaf Slof \"brilliantly eccentric, funny and inventive avant-pop.\" Metal Magazine describes their music as an \"eclectic storm of electro, jazz, experimental pop, and folk.\"",
-    "wiki": "https://en.wikipedia.org/wiki/Mermaid_Chunky"
+    "wiki": "https://en.wikipedia.org/wiki/Mermaid_Chunky",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178b4253d66d994918bec5e5ade",
+    "spotifyId": "5IVLihKRLMZ5RHzSPa7cAI",
+    "spotifyUrl": "https://open.spotify.com/artist/5IVLihKRLMZ5RHzSPa7cAI"
   },
   "Mhaol": {
     "name": "Mhaol",
     "genres": [],
-    "source": "none"
+    "source": "spotify",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb7a3fb28229223e29407b723e",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1787a3fb28229223e29407b723e",
+    "spotifyId": "3YQdlHhWbhvV46g0bDtaFN",
+    "spotifyUrl": "https://open.spotify.com/artist/3YQdlHhWbhvV46g0bDtaFN"
   },
   "MiddleMan": {
     "name": "MiddleMan",
@@ -2646,25 +2959,37 @@
   "Mince": {
     "name": "Mince",
     "genres": [],
-    "source": "wiki-direct-en",
+    "source": "wiki-direct-en+spotify",
     "mbid": "09aa04d4-51bf-4b00-a198-72c541bd6ac5",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb6a4f5231482be8007a6b1b27",
     "summary": "Johnny Mince was an American swing jazz clarinetist.",
-    "wiki": "https://en.wikipedia.org/wiki/Johnny_Mince"
+    "wiki": "https://en.wikipedia.org/wiki/Johnny_Mince",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1786a4f5231482be8007a6b1b27",
+    "spotifyId": "7y1hRXZnRy0bd8QpQzGH8R",
+    "spotifyUrl": "https://open.spotify.com/artist/7y1hRXZnRy0bd8QpQzGH8R"
   },
   "Miss Tiny": {
     "name": "Miss Tiny",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "a68df9c4-2e0d-4144-b9ab-0c325ae59d6e",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb83ff809a40551299a035093e",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17883ff809a40551299a035093e",
+    "spotifyId": "2hbFQvtM89x3icGyynjgN4",
+    "spotifyUrl": "https://open.spotify.com/artist/2hbFQvtM89x3icGyynjgN4"
   },
   "Minor Conflict": {
     "name": "Minor Conflict",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "7f6cca9e-63db-4c88-9202-78016895fdc5",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebc93858cc95fac54f74c203fa",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178c93858cc95fac54f74c203fa",
+    "spotifyId": "2DJpF2PxGMPYry3ffKmTys",
+    "spotifyUrl": "https://open.spotify.com/artist/2DJpF2PxGMPYry3ffKmTys"
   },
   "Model/Actriz": {
     "name": "Model/Actriz",
@@ -2682,25 +3007,37 @@
   "Moreish Idols": {
     "name": "Moreish Idols",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "37915598-b8b0-4f40-8472-338735c26897",
-    "type": null
+    "type": null,
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebb0d752b88a980c3eb82235f2",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178b0d752b88a980c3eb82235f2",
+    "spotifyId": "7DoCMYqpSbn3kgBSWDpnLP",
+    "spotifyUrl": "https://open.spotify.com/artist/7DoCMYqpSbn3kgBSWDpnLP"
   },
   "Motorists": {
     "name": "Motorists",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "0a89981d-65c5-4848-a563-bba10e9bf2c2",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb9afad684ee859e9eaf67ea4d",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1789afad684ee859e9eaf67ea4d",
+    "spotifyId": "3ThrU1d2VW0MMFRzRq0aZQ",
+    "spotifyUrl": "https://open.spotify.com/artist/3ThrU1d2VW0MMFRzRq0aZQ"
   },
   "Murkage Dave": {
     "name": "Murkage Dave",
     "genres": [],
-    "source": "wiki-direct-en",
+    "source": "wiki-direct-en+spotify",
     "mbid": "9f02af13-3bc8-4aef-9d0a-d2996d67cba2",
     "type": "Person",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb0da14e4f0720a537caed1d7e",
     "summary": "Murkage Dave is a singer and songwriter from Leytonstone, East London.",
-    "wiki": "https://en.wikipedia.org/wiki/Murkage_Dave"
+    "wiki": "https://en.wikipedia.org/wiki/Murkage_Dave",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1780da14e4f0720a537caed1d7e",
+    "spotifyId": "4fTqtoSkTj4lcLHMANIs4C",
+    "spotifyUrl": "https://open.spotify.com/artist/4fTqtoSkTj4lcLHMANIs4C"
   },
   "Nasty Joe": {
     "name": "Nasty Joe",
@@ -2730,9 +3067,13 @@
       "post-punk",
       "shoegaze"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "4a8dadb4-7a08-40ec-abc5-ba296998435a",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eba1e8c9881848445b3bd86fe4",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178a1e8c9881848445b3bd86fe4",
+    "spotifyId": "55JCn3mnNR7NQ9AfEaVTCF",
+    "spotifyUrl": "https://open.spotify.com/artist/55JCn3mnNR7NQ9AfEaVTCF"
   },
   "Nerves": {
     "name": "Nerves",
@@ -2764,21 +3105,33 @@
   "Nice Biscuit": {
     "name": "Nice Biscuit",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "632cda31-18ca-43b5-8c3b-74e970dc5105",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebd0b96462f2a0500e4bb17d9a",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178d0b96462f2a0500e4bb17d9a",
+    "spotifyId": "1HDNxhUcc8y6JukY45KHyv",
+    "spotifyUrl": "https://open.spotify.com/artist/1HDNxhUcc8y6JukY45KHyv"
   },
   "Nightbus": {
     "name": "Nightbus",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "208702fb-f566-451a-89bb-8d4362f3c8be",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb1f22a84e29ce7f03ee5ae9a2",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1781f22a84e29ce7f03ee5ae9a2",
+    "spotifyId": "1fbC8ATYVPUeFy2h5NOK8x",
+    "spotifyUrl": "https://open.spotify.com/artist/1fbC8ATYVPUeFy2h5NOK8x"
   },
   "Noctilians": {
     "name": "Noctilians",
     "genres": [],
-    "source": "none"
+    "source": "spotify",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebc971e569ce4cc473d823cadf",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178c971e569ce4cc473d823cadf",
+    "spotifyId": "1Q61wvooYpZvBYE1nR0bQ3",
+    "spotifyUrl": "https://open.spotify.com/artist/1Q61wvooYpZvBYE1nR0bQ3"
   },
   "Nils Frahm": {
     "name": "Nils Frahm",
@@ -2799,9 +3152,13 @@
   "Nina Garcia": {
     "name": "Nina Garcia",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "d9668912-bb3c-47af-84af-88e0185b2bd7",
-    "type": "Person"
+    "type": "Person",
+    "photo": "https://i.scdn.co/image/ab67616d0000b2730bc59e6ca0dc7ced950cf305",
+    "photoSmall": "https://i.scdn.co/image/ab67616d000048510bc59e6ca0dc7ced950cf305",
+    "spotifyId": "4RP6VKbxye2HUcJjyrmCl4",
+    "spotifyUrl": "https://open.spotify.com/artist/4RP6VKbxye2HUcJjyrmCl4"
   },
   "Nova Twins": {
     "name": "Nova Twins",
@@ -2840,48 +3197,61 @@
     "genres": [
       "post-punk"
     ],
-    "source": "mb-wikidata-en",
+    "source": "mb-wikidata-en+spotify",
     "mbid": "6f8c8536-2cb7-4dbc-aab9-38ff9ff5c789",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebcd89c5423993fbcfeb242fc5",
     "summary": "Opus Kink are an English post-punk band that formed in Brighton in 2017, consisting of Sam Abbo, Angus Rogers, Fin Abbo, Jack Banjo Courtney, Jazz Pope, and Jed Morgans. The band have released three EPs: Requiem For a Quarantine (2020), Til the Stream Runs Dry (2022) and My Eyes, Brother! (2023).",
-    "wiki": "https://en.wikipedia.org/wiki/Opus_Kink"
+    "wiki": "https://en.wikipedia.org/wiki/Opus_Kink",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178cd89c5423993fbcfeb242fc5",
+    "spotifyId": "1qDKbZJLaLlsaI7e6mHqm3",
+    "spotifyUrl": "https://open.spotify.com/artist/1qDKbZJLaLlsaI7e6mHqm3"
   },
   "Oslo Twins": {
     "name": "Oslo Twins",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "aa4ee7db-3067-490c-a801-55f992f43701",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebf62f3375166f8c5775d13000",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178f62f3375166f8c5775d13000",
+    "spotifyId": "2rpkPoe2Qc5unwCOmWpN5y",
+    "spotifyUrl": "https://open.spotify.com/artist/2rpkPoe2Qc5unwCOmWpN5y"
   },
   "Otala": {
     "name": "Otala",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "6224433b-ba4e-40e1-9a6c-4672a75eedf7",
-    "type": "Group"
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb481f1b6c7cdde0e71b6becc0",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178481f1b6c7cdde0e71b6becc0",
+    "spotifyId": "5Ha8b8szNaRXrcXYR0oAXE",
+    "spotifyUrl": "https://open.spotify.com/artist/5Ha8b8szNaRXrcXYR0oAXE"
   },
   "PVA": {
     "name": "PVA",
     "genres": [
-      "synth-pop",
-      "acid house",
+      "electronic",
+      "futurepop",
       "dance",
+      "house",
       "ebm",
-      "electroclash",
-      "electronic"
+      "techno"
     ],
-    "source": "mb-wikidata-en",
+    "source": "wiki-direct-en+spotify",
     "mbid": "3e3c2787-4412-4614-82af-ce903b4d8b96",
-    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebdacc68db3dc018dc4cc48b64",
     "summary": "PVA is an English music band formed in South London in 2017, consisting of Ella Harris, Josh Baxter and Louis Satchell.",
-    "wiki": "https://en.wikipedia.org/wiki/PVA_(band)"
+    "wiki": "https://en.wikipedia.org/wiki/PVA_(band)",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178dacc68db3dc018dc4cc48b64",
+    "spotifyId": "2d2ElnqC2cMPp7zcSyv3yG",
+    "spotifyUrl": "https://open.spotify.com/artist/2d2ElnqC2cMPp7zcSyv3yG"
   },
   "Ottis Coeur": {
     "name": "Ottis Coeur",
     "genres": [],
     "source": "mb-only",
-    "mbid": "dd153001-c3b5-4e2f-81e3-596237e8e991",
-    "type": "Group"
+    "mbid": "dd153001-c3b5-4e2f-81e3-596237e8e991"
   },
   "Panic Shake": {
     "name": "Panic Shake",
@@ -2891,40 +3261,56 @@
   "Paranoid London": {
     "name": "Paranoid London",
     "genres": [
-      "edm",
-      "house"
+      "house",
+      "edm"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "76ebdc4a-935e-45bb-a9e9-d1c43eca2c8b",
-    "type": "Group"
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb5974e92b915a79b58b5a2c7c",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1785974e92b915a79b58b5a2c7c",
+    "spotifyId": "0KyUH5WmspOhuIQAnw42Fb",
+    "spotifyUrl": "https://open.spotify.com/artist/0KyUH5WmspOhuIQAnw42Fb"
   },
   "Parker Fans": {
     "name": "Parker Fans",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "504b0b46-1706-4cd3-b9ff-3e988ee5fa5d",
-    "type": "Group"
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebe5a364ebc54c65cf5452197b",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178e5a364ebc54c65cf5452197b",
+    "spotifyId": "1vY8fuL3kdwvvfdoMHwvsX",
+    "spotifyUrl": "https://open.spotify.com/artist/1vY8fuL3kdwvvfdoMHwvsX"
   },
   "Pearl2": {
     "name": "Pearl2",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "c4cd22c3-a2db-462d-83b9-d31fb3502384",
-    "type": null
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebafa973d4b6a47b6cffcca341",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178afa973d4b6a47b6cffcca341",
+    "spotifyId": "6oAiXaEJiLGQvqsB925C1D",
+    "spotifyUrl": "https://open.spotify.com/artist/6oAiXaEJiLGQvqsB925C1D"
   },
   "Pennine Suite": {
     "name": "Pennine Suite",
     "genres": [],
-    "source": "none"
+    "source": "spotify",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb5a626e6244803a037570d9f4",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1785a626e6244803a037570d9f4",
+    "spotifyId": "5lLvOEgGQFoevizF5OeZ5T",
+    "spotifyUrl": "https://open.spotify.com/artist/5lLvOEgGQFoevizF5OeZ5T"
   },
   "Pencil": {
     "name": "Pencil",
     "genres": [],
-    "source": "wiki-direct-en",
+    "source": "wiki-direct-en+spotify",
     "mbid": "d5f947b5-99fd-486d-a701-8a0b3a8314ed",
-    "type": "Person",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebdf5bceac2f8cb984738e7f4f",
     "summary": "Edwin Pouncey, also known by the nom de plume Savage Pencil, is an English comics artist, musician, and music journalist.",
-    "wiki": "https://en.wikipedia.org/wiki/Savage_Pencil"
+    "wiki": "https://en.wikipedia.org/wiki/Savage_Pencil",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178df5bceac2f8cb984738e7f4f",
+    "spotifyId": "0WpuiEplimtEOyXv5SGurF",
+    "spotifyUrl": "https://open.spotify.com/artist/0WpuiEplimtEOyXv5SGurF"
   },
   "Personal Trainer": {
     "name": "Personal Trainer",
@@ -2973,18 +3359,21 @@
   "Play Dead": {
     "name": "Play Dead",
     "genres": [
-      "gothic rock",
+      "punk",
       "post-punk",
-      "banbury",
-      "england",
+      "uk",
       "goth",
-      "oxford"
+      "gothic rock",
+      "england"
     ],
-    "source": "mb-wikidata-en",
+    "source": "wiki-direct-en+spotify",
     "mbid": "764f0969-6485-4a47-b2e6-73764cfc6978",
-    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab67616d0000b273e4b8299157cc98a65f1bd315",
     "summary": "Play Dead were an English rock band from Oxford formed in 1980 by Rob Hickson, Pete Waddleton, Mark \"Wiff\" Smith and Re-Vox.",
-    "wiki": "https://en.wikipedia.org/wiki/Play_Dead_(band)"
+    "wiki": "https://en.wikipedia.org/wiki/Play_Dead_(band)",
+    "photoSmall": "https://i.scdn.co/image/ab67616d00004851e4b8299157cc98a65f1bd315",
+    "spotifyId": "1eNErxU1Dh5YPvxjgMuiSA",
+    "spotifyUrl": "https://open.spotify.com/artist/1eNErxU1Dh5YPvxjgMuiSA"
   },
   "Ploho": {
     "name": "Ploho",
@@ -3019,22 +3408,23 @@
     "name": "Pom",
     "genres": [],
     "source": "mb-only",
-    "mbid": "c173f406-f7f0-44a3-becc-555a24db83d2",
-    "type": "Group"
+    "mbid": "c173f406-f7f0-44a3-becc-555a24db83d2"
   },
   "Pop Vulture": {
     "name": "Pop Vulture",
     "genres": [],
     "source": "mb-only",
-    "mbid": "abd3a8d3-97d8-4d95-994a-9b834aef7d82",
-    "type": "Group"
+    "mbid": "abd3a8d3-97d8-4d95-994a-9b834aef7d82"
   },
   "Porchlight": {
     "name": "Porchlight",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "7c391da8-31b2-4acc-a2a3-805994f2c0eb",
-    "type": "Person"
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebbcf802fbc5295a890476f4b0",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178bcf802fbc5295a890476f4b0",
+    "spotifyId": "2JOTv1ppSGx9GAHZtkc8gi",
+    "spotifyUrl": "https://open.spotify.com/artist/2JOTv1ppSGx9GAHZtkc8gi"
   },
   "Porridge Radio": {
     "name": "Porridge Radio",
@@ -3073,9 +3463,13 @@
   "Projector": {
     "name": "Projector",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "566a6880-c750-4c30-860f-cffc8741f543",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb0dad5265eaa4b6eeb9ad3131",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1780dad5265eaa4b6eeb9ad3131",
+    "spotifyId": "25loVbwSp0xXNu4Ds1lTa9",
+    "spotifyUrl": "https://open.spotify.com/artist/25loVbwSp0xXNu4Ds1lTa9"
   },
   "Protomartyr": {
     "name": "Protomartyr",
@@ -3099,16 +3493,24 @@
       "indie pop",
       "indie rock"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "bc08d9c6-e5f3-4e58-a09a-d97edbf149f2",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebfa65e2a9cf4e7b2898fb078b",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178fa65e2a9cf4e7b2898fb078b",
+    "spotifyId": "4cIkY1R6unpsnIdkLfOTFf",
+    "spotifyUrl": "https://open.spotify.com/artist/4cIkY1R6unpsnIdkLfOTFf"
   },
   "Punchlove": {
     "name": "Punchlove",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "4098f6aa-ae26-43b8-902c-d4bed99720c0",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb3fa594a8cbf1fea23b2ec7cb",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1783fa594a8cbf1fea23b2ec7cb",
+    "spotifyId": "5Tbdx7OG835TPTxnEgfNiW",
+    "spotifyUrl": "https://open.spotify.com/artist/5Tbdx7OG835TPTxnEgfNiW"
   },
   "Pynch": {
     "name": "Pynch",
@@ -3117,38 +3519,54 @@
       "new wave",
       "post-punk revival"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "7584c7e5-a89c-4096-b36e-5abdaa189ef4",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebfe9345f6f588248c8621f3bd",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178fe9345f6f588248c8621f3bd",
+    "spotifyId": "6R1b13BgmP15f21dQZpFz9",
+    "spotifyUrl": "https://open.spotify.com/artist/6R1b13BgmP15f21dQZpFz9"
   },
   "Pyncher": {
     "name": "Pyncher",
     "genres": [],
-    "source": "mb-wiki-en",
+    "source": "mb-wiki-en+spotify",
     "mbid": "bdd0974f-4dab-4c92-8505-8d2fcf31cf83",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb9ea53937aab68d824d19814b",
     "summary": "pyncher are an English alternative rock band, formed in Manchester in 2020. The band is composed of vocalist and guitarist Sam Blakeley, lead guitarist Harvey O'Toole, bassist Britt Dewhurst, and drummer Jack Rainbow. The band has a reputation for their high-energy live shows, called \"electrifying\" and \"one of the city's most talked‑about new acts\" by BBC Music Introducing.",
-    "wiki": "https://en.wikipedia.org/wiki/Pyncher"
+    "wiki": "https://en.wikipedia.org/wiki/Pyncher",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1789ea53937aab68d824d19814b",
+    "spotifyId": "66NBYDmR4OTIL8AuMvKTK7",
+    "spotifyUrl": "https://open.spotify.com/artist/66NBYDmR4OTIL8AuMvKTK7"
   },
   "Quade": {
     "name": "Quade",
     "genres": [],
-    "source": "wiki-direct-en",
+    "source": "wiki-direct-en+spotify",
     "mbid": "643d54df-5355-4e8d-9ed3-820a88ed1101",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebad822fb2a573186ef6c99770",
     "summary": "Satanicide are an American, New York City-based mock metal/glam metal band formed in 1999 that styles themselves and their music to represent, tongue-in-cheek, the heavy metal music scene of the 1980s in New Jersey. Self-described as portraying a lifestyle \"where the mullet and kick-ass rock 'n' roll still live\", the members sport big hair and spandex and leather stagewear. As part of their presentation, Santanicide plays party anthems and power ballads with a mixture of satire and affection. In 2003, the group were described in The Drama Review as an \"irreverent, demonic death-metal turned glam turned cock-rock band\". The original four member band consists of frontman Dale \"Devlin Mayhem\" May, guitarist Phil \"Aleister Cradley\" Costello, drummer Andrew \"Sloth Vader\" Griffiths, and bassist Pemberton \"The Baron Klaus Von Goaten\" Roach. Pemberton was replaced by bassist Jake \"Vargas Von Goaten\" Garcia in 2003, who was subsequently replaced by Drew Thurlow, followed by Patrick Quade.",
-    "wiki": "https://en.wikipedia.org/wiki/Satanicide"
+    "wiki": "https://en.wikipedia.org/wiki/Satanicide",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178ad822fb2a573186ef6c99770",
+    "spotifyId": "3jRUNsEZI2Zb06hF326tBX",
+    "spotifyUrl": "https://open.spotify.com/artist/3jRUNsEZI2Zb06hF326tBX"
   },
   "RIP Magic": {
     "name": "RIP Magic",
     "genres": [
       "electronic"
     ],
-    "source": "wiki-direct-en",
+    "source": "wiki-direct-en+spotify",
     "mbid": "9109582c-cc24-49ae-bc03-ccb9c7c30966",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb046ad8db20d837dee33e8beb",
     "summary": "RIP Magic are a dance punk band from London, United Kingdom.",
-    "wiki": "https://en.wikipedia.org/wiki/RIP_Magic"
+    "wiki": "https://en.wikipedia.org/wiki/RIP_Magic",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178046ad8db20d837dee33e8beb",
+    "spotifyId": "34VnmMzwkbqk09L8Gk1LyM",
+    "spotifyUrl": "https://open.spotify.com/artist/34VnmMzwkbqk09L8Gk1LyM"
   },
   "Rabbitfoot": {
     "name": "Rabbitfoot",
@@ -3160,37 +3578,57 @@
   "Radio Free Alice": {
     "name": "Radio Free Alice",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "8af999e2-b2f7-4095-af72-ba91b2683a16",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb3c962edcee32ef23ddbb83fc",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1783c962edcee32ef23ddbb83fc",
+    "spotifyId": "4cCA6V2DRIDqeYDyGIcEoj",
+    "spotifyUrl": "https://open.spotify.com/artist/4cCA6V2DRIDqeYDyGIcEoj"
   },
   "Real Farmer": {
     "name": "Real Farmer",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "86d37606-192d-4704-a171-49cec07ff800",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb2e4cc85318eac90d2d3d9db2",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1782e4cc85318eac90d2d3d9db2",
+    "spotifyId": "19lSZSwxm5y6ihi5mODLaK",
+    "spotifyUrl": "https://open.spotify.com/artist/19lSZSwxm5y6ihi5mODLaK"
   },
   "Rallye": {
     "name": "Rallye",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "d09bd091-14db-442c-9139-a118d5315729",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb70bfefb3656e8e3efe492afa",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17870bfefb3656e8e3efe492afa",
+    "spotifyId": "36buOdDVz6p3QbVatFi4iX",
+    "spotifyUrl": "https://open.spotify.com/artist/36buOdDVz6p3QbVatFi4iX"
   },
   "Really Good Time": {
     "name": "Really Good Time",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "1aa193f3-6586-45ae-88c7-7c3eed569e84",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebee3f36c9fbffb93fdd8f6a77",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178ee3f36c9fbffb93fdd8f6a77",
+    "spotifyId": "69sUrcdEMJrukvF581bshp",
+    "spotifyUrl": "https://open.spotify.com/artist/69sUrcdEMJrukvF581bshp"
   },
   "Red Ivory": {
     "name": "Red Ivory",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "90698795-a5d1-4b16-9c1a-d173e9538e27",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebfb4a7219d89193a409d0d755",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178fb4a7219d89193a409d0d755",
+    "spotifyId": "70km633pkxmkbckdRM6SAb",
+    "spotifyUrl": "https://open.spotify.com/artist/70km633pkxmkbckdRM6SAb"
   },
   "Rimon": {
     "name": "Rimon",
@@ -3210,9 +3648,13 @@
   "Robbie & Mona": {
     "name": "Robbie & Mona",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "57e70ca8-fa95-4d96-9970-700dfa74eb66",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebd0815ca68a8ffbef8fac1442",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178d0815ca68a8ffbef8fac1442",
+    "spotifyId": "4fnfpNwSpKOQoclvocBa0b",
+    "spotifyUrl": "https://open.spotify.com/artist/4fnfpNwSpKOQoclvocBa0b"
   },
   "Robocobra Quartet": {
     "name": "Robocobra Quartet",
@@ -3221,9 +3663,13 @@
       "jazz punk",
       "spoken word"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "6cd83f02-ced2-4828-a0eb-98d97bd70ea1",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb28d149766d0aa8affc2d1df2",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17828d149766d0aa8affc2d1df2",
+    "spotifyId": "1TWFJFIiQbaPOLDqp3he4s",
+    "spotifyUrl": "https://open.spotify.com/artist/1TWFJFIiQbaPOLDqp3he4s"
   },
   "Royel Otis": {
     "name": "Royel Otis",
@@ -3235,20 +3681,28 @@
       "new wave/post-punk revival",
       "pop"
     ],
-    "source": "mb-wikidata-en",
+    "source": "mb-wikidata-en+spotify",
     "mbid": "2244c1f9-773f-4541-a4fe-ee6dc4f2ce60",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebf9611f076ce2c0d5fbda708d",
     "summary": "Royel Otis is an Australian indie pop duo from Sydney, formed in 2019 by Royel Maddell and Otis Pavlovic. Their music encompasses the styles of indie rock, new wave, pop rock, post-punk and psychedelic rock. Royel Otis released three EPs, including Sofa Kings, before their debut studio album, Pratts & Pain, was released in February 2024. The duo won four awards at the 2024 ARIA Music Awards. Their sophomore studio album, Hickey, was released on 22 August 2025.",
-    "wiki": "https://en.wikipedia.org/wiki/Royel_Otis"
+    "wiki": "https://en.wikipedia.org/wiki/Royel_Otis",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178f9611f076ce2c0d5fbda708d",
+    "spotifyId": "5b5bt4mZQpJMoCRbiQ7diH",
+    "spotifyUrl": "https://open.spotify.com/artist/5b5bt4mZQpJMoCRbiQ7diH"
   },
   "SHOLTO": {
     "name": "SHOLTO",
     "genres": [
       "jazz"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "e208a1e0-a1c1-4f57-9e04-4b6f1d19bdbd",
-    "type": "Person"
+    "type": "Person",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb7de82b180e30e588944c0167",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1787de82b180e30e588944c0167",
+    "spotifyId": "7ExeVJhe1xFgmfbrag2v0u",
+    "spotifyUrl": "https://open.spotify.com/artist/7ExeVJhe1xFgmfbrag2v0u"
   },
   "SLAG": {
     "name": "SLAG",
@@ -3256,9 +3710,13 @@
       "brazil",
       "hardcore punk"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "8d86fe56-9ae8-4ed3-9205-1e8e4945e361",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb663275611bdac84a8aca40e0",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178663275611bdac84a8aca40e0",
+    "spotifyId": "5eGQYBSvZQ7242siSaU8v1",
+    "spotifyUrl": "https://open.spotify.com/artist/5eGQYBSvZQ7242siSaU8v1"
   },
   "SOFTCULT": {
     "name": "SOFTCULT",
@@ -3277,9 +3735,13 @@
   "SPILL GOLD": {
     "name": "SPILL GOLD",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "81c464bd-965c-420f-8d3b-f091e69278c3",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebf2ad6895efcb87bd530c791b",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178f2ad6895efcb87bd530c791b",
+    "spotifyId": "1FeDxis657DtUiTExInBZa",
+    "spotifyUrl": "https://open.spotify.com/artist/1FeDxis657DtUiTExInBZa"
   },
   "Saint Vincent": {
     "name": "Saint Vincent",
@@ -3294,23 +3756,35 @@
   "Salomé Wu": {
     "name": "Salomé Wu",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "4f6bbef5-9a41-4381-80a5-c76ae8b130f6",
-    "type": null
+    "type": null,
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebe41da8a68c79a9ccbb4a7a1f",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178e41da8a68c79a9ccbb4a7a1f",
+    "spotifyId": "4DzW5sG9CpahHt7NlHv4kQ",
+    "spotifyUrl": "https://open.spotify.com/artist/4DzW5sG9CpahHt7NlHv4kQ"
   },
   "Saloon Dion": {
     "name": "Saloon Dion",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "2e5acdff-d77d-4858-9b6f-e1a5e2b12b15",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb311d417704e2449658e880d2",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178311d417704e2449658e880d2",
+    "spotifyId": "5jyDRjrVTg2M6uHOQF5MhU",
+    "spotifyUrl": "https://open.spotify.com/artist/5jyDRjrVTg2M6uHOQF5MhU"
   },
   "Sam Akpro": {
     "name": "Sam Akpro",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "44bc4b22-c06a-42ac-9493-c48079831572",
-    "type": "Person"
+    "type": "Person",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb8d6977a4f0dea8ffb886b55a",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1788d6977a4f0dea8ffb886b55a",
+    "spotifyId": "0gs6n0OYGwA7j4L4HHqKV2",
+    "spotifyUrl": "https://open.spotify.com/artist/0gs6n0OYGwA7j4L4HHqKV2"
   },
   "Saul DJ": {
     "name": "Saul DJ",
@@ -3349,9 +3823,13 @@
   "Shanghai Qiutian": {
     "name": "Shanghai Qiutian",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "153252bd-53a3-4db3-a3a8-b0e5feb24372",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebd67907381712c3b1a4121db9",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178d67907381712c3b1a4121db9",
+    "spotifyId": "6jPesaFAUoRzmHf1i8VgSg",
+    "spotifyUrl": "https://open.spotify.com/artist/6jPesaFAUoRzmHf1i8VgSg"
   },
   "She's in Parties": {
     "name": "She's in Parties",
@@ -3366,18 +3844,26 @@
   "Sheep": {
     "name": "Sheep",
     "genres": [],
-    "source": "wiki-direct-en",
+    "source": "wiki-direct-en+spotify",
     "mbid": "f1fdcaab-d975-48ef-bd0d-ee65f2d238bd",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb2ede878136398159c410d944",
     "summary": "Bruce Turgon is an American bass guitarist, guitarist, vocalist, songwriter and producer. Bruce has played in several bands throughout his career including: Foreigner, The Lou Gramm Band, Shadow King, Steve Stevens, Warrior, Black Sheep and Showcase.",
-    "wiki": "https://en.wikipedia.org/wiki/Bruce_Turgon"
+    "wiki": "https://en.wikipedia.org/wiki/Bruce_Turgon",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1782ede878136398159c410d944",
+    "spotifyId": "1y8zVPVwBdLUb6XaMeOwsj",
+    "spotifyUrl": "https://open.spotify.com/artist/1y8zVPVwBdLUb6XaMeOwsj"
   },
   "Silver Gore": {
     "name": "Silver Gore",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "79d11a90-889d-4300-98c7-ad005fd5fa04",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb0a3b6ce3165cea6db37b5b0e",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1780a3b6ce3165cea6db37b5b0e",
+    "spotifyId": "5VrSyJDlKqvbpRaRBaA4o2",
+    "spotifyUrl": "https://open.spotify.com/artist/5VrSyJDlKqvbpRaRBaA4o2"
   },
   "Silverbacks": {
     "name": "Silverbacks",
@@ -3385,18 +3871,26 @@
       "indie rock",
       "post-punk"
     ],
-    "source": "wiki-direct-en",
+    "source": "wiki-direct-en+spotify",
     "mbid": "85e28ce6-1fa6-4c6e-86fb-b27a81a59b96",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb06d436a1637f8d3d475fc0d8",
     "summary": "Silverbacks are an Irish post-punk band, with members based in County Kildare, Drogheda and Paris.",
-    "wiki": "https://en.wikipedia.org/wiki/Silverbacks_(band)"
+    "wiki": "https://en.wikipedia.org/wiki/Silverbacks_(band)",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17806d436a1637f8d3d475fc0d8",
+    "spotifyId": "3dAQygOelOwG3LTU9efbc9",
+    "spotifyUrl": "https://open.spotify.com/artist/3dAQygOelOwG3LTU9efbc9"
   },
   "Silverwingkiller": {
     "name": "Silverwingkiller",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "83c235a2-d929-4822-89e2-944b0a22ba0f",
-    "type": null
+    "type": null,
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebc30cf7945199c84ff4087efa",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178c30cf7945199c84ff4087efa",
+    "spotifyId": "01fAmVDgOqwXenvB9TWVCu",
+    "spotifyUrl": "https://open.spotify.com/artist/01fAmVDgOqwXenvB9TWVCu"
   },
   "Slowdive": {
     "name": "Slowdive",
@@ -3470,25 +3964,37 @@
   "Soft Loft": {
     "name": "Soft Loft",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "499dabc1-47b9-4078-b53f-11ea2cf41a80",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb95e1ffbada56acd6edc8eb87",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17895e1ffbada56acd6edc8eb87",
+    "spotifyId": "2AeL43nXvfqW3WrV9sDh5t",
+    "spotifyUrl": "https://open.spotify.com/artist/2AeL43nXvfqW3WrV9sDh5t"
   },
   "Spanish Horses": {
     "name": "Spanish Horses",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "2fa19c62-2533-4d75-b3f2-89dcffc2b4c5",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb94714e92cf4a398e4bf67b56",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17894714e92cf4a398e4bf67b56",
+    "spotifyId": "3YrLAGmnU9JltcICs5wBy1",
+    "spotifyUrl": "https://open.spotify.com/artist/3YrLAGmnU9JltcICs5wBy1"
   },
   "Sparkling": {
     "name": "Sparkling",
     "genres": [],
-    "source": "mb-wikidata-de",
+    "source": "mb-wikidata-de+spotify",
     "mbid": "b7e852af-f08b-4378-b469-a06c0d259358",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab67616d0000b2730d90b185a615eff4cb1d049f",
     "summary": "Sparkling ist eine deutsche Musikgruppe aus Köln. Der Musikexpress bezeichnete den Musikstil der Band als „Elektro-Post-Punk-Pop“, als einen Hybrid aus Rock und Dance. Die Einflüsse kommen aus dem französischen Elektro, englischem Post-Punk und dem deutschen Krautrock. Die Band singt multilinguale Texte aus Deutsch, Englisch und Französisch.",
-    "wiki": "https://de.wikipedia.org/wiki/Sparkling"
+    "wiki": "https://de.wikipedia.org/wiki/Sparkling",
+    "photoSmall": "https://i.scdn.co/image/ab67616d000048510d90b185a615eff4cb1d049f",
+    "spotifyId": "2K2Xw8qBP9WAFM6ts4OGus",
+    "spotifyUrl": "https://open.spotify.com/artist/2K2Xw8qBP9WAFM6ts4OGus"
   },
   "Special Interest": {
     "name": "Special Interest",
@@ -3503,7 +4009,11 @@
   "Spinabifida": {
     "name": "Spinabifida",
     "genres": [],
-    "source": "none"
+    "source": "spotify",
+    "photo": "https://i.scdn.co/image/ab67616d0000b2730c357aa2f2dcfa3b93e07b2e",
+    "photoSmall": "https://i.scdn.co/image/ab67616d000048510c357aa2f2dcfa3b93e07b2e",
+    "spotifyId": "1IkrCXWXk7KssXK3Z6lrN7",
+    "spotifyUrl": "https://open.spotify.com/artist/1IkrCXWXk7KssXK3Z6lrN7"
   },
   "Speedial": {
     "name": "Speedial",
@@ -3511,9 +4021,13 @@
       "post-rock",
       "art rock"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "59957ab4-0358-49fb-8839-60cba21fd988",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb7b999c4266158aca9e3f1acc",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1787b999c4266158aca9e3f1acc",
+    "spotifyId": "6mPywLRzgpD0KGRe89WECW",
+    "spotifyUrl": "https://open.spotify.com/artist/6mPywLRzgpD0KGRe89WECW"
   },
   "Spiritualized": {
     "name": "Spiritualized",
@@ -3592,9 +4106,13 @@
   "Stay Lunar": {
     "name": "Stay Lunar",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "abefc56e-04f1-4fb1-9902-2b06a9c515c8",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb50e749987d195819d6224c2c",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17850e749987d195819d6224c2c",
+    "spotifyId": "6kqPs71d5mSIQ5XYc4VRpK",
+    "spotifyUrl": "https://open.spotify.com/artist/6kqPs71d5mSIQ5XYc4VRpK"
   },
   "Star City": {
     "name": "Star City",
@@ -3615,11 +4133,15 @@
       "progressive metal",
       "progressive metalcore"
     ],
-    "source": "mb-wikidata-en",
+    "source": "mb-wikidata-en+spotify",
     "mbid": "2d011f96-395d-47f4-82d0-590c43825ea6",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb21e88dea9f7815f0d68ab9cf",
     "summary": "Structures is a Canadian metalcore band from Toronto, formed in 2009. Their current line-up consists of guitarists Spyros Georgiou and Brendon Padjasek, who also performs vocals, and drummer Andrew McEnaney. They have released two studio albums: Divided By (2011) and Life Through a Window (2014). After reforming in 2021, they released an EP titled None of the Above.",
-    "wiki": "https://en.wikipedia.org/wiki/Structures_(band)"
+    "wiki": "https://en.wikipedia.org/wiki/Structures_(band)",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17821e88dea9f7815f0d68ab9cf",
+    "spotifyId": "4uAJ9vbmemltkuu0D3gBHQ",
+    "spotifyUrl": "https://open.spotify.com/artist/4uAJ9vbmemltkuu0D3gBHQ"
   },
   "Stuck": {
     "name": "Stuck",
@@ -3634,16 +4156,24 @@
   "Sunbrella": {
     "name": "Sunbrella",
     "genres": [],
-    "source": "none"
+    "source": "spotify",
+    "photo": "https://i.scdn.co/image/ab67616d0000b27334164a1b1812f8d94e25540a",
+    "photoSmall": "https://i.scdn.co/image/ab67616d0000485134164a1b1812f8d94e25540a",
+    "spotifyId": "64uDYI3mvZ926PEzj6UC5q",
+    "spotifyUrl": "https://open.spotify.com/artist/64uDYI3mvZ926PEzj6UC5q"
   },
   "Suck": {
     "name": "Suck",
     "genres": [],
-    "source": "mb-wikidata-en",
+    "source": "mb-wikidata-en+spotify",
     "mbid": "13704380-7be6-43d9-9fe1-dbe5dc2e0393",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb226c5829bd7195331b9bae88",
     "summary": "Suck were a rock band who were part of South Africa's first wave of hard rock titled \"The Big Heavies\". The group lasted eight months between 1970 and 1971, during which they recorded their only LP, Time to Suck. It was later released in America in 2009. Suck were also among the earliest groups to cover Black Sabbath. In March 2007, they were featured in an article in Classic Rock magazine titled \"The Lost Pioneers of Heavy Metal\", where they were referred to as \"acidpunk metal\".",
-    "wiki": "https://en.wikipedia.org/wiki/Suck_(band)"
+    "wiki": "https://en.wikipedia.org/wiki/Suck_(band)",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178226c5829bd7195331b9bae88",
+    "spotifyId": "7MxmGisbEwkQfFGkTfpkWA",
+    "spotifyUrl": "https://open.spotify.com/artist/7MxmGisbEwkQfFGkTfpkWA"
   },
   "Sunfruits": {
     "name": "Sunfruits",
@@ -3655,11 +4185,15 @@
       "indie rock",
       "krautrock"
     ],
-    "source": "wiki-direct-en",
+    "source": "wiki-direct-en+spotify",
     "mbid": "c21a3572-0080-4ef6-8734-b8868c1bad76",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb842ef87ee60bce32d268da86",
     "summary": "Sunfruits is an Australian psychedelic pop band formed by Winter McQuinn. They released their debut album One Degree in April 2023.",
-    "wiki": "https://en.wikipedia.org/wiki/Sunfruits"
+    "wiki": "https://en.wikipedia.org/wiki/Sunfruits",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178842ef87ee60bce32d268da86",
+    "spotifyId": "0ihk9wQDn5mHeCYTkgj6gy",
+    "spotifyUrl": "https://open.spotify.com/artist/0ihk9wQDn5mHeCYTkgj6gy"
   },
   "Sunken": {
     "name": "Sunken",
@@ -3667,9 +4201,13 @@
       "atmospheric black metal",
       "black metal"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "e8c079c6-6bc2-44b8-97e0-2c28c36c4f9d",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eba3c6f114ca9930d8845c22be",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178a3c6f114ca9930d8845c22be",
+    "spotifyId": "3HfXtfhLJqJALdgoWAnjKt",
+    "spotifyUrl": "https://open.spotify.com/artist/3HfXtfhLJqJALdgoWAnjKt"
   },
   "Swirls": {
     "name": "Swirls",
@@ -3681,16 +4219,24 @@
   "TV Cult": {
     "name": "TV Cult",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "65705850-ceea-48f6-90ad-9d881aa0e8d6",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb334363b70a75c6a13a8df4ad",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178334363b70a75c6a13a8df4ad",
+    "spotifyId": "4HFnD2505aJd9mBkw9zgC8",
+    "spotifyUrl": "https://open.spotify.com/artist/4HFnD2505aJd9mBkw9zgC8"
   },
   "TVOD": {
     "name": "TVOD",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "b3547cd7-1258-4f24-af48-1b76cb4e1e29",
-    "type": null
+    "type": null,
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebfbc8520424300b33829dae07",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178fbc8520424300b33829dae07",
+    "spotifyId": "7p1Yt9qJ5pSSmyCEnVdQxh",
+    "spotifyUrl": "https://open.spotify.com/artist/7p1Yt9qJ5pSSmyCEnVdQxh"
   },
   "Tapir!": {
     "name": "Tapir!",
@@ -3725,23 +4271,35 @@
   "Terra Twin": {
     "name": "Terra Twin",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "d8a6cf5e-bbfc-46ae-8e37-bb31db0830a7",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebfab1053438721d6054f29746",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178fab1053438721d6054f29746",
+    "spotifyId": "1APkoiZBXf5B3YqPruHouT",
+    "spotifyUrl": "https://open.spotify.com/artist/1APkoiZBXf5B3YqPruHouT"
   },
   "Test Plan": {
     "name": "Test Plan",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "c13fbd53-3b55-4df0-98e5-115255f6b51c",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebb46736eacfa1cf6411e64ec6",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178b46736eacfa1cf6411e64ec6",
+    "spotifyId": "51hfP8BcSbQoL3DFrwNNCA",
+    "spotifyUrl": "https://open.spotify.com/artist/51hfP8BcSbQoL3DFrwNNCA"
   },
   "Texoprint": {
     "name": "Texoprint",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "2d8c1317-ff7a-4b44-8781-03b260881b72",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb831e2b7b5b294a3b954a95d3",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178831e2b7b5b294a3b954a95d3",
+    "spotifyId": "3Crxw3x5GQwDrhY51BNcMi",
+    "spotifyUrl": "https://open.spotify.com/artist/3Crxw3x5GQwDrhY51BNcMi"
   },
   "The Bug Club": {
     "name": "The Bug Club",
@@ -3775,16 +4333,24 @@
   "The 113": {
     "name": "The 113",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "4c553b8c-884c-4ca6-8eb4-d9a328b2c0c7",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb76d4d9e4ed75f90e650fe4a2",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17876d4d9e4ed75f90e650fe4a2",
+    "spotifyId": "46vIwkB5m3AyV3CmxYCbUe",
+    "spotifyUrl": "https://open.spotify.com/artist/46vIwkB5m3AyV3CmxYCbUe"
   },
   "The Clockworks": {
     "name": "The Clockworks",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "51616baa-51db-41a0-8a2f-26a00d02ac0a",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb912d504aeb9f41ce29b9491b",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178912d504aeb9f41ce29b9491b",
+    "spotifyId": "6Jg3DFzPWX2VIy01oqLGkz",
+    "spotifyUrl": "https://open.spotify.com/artist/6Jg3DFzPWX2VIy01oqLGkz"
   },
   "The Cure": {
     "name": "The Cure",
@@ -3822,32 +4388,48 @@
     "genres": [
       "post-punk"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "452947b1-01b2-4be6-9420-b45d2d6ad4d5",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab67616d0000b273beed53111257eacd8dc9bfcf",
+    "photoSmall": "https://i.scdn.co/image/ab67616d00004851beed53111257eacd8dc9bfcf",
+    "spotifyId": "4cGPrUtNiRS7pdfiKZ1EGw",
+    "spotifyUrl": "https://open.spotify.com/artist/4cGPrUtNiRS7pdfiKZ1EGw"
   },
   "The Family Battenberg": {
     "name": "The Family Battenberg",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "39497feb-5dac-46eb-8400-5e7307d4e839",
-    "type": null
+    "type": null,
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebe5ee4964ae07f47abfcec166",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178e5ee4964ae07f47abfcec166",
+    "spotifyId": "769i8WlIx04arCTdFaIvbd",
+    "spotifyUrl": "https://open.spotify.com/artist/769i8WlIx04arCTdFaIvbd"
   },
   "The Grogans": {
     "name": "The Grogans",
     "genres": [],
-    "source": "wiki-direct-en",
+    "source": "wiki-direct-en+spotify",
     "mbid": "07c7e786-9ab7-4371-bd11-78a129f379f0",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebc13b78e7db03daf1c0dcb5cb",
     "summary": "The Grogans are an Australian garage rock band from Melbourne. The trio consists of lead vocalist and guitarist Quin Grunden, guitarist Angus Vasic, and drummer Jordan Lewis. Since forming in 2016, they have released three extended plays and four studio albums, most recently, Stagger in 2025. Their sound is inspired by surf rock from the 1960s.",
-    "wiki": "https://en.wikipedia.org/wiki/The_Grogans"
+    "wiki": "https://en.wikipedia.org/wiki/The_Grogans",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178c13b78e7db03daf1c0dcb5cb",
+    "spotifyId": "3LiQA7CeDBEpoWI0TNBJgv",
+    "spotifyUrl": "https://open.spotify.com/artist/3LiQA7CeDBEpoWI0TNBJgv"
   },
   "The Guilteens": {
     "name": "The Guilteens",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "5c603e7b-998a-496e-863d-995948113c29",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab67616d0000b273eb51b66298d4ee74309da71e",
+    "photoSmall": "https://i.scdn.co/image/ab67616d00004851eb51b66298d4ee74309da71e",
+    "spotifyId": "7v2vsx6K1oNGKShiG8WcXT",
+    "spotifyUrl": "https://open.spotify.com/artist/7v2vsx6K1oNGKShiG8WcXT"
   },
   "The Ib": {
     "name": "The Ib",
@@ -3861,9 +4443,13 @@
   "The Itch": {
     "name": "The Itch",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "ffd9b907-89a6-4087-9790-ebb270c4a898",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb89f629926408468fc61feb15",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17889f629926408468fc61feb15",
+    "spotifyId": "64Db5ZXKSHKOKC7h1brQck",
+    "spotifyUrl": "https://open.spotify.com/artist/64Db5ZXKSHKOKC7h1brQck"
   },
   "The Leather Gallary": {
     "name": "The Leather Gallary",
@@ -3917,11 +4503,15 @@
       "post-punk",
       "windmill scene"
     ],
-    "source": "wiki-direct-en",
+    "source": "wiki-direct-en+spotify",
     "mbid": "2dedfbcd-3ad5-4f23-988a-b4454730a969",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eba21a65e76243a06e12745e7d",
     "summary": "The Lounge Society are an English rock band from Yorkshire. After their 2021 EP Silk for the Starving, they released their debut album Tired of Liberty in 2022 on Speedy Wunderground. Speedy Wunderground is the label of Daniel De Mussenden Carey, who produced albums and songs for musical artists such as Geese, Foals, Wet Leg, Fontaines D.C., Slowthai, Squid, PVA, Chubby and the Gang, Caroline Polachek, Black Midi, Pumarosa, Grimes, and Sophie Hunger. The album Tired of Liberty was produced by Carey.",
-    "wiki": "https://en.wikipedia.org/wiki/The_Lounge_Society"
+    "wiki": "https://en.wikipedia.org/wiki/The_Lounge_Society",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178a21a65e76243a06e12745e7d",
+    "spotifyId": "5OfZVpXzGottp1rYD73ufE",
+    "spotifyUrl": "https://open.spotify.com/artist/5OfZVpXzGottp1rYD73ufE"
   },
   "The Love Buzz": {
     "name": "The Love Buzz",
@@ -3933,9 +4523,13 @@
       "indie pop",
       "psych"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "8f1ff72b-9ec3-419c-8334-f6cf6dece5ae",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb02beb98545d1fa28e08c5fbf",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17802beb98545d1fa28e08c5fbf",
+    "spotifyId": "103TWTu6vxVZ9g6eqA1ntP",
+    "spotifyUrl": "https://open.spotify.com/artist/103TWTu6vxVZ9g6eqA1ntP"
   },
   "The Midnight Itch": {
     "name": "The Midnight Itch",
@@ -4021,9 +4615,13 @@
       "garage rock",
       "post-punk"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "649cc6ea-8edc-4632-8e18-336af9581be6",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb87f6eea957150bfa09cb6060",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17887f6eea957150bfa09cb6060",
+    "spotifyId": "34ji1NPhqjImjXwOb2kwg4",
+    "spotifyUrl": "https://open.spotify.com/artist/34ji1NPhqjImjXwOb2kwg4"
   },
   "The Psychotic Monks": {
     "name": "The Psychotic Monks",
@@ -4031,9 +4629,13 @@
       "psychedelic rock",
       "rock"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "c9faf802-45b0-44fc-ba9e-6bb17a9f9335",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebf7e15e5e0398bb240cc5ff68",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178f7e15e5e0398bb240cc5ff68",
+    "spotifyId": "7GB1a2GjXTCbTtdSv3NTPy",
+    "spotifyUrl": "https://open.spotify.com/artist/7GB1a2GjXTCbTtdSv3NTPy"
   },
   "The Ringards": {
     "name": "The Ringards",
@@ -4078,18 +4680,26 @@
   "The Wheel": {
     "name": "The Wheel",
     "genres": [],
-    "source": "wiki-direct-en",
+    "source": "wiki-direct-en+spotify",
     "mbid": "84e4841e-9cd0-478b-a986-5949e97928ca",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb21521c955bcc445a89712e38",
     "summary": "The Wheel is an Australian country music band. Their albums The Wheel and Good Noise were nominated for the 1996 and 1998 ARIA Awards for Best Country Album.",
-    "wiki": "https://en.wikipedia.org/wiki/The_Wheel_(band)"
+    "wiki": "https://en.wikipedia.org/wiki/The_Wheel_(band)",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17821521c955bcc445a89712e38",
+    "spotifyId": "2YHiZJIrkZbiR02Yo09wRy",
+    "spotifyUrl": "https://open.spotify.com/artist/2YHiZJIrkZbiR02Yo09wRy"
   },
   "The Youth Play": {
     "name": "The Youth Play",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "08c4ce07-63b6-4dc7-88cf-3e5b947cf8ec",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb84558a65ee56ff311d1a4b92",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17884558a65ee56ff311d1a4b92",
+    "spotifyId": "66HAxyy84qo8z9CNDDUpwo",
+    "spotifyUrl": "https://open.spotify.com/artist/66HAxyy84qo8z9CNDDUpwo"
   },
   "Tirage": {
     "name": "Tirage",
@@ -4122,11 +4732,15 @@
   "They Hate Change": {
     "name": "They Hate Change",
     "genres": [],
-    "source": "mb-wikidata-en",
+    "source": "mb-wikidata-en+spotify",
     "mbid": "655e9772-27c1-4aba-843d-acabfd29f8a8",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb7bc61a0c6686530a4207dd5f",
     "summary": "They Hate Change is an American hip hop and electronic music duo from Tampa, Florida, consisting of members Vonne Parks and Andre \"Dre\" Gainey. The duo is known for its diverse array of influences, including hip hop, drum 'n' bass, Chicago footwork, post-punk, prog, grime, krautrock and emo. The Tampa Bay Times has described They Hate Change as \"musical ambassadors for the Gulf Coast\".",
-    "wiki": "https://en.wikipedia.org/wiki/They_Hate_Change"
+    "wiki": "https://en.wikipedia.org/wiki/They_Hate_Change",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1787bc61a0c6686530a4207dd5f",
+    "spotifyId": "6ht9VksrtRJDQXKzC2BZ3d",
+    "spotifyUrl": "https://open.spotify.com/artist/6ht9VksrtRJDQXKzC2BZ3d"
   },
   "Treeboy&Arc": {
     "name": "Treeboy&Arc",
@@ -4146,9 +4760,13 @@
   "Tramhaus": {
     "name": "Tramhaus",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "dace0d40-f90f-4b3b-99da-aa99be756920",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebf61bed49e767f7e94e05aa4c",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178f61bed49e767f7e94e05aa4c",
+    "spotifyId": "5HXrUfoDwofY8lehLNIykB",
+    "spotifyUrl": "https://open.spotify.com/artist/5HXrUfoDwofY8lehLNIykB"
   },
   "Tribute - Queen": {
     "name": "Tribute - Queen",
@@ -4195,9 +4813,13 @@
   "Truthpaste": {
     "name": "Truthpaste",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "e6c87347-046b-46eb-a190-4d35c8352671",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebe5c5a9eef3e0c46634bf1563",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178e5c5a9eef3e0c46634bf1563",
+    "spotifyId": "1jX7jSANud3GSSMfs41KPs",
+    "spotifyUrl": "https://open.spotify.com/artist/1jX7jSANud3GSSMfs41KPs"
   },
   "Tummy Ache": {
     "name": "Tummy Ache",
@@ -4212,9 +4834,13 @@
       "alternative rock",
       "singer-songwriter"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "e97ac907-678b-41ad-9ea8-b7d243c0c417",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb5730bce635c11d0288ad0b37",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1785730bce635c11d0288ad0b37",
+    "spotifyId": "2iGQR8gH9aKFtCxOsPGFYx",
+    "spotifyUrl": "https://open.spotify.com/artist/2iGQR8gH9aKFtCxOsPGFYx"
   },
   "UGLY": {
     "name": "UGLY",
@@ -4229,9 +4855,13 @@
   "Unschooling": {
     "name": "Unschooling",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "f659488d-9fab-4851-aec8-6ebe78977985",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb3bce4e28be0ce873c2c1b276",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1783bce4e28be0ce873c2c1b276",
+    "spotifyId": "4kIdiDjOJs6U8AAvBhecWs",
+    "spotifyUrl": "https://open.spotify.com/artist/4kIdiDjOJs6U8AAvBhecWs"
   },
   "Ugly": {
     "name": "Ugly",
@@ -4246,9 +4876,13 @@
   "University": {
     "name": "University",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "e671a93e-e6a0-4144-aefd-7c96d4a7c33a",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb21dec25eb1c3c976070e9a66",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17821dec25eb1c3c976070e9a66",
+    "spotifyId": "2TDMep1IfMAASZxbC5FAo5",
+    "spotifyUrl": "https://open.spotify.com/artist/2TDMep1IfMAASZxbC5FAo5"
   },
   "Viva Varda Concert": {
     "name": "Viva Varda Concert",
@@ -4258,23 +4892,35 @@
   "Van Zon": {
     "name": "Van Zon",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "0b04be45-42f8-46bc-b207-c76c2aae31e0",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb9ff5a950262bab8491975a0f",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1789ff5a950262bab8491975a0f",
+    "spotifyId": "3uQKia7VKMcqrZXKLp2jFa",
+    "spotifyUrl": "https://open.spotify.com/artist/3uQKia7VKMcqrZXKLp2jFa"
   },
   "Velvetine": {
     "name": "Velvetine",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "ac9f1d36-fbac-4a2c-8759-a30574fe8715",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb80f3c709c5494423131f3960",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17880f3c709c5494423131f3960",
+    "spotifyId": "6nGzm3tJwcjoa7LLtjElNa",
+    "spotifyUrl": "https://open.spotify.com/artist/6nGzm3tJwcjoa7LLtjElNa"
   },
   "Van Houten": {
     "name": "Van Houten",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "c527b2f4-572e-477c-bf22-ba51b49fff85",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebb4bcc6b3665ceb3e3c9b10e3",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178b4bcc6b3665ceb3e3c9b10e3",
+    "spotifyId": "1DJIjqnBb14BDo3EIZc2zB",
+    "spotifyUrl": "https://open.spotify.com/artist/1DJIjqnBb14BDo3EIZc2zB"
   },
   "Vlure": {
     "name": "Vlure",
@@ -4284,9 +4930,13 @@
       "rave",
       "synth-pop"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "d4bc4880-00d6-4e38-95fa-e84ea4737899",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebac9f36a5e9d5be67dca66474",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178ac9f36a5e9d5be67dca66474",
+    "spotifyId": "0Ev1tqYsfzq2eF5qqXhkYm",
+    "spotifyUrl": "https://open.spotify.com/artist/0Ev1tqYsfzq2eF5qqXhkYm"
   },
   "Wallows": {
     "name": "Wallows",
@@ -4306,11 +4956,15 @@
   "Warhaus": {
     "name": "Warhaus",
     "genres": [],
-    "source": "mb-wikidata-de",
+    "source": "mb-wikidata-de+spotify",
     "mbid": "d9fccd7c-a14c-4c1a-8a3b-17d05b2f549c",
     "type": "Person",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb284376488b5fecd6506144f9",
     "summary": "Warhaus ist der Künstlername des Belgiers Maarten Devoldere.",
-    "wiki": "https://de.wikipedia.org/wiki/Warhaus"
+    "wiki": "https://de.wikipedia.org/wiki/Warhaus",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178284376488b5fecd6506144f9",
+    "spotifyId": "5uy67fWgovgNdbkP1kAf7m",
+    "spotifyUrl": "https://open.spotify.com/artist/5uy67fWgovgNdbkP1kAf7m"
   },
   "Water From Your Eyes": {
     "name": "Water From Your Eyes",
@@ -4344,9 +4998,13 @@
   "Wax Head": {
     "name": "Wax Head",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "f12f583b-c178-46a8-8060-674a42062638",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb0657934583697735e880949c",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1780657934583697735e880949c",
+    "spotifyId": "5uL8BYKyfiVy6s3Q3cNYHG",
+    "spotifyUrl": "https://open.spotify.com/artist/5uL8BYKyfiVy6s3Q3cNYHG"
   },
   "Weatherday": {
     "name": "Weatherday",
@@ -4374,11 +5032,15 @@
   "Web": {
     "name": "Web",
     "genres": [],
-    "source": "mb-wikidata-en",
+    "source": "mb-wikidata-en+spotify",
     "mbid": "084dd158-4c46-4ea2-80d1-4148cd2830f6",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb5f9d1e9c381a140cb57ef42d",
     "summary": "\nThe Web were an English band. Hailing from the British psychedelic scene, their style is often described as atmospheric, moody, melancholy, and dark.",
-    "wiki": "https://en.wikipedia.org/wiki/The_Web_(band)"
+    "wiki": "https://en.wikipedia.org/wiki/The_Web_(band)",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1785f9d1e9c381a140cb57ef42d",
+    "spotifyId": "0vpkGPve4zar394BIrZOGh",
+    "spotifyUrl": "https://open.spotify.com/artist/0vpkGPve4zar394BIrZOGh"
   },
   "Westside Cowboy": {
     "name": "Westside Cowboy",
@@ -4402,9 +5064,13 @@
       "bubblegrunge",
       "chill wave"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "277b4d0a-b8eb-47da-b688-f64d8bde85e8",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebb6e9e5915c6e2883116a2a12",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178b6e9e5915c6e2883116a2a12",
+    "spotifyId": "20KPYZbsc8RP3Al1LHkKUK",
+    "spotifyUrl": "https://open.spotify.com/artist/20KPYZbsc8RP3Al1LHkKUK"
   },
   "Wolf Alice": {
     "name": "Wolf Alice",
@@ -4443,9 +5109,13 @@
   "World News": {
     "name": "World News",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "49211211-44e2-41e2-8ea2-2dd3a5fd0a3c",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb7dba38b8ec96f2a81869a014",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1787dba38b8ec96f2a81869a014",
+    "spotifyId": "3VQXCMRCSzdKek71OkAL3Q",
+    "spotifyUrl": "https://open.spotify.com/artist/3VQXCMRCSzdKek71OkAL3Q"
   },
   "Wombo": {
     "name": "Wombo",
@@ -4453,11 +5123,15 @@
       "indie rock",
       "post-punk"
     ],
-    "source": "wiki-direct-en",
+    "source": "wiki-direct-en+spotify",
     "mbid": "46b02238-8b8e-457b-8ff5-56452a1d5842",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb56e85ca314462a3c41e9efb5",
     "summary": "Wombo is an American three-piece indie rock band from Louisville, Kentucky. The band consists of members Sydney Chadwick, Cameron Lowe (guitar), and Joel Taylor (drums).",
-    "wiki": "https://en.wikipedia.org/wiki/Wombo_(band)"
+    "wiki": "https://en.wikipedia.org/wiki/Wombo_(band)",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17856e85ca314462a3c41e9efb5",
+    "spotifyId": "67GGyFejJ19UWUjJlLhJq4",
+    "spotifyUrl": "https://open.spotify.com/artist/67GGyFejJ19UWUjJlLhJq4"
   },
   "Wunderhorse": {
     "name": "Wunderhorse",
@@ -4519,16 +5193,24 @@
   "Yabba": {
     "name": "Yabba",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "b768db5b-0ca6-4dd9-a65b-d66ba65e1131",
-    "type": null
+    "type": null,
+    "photo": "https://i.scdn.co/image/ab67616d0000b27395b689a02321ad9f2d88f2da",
+    "photoSmall": "https://i.scdn.co/image/ab67616d0000485195b689a02321ad9f2d88f2da",
+    "spotifyId": "2642wZFyCEZVca8hqLbJMo",
+    "spotifyUrl": "https://open.spotify.com/artist/2642wZFyCEZVca8hqLbJMo"
   },
   "Yeahrs": {
     "name": "Yeahrs",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "7ae6b9a7-11e3-4ef5-a1f1-e55ab13dbcd2",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb7d24e57098e303bb0b351e82",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1787d24e57098e303bb0b351e82",
+    "spotifyId": "0xT8wI8JgoOqFrCr5v96qd",
+    "spotifyUrl": "https://open.spotify.com/artist/0xT8wI8JgoOqFrCr5v96qd"
   },
   "Yowl": {
     "name": "Yowl",
@@ -4542,9 +5224,13 @@
     "genres": [
       "indie rock"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "ba95e737-134e-4fb2-ae2f-9db0cd9890e2",
-    "type": "Person"
+    "type": "Person",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb8400a2bd8fededc0331ad386",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1788400a2bd8fededc0331ad386",
+    "spotifyId": "26j38hvhD7PjC0a4EqdaSn",
+    "spotifyUrl": "https://open.spotify.com/artist/26j38hvhD7PjC0a4EqdaSn"
   },
   "Yin Yin": {
     "name": "Yin Yin",
@@ -4571,9 +5257,13 @@
   "Zac Lawrence": {
     "name": "Zac Lawrence",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "2f60cec2-77c3-4b16-b06b-3cef5309463c",
-    "type": "Person"
+    "type": "Person",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb301bc18e6d83674e9ae10261",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178301bc18e6d83674e9ae10261",
+    "spotifyId": "4AarEZsW2fFlziwV2705AL",
+    "spotifyUrl": "https://open.spotify.com/artist/4AarEZsW2fFlziwV2705AL"
   },
   "Zimmer90": {
     "name": "Zimmer90",
@@ -4584,11 +5274,15 @@
       "indie rock",
       "indietronica"
     ],
-    "source": "mb-wikidata-de",
+    "source": "mb-wikidata-de+spotify",
     "mbid": "d7c1cfab-a75e-42e9-bde8-f4e0c031243e",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebec39e1a00fd77d514b0ba85a",
     "summary": "Zimmer90 ist eine deutsche Indie-Electropop-Band, die 2018 in Stuttgart gegründet wurde. Die Band besteht aus Joscha Becker und Finn Gronemeyer. Mit der Single What Love Is erreichte sie Ende 2023 erstmals größere internationale Bekanntheit.",
-    "wiki": "https://de.wikipedia.org/wiki/Zimmer90"
+    "wiki": "https://de.wikipedia.org/wiki/Zimmer90",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178ec39e1a00fd77d514b0ba85a",
+    "spotifyId": "7cViIoKAQrjHURdxb9ACCX",
+    "spotifyUrl": "https://open.spotify.com/artist/7cViIoKAQrjHURdxb9ACCX"
   },
   "caroline": {
     "name": "caroline",
@@ -4602,30 +5296,46 @@
   "Zo Lief": {
     "name": "Zo Lief",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "f8adaafe-9c14-4a40-bba7-0574df0a1f75",
-    "type": null
+    "type": null,
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebcea445d9692002c5fd04ab2f",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178cea445d9692002c5fd04ab2f",
+    "spotifyId": "655lv153aeepabVfhjnGwq",
+    "spotifyUrl": "https://open.spotify.com/artist/655lv153aeepabVfhjnGwq"
   },
   "chest.": {
     "name": "chest.",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "eaef344f-a746-4088-9623-bc2fbba758af",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebdd07b5c3ec8d5a2d28bb72d8",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178dd07b5c3ec8d5a2d28bb72d8",
+    "spotifyId": "2D3csYLILmlZH3SUbkz11L",
+    "spotifyUrl": "https://open.spotify.com/artist/2D3csYLILmlZH3SUbkz11L"
   },
   "cratL": {
     "name": "cratL",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "cbe33ae8-d433-4f64-b9a4-62dc41c6d201",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb607630609a3850bdcd414b44",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178607630609a3850bdcd414b44",
+    "spotifyId": "3h660dVoUPDSItz4iVGJym",
+    "spotifyUrl": "https://open.spotify.com/artist/3h660dVoUPDSItz4iVGJym"
   },
   "cruush": {
     "name": "cruush",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "435365b9-2a50-41e6-9611-e44b0eebbcda",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebf554ed34d9ea713588fea8ee",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178f554ed34d9ea713588fea8ee",
+    "spotifyId": "09SorScmrKs8yZMG9hdr6N",
+    "spotifyUrl": "https://open.spotify.com/artist/09SorScmrKs8yZMG9hdr6N"
   },
   "leather.head": {
     "name": "leather.head",
@@ -4671,9 +5381,13 @@
   "upsammy": {
     "name": "upsammy",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "36124745-211c-446d-a51d-523742844d80",
-    "type": "Person"
+    "type": "Person",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb09ca25a9e49bb521defd0d08",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17809ca25a9e49bb521defd0d08",
+    "spotifyId": "2orXY2oMFNUtiNrNMDyreV",
+    "spotifyUrl": "https://open.spotify.com/artist/2orXY2oMFNUtiNrNMDyreV"
   },
   "落日飞车": {
     "name": "落日飞车",
