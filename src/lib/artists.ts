@@ -1,0 +1,40 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
+export interface ArtistMeta {
+  name: string;
+  photo?: string;
+  genres: string[];
+  summary?: string;
+  wiki?: string;
+  mbid?: string;
+  type?: string;
+  source?: string;
+}
+
+let cache: Record<string, ArtistMeta> | null = null;
+let pending: Promise<Record<string, ArtistMeta>> | null = null;
+
+async function load(): Promise<Record<string, ArtistMeta>> {
+  if (cache) return cache;
+  if (pending) return pending;
+  pending = fetch("/artists.json", { cache: "force-cache" })
+    .then(r => (r.ok ? r.json() : {}))
+    .then(d => (cache = d as Record<string, ArtistMeta>))
+    .catch(() => (cache = {}));
+  return pending;
+}
+
+export function useArtistMeta(name: string | undefined): ArtistMeta | undefined {
+  const [meta, setMeta] = useState<ArtistMeta | undefined>(() =>
+    name && cache ? cache[name] : undefined
+  );
+  useEffect(() => {
+    if (!name) return;
+    let cancelled = false;
+    load().then(d => { if (!cancelled) setMeta(d[name]); });
+    return () => { cancelled = true; };
+  }, [name]);
+  return meta;
+}

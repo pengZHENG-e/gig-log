@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, BarChart, Bar } from "recharts";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
+import { useArtistMeta } from "@/lib/artists";
 import type { User } from "@supabase/supabase-js";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
@@ -99,6 +100,9 @@ const i18n = {
       companions: "同行",
       paid: "票价",
       notes: "笔记",
+      genres: "风格",
+      about: "简介",
+      wikiLink: "Wikipedia",
     },
     stats: {
       total: "总场次", artists: "艺人数", cities: "城市数",
@@ -224,6 +228,9 @@ const i18n = {
       companions: "Went with",
       paid: "Paid",
       notes: "Notes",
+      genres: "Genres",
+      about: "About",
+      wikiLink: "Wikipedia",
     },
     stats: {
       total: "Total Shows", artists: "Artists", cities: "Cities",
@@ -651,6 +658,9 @@ function GigDetailModal({ gig, lang, onClose, onUpdate, onDelete }: {
   const [editing, setEditing] = useState(false);
   const [confirming, setConfirming] = useState(false);
   const [saving, setSaving] = useState(false);
+  const [photoFailed, setPhotoFailed] = useState(false);
+  const meta = useArtistMeta(gig.artist);
+  const hasPhoto = !!meta?.photo && !photoFailed;
 
   const dateStr = new Date(gig.date + "T00:00:00").toLocaleDateString(lang === "zh" ? "zh-CN" : "en-GB", {
     year: "numeric", month: "long", day: "numeric",
@@ -700,6 +710,22 @@ function GigDetailModal({ gig, lang, onClose, onUpdate, onDelete }: {
             </>
           ) : (
             <>
+              {/* Artist banner */}
+              {hasPhoto && (
+                <div className="-mx-6 -mt-4 mb-5 h-48 sm:h-56 bg-gray-100 dark:bg-slate-700 overflow-hidden relative">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={meta!.photo!}
+                    alt={gig.artist}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                    onError={() => setPhotoFailed(true)}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                </div>
+              )}
+
               {/* Header */}
               <div className="flex items-start justify-between mb-1">
                 <h2 className="text-2xl font-bold pr-4">{gig.artist}</h2>
@@ -712,7 +738,26 @@ function GigDetailModal({ gig, lang, onClose, onUpdate, onDelete }: {
 
               <StarRating value={gig.rating} size="lg" />
 
-              {/* Tags + price */}
+              {/* Artist genres (from Wikipedia/MusicBrainz, distinct styling from user tags) */}
+              {meta?.genres?.length ? (
+                <div className="flex flex-wrap gap-1.5 mt-4">
+                  {meta.genres.slice(0, 6).map(g => (
+                    <span key={g} className="text-xs bg-gray-100 dark:bg-slate-700/60 text-gray-600 dark:text-slate-300 px-2.5 py-1 rounded-full capitalize">{g}</span>
+                  ))}
+                </div>
+              ) : null}
+
+              {/* About (Wikipedia summary) */}
+              {meta?.summary && (
+                <div className="mt-3">
+                  <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed" style={{ display: "-webkit-box", WebkitLineClamp: 4, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{meta.summary}</p>
+                  {meta.wiki && (
+                    <a href={meta.wiki} target="_blank" rel="noopener noreferrer" className="inline-block mt-1.5 text-xs text-indigo-500 hover:underline">{dt.wikiLink} →</a>
+                  )}
+                </div>
+              )}
+
+              {/* User tags + price */}
               {(gig.tags.length > 0 || gig.price != null) && (
                 <div className="flex flex-wrap gap-1.5 mt-4">
                   {gig.tags.map(tag => (
