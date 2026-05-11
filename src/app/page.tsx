@@ -1489,55 +1489,69 @@ function HomeTab({ gigs, setGigs, lang, showForm, setShowForm, user, profile }: 
           {filtered.map(gig => <GigCard key={gig.id} gig={gig} onClick={() => setSelectedGig(gig)} lang={lang} />)}
         </div>
       ) : (
-        <div className="space-y-6">
+        <div className="space-y-2">
           {grouped.map(({ year, months, count }) => {
             const forceOpen = !!search.trim() || hasActiveFilter;
             const yearOpen = forceOpen || expandedYears.has(year);
             return (
-              <div key={year} className="space-y-4">
+              <div key={year}>
                 <button
                   type="button"
                   onClick={() => !forceOpen && toggleYear(year)}
                   disabled={forceOpen}
-                  className={`flex items-baseline gap-2 px-1 w-full text-left ${forceOpen ? "" : "cursor-pointer group"}`}
+                  className={`w-full flex items-center justify-between text-left transition-all ${
+                    forceOpen
+                      ? "px-1 py-1"
+                      : `bg-white dark:bg-slate-800 rounded-2xl px-4 py-3.5 border border-gray-100 dark:border-slate-700 ${yearOpen ? "shadow-sm" : "hover:border-indigo-300 dark:hover:border-indigo-600 hover:shadow-sm"}`
+                  }`}
                 >
-                  <span className={`text-gray-400 dark:text-slate-500 text-xs transition-transform ${yearOpen ? "rotate-90" : ""}`}>▸</span>
-                  <span className="text-base font-bold text-gray-700 dark:text-slate-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">{year}</span>
-                  <span className="text-xs font-medium text-gray-400 dark:text-slate-500">· {count} {t.shows}</span>
+                  <span className="flex items-baseline gap-2.5">
+                    <span className="text-lg font-bold text-gray-800 dark:text-slate-100 tabular-nums">{year}</span>
+                    <span className="text-xs font-medium text-gray-400 dark:text-slate-500">{count} {t.shows}</span>
+                  </span>
+                  {!forceOpen && (
+                    <span className={`text-gray-300 dark:text-slate-600 text-sm transition-transform ${yearOpen ? "rotate-90" : ""}`}>▸</span>
+                  )}
                 </button>
-                {yearOpen && months.map(({ month, weeks, count: monthCount }) => {
-                  const monthKey = `${year}-${month}`;
-                  const monthOpen = forceOpen || expandedMonths.has(monthKey);
-                  return (
-                    <div key={month} className="space-y-3">
-                      <button
-                        type="button"
-                        onClick={() => !forceOpen && toggleMonth(monthKey)}
-                        disabled={forceOpen}
-                        className={`flex items-baseline gap-2 px-1 w-full text-left ${forceOpen ? "" : "cursor-pointer group"}`}
-                      >
-                        <span className={`text-gray-300 dark:text-slate-600 text-[10px] transition-transform ${monthOpen ? "rotate-90" : ""}`}>▸</span>
-                        <span className="text-xs font-semibold text-gray-500 dark:text-slate-400 uppercase tracking-wide group-hover:text-indigo-500 transition-colors">{t.stats.months[month]}</span>
-                        <span className="text-xs text-gray-300 dark:text-slate-600 normal-case font-normal">· {monthCount} {t.shows}</span>
-                      </button>
-                      {monthOpen && weeks.map(({ weekStart, days }) => (
-                        <div key={weekStart} className="space-y-2">
-                          <p className="text-[11px] text-gray-300 dark:text-slate-600 px-1">{weekRangeLabel(weekStart, lang)}</p>
-                          <div className="space-y-3">
-                            {days.map(({ date, gigs }) => (
-                              <div key={date} className="space-y-1.5">
-                                <p className="text-xs font-medium text-gray-500 dark:text-slate-400 px-1">{dayHeaderLabel(date, lang)}</p>
-                                <div className="space-y-2.5">
-                                  {gigs.map(gig => <GigCard key={gig.id} gig={gig} onClick={() => setSelectedGig(gig)} lang={lang} hideDate />)}
-                                </div>
+                {yearOpen && (
+                  <div className={`space-y-4 ${forceOpen ? "mt-3" : "px-2 pt-4 pb-2"}`}>
+                    {months.map(({ month, weeks, count: monthCount }) => {
+                      const monthKey = `${year}-${month}`;
+                      const monthOpen = forceOpen || expandedMonths.has(monthKey);
+                      return (
+                        <div key={month} className="space-y-3">
+                          <button
+                            type="button"
+                            onClick={() => !forceOpen && toggleMonth(monthKey)}
+                            disabled={forceOpen}
+                            className={`flex items-center gap-2 px-1 w-full text-left ${forceOpen ? "" : "group"}`}
+                          >
+                            {!forceOpen && (
+                              <span className={`text-gray-300 dark:text-slate-600 text-[10px] transition-transform ${monthOpen ? "rotate-90" : ""}`}>▸</span>
+                            )}
+                            <span className="text-xs font-semibold text-gray-500 dark:text-slate-400 uppercase tracking-wide group-hover:text-indigo-500 transition-colors">{t.stats.months[month]}</span>
+                            <span className="text-xs text-gray-300 dark:text-slate-600 normal-case font-normal">· {monthCount} {t.shows}</span>
+                          </button>
+                          {monthOpen && weeks.map(({ weekStart, days }) => (
+                            <div key={weekStart} className="space-y-2">
+                              <p className="text-[11px] text-gray-300 dark:text-slate-600 px-1">{weekRangeLabel(weekStart, lang)}</p>
+                              <div className="space-y-3">
+                                {days.map(({ date, gigs }) => (
+                                  <div key={date} className="space-y-1.5">
+                                    <p className="text-xs font-medium text-gray-500 dark:text-slate-400 px-1">{dayHeaderLabel(date, lang)}</p>
+                                    <div className="space-y-2.5">
+                                      {gigs.map(gig => <GigCard key={gig.id} gig={gig} onClick={() => setSelectedGig(gig)} lang={lang} hideDate />)}
+                                    </div>
+                                  </div>
+                                ))}
                               </div>
-                            ))}
-                          </div>
+                            </div>
+                          ))}
                         </div>
-                      ))}
-                    </div>
-                  );
-                })}
+                      );
+                    })}
+                  </div>
+                )}
               </div>
             );
           })}
