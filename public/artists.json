@@ -5,7 +5,10 @@
       "grunge",
       "post grunge",
       "punk",
-      "sonic"
+      "sonic",
+      "alternative",
+      "rock",
+      "post-grunge"
     ],
     "source": "wiki-direct-en",
     "mbid": "a4cfa920-2737-47ae-b6a8-5be3632872c4",
@@ -25,7 +28,13 @@
   },
   "AGILE": {
     "name": "AGILE",
-    "genres": [],
+    "genres": [
+      "screamo",
+      "emo",
+      "skramz",
+      "experimental",
+      "drag"
+    ],
     "source": "wiki-direct-en",
     "mbid": "3e265ba3-7898-4068-b81a-dfa8fca0e255",
     "type": "Person",
@@ -35,7 +44,13 @@
   },
   "Abdomen": {
     "name": "Abdomen",
-    "genres": [],
+    "genres": [
+      "garage rock",
+      "garage punk",
+      "psytrance",
+      "punk rock",
+      "experimental metal"
+    ],
     "source": "spotify",
     "mbid": "4195eae5-78a1-42ab-8970-17677fc12143",
     "type": "Group",
@@ -46,7 +61,12 @@
   },
   "Ade": {
     "name": "Ade",
-    "genres": [],
+    "genres": [
+      "death metal",
+      "technical death metal",
+      "brutal death metal",
+      "folk metal"
+    ],
     "source": "wiki-direct-en",
     "mbid": "7403da94-4d7f-4f36-a8a1-eb6e5cc788ce",
     "type": "Group",
@@ -56,7 +76,10 @@
   "Adult DVD": {
     "name": "Adult DVD",
     "genres": [
-      "dance-rock"
+      "dance-rock",
+      "post-punk",
+      "indie rock",
+      "synthpunk"
     ],
     "source": "wiki-direct-en",
     "mbid": "3daddca6-34a3-47b1-91a5-a1bff99c98dc",
@@ -67,7 +90,10 @@
   },
   "Aerial Salad": {
     "name": "Aerial Salad",
-    "genres": [],
+    "genres": [
+      "punk rock",
+      "punk"
+    ],
     "source": "spotify",
     "mbid": "30be4dae-121e-4219-b366-cec72eae4724",
     "photo": "https://i.scdn.co/image/ab6761610000e5eb290efcc9ad980b3f2cf4dfe6",
@@ -78,7 +104,11 @@
   "Ain't": {
     "name": "Ain't",
     "genres": [
-      "rock"
+      "rock",
+      "post-punk",
+      "indie rock",
+      "electronic",
+      "shoegaze"
     ],
     "source": "wiki-direct-en",
     "mbid": "932420a3-11cf-457d-a9ef-ad981ff71ffc",
@@ -92,9 +122,9 @@
       "electronic",
       "downtempo",
       "ambient",
-      "french",
       "ambient pop",
-      "electronica"
+      "electronica",
+      "chillout"
     ],
     "source": "mb-wikidata-en",
     "mbid": "cb67438a-7f50-4f2b-a6f1-2bb2729fd538",
@@ -112,7 +142,13 @@
   },
   "Alien Chicks": {
     "name": "Alien Chicks",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "post-hardcore",
+      "art punk",
+      "noise rock",
+      "crank wave"
+    ],
     "source": "spotify",
     "mbid": "61f22fec-c4fc-4e2a-8bb9-b9d0a04864ab",
     "type": "Group",
@@ -124,8 +160,8 @@
   "Alvilda": {
     "name": "Alvilda",
     "genres": [
-      "france",
-      "power pop"
+      "power pop",
+      "garage rock"
     ],
     "source": "spotify",
     "mbid": "e89abc53-6dc5-4212-bc65-8d1d9f6ff4c2",
@@ -141,7 +177,11 @@
       "indie folk",
       "indie rock",
       "lo-fi",
-      "queer"
+      "queer",
+      "indie pop",
+      "folk",
+      "dream pop",
+      "indie"
     ],
     "source": "mb-wikidata-en",
     "mbid": "2af1b76d-104c-4ba2-8092-49887407f8f3",
@@ -152,7 +192,12 @@
   },
   "Antony Szmierek": {
     "name": "Antony Szmierek",
-    "genres": [],
+    "genres": [
+      "spoken word",
+      "electronic",
+      "indie",
+      "hip-hop"
+    ],
     "source": "wiki-direct-en",
     "mbid": "4e892967-3080-4a28-840f-66717360e535",
     "type": "Person",
@@ -167,8 +212,10 @@
       "alternative rock",
       "garage rock revival",
       "post-punk revival",
-      "british",
-      "baroque pop"
+      "baroque pop",
+      "indie",
+      "alternative",
+      "rock"
     ],
     "source": "mb-wikidata-en",
     "mbid": "ada7a83c-e3e1-40f1-93f9-3e73dbc9298a",
@@ -191,7 +238,10 @@
   "Astrid Sonne": {
     "name": "Astrid Sonne",
     "genres": [
-      "electronic"
+      "electronic",
+      "experimental",
+      "ambient",
+      "glitch"
     ],
     "source": "mb-wikidata-en",
     "mbid": "bc6af694-5880-4770-bdf1-82d03fea43f4",
@@ -202,7 +252,12 @@
   },
   "Atom Atom": {
     "name": "Atom Atom",
-    "genres": [],
+    "genres": [
+      "hardcore",
+      "punk",
+      "d-beat",
+      "crust"
+    ],
     "source": "spotify",
     "photo": "https://i.scdn.co/image/ab6761610000e5eb8e6a0ebf3f14850b2506a31a",
     "photoSmall": "https://i.scdn.co/image/ab6761610000f1788e6a0ebf3f14850b2506a31a",
@@ -211,7 +266,12 @@
   },
   "Automotion": {
     "name": "Automotion",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "indie rock",
+      "post rock",
+      "rock"
+    ],
     "source": "spotify",
     "mbid": "c98bbdfa-cad8-4dd4-bee8-5cdf7806cf65",
     "type": "Group",
@@ -222,7 +282,12 @@
   },
   "BEACHTAPE": {
     "name": "BEACHTAPE",
-    "genres": [],
+    "genres": [
+      "indie pop",
+      "surf rock",
+      "indie",
+      "bedroom"
+    ],
     "source": "spotify",
     "mbid": "cd04be9c-d2d8-48bf-9af3-bb9a527fa952",
     "type": "Group",
@@ -233,7 +298,13 @@
   },
   "BELMONDO": {
     "name": "BELMONDO",
-    "genres": [],
+    "genres": [
+      "hungarian",
+      "rap",
+      "alternative",
+      "rock",
+      "hungarian rock"
+    ],
     "source": "wiki-direct-en",
     "mbid": "07853156-439e-45f9-a29d-e0e912af6d43",
     "type": "Group",
@@ -255,7 +326,10 @@
       "hypnagogic pop",
       "noise pop",
       "post-punk revival",
-      "slacker rock"
+      "slacker rock",
+      "lo-fi",
+      "post-punk",
+      "experimental"
     ],
     "source": "mb-wikidata-en",
     "mbid": "fc6fe95d-ab24-44fd-a086-f33a505ad518",
@@ -266,7 +340,11 @@
   },
   "Basht.": {
     "name": "Basht.",
-    "genres": [],
+    "genres": [
+      "alternative rock",
+      "indie rock",
+      "garage rock"
+    ],
     "source": "spotify",
     "mbid": "eefe0ce9-822e-4814-be32-d5fc0f83db2e",
     "type": "Group",
@@ -277,7 +355,13 @@
   },
   "Beak": {
     "name": "Beak",
-    "genres": [],
+    "genres": [
+      "idm",
+      "electronic",
+      "post-metal",
+      "sludge",
+      "sludge metal"
+    ],
     "source": "wiki-direct-en",
     "mbid": "1ac4a875-e98a-4a45-a8dc-106157b80cf5",
     "type": "Person",
@@ -293,7 +377,9 @@
       "indie rock",
       "anti-folk",
       "electronic",
-      "rock"
+      "rock",
+      "alternative",
+      "indie"
     ],
     "source": "mb-wikidata-en",
     "mbid": "309c62ba-7a22-4277-9f67-4a162526d18a",
@@ -304,14 +390,23 @@
   },
   "Bedroom Vacation": {
     "name": "Bedroom Vacation",
-    "genres": [],
+    "genres": [
+      "indie",
+      "indie rock"
+    ],
     "source": "mb-only",
     "mbid": "fb73f3ce-453d-4f46-9600-c7beddacd146",
     "type": "Group"
   },
   "Beige Banquet": {
     "name": "Beige Banquet",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "crank wave",
+      "post-brexit new wave",
+      "garage rock",
+      "art punk"
+    ],
     "source": "spotify",
     "mbid": "4d25f8ee-a782-4e1c-a79b-5492ff5a16a0",
     "type": "Group",
@@ -322,7 +417,13 @@
   },
   "Belmondo": {
     "name": "Belmondo",
-    "genres": [],
+    "genres": [
+      "hungarian",
+      "rap",
+      "alternative",
+      "rock",
+      "hungarian rock"
+    ],
     "source": "wiki-direct-en+spotify",
     "mbid": "07853156-439e-45f9-a29d-e0e912af6d43",
     "type": "Group",
@@ -339,7 +440,11 @@
       "industrial",
       "poetry",
       "post-punk",
-      "power electronics"
+      "power electronics",
+      "hip-hop",
+      "pop",
+      "underground hip-hop",
+      "rap"
     ],
     "source": "mb-wikidata-en",
     "mbid": "e80c1c9f-fbc7-410a-9c51-b0362eeca38b",
@@ -350,7 +455,12 @@
   },
   "Better Joy": {
     "name": "Better Joy",
-    "genres": [],
+    "genres": [
+      "indie pop",
+      "indie",
+      "pop",
+      "indie rock"
+    ],
     "source": "spotify",
     "mbid": "beb6863f-bb01-4ce8-a4ed-bd75a696f860",
     "type": "Person",
@@ -361,7 +471,13 @@
   },
   "Bible Club": {
     "name": "Bible Club",
-    "genres": [],
+    "genres": [
+      "indie rock",
+      "punk rock",
+      "art punk",
+      "post-punk",
+      "acute sounds"
+    ],
     "source": "spotify",
     "mbid": "bb43727e-b6b5-4dba-9fe7-c399675b1012",
     "type": null,
@@ -372,7 +488,12 @@
   },
   "Big Red": {
     "name": "Big Red",
-    "genres": [],
+    "genres": [
+      "dancehall",
+      "reggae",
+      "ragga",
+      "rap"
+    ],
     "source": "wiki-direct-en",
     "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Aaron_Dessner_at_Way_Out_West_2014.jpg/330px-Aaron_Dessner_at_Way_Out_West_2014.jpg",
     "summary": "Aaron Brooking Dessner is an American musician. He is best known as a founding member of the rock band the National, with whom he has recorded ten studio albums; a co-founder of the indie rock duo Big Red Machine, teaming with Bon Iver's Justin Vernon; and a collaborator on Taylor Swift's critically acclaimed studio albums Folklore and Evermore, both of which contended for the Grammy Award for Album of the Year in 2021 and 2022, respectively, with the former winning the accolade; as well as The Tortured Poets Department (2024).",
@@ -380,7 +501,12 @@
   },
   "Big Special": {
     "name": "Big Special",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "crank wave",
+      "punk rock",
+      "punk blues"
+    ],
     "source": "wiki-direct-en",
     "mbid": "38d929d1-502d-486e-947a-00d6e4194039",
     "type": "Group",
@@ -390,7 +516,12 @@
   },
   "Bilk": {
     "name": "Bilk",
-    "genres": [],
+    "genres": [
+      "punk",
+      "rock",
+      "alternative",
+      "indie"
+    ],
     "source": "wiki-direct-en",
     "mbid": "5a220a45-b945-4abf-badd-98b8581d1070",
     "type": "Group",
@@ -400,7 +531,12 @@
   },
   "Bingo Fury": {
     "name": "Bingo Fury",
-    "genres": [],
+    "genres": [
+      "avant-garde jazz",
+      "jazz",
+      "avant-garde",
+      "experimental"
+    ],
     "source": "spotify",
     "mbid": "3e4feeee-d5ad-495d-b7c2-6457dfe5b058",
     "type": "Group",
@@ -411,7 +547,12 @@
   },
   "Bishopskin": {
     "name": "Bishopskin",
-    "genres": [],
+    "genres": [
+      "indie pop",
+      "indie rock",
+      "avant-garde",
+      "folk pop"
+    ],
     "source": "spotify",
     "mbid": "1927d60c-ba5b-4f84-bd71-734bfa4fef66",
     "type": null,
@@ -428,7 +569,8 @@
       "experimental rock",
       "chamber pop",
       "post-punk",
-      "indie rock"
+      "indie rock",
+      "crank wave"
     ],
     "source": "mb-wikidata-en",
     "mbid": "e9403d9c-329b-4108-a26f-564159d441d9",
@@ -439,7 +581,13 @@
   },
   "Black Fondu": {
     "name": "Black Fondu",
-    "genres": [],
+    "genres": [
+      "rap",
+      "hip hop",
+      "experimental",
+      "electronic",
+      "grime"
+    ],
     "source": "spotify",
     "mbid": "a9e69a24-1428-42f9-9b74-5f179198990b",
     "type": null,
@@ -456,7 +604,8 @@
       "noise rock",
       "avant-prog",
       "post-punk",
-      "progressive rock"
+      "progressive rock",
+      "crank wave"
     ],
     "source": "mb-wikidata-en",
     "mbid": "4afbef0a-05ee-4551-b0e0-f1f1870d8f1c",
@@ -468,7 +617,12 @@
   "Blank": {
     "name": "Blank",
     "genres": [
-      "electro"
+      "electro",
+      "emo",
+      "futurepop",
+      "ebm",
+      "dark electro",
+      "electronic"
     ],
     "source": "wiki-direct-en",
     "mbid": "fb975e3d-181c-46fd-bb43-512e052942d0",
@@ -479,7 +633,13 @@
   },
   "Bleech 9:3": {
     "name": "Bleech 9:3",
-    "genres": [],
+    "genres": [
+      "post-grunge",
+      "rock",
+      "indie rock",
+      "grunge",
+      "alternative rock"
+    ],
     "source": "spotify",
     "mbid": "77127115-2daf-4ca8-81c2-c3acb4ce0c31",
     "type": "Group",
@@ -490,7 +650,13 @@
   },
   "Blue Bendy": {
     "name": "Blue Bendy",
-    "genres": [],
+    "genres": [
+      "indie rock",
+      "art rock",
+      "post-punk",
+      "alternative",
+      "art punk"
+    ],
     "source": "wiki-direct-en",
     "mbid": "734e5ba9-f148-4d93-9e3d-526bf172ceb6",
     "type": "Group",
@@ -500,7 +666,9 @@
   },
   "Blue Slate": {
     "name": "Blue Slate",
-    "genres": [],
+    "genres": [
+      "shoegaze"
+    ],
     "source": "spotify",
     "mbid": "96c40a01-fe4f-4241-a769-a5b4fd35bbe6",
     "type": "Group",
@@ -511,7 +679,13 @@
   },
   "Bo Gritz": {
     "name": "Bo Gritz",
-    "genres": [],
+    "genres": [
+      "alternative rock",
+      "garage punk",
+      "indie rock",
+      "punk rock",
+      "post-punk"
+    ],
     "source": "spotify",
     "mbid": "0476da23-51fb-4d41-9656-7465813464f2",
     "type": "Group",
@@ -522,7 +696,12 @@
   },
   "Body Horror": {
     "name": "Body Horror",
-    "genres": [],
+    "genres": [
+      "indie",
+      "faggy music",
+      "queer",
+      "industrial"
+    ],
     "source": "spotify",
     "mbid": "194c412e-a454-469d-a40f-82f658061506",
     "type": "Group",
@@ -534,7 +713,11 @@
   "Bolis Pupul": {
     "name": "Bolis Pupul",
     "genres": [
-      "electronic"
+      "electronic",
+      "dance",
+      "new beat",
+      "electropop",
+      "electro"
     ],
     "source": "mb-wikidata-en",
     "mbid": "52f78c75-9f2f-4353-a368-ac35e96ca25a",
@@ -550,7 +733,13 @@
   },
   "Bucket": {
     "name": "Bucket",
-    "genres": [],
+    "genres": [
+      "skate punk",
+      "punk rock",
+      "skatepunk",
+      "melodic punk",
+      "shoegaze"
+    ],
     "source": "wiki-direct-en",
     "mbid": "3508781f-1588-4304-9f2a-b2fbdd9ec93e",
     "type": "Group",
@@ -560,7 +749,11 @@
   },
   "Bug Teeth": {
     "name": "Bug Teeth",
-    "genres": [],
+    "genres": [
+      "dream pop",
+      "ambient pop",
+      "indie pop"
+    ],
     "source": "spotify",
     "mbid": "cfc23bcd-16d0-4af7-b7c0-f3805e0eb44a",
     "type": "Group",
@@ -585,7 +778,13 @@
   },
   "Butch Kassidy": {
     "name": "Butch Kassidy",
-    "genres": [],
+    "genres": [
+      "post-rock",
+      "post-hardcore",
+      "post-punk",
+      "experimental rock",
+      "noisecore"
+    ],
     "source": "spotify",
     "mbid": "c53751b4-ba21-456b-bbb7-d749a34e58a3",
     "type": null,
@@ -597,7 +796,12 @@
   "C Turtle": {
     "name": "C Turtle",
     "genres": [
-      "lo-fi"
+      "lo-fi",
+      "indie pop",
+      "indie rock",
+      "post-punk",
+      "experimental",
+      "noise pop"
     ],
     "source": "spotify",
     "mbid": "43d5c257-9ed4-402b-b515-ea94908f1de3",
@@ -614,7 +818,12 @@
   },
   "CVC": {
     "name": "CVC",
-    "genres": [],
+    "genres": [
+      "psychedelic rock",
+      "rock",
+      "classic rock",
+      "soft rock"
+    ],
     "source": "spotify",
     "mbid": "a9c2c991-3d78-4ea1-8d96-40389f792af4",
     "type": "Group",
@@ -626,7 +835,12 @@
   "CLAMM": {
     "name": "CLAMM",
     "genres": [
-      "rock"
+      "rock",
+      "doom punk",
+      "heavy punk",
+      "punk rock",
+      "garage rock",
+      "punk"
     ],
     "source": "spotify",
     "mbid": "f7e5fc72-a1dc-41bc-8a26-a6ee41ac6b58",
@@ -638,7 +852,10 @@
   },
   "Car boot sale": {
     "name": "Car boot sale",
-    "genres": [],
+    "genres": [
+      "indie pop",
+      "indie rock"
+    ],
     "source": "spotify",
     "mbid": "a2bed50f-313a-4afa-bfe2-ca53a1ac3a50",
     "type": "Group",
@@ -649,7 +866,13 @@
   },
   "Cameron Winter": {
     "name": "Cameron Winter",
-    "genres": [],
+    "genres": [
+      "singer-songwriter",
+      "indie folk",
+      "chamber folk",
+      "contemporary folk",
+      "indie"
+    ],
     "source": "wiki-direct-en",
     "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Cameron_Winter_with_Geese%2C_Boston_2024_%28cropped2%29.jpg/330px-Cameron_Winter_with_Geese%2C_Boston_2024_%28cropped2%29.jpg",
     "summary": "Cameron Winter is an American musician who fronts the rock band Geese. He released his debut solo album, Heavy Metal, in 2024.",
@@ -657,7 +880,13 @@
   },
   "Chad": {
     "name": "Chad",
-    "genres": [],
+    "genres": [
+      "lounge",
+      "chillout",
+      "electronic",
+      "electronica",
+      "trip hop"
+    ],
     "source": "wiki-direct-en",
     "photo": "https://upload.wikimedia.org/wikipedia/commons/a/a0/%D0%A7%D0%B0%D0%B4.jpg",
     "summary": "Chad Robert Kroeger is a Canadian musician who is best known for being the lead singer, lead guitarist, primary songwriter, and founding member of the rock band Nickelback. In addition to his work with Nickelback, Kroeger has been involved with a variety of collaborations, appearing as a guest musician in several songs and has contributed in both production and songwriting. He has co-written several songs for other artists and films.",
@@ -665,7 +894,10 @@
   },
   "Carsick": {
     "name": "Carsick",
-    "genres": [],
+    "genres": [
+      "punk",
+      "bands seen live"
+    ],
     "source": "spotify",
     "mbid": "242940bb-0600-4bfe-a1c0-efb1ab583fec",
     "type": "Group",
@@ -676,7 +908,13 @@
   },
   "Cardinals": {
     "name": "Cardinals",
-    "genres": [],
+    "genres": [
+      "electronic",
+      "indie",
+      "indie rock",
+      "vocal",
+      "relaxing"
+    ],
     "source": "wiki-direct-en",
     "photo": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Aviewofotherwindows.jpg/330px-Aviewofotherwindows.jpg",
     "summary": "A View of Other Windows is a coffee table photo-book by American musician Neal Casal documenting his time spent in the alt-country band Ryan Adams & the Cardinals from 2005 to 2009. Released on February 22, 2010 through Abrams Books, the book contains an introduction by Ryan Adams, and features written contributions from bandmates, Jon Graboff, Brad Pemberton and Chris Feinstein, throughout. Grateful Dead founding member and bass guitarist Phil Lesh wrote the book's afterword.",
@@ -686,7 +924,11 @@
     "name": "Chalk",
     "genres": [
       "dance-punk",
-      "post-punk"
+      "post-punk",
+      "noise rock",
+      "indie",
+      "acoustic",
+      "emo"
     ],
     "source": "wiki-direct-en",
     "mbid": "d8339825-470a-4dde-9792-d5c724e14e18",
@@ -697,7 +939,12 @@
   },
   "Children Of The Pope": {
     "name": "Children Of The Pope",
-    "genres": [],
+    "genres": [
+      "garage rock",
+      "garage punk",
+      "indie rock",
+      "punk rock"
+    ],
     "source": "spotify",
     "mbid": "8958b2ac-8854-4c52-b3b3-e5b5044ffa05",
     "type": "Group",
@@ -709,7 +956,10 @@
   "Chaos in the CBD": {
     "name": "Chaos in the CBD",
     "genres": [
-      "deep house"
+      "deep house",
+      "house",
+      "electronic",
+      "post-dubstep"
     ],
     "source": "spotify",
     "mbid": "ae534b5f-95e5-40d9-9ce0-75e4b777cad1",
@@ -724,7 +974,8 @@
     "genres": [
       "emo",
       "indie rock",
-      "math rock"
+      "math rock",
+      "post-rock"
     ],
     "source": "mb-wikidata-en",
     "mbid": "00155139-0a81-4076-a367-133d8727cf8c",
@@ -735,7 +986,12 @@
   },
   "Children of the Pope": {
     "name": "Children of the Pope",
-    "genres": [],
+    "genres": [
+      "garage rock",
+      "garage punk",
+      "indie rock",
+      "punk rock"
+    ],
     "source": "spotify",
     "mbid": "8958b2ac-8854-4c52-b3b3-e5b5044ffa05",
     "type": "Group",
@@ -746,7 +1002,13 @@
   },
   "Chloe Qisha": {
     "name": "Chloe Qisha",
-    "genres": [],
+    "genres": [
+      "alternative pop",
+      "pop",
+      "indie pop",
+      "malaysia",
+      "singer-songwriter"
+    ],
     "source": "mb-wikidata-en+spotify",
     "mbid": "fffa2bd2-2382-44b8-8f94-27b1fbe9eb58",
     "type": "Person",
@@ -779,7 +1041,11 @@
   },
   "Cliffords": {
     "name": "Cliffords",
-    "genres": [],
+    "genres": [
+      "indie pop",
+      "indie rock",
+      "pop rock"
+    ],
     "source": "spotify",
     "mbid": "18b364b6-7b4b-458d-9d23-71354320aaec",
     "type": "Group",
@@ -798,7 +1064,11 @@
   "Cola": {
     "name": "Cola",
     "genres": [
-      "post-punk"
+      "post-punk",
+      "indie rock",
+      "crank wave",
+      "art punk",
+      "garage rock"
     ],
     "source": "mb-wikidata-en+spotify",
     "mbid": "644ca6ea-a2ff-40b5-bd24-9df719e799ff",
@@ -812,7 +1082,11 @@
   },
   "Coach Party": {
     "name": "Coach Party",
-    "genres": [],
+    "genres": [
+      "indie rock",
+      "power pop",
+      "indie pop"
+    ],
     "source": "mb-wikidata-en+spotify",
     "mbid": "ec44206a-c3cc-419d-9ef9-08971c1297dd",
     "type": "Group",
@@ -830,7 +1104,11 @@
   },
   "Clothing": {
     "name": "Clothing",
-    "genres": [],
+    "genres": [
+      "psychedelic",
+      "indie pop",
+      "indie rock"
+    ],
     "source": "wiki-direct-en",
     "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/2023_Rock_im_Park_-_Bring_Me_The_Horizon_-_Oliver_Sykes_-_by_2eight_-_ZSC5724.jpg/330px-2023_Rock_im_Park_-_Bring_Me_The_Horizon_-_Oliver_Sykes_-_by_2eight_-_ZSC5724.jpg",
     "summary": "Oliver Scott Sykes, known professionally as Oli Sykes is an English musician, and the lead vocalist and primary lyricist of the rock band Bring Me the Horizon. He founded apparel company Drop Dead Clothing and opened a vegan dinnery in Sheffield.",
@@ -847,7 +1125,13 @@
   },
   "Cowboyy": {
     "name": "Cowboyy",
-    "genres": [],
+    "genres": [
+      "garage rock",
+      "garage punk",
+      "indie rock",
+      "punk rock",
+      "art punk"
+    ],
     "source": "spotify",
     "mbid": "ec19bb9a-2231-4da3-8a2d-c726d319747a",
     "type": "Group",
@@ -858,7 +1142,12 @@
   },
   "Cooper T": {
     "name": "Cooper T",
-    "genres": [],
+    "genres": [
+      "classic blues",
+      "blues",
+      "acoustic blues",
+      "steel guitar"
+    ],
     "source": "wiki-direct-en+spotify",
     "mbid": "d09aadc3-6cdd-4600-ab8f-8ece12bd9cc8",
     "type": "Group",
@@ -873,7 +1162,10 @@
     "name": "Crack Cloud",
     "genres": [
       "art punk",
-      "post-punk"
+      "post-punk",
+      "crank wave",
+      "krautrock",
+      "new wave"
     ],
     "source": "mb-wikidata-en",
     "mbid": "c641bdb4-2ec3-4889-96f8-ea44a70604f9",
@@ -887,7 +1179,12 @@
     "genres": [
       "hip hop",
       "nu metal",
-      "trap"
+      "trap",
+      "2001 era gamecube pit music",
+      "rap",
+      "phonk",
+      "hip-hop",
+      "east coast rap"
     ],
     "source": "wiki-direct-en",
     "mbid": "ed296c51-4009-4403-ae8b-138507ef8118",
@@ -922,7 +1219,9 @@
       "dark wave",
       "gothic rock",
       "riot grrrl",
-      "synth punk"
+      "synth punk",
+      "crank wave",
+      "punk rock"
     ],
     "source": "mb-wikidata-en",
     "mbid": "5e774053-3122-4484-bd0d-70acaa6dd4dc",
@@ -933,7 +1232,13 @@
   },
   "Cruush": {
     "name": "Cruush",
-    "genres": [],
+    "genres": [
+      "shoegaze",
+      "dream pop",
+      "indie",
+      "rock",
+      "alternative rock"
+    ],
     "source": "spotify",
     "mbid": "435365b9-2a50-41e6-9611-e44b0eebbcda",
     "type": "Group",
@@ -944,7 +1249,10 @@
   },
   "Curser": {
     "name": "Curser",
-    "genres": [],
+    "genres": [
+      "alternative metal",
+      "metalcore"
+    ],
     "source": "spotify",
     "mbid": "05ec4921-d23c-4d40-8959-8f0e4e513c30",
     "type": "Group",
@@ -955,7 +1263,13 @@
   },
   "DITZ": {
     "name": "DITZ",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "noise rock",
+      "crank wave",
+      "post-hardcore",
+      "post-brexit new wave"
+    ],
     "source": "wiki-direct-en",
     "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Ditz_at_Mutations_Festival_Brighton%2C_7_November_2025_03.jpg/330px-Ditz_at_Mutations_Festival_Brighton%2C_7_November_2025_03.jpg",
     "summary": "Ditz are an English rock band that formed in Brighton in 2016. The band consists of Cal Francis (vocals), Caleb Remnant (bass), Anton Mocock (Guitar), Jack Looker (Guitar), Sam Evans (Drums).",
@@ -963,7 +1277,13 @@
   },
   "DBA!": {
     "name": "DBA!",
-    "genres": [],
+    "genres": [
+      "garage rock",
+      "psychedelic rock",
+      "alternative rock",
+      "garage punk",
+      "post-punk"
+    ],
     "source": "spotify",
     "mbid": "5a9007ea-c437-49a9-813a-1e2425d086dd",
     "type": "Group",
@@ -974,7 +1294,13 @@
   },
   "DEADLETTER": {
     "name": "DEADLETTER",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "crank wave",
+      "post-brexit new wave",
+      "dance-punk",
+      "indie rock"
+    ],
     "source": "spotify",
     "mbid": "f62f5f75-f6a2-42ea-a8b2-9732ca1be53c",
     "type": "Group",
@@ -988,7 +1314,11 @@
     "genres": [
       "punk rock",
       "garage rock",
-      "new zealand"
+      "indie rock",
+      "rock",
+      "math rock",
+      "folk",
+      "punk"
     ],
     "source": "spotify",
     "mbid": "b62e977d-5a98-437d-945e-f3cfb9e76f73",
@@ -1000,7 +1330,13 @@
   },
   "Deadletter": {
     "name": "Deadletter",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "crank wave",
+      "post-brexit new wave",
+      "dance-punk",
+      "indie rock"
+    ],
     "source": "spotify",
     "mbid": "f62f5f75-f6a2-42ea-a8b2-9732ca1be53c",
     "type": "Group",
@@ -1011,7 +1347,13 @@
   },
   "Deary": {
     "name": "Deary",
-    "genres": [],
+    "genres": [
+      "dream pop",
+      "shoegaze",
+      "indie",
+      "pop",
+      "alternative"
+    ],
     "source": "wiki-direct-en",
     "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/DigsyDeary.jpg/330px-DigsyDeary.jpg",
     "summary": "Peter Deary is an English musician and singer-songwriter.",
@@ -1020,7 +1362,9 @@
   "Deliluh": {
     "name": "Deliluh",
     "genres": [
-      "art rock"
+      "art rock",
+      "post-punk",
+      "experimental"
     ],
     "source": "mb-only",
     "mbid": "eb56c5c5-fe66-420e-9e26-19e8cee5b080",
@@ -1028,14 +1372,25 @@
   },
   "Deep Tan": {
     "name": "Deep Tan",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "crank wave",
+      "post-brexit new wave",
+      "new wave",
+      "art punk"
+    ],
     "source": "mb-only",
     "mbid": "2ba993ec-2606-4505-a3bb-f401ab688def",
     "type": "Group"
   },
   "Demuja": {
     "name": "Demuja",
-    "genres": [],
+    "genres": [
+      "outsider house",
+      "house",
+      "deep house",
+      "electronic"
+    ],
     "source": "spotify",
     "mbid": "6898219e-41d2-4c5e-9aeb-a9e1463ccd10",
     "type": "Person",
@@ -1046,7 +1401,13 @@
   },
   "Dictator": {
     "name": "Dictator",
-    "genres": [],
+    "genres": [
+      "funeral doom",
+      "dark ambient",
+      "black metal",
+      "doom metal",
+      "funeral doom metal"
+    ],
     "source": "wiki-direct-en",
     "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/The_Corntias_1977_London_Jill_Furmanovski.jpg/330px-The_Corntias_1977_London_Jill_Furmanovski.jpg",
     "summary": "The Cortinas were a Bristol-based punk rock band, originally active between 1976 and 1978. Guitarist Nick Sheppard went on to play with the Clash. In 2001, the band's debut single, \"Fascist Dictator\", was included in a leading British music magazine's list of the best punk-rock singles of all time.",
@@ -1055,7 +1416,11 @@
   "Death Bells": {
     "name": "Death Bells",
     "genres": [
-      "post-punk"
+      "post-punk",
+      "dream pop",
+      "electronic",
+      "rock",
+      "indie rock"
     ],
     "source": "spotify",
     "mbid": "da9c1ec9-6ac1-4cfb-b24d-1932e22b7b37",
@@ -1067,7 +1432,13 @@
   },
   "Didi Han": {
     "name": "Didi Han",
-    "genres": [],
+    "genres": [
+      "french deep house",
+      "french house",
+      "dance",
+      "electronic",
+      "deep house"
+    ],
     "source": "spotify",
     "mbid": "6b9dc54f-d59d-4242-a6b8-583e4a65fc7e",
     "type": "Person",
@@ -1078,7 +1449,11 @@
   },
   "Difference": {
     "name": "Difference",
-    "genres": [],
+    "genres": [
+      "hardcore",
+      "straight edge",
+      "vegan"
+    ],
     "source": "wiki-direct-en+spotify",
     "mbid": "330c7598-5ec1-450e-a9d8-43b6f006874f",
     "type": "Group",
@@ -1092,7 +1467,11 @@
   "Ditz": {
     "name": "Ditz",
     "genres": [
-      "noise rock"
+      "noise rock",
+      "post-punk",
+      "crank wave",
+      "post-hardcore",
+      "post-brexit new wave"
     ],
     "source": "wiki-direct-en",
     "mbid": "bd0f9f45-22c2-4566-b2cc-3c255ceb6e76",
@@ -1103,7 +1482,9 @@
   },
   "Dim Imagery": {
     "name": "Dim Imagery",
-    "genres": [],
+    "genres": [
+      "photographed"
+    ],
     "source": "spotify",
     "mbid": "062df1ca-55c9-43bc-a54c-9205fefa44a1",
     "type": null,
@@ -1114,7 +1495,13 @@
   },
   "Divorce": {
     "name": "Divorce",
-    "genres": [],
+    "genres": [
+      "noise rock",
+      "noise",
+      "alt-country",
+      "rock",
+      "country"
+    ],
     "source": "mb-wiki-en",
     "mbid": "9dfc39ab-d320-45a9-9c1c-1f95e94882e4",
     "type": "Group",
@@ -1125,7 +1512,11 @@
   "Dog Race": {
     "name": "Dog Race",
     "genres": [
-      "indie rock"
+      "indie rock",
+      "post-punk",
+      "gothic rock",
+      "dream pop",
+      "indie pop"
     ],
     "source": "spotify",
     "mbid": "9689f21c-bd22-4619-9129-bab9199d7e2b",
@@ -1139,7 +1530,11 @@
     "name": "Do Nothing",
     "genres": [
       "indie rock",
-      "post-punk revival"
+      "post-punk revival",
+      "post-punk",
+      "crank wave",
+      "art punk",
+      "post-brexit new wave"
     ],
     "source": "wiki-direct-en+spotify",
     "mbid": "5fabd96a-db39-4698-8098-b9de5062ee79",
@@ -1159,7 +1554,12 @@
   "Dr Sure's Unusual Practice": {
     "name": "Dr Sure's Unusual Practice",
     "genres": [
-      "spotify boycott"
+      "spotify boycott",
+      "post-punk",
+      "new wave",
+      "art punk",
+      "punk rock",
+      "egg punk"
     ],
     "source": "mb-only",
     "mbid": "95ea4b79-8c45-4696-8413-8f92019de03f",
@@ -1171,7 +1571,11 @@
       "indie rock",
       "post-punk",
       "post-punk 2k",
-      "riot grrrl"
+      "riot grrrl",
+      "rock",
+      "dream pop",
+      "indie",
+      "punk"
     ],
     "source": "mb-wikidata-en",
     "mbid": "e83563e8-c8b2-4282-b960-6a7721acdbbb",
@@ -1182,7 +1586,11 @@
   },
   "Driving Dead Girl": {
     "name": "Driving Dead Girl",
-    "genres": [],
+    "genres": [
+      "garage rock",
+      "indie rock",
+      "coldwave"
+    ],
     "source": "mb-wikidata-fr+spotify",
     "mbid": "9e5d6721-8bc7-451a-8ad9-7f8311b1f144",
     "type": "Group",
@@ -1200,7 +1608,10 @@
       "alternative rock",
       "indie rock",
       "new wave",
-      "post-punk 2k"
+      "post-punk 2k",
+      "crank wave",
+      "spoken word",
+      "post-brexit new wave"
     ],
     "source": "mb-wikidata-en",
     "mbid": "8a74e5ea-6f68-49e1-951c-80d2291f7c3f",
@@ -1225,7 +1636,11 @@
     "genres": [
       "hard rock",
       "blues rock",
-      "heavy psych"
+      "heavy psych",
+      "classic rock",
+      "stoner rock",
+      "heavy metal",
+      "early metal"
     ],
     "source": "mb-wikidata-en",
     "mbid": "b2828b9e-98c0-4624-8e0f-f423bd141efb",
@@ -1235,7 +1650,12 @@
   },
   "EBBB": {
     "name": "EBBB",
-    "genres": [],
+    "genres": [
+      "electronic",
+      "baroque pop",
+      "dream pop",
+      "art pop"
+    ],
     "source": "spotify",
     "mbid": "efaf62b6-0f94-4a1b-a82a-dc386a7fd947",
     "type": "Group",
@@ -1246,7 +1666,12 @@
   },
   "Ebbb": {
     "name": "Ebbb",
-    "genres": [],
+    "genres": [
+      "electronic",
+      "baroque pop",
+      "dream pop",
+      "art pop"
+    ],
     "source": "spotify",
     "mbid": "efaf62b6-0f94-4a1b-a82a-dc386a7fd947",
     "type": "Group",
@@ -1264,7 +1689,10 @@
     "name": "Egyptian Blue",
     "genres": [
       "art punk",
-      "post-punk"
+      "post-punk",
+      "crank wave",
+      "post-brexit new wave",
+      "indie"
     ],
     "source": "spotify",
     "mbid": "1cf52485-c52f-458f-b957-7b6ec9bc53d3",
@@ -1287,7 +1715,9 @@
       "garage punk",
       "garage rock",
       "krautrock",
-      "neo-psychedelia"
+      "neo-psychedelia",
+      "jungle",
+      "house"
     ],
     "source": "spotify",
     "mbid": "d5170ebd-e4bc-4554-9327-170ed2a52a0e",
@@ -1305,7 +1735,9 @@
       "alternative rock",
       "art rock",
       "experimental",
-      "new wave"
+      "new wave",
+      "crank wave",
+      "art punk"
     ],
     "source": "mb-wikidata-en",
     "mbid": "b60fd6f1-a47a-4021-b8df-83f8e8893e91",
@@ -1316,7 +1748,13 @@
   },
   "Enola": {
     "name": "Enola",
-    "genres": [],
+    "genres": [
+      "indonesia",
+      "techno",
+      "shoegaze",
+      "electronic",
+      "tech house"
+    ],
     "source": "wiki-direct-en",
     "mbid": "18cc303b-668c-4810-b8b5-3b24377a95b1",
     "type": "Group",
@@ -1327,8 +1765,12 @@
   "Enola Gay": {
     "name": "Enola Gay",
     "genres": [
-      "denmark",
-      "punk"
+      "punk",
+      "post-punk",
+      "hardcore",
+      "hardcore punk",
+      "power metal",
+      "noise rock"
     ],
     "source": "wiki-direct-en",
     "mbid": "b7b27e00-abf6-4ad2-aac8-ad419a3aee7b",
@@ -1345,7 +1787,9 @@
       "calypso",
       "grime",
       "hip hop",
-      "hip-hop"
+      "hip-hop",
+      "jazz fusion",
+      "trumpet"
     ],
     "source": "mb-wikidata-en",
     "mbid": "d51acca9-a88b-4f5c-a2fe-f069de70ca1d",
@@ -1356,7 +1800,13 @@
   },
   "Eyesore & The Jinx": {
     "name": "Eyesore & The Jinx",
-    "genres": [],
+    "genres": [
+      "garage rock",
+      "indie rock",
+      "post-punk",
+      "alternative",
+      "crank wave"
+    ],
     "source": "spotify",
     "mbid": "1aebb81a-d285-4b20-9c1f-c5124384bc89",
     "type": "Group",
@@ -1367,7 +1817,13 @@
   },
   "FEET": {
     "name": "FEET",
-    "genres": [],
+    "genres": [
+      "indie",
+      "folk",
+      "silesia",
+      "indie rock",
+      "nie da sie ukryc kurwa disko polo"
+    ],
     "source": "wiki-direct-en",
     "mbid": "e9e02b3f-67d1-42de-9fd4-ef351da13aca",
     "type": "Group",
@@ -1383,7 +1839,9 @@
       "krautrock",
       "post-punk",
       "postpunk",
-      "shoegaze"
+      "shoegaze",
+      "dream pop",
+      "indie pop"
     ],
     "source": "mb-wikidata-en+spotify",
     "mbid": "b0aaad28-a3a2-472d-b016-11b498cf717e",
@@ -1401,7 +1859,10 @@
       "art rock",
       "dance-punk",
       "indie rock",
-      "post-punk"
+      "post-punk",
+      "crank wave",
+      "new wave",
+      "post-brexit new wave"
     ],
     "source": "wiki-direct-en",
     "mbid": "58fce927-d15b-4d5d-9fc5-9f4a22c7acfd",
@@ -1429,7 +1890,9 @@
       "new rave",
       "alternative rock",
       "indie rock",
-      "indietronica"
+      "indietronica",
+      "rap",
+      "hip hop"
     ],
     "source": "mb-wikidata-en",
     "mbid": "8b16f1e6-d960-432b-92d1-70fc3e61176d",
@@ -1445,7 +1908,10 @@
       "lo-fi",
       "neo-psychedelia",
       "post-punk",
-      "post-punk 2k"
+      "post-punk 2k",
+      "garage rock",
+      "rock",
+      "experimental"
     ],
     "source": "mb-wikidata-en",
     "mbid": "0935da47-cf41-4aa1-a91a-850ced520454",
@@ -1456,7 +1922,13 @@
   },
   "Fez": {
     "name": "Fez",
-    "genres": [],
+    "genres": [
+      "jazz",
+      "free jazz",
+      "indie",
+      "neo-psychedelia",
+      "free"
+    ],
     "source": "wiki-direct-en",
     "mbid": "0e0b3bfd-1bdd-4228-8140-52f65731964f",
     "type": "Group",
@@ -1466,7 +1938,12 @@
   },
   "Fiep": {
     "name": "Fiep",
-    "genres": [],
+    "genres": [
+      "indie",
+      "rock",
+      "alternative",
+      "indie pop"
+    ],
     "source": "spotify",
     "mbid": "dd9046a6-1e09-4192-9aa1-06d2a461e94a",
     "type": "Group",
@@ -1491,7 +1968,13 @@
   },
   "Film Noir": {
     "name": "Film Noir",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "new wave",
+      "darkwave",
+      "post-rock",
+      "alternative"
+    ],
     "source": "spotify",
     "mbid": "81e4e5dd-b89d-48c7-82dd-631386d99c67",
     "type": "Group",
@@ -1502,7 +1985,12 @@
   },
   "Flat Party": {
     "name": "Flat Party",
-    "genres": [],
+    "genres": [
+      "acoustic",
+      "instrumental",
+      "emo",
+      "indie rock"
+    ],
     "source": "spotify",
     "mbid": "e63dc9f0-55c5-4f25-b792-8e4677c20dce",
     "type": null,
@@ -1513,7 +2001,13 @@
   },
   "Flip Top Head": {
     "name": "Flip Top Head",
-    "genres": [],
+    "genres": [
+      "crank wave",
+      "indie rock",
+      "experimental",
+      "post-rock",
+      "post-punk"
+    ],
     "source": "spotify",
     "mbid": "cd020aaf-216f-4693-a082-cb5eb2e8476b",
     "type": "Group",
@@ -1524,7 +2018,12 @@
   },
   "Floodlights": {
     "name": "Floodlights",
-    "genres": [],
+    "genres": [
+      "indie rock",
+      "post-punk",
+      "alternative",
+      "seen live more than once"
+    ],
     "source": "wiki-direct-en+spotify",
     "mbid": "31b575d4-11ce-472a-a892-4cc847f8f5f0",
     "type": "Group",
@@ -1538,7 +2037,9 @@
   "Florence Road": {
     "name": "Florence Road",
     "genres": [
-      "indie rock"
+      "indie rock",
+      "power pop",
+      "indie pop"
     ],
     "source": "wiki-direct-en",
     "mbid": "9b189d1b-3d6d-41d1-9053-cf29a487a75e",
@@ -1549,7 +2050,12 @@
   },
   "Flytrap": {
     "name": "Flytrap",
-    "genres": [],
+    "genres": [
+      "rapcore",
+      "heavy metal",
+      "nu metal",
+      "estonian metal"
+    ],
     "source": "wiki-direct-en+spotify",
     "mbid": "70a64d68-efc4-4e69-a500-8969d6cadc00",
     "type": "Group",
@@ -1562,7 +2068,12 @@
   },
   "Flora Hibberd": {
     "name": "Flora Hibberd",
-    "genres": [],
+    "genres": [
+      "folk pop",
+      "indie folk",
+      "folk",
+      "folk-rock"
+    ],
     "source": "spotify",
     "mbid": "9cc2de62-59a2-46d3-ba2b-37c96796e630",
     "type": "Person",
@@ -1573,7 +2084,13 @@
   },
   "Folly Group": {
     "name": "Folly Group",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "crank wave",
+      "art punk",
+      "indie rock",
+      "dance-punk"
+    ],
     "source": "spotify",
     "mbid": "b92500c4-be02-4efc-aa85-83c134a2feff",
     "type": "Group",
@@ -1590,7 +2107,9 @@
       "alternative rock",
       "art rock",
       "dance-punk",
-      "new wave"
+      "new wave",
+      "indie",
+      "electronic"
     ],
     "source": "mb-wikidata-en",
     "mbid": "6a65d878-fcd0-42cf-aff9-ca1d636a8bcc",
@@ -1604,10 +2123,11 @@
     "genres": [
       "post-punk",
       "indie rock",
-      "dublin",
       "gothic rock",
       "post-punk 2k",
-      "rock"
+      "rock",
+      "crank wave",
+      "post-brexit new wave"
     ],
     "source": "mb-wikidata-en",
     "mbid": "fd87acc7-e0a0-4a45-bc2a-d2ab5c10be68",
@@ -1621,7 +2141,6 @@
     "genres": [
       "post-punk",
       "indie rock",
-      "dublin",
       "gothic rock",
       "post-punk 2k",
       "rock"
@@ -1655,7 +2174,8 @@
     "name": "Former Champ",
     "genres": [
       "indie rock",
-      "power pop"
+      "power pop",
+      "garage rock"
     ],
     "source": "spotify",
     "mbid": "739af113-4b8a-498a-923b-6708bb69b03a",
@@ -1683,7 +2203,9 @@
       "art punk",
       "post-punk",
       "cowpunk",
-      "punk blues"
+      "punk blues",
+      "crank wave",
+      "dance-punk"
     ],
     "source": "mb-wikidata-en",
     "mbid": "e0c97a4d-c392-41a9-a374-57af3e3eeab3",
@@ -1694,7 +2216,12 @@
   },
   "Gans": {
     "name": "Gans",
-    "genres": [],
+    "genres": [
+      "power metal",
+      "heavy metal",
+      "metal",
+      "swedish metal"
+    ],
     "source": "wiki-direct-en",
     "mbid": "8e5c16ed-5bd1-4614-bede-41f594abf8d8",
     "type": "Group",
@@ -1706,7 +2233,11 @@
     "name": "Geordie Greep",
     "genres": [
       "art rock",
-      "jazz rock"
+      "jazz rock",
+      "progressive rock",
+      "jazz-rock",
+      "avant-prog",
+      "latin rock"
     ],
     "source": "mb-wikidata-en",
     "mbid": "6ca6f49f-41f3-49ae-8403-44d07bc6f564",
@@ -1717,7 +2248,12 @@
   },
   "Ghost Woman": {
     "name": "Ghost Woman",
-    "genres": [],
+    "genres": [
+      "psychedelic rock",
+      "rock",
+      "indie rock",
+      "post-punk"
+    ],
     "source": "mb-only",
     "mbid": "9086fc25-28e8-442c-8af6-64c6f254cbfa",
     "type": "Group"
@@ -1727,7 +2263,11 @@
     "genres": [
       "post-punk",
       "art pop",
-      "disco"
+      "disco",
+      "dance-punk",
+      "indie rock",
+      "alternative dance",
+      "crank wave"
     ],
     "source": "mb-wikidata-en+spotify",
     "mbid": "ca57dd61-590f-4605-85ec-72e947a6148b",
@@ -1744,7 +2284,11 @@
     "genres": [
       "garage rock",
       "psychedelic rock",
-      "stoner rock"
+      "stoner rock",
+      "punk",
+      "rock",
+      "alternative",
+      "psychedelic"
     ],
     "source": "spotify",
     "mbid": "3136f4a3-f711-4729-a722-363610056681",
@@ -1762,7 +2306,9 @@
       "industrial",
       "no wave",
       "noise",
-      "no wave revival"
+      "no wave revival",
+      "crank wave",
+      "experimental rock"
     ],
     "source": "mb-wikidata-en",
     "mbid": "9018ba16-a391-4a08-af8c-21cdc52672c2",
@@ -1786,7 +2332,9 @@
     "name": "Girl Scout",
     "genres": [
       "indie rock",
-      "sweden"
+      "psychedelic rock",
+      "indie",
+      "psychedelic"
     ],
     "source": "spotify",
     "mbid": "6d5ce39c-2508-44ab-a83c-2bb5ce4315f3",
@@ -1799,7 +2347,11 @@
   "Gloop Unit": {
     "name": "Gloop Unit",
     "genres": [
-      "jazz punk"
+      "jazz punk",
+      "psychedelic",
+      "psychedelic rock",
+      "progressive rock",
+      "progressive"
     ],
     "source": "spotify",
     "mbid": "8dbe3b04-1912-41ff-ae90-37f4cdadb71d",
@@ -1817,7 +2369,9 @@
       "alternative rock",
       "_private tag 1",
       "alternative",
-      "art punk"
+      "art punk",
+      "crank wave",
+      "post-brexit new wave"
     ],
     "source": "mb-wikidata-en",
     "mbid": "29a2e15e-b14f-42ca-8f65-d52479872452",
@@ -1828,7 +2382,13 @@
   },
   "Godcaster": {
     "name": "Godcaster",
-    "genres": [],
+    "genres": [
+      "art punk",
+      "punk",
+      "psychedelic",
+      "indie rock",
+      "noise rock"
+    ],
     "source": "wiki-direct-en+spotify",
     "mbid": "6570d5e0-9dbf-4998-9212-aefe30d5be6b",
     "type": "Group",
@@ -1841,7 +2401,11 @@
   },
   "Good Looks": {
     "name": "Good Looks",
-    "genres": [],
+    "genres": [
+      "indie rock",
+      "alternative rock",
+      "rock"
+    ],
     "source": "spotify",
     "mbid": "64d57dc4-ad42-4489-b62e-572d8c7f1334",
     "type": "Group",
@@ -1852,7 +2416,13 @@
   },
   "Goo": {
     "name": "Goo",
-    "genres": [],
+    "genres": [
+      "grindcore",
+      "punk",
+      "hardcore",
+      "indie pop",
+      "indie rock"
+    ],
     "source": "wiki-direct-en",
     "mbid": "f38aca45-2c4c-4069-9614-fa69f77c06de",
     "type": "Person",
@@ -1862,7 +2432,13 @@
   },
   "Grandmas House": {
     "name": "Grandmas House",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "crank wave",
+      "riot grrrl",
+      "garage punk",
+      "punk"
+    ],
     "source": "spotify",
     "mbid": "96c2b1c6-bb57-4677-ba8e-6fe810d3aafe",
     "type": "Group",
@@ -1873,7 +2449,12 @@
   },
   "Graywave": {
     "name": "Graywave",
-    "genres": [],
+    "genres": [
+      "shoegaze",
+      "dream pop",
+      "post-metal",
+      "alternative metal"
+    ],
     "source": "spotify",
     "mbid": "cde87040-5225-4ae8-b188-7dbcf25ba815",
     "type": "Person",
@@ -1884,7 +2465,9 @@
   },
   "Guimauve": {
     "name": "Guimauve",
-    "genres": [],
+    "genres": [
+      "punk"
+    ],
     "source": "spotify",
     "mbid": "748ca9c6-eff2-40e9-bc30-c9e6d56708bb",
     "type": "Group",
@@ -1895,7 +2478,13 @@
   },
   "Ha the Unclear": {
     "name": "Ha the Unclear",
-    "genres": [],
+    "genres": [
+      "indie",
+      "alternative",
+      "pop",
+      "indie pop",
+      "flying nun"
+    ],
     "source": "wiki-direct-en",
     "mbid": "6243e44a-2eb5-4cdb-bbc8-39056a184a91",
     "type": "Group",
@@ -1908,7 +2497,8 @@
     "genres": [
       "alternative rock",
       "indie rock",
-      "post-punk"
+      "post-punk",
+      "crank wave"
     ],
     "source": "spotify",
     "mbid": "b3e28883-d118-4180-b458-568a18bc239d",
@@ -1920,7 +2510,13 @@
   },
   "Hallan": {
     "name": "Hallan",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "crank wave",
+      "post-brexit new wave",
+      "indie rock",
+      "garage rock"
+    ],
     "source": "spotify",
     "mbid": "a36f921f-c30b-4ae5-8255-e1743d5b64e4",
     "type": "Group",
@@ -1931,7 +2527,13 @@
   },
   "Hammok": {
     "name": "Hammok",
-    "genres": [],
+    "genres": [
+      "post-rock",
+      "ambient",
+      "shoegaze",
+      "instrumental",
+      "electronic"
+    ],
     "source": "spotify",
     "mbid": "1f2268d8-67e4-4291-b12a-2f2df4467b3f",
     "type": "Group",
@@ -1942,7 +2544,9 @@
   },
   "Handcuff": {
     "name": "Handcuff",
-    "genres": [],
+    "genres": [
+      "ankara"
+    ],
     "source": "spotify",
     "mbid": "3eefeee6-12d5-41a8-88fe-ee1c5da3576c",
     "type": null,
@@ -1953,7 +2557,13 @@
   },
   "Heartworms": {
     "name": "Heartworms",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "indie pop",
+      "indie",
+      "gothic rock",
+      "indie rock"
+    ],
     "source": "wiki-direct-en",
     "mbid": "6a102993-6cd6-4d67-b681-c61ab8f14415",
     "type": "Group",
@@ -1969,7 +2579,9 @@
       "classic country",
       "traditional country",
       "blues",
-      "country blues"
+      "country blues",
+      "punk",
+      "rock"
     ],
     "source": "mb-wikidata-en",
     "mbid": "906bddec-bc73-49f8-ac1e-eaee691c6cf9",
@@ -1982,7 +2594,10 @@
     "name": "Heavy Lungs",
     "genres": [
       "post-hardcore",
-      "post-punk"
+      "post-punk",
+      "crank wave",
+      "noise rock",
+      "doom punk"
     ],
     "source": "mb-wikidata-en",
     "mbid": "b7faff47-57c9-4625-a612-4b0ea6c51511",
@@ -1995,7 +2610,10 @@
     "name": "Highschool",
     "genres": [
       "indie rock",
-      "post-punk"
+      "post-punk",
+      "crank wave",
+      "indie",
+      "indie pop"
     ],
     "source": "wiki-direct-en",
     "mbid": "3c077b00-f48b-4868-a487-8851a503358b",
@@ -2006,7 +2624,12 @@
   },
   "Honeyglaze": {
     "name": "Honeyglaze",
-    "genres": [],
+    "genres": [
+      "indie rock",
+      "crank wave",
+      "post-punk",
+      "dream pop"
+    ],
     "source": "mb-wikidata-en",
     "mbid": "6a04ab15-ef22-4408-844f-5bf1d54dd2cb",
     "type": "Group",
@@ -2016,7 +2639,13 @@
   },
   "Home Counties": {
     "name": "Home Counties",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "crank wave",
+      "post-brexit new wave",
+      "indie rock",
+      "dance-punk"
+    ],
     "source": "wiki-direct-en",
     "mbid": "557f0eee-6413-4752-81bb-992b2ef061af",
     "type": "Group",
@@ -2030,7 +2659,10 @@
       "garage",
       "psychedelic rock",
       "rock",
-      "rock and roll"
+      "rock and roll",
+      "garage rock",
+      "lo-fi",
+      "guitar"
     ],
     "source": "spotify",
     "mbid": "07136810-624a-4632-91a3-35f89194d179",
@@ -2048,7 +2680,8 @@
       "avant-prog",
       "experimental",
       "experimental rock",
-      "krautrock"
+      "krautrock",
+      "math rock"
     ],
     "source": "mb-wikidata-en+spotify",
     "mbid": "6efe2782-6926-41f6-b246-bdd60f997b8b",
@@ -2062,7 +2695,13 @@
   },
   "Hot Face": {
     "name": "Hot Face",
-    "genres": [],
+    "genres": [
+      "guitar",
+      "rock",
+      "garage rock",
+      "garage punk",
+      "psychedelic"
+    ],
     "source": "spotify",
     "mbid": "b75f0d72-53cc-4120-9381-2c53281ea9f5",
     "type": "Group",
@@ -2073,7 +2712,13 @@
   },
   "Hot Wax": {
     "name": "Hot Wax",
-    "genres": [],
+    "genres": [
+      "dub",
+      "post-punk",
+      "industrial",
+      "experimental",
+      "electronic"
+    ],
     "source": "wiki-direct-en",
     "mbid": "ec0201ac-50e2-47ba-8736-d9bffe48852e",
     "type": "Group",
@@ -2083,7 +2728,13 @@
   },
   "Hotel Lux": {
     "name": "Hotel Lux",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "crank wave",
+      "indie rock",
+      "art punk",
+      "post-brexit new wave"
+    ],
     "source": "spotify",
     "mbid": "1838ad59-1008-4db8-aede-3c75195fd40b",
     "type": "Group",
@@ -2099,7 +2750,13 @@
   },
   "House Arrest": {
     "name": "House Arrest",
-    "genres": [],
+    "genres": [
+      "hardcore",
+      "punk",
+      "mosh",
+      "thrash",
+      "hardcore punk"
+    ],
     "source": "spotify",
     "mbid": "0ea834d9-3fc1-47d0-9c47-24138108cef5",
     "type": "Group",
@@ -2112,7 +2769,11 @@
     "name": "Human Interest",
     "genres": [
       "art rock",
-      "indie rock"
+      "indie rock",
+      "britain",
+      "garage rock",
+      "indie",
+      "alternative"
     ],
     "source": "spotify",
     "mbid": "3140d565-a48b-471f-8656-d62f0565b381",
@@ -2126,7 +2787,12 @@
     "name": "Hutch",
     "genres": [
       "hardcore punk",
-      "punk"
+      "punk",
+      "hardcore",
+      "punk rock",
+      "funny",
+      "folk",
+      "spoken word"
     ],
     "source": "wiki-direct-en",
     "mbid": "f77fceea-4c44-4cd3-8145-cda9f1589033",
@@ -2142,7 +2808,9 @@
       "art punk",
       "art rock",
       "post-hardcore",
-      "punk"
+      "punk",
+      "crank wave",
+      "noise rock"
     ],
     "source": "mb-wikidata-en",
     "mbid": "be465d4f-c28d-4ba1-94ab-ebaada7db8af",
@@ -2153,7 +2821,12 @@
   },
   "Humour": {
     "name": "Humour",
-    "genres": [],
+    "genres": [
+      "crank wave",
+      "post-hardcore",
+      "alternative rock",
+      "rock"
+    ],
     "source": "wiki-direct-en",
     "mbid": "ebde0870-c1a3-4b10-a528-66b4841a6096",
     "type": "Group",
@@ -2163,7 +2836,13 @@
   },
   "Ideal Living": {
     "name": "Ideal Living",
-    "genres": [],
+    "genres": [
+      "alternative rock",
+      "progressive rock",
+      "experimental",
+      "post-rock",
+      "post-punk"
+    ],
     "source": "spotify",
     "mbid": "df8e86ae-1adb-4b24-bdc9-0961d5da0e0e",
     "type": "Group",
@@ -2174,7 +2853,13 @@
   },
   "Japanese Television": {
     "name": "Japanese Television",
-    "genres": [],
+    "genres": [
+      "psychedelic rock",
+      "space rock",
+      "garage rock",
+      "surf rock",
+      "alternative rock"
+    ],
     "source": "wiki-direct-en+spotify",
     "mbid": "b08f1f0d-cd7a-4c40-8bdd-f73244d6c616",
     "type": "Group",
@@ -2187,7 +2872,10 @@
   },
   "Infecticide": {
     "name": "Infecticide",
-    "genres": [],
+    "genres": [
+      "minimal wave",
+      "new-wave"
+    ],
     "source": "spotify",
     "mbid": "16768f54-ed97-4117-958a-8cf92f8000e5",
     "type": "Group",
@@ -2204,7 +2892,9 @@
       "punk",
       "emo",
       "experimental rock",
-      "folk punk"
+      "folk punk",
+      "pop punk",
+      "power pop"
     ],
     "source": "mb-wikidata-en",
     "mbid": "14892f45-a103-44f2-bb18-ee4a20d7876e",
@@ -2215,7 +2905,13 @@
   },
   "Italia 90": {
     "name": "Italia 90",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "crank wave",
+      "post-brexit new wave",
+      "punk rock",
+      "garage rock"
+    ],
     "source": "spotify",
     "mbid": "cd33f87d-1ce5-4f5d-8ff7-931db36e0f4a",
     "type": "Group",
@@ -2232,7 +2928,9 @@
       "glitch pop",
       "noise rock",
       "pop rock",
-      "windmill scene"
+      "electronic",
+      "experimental",
+      "indie pop"
     ],
     "source": "mb-wikidata-en",
     "mbid": "7230b2f8-96da-4242-8d57-2a8c1c3d71e4",
@@ -2243,7 +2941,13 @@
   },
   "Jesse Jo Stark": {
     "name": "Jesse Jo Stark",
-    "genres": [],
+    "genres": [
+      "rock",
+      "blues",
+      "indie rock",
+      "indie",
+      "singer-songwriter"
+    ],
     "source": "wiki-direct-en",
     "mbid": "9c322880-187b-44c9-9020-4d707fbc6ac1",
     "type": "Person",
@@ -2253,7 +2957,11 @@
   },
   "Joe Unknown": {
     "name": "Joe Unknown",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "uk hip hop",
+      "great britian"
+    ],
     "source": "spotify",
     "mbid": "dee6ad59-2087-4034-89c9-84e49728be5e",
     "type": "Person",
@@ -2270,7 +2978,9 @@
       "composer",
       "film composer",
       "orchestral",
-      "conductor"
+      "conductor",
+      "vocaloid",
+      "hatsune miku"
     ],
     "source": "mb-wikidata-en",
     "mbid": "53b106e7-0cc6-42cc-ac95-ed8d30a3a98e",
@@ -2287,7 +2997,9 @@
       "dance",
       "electronica",
       "experimental hip hop",
-      "glitch hop"
+      "glitch hop",
+      "experimental",
+      "electronic"
     ],
     "source": "wiki-direct-en",
     "mbid": "34ebe14b-113c-4004-9625-77cb6b13b27d",
@@ -2299,7 +3011,11 @@
   "Jonah Yano": {
     "name": "Jonah Yano",
     "genres": [
-      "alternative r&b"
+      "alternative r&b",
+      "electronic",
+      "jazz",
+      "neo-soul",
+      "jazz pop"
     ],
     "source": "wiki-direct-en+spotify",
     "mbid": "86da1981-9d9a-49d5-b2f2-f968132e2a46",
@@ -2313,7 +3029,11 @@
   },
   "Jon K": {
     "name": "Jon K",
-    "genres": [],
+    "genres": [
+      "house",
+      "indie",
+      "techno"
+    ],
     "source": "mb-only",
     "mbid": "e734c9b3-8922-4bcb-969b-0752f313f578",
     "type": null
@@ -2325,7 +3045,13 @@
   },
   "KEG": {
     "name": "KEG",
-    "genres": [],
+    "genres": [
+      "crank wave",
+      "post-punk",
+      "garage rock",
+      "indie rock",
+      "post-brexit new wave"
+    ],
     "source": "wiki-direct-en+spotify",
     "mbid": "e447dc02-d59c-442e-b2eb-1cdd6c230867",
     "type": "Group",
@@ -2338,7 +3064,12 @@
   },
   "Joyeria": {
     "name": "Joyeria",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "indie rock",
+      "art punk",
+      "punk rock"
+    ],
     "source": "spotify",
     "mbid": "40a88d5a-274a-4210-8e21-4af69885a0de",
     "type": "Person",
@@ -2349,7 +3080,10 @@
   },
   "Kickboy": {
     "name": "Kickboy",
-    "genres": [],
+    "genres": [
+      "crank wave",
+      "post-brexit new wave"
+    ],
     "source": "wiki-direct-en+spotify",
     "mbid": "fb57371f-56d3-444a-9e5d-c44df59bab6d",
     "type": null,
@@ -2362,7 +3096,10 @@
   },
   "Kissing Gate": {
     "name": "Kissing Gate",
-    "genres": [],
+    "genres": [
+      "indie pop",
+      "indie rock"
+    ],
     "source": "spotify",
     "mbid": "67c379d5-85f0-49af-9a5b-9b8718ae0b21",
     "type": "Group",
@@ -2376,9 +3113,9 @@
     "genres": [
       "hip hop",
       "political hip hop",
-      "irish",
       "rap",
-      "gangsta rap"
+      "gangsta rap",
+      "hip-hop"
     ],
     "source": "mb-wikidata-en",
     "mbid": "6ac275dd-eb37-42cf-9a60-6b147320c7be",
@@ -2395,7 +3132,8 @@
       "progressive rock",
       "jazz rock",
       "psychedelic pop",
-      "thrash metal"
+      "thrash metal",
+      "psychedelic"
     ],
     "source": "mb-wikidata-en",
     "mbid": "f58384a4-2ad2-4f24-89c5-c7b74ae1cce7",
@@ -2406,7 +3144,13 @@
   },
   "Knives": {
     "name": "Knives",
-    "genres": [],
+    "genres": [
+      "halftime",
+      "post-hardcore",
+      "rapcore",
+      "rap metal",
+      "death n roll"
+    ],
     "source": "wiki-direct-en",
     "mbid": "26523296-ee2c-4896-beb6-6d32fff8a974",
     "type": "Group",
@@ -2421,7 +3165,13 @@
   },
   "L'objectif": {
     "name": "L'objectif",
-    "genres": [],
+    "genres": [
+      "crank wave",
+      "post-punk",
+      "post-brexit new wave",
+      "indie rock",
+      "art punk"
+    ],
     "source": "wiki-direct-en",
     "mbid": "040d6b21-d0c7-432a-8040-5d6f546e3d79",
     "type": null,
@@ -2433,7 +3183,11 @@
     "name": "Krokodil",
     "genres": [
       "psychedelic rock",
-      "rock"
+      "rock",
+      "krautrock",
+      "progressive rock",
+      "blues rock",
+      "psychedelic"
     ],
     "source": "wiki-direct-en",
     "mbid": "01a6d199-bbab-4191-83d6-4a6289ff907f",
@@ -2455,7 +3209,13 @@
   },
   "LOSTBOY": {
     "name": "LOSTBOY",
-    "genres": [],
+    "genres": [
+      "dream pop",
+      "indie pop",
+      "indie",
+      "alternative rock",
+      "art pop"
+    ],
     "source": "mb-wikidata-en",
     "mbid": "29871918-3352-424d-8615-783d8f30c399",
     "type": "Person",
@@ -2466,7 +3226,11 @@
   "LIFE": {
     "name": "LIFE",
     "genres": [
-      "hip hop"
+      "hip hop",
+      "crust",
+      "screamo",
+      "hardcore",
+      "crust punk"
     ],
     "source": "mb-only",
     "mbid": "f2e99aa1-4861-4b8f-b55e-bd088c0715ea",
@@ -2480,7 +3244,8 @@
       "anarcho-punk",
       "garage punk",
       "pop punk",
-      "punk"
+      "punk",
+      "punk rock"
     ],
     "source": "spotify",
     "mbid": "65feec89-20e8-4e3a-bca5-00420ef69827",
@@ -2495,7 +3260,9 @@
     "genres": [
       "art punk",
       "new wave",
-      "post-punk"
+      "post-punk",
+      "garage rock",
+      "indie rock"
     ],
     "source": "mb-wikidata-en",
     "mbid": "a03666b0-23ba-455f-bc74-1e8a7140fed3",
@@ -2505,7 +3272,13 @@
   },
   "Ladylike": {
     "name": "Ladylike",
-    "genres": [],
+    "genres": [
+      "indie rock",
+      "power pop",
+      "shoegaze",
+      "indie pop",
+      "dream pop"
+    ],
     "source": "wiki-direct-en",
     "mbid": "b46076a3-46cf-44cb-9297-6672a00a1cd0",
     "type": "Group",
@@ -2518,7 +3291,12 @@
     "genres": [
       "punk",
       "punk rock",
-      "rock"
+      "rock",
+      "riot grrrl",
+      "garage punk",
+      "crank wave",
+      "post-punk",
+      "queercore"
     ],
     "source": "mb-wikidata-en",
     "mbid": "4eeea7eb-7554-48cb-9e50-c26d434ed9ef",
@@ -2544,7 +3322,10 @@
       "classical",
       "pianist",
       "chinese pianist",
-      "piano"
+      "piano",
+      "classical piano",
+      "instrumental",
+      "lang lang"
     ],
     "source": "mb-wikidata-en",
     "mbid": "43e1570a-1a0d-479f-9c95-fba971aec91a",
@@ -2555,7 +3336,13 @@
   },
   "Legss": {
     "name": "Legss",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "crank wave",
+      "post-brexit new wave",
+      "indie rock",
+      "art punk"
+    ],
     "source": "wiki-direct-en",
     "mbid": "393a2879-2d1f-4ae0-92cf-a2c3a540d0e1",
     "type": "Group",
@@ -2577,7 +3364,9 @@
   "Les Clopes": {
     "name": "Les Clopes",
     "genres": [
-      "alternative rock"
+      "alternative rock",
+      "post-punk",
+      "electronic"
     ],
     "source": "spotify",
     "mbid": "1ed80fc0-e00a-4b2c-868d-e20aec909308",
@@ -2589,7 +3378,13 @@
   },
   "Lice": {
     "name": "Lice",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "art punk",
+      "crank wave",
+      "post-brexit new wave",
+      "experimental rock"
+    ],
     "source": "spotify",
     "mbid": "bb64bb70-7a0b-4491-8ca2-0c4bf2e57fe6",
     "type": "Group",
@@ -2601,7 +3396,12 @@
   "Lifts": {
     "name": "Lifts",
     "genres": [
-      "art rock"
+      "art rock",
+      "classical",
+      "jazz",
+      "art-rock",
+      "post-punk",
+      "classical music"
     ],
     "source": "spotify",
     "mbid": "fd2e84ee-0486-4b77-9e64-743dc876daba",
@@ -2613,7 +3413,10 @@
   },
   "Les Lullies": {
     "name": "Les Lullies",
-    "genres": [],
+    "genres": [
+      "garage punk",
+      "punk rock"
+    ],
     "source": "spotify",
     "mbid": "359e2b43-09f2-4829-a448-6db3e06153dd",
     "type": "Group",
@@ -2624,7 +3427,13 @@
   },
   "Lip Filler": {
     "name": "Lip Filler",
-    "genres": [],
+    "genres": [
+      "indie rock",
+      "rock",
+      "indie pop",
+      "punk",
+      "shoegaze"
+    ],
     "source": "spotify",
     "mbid": "9fe14671-7b6a-4124-a146-9fedca3596e3",
     "type": null,
@@ -2635,7 +3444,12 @@
   },
   "Liz Lawrence": {
     "name": "Liz Lawrence",
-    "genres": [],
+    "genres": [
+      "folk",
+      "singer-songwriter",
+      "indie",
+      "indie folk"
+    ],
     "source": "mb-wikidata-en",
     "mbid": "f6cab4e8-1757-46f3-81cd-c3d1950b1d68",
     "type": "Person",
@@ -2649,7 +3463,9 @@
       "dance-punk",
       "indie pop",
       "new rave",
-      "post-punk revival"
+      "post-punk revival",
+      "indie rock",
+      "post-punk"
     ],
     "source": "mb-wikidata-en",
     "mbid": "47d7fd0d-6598-43a0-b7b3-39bfff0d3ce4",
@@ -2661,7 +3477,12 @@
   "Loose Articles": {
     "name": "Loose Articles",
     "genres": [
-      "punk"
+      "punk",
+      "post-punk",
+      "crank wave",
+      "post-brexit new wave",
+      "indie rock",
+      "art punk"
     ],
     "source": "spotify",
     "mbid": "12009c0e-61be-4adc-b631-18bfa444fc3e",
@@ -2678,7 +3499,8 @@
       "indie",
       "indie pop",
       "psychedelic rock",
-      "surf rock"
+      "surf rock",
+      "instrumental"
     ],
     "source": "mb-wikidata-en",
     "mbid": "685051dc-49ad-496a-acab-57ad1ad1e491",
@@ -2689,7 +3511,13 @@
   },
   "Lumer": {
     "name": "Lumer",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "crank wave",
+      "post-brexit new wave",
+      "garage rock",
+      "indie rock"
+    ],
     "source": "spotify",
     "mbid": "0e9d7bbd-7fb9-42db-ad70-6a0a4a29d6eb",
     "type": "Group",
@@ -2702,7 +3530,8 @@
     "name": "Lucid Express",
     "genres": [
       "dream pop",
-      "shoegaze"
+      "shoegaze",
+      "electronic"
     ],
     "source": "spotify",
     "mbid": "c64ed7a6-fff8-4487-b590-21870d444c74",
@@ -2720,7 +3549,9 @@
       "shoegaze",
       "synth-pop",
       "indietronica",
-      "post-rock"
+      "post-rock",
+      "indie",
+      "electronica"
     ],
     "source": "mb-wikidata-en",
     "mbid": "6d7b7cd4-254b-4c25-83f6-dd20f98ceacd",
@@ -2733,7 +3564,12 @@
     "name": "MEMORIALS",
     "genres": [
       "free jazz",
-      "noise rock"
+      "noise rock",
+      "melodic hardcore",
+      "hardcore",
+      "screamo",
+      "modern hardcore",
+      "hardcore punk"
     ],
     "source": "spotify",
     "mbid": "da08fa56-7311-4008-8592-d25aa4dd23ff",
@@ -2747,7 +3583,10 @@
     "name": "MODEL/ACTRIZ",
     "genres": [
       "noise rock",
-      "post-punk"
+      "post-punk",
+      "no wave",
+      "dance-punk",
+      "experimental"
     ],
     "source": "mb-wikidata-en",
     "mbid": "1b6bd9dc-c944-4937-94ec-b2276141fa36",
@@ -2758,7 +3597,12 @@
   },
   "MOULD": {
     "name": "MOULD",
-    "genres": [],
+    "genres": [
+      "punk rock",
+      "punk",
+      "doom metal",
+      "post-punk"
+    ],
     "source": "wiki-direct-en",
     "mbid": "758c7b15-0774-4313-a822-52bb1cf04df9",
     "type": "Group",
@@ -2769,7 +3613,11 @@
   "Makeshift Art Bar": {
     "name": "Makeshift Art Bar",
     "genres": [
-      "post-punk"
+      "post-punk",
+      "crank wave",
+      "noise rock",
+      "alternative rock",
+      "experimental"
     ],
     "source": "spotify",
     "mbid": "2bc5a8a2-a5da-4ab2-8edb-0983b2fd9065",
@@ -2791,7 +3639,10 @@
       "industrial",
       "ebm",
       "electro-industrial",
-      "indie"
+      "indie",
+      "post-punk",
+      "noise rock",
+      "experimental rock"
     ],
     "source": "mb-wikidata-en+spotify",
     "mbid": "9ed67b68-9fa7-471a-99eb-483139293274",
@@ -2807,7 +3658,11 @@
     "name": "Man/Woman/Chainsaw",
     "genres": [
       "art punk",
-      "indie rock"
+      "indie rock",
+      "crank wave",
+      "post-punk",
+      "art rock",
+      "noise rock"
     ],
     "source": "spotify",
     "mbid": "e72f0b0e-fe8e-405a-942e-633edd84c998",
@@ -2820,7 +3675,12 @@
   "Marathon": {
     "name": "Marathon",
     "genres": [
-      "crossover prog"
+      "crossover prog",
+      "punk",
+      "melodic hardcore",
+      "emo",
+      "hardcore",
+      "the netherlands"
     ],
     "source": "spotify",
     "mbid": "9a31c1d0-8efd-4f96-98e7-0b06216f2199",
@@ -2852,7 +3712,10 @@
   },
   "Maripool": {
     "name": "Maripool",
-    "genres": [],
+    "genres": [
+      "indie pop",
+      "indie rock"
+    ],
     "source": "spotify",
     "mbid": "43a7d2ea-d4cc-480e-9f17-30c4e38ce894",
     "type": null,
@@ -2863,7 +3726,13 @@
   },
   "Marketplace": {
     "name": "Marketplace",
-    "genres": [],
+    "genres": [
+      "techno",
+      "acid",
+      "indie",
+      "trance",
+      "hardcore techno"
+    ],
     "source": "spotify",
     "mbid": "ce805d5d-830d-436e-8a65-b62f3890a71b",
     "type": "Group",
@@ -2874,7 +3743,12 @@
   },
   "Martial Arts": {
     "name": "Martial Arts",
-    "genres": [],
+    "genres": [
+      "power pop",
+      "jangle pop",
+      "the beach boys",
+      "meh"
+    ],
     "source": "wiki-direct-en+spotify",
     "mbid": "17bc5a71-547d-440d-85a5-16ed0d55e4f3",
     "type": "Group",
@@ -2887,7 +3761,13 @@
   },
   "Mary in the Junkyard": {
     "name": "Mary in the Junkyard",
-    "genres": [],
+    "genres": [
+      "art rock",
+      "indie rock",
+      "post-punk",
+      "alternative",
+      "alternative rock"
+    ],
     "source": "wiki-direct-en+spotify",
     "mbid": "64367341-4bc2-493c-8e5d-ce17841c8a7a",
     "type": "Group",
@@ -2905,7 +3785,8 @@
       "art rock",
       "jazz rock",
       "post-punk",
-      "post-rock"
+      "post-rock",
+      "crank wave"
     ],
     "source": "mb-wikidata-en",
     "mbid": "91af52ad-77b0-488e-b648-bf65ac695539",
@@ -2922,7 +3803,9 @@
       "alternative dance",
       "avant-folk",
       "dance-pop",
-      "experimental electronic"
+      "experimental electronic",
+      "electronic",
+      "indie"
     ],
     "source": "wiki-direct-en+spotify",
     "mbid": "b130500a-a0d0-4eb5-a764-66b1233e35d6",
@@ -2936,7 +3819,13 @@
   },
   "Mhaol": {
     "name": "Mhaol",
-    "genres": [],
+    "genres": [
+      "crank wave",
+      "post-punk",
+      "spoken word",
+      "noise rock",
+      "riot grrrl"
+    ],
     "source": "spotify",
     "photo": "https://i.scdn.co/image/ab6761610000e5eb7a3fb28229223e29407b723e",
     "photoSmall": "https://i.scdn.co/image/ab6761610000f1787a3fb28229223e29407b723e",
@@ -2947,7 +3836,11 @@
     "name": "MiddleMan",
     "genres": [
       "alternative rock",
-      "rap rock"
+      "rap rock",
+      "indie",
+      "rock",
+      "lms artist",
+      "indie rock"
     ],
     "source": "mb-wikidata-en",
     "mbid": "f905b521-4e68-49b9-9f69-e560fed2daf2",
@@ -2958,7 +3851,12 @@
   },
   "Mince": {
     "name": "Mince",
-    "genres": [],
+    "genres": [
+      "electronic",
+      "chillout",
+      "experimental",
+      "vancouver"
+    ],
     "source": "wiki-direct-en+spotify",
     "mbid": "09aa04d4-51bf-4b00-a198-72c541bd6ac5",
     "type": "Group",
@@ -2971,7 +3869,13 @@
   },
   "Miss Tiny": {
     "name": "Miss Tiny",
-    "genres": [],
+    "genres": [
+      "garage rock",
+      "garage punk",
+      "indie rock",
+      "krautrock",
+      "art punk"
+    ],
     "source": "spotify",
     "mbid": "a68df9c4-2e0d-4144-b9ab-0c325ae59d6e",
     "type": "Group",
@@ -2982,7 +3886,13 @@
   },
   "Minor Conflict": {
     "name": "Minor Conflict",
-    "genres": [],
+    "genres": [
+      "avant-garde",
+      "experimental",
+      "art punk",
+      "post-punk",
+      "avant-garde pop"
+    ],
     "source": "spotify",
     "mbid": "7f6cca9e-63db-4c88-9202-78016895fdc5",
     "type": "Group",
@@ -2995,7 +3905,10 @@
     "name": "Model/Actriz",
     "genres": [
       "noise rock",
-      "post-punk"
+      "post-punk",
+      "no wave",
+      "dance-punk",
+      "experimental"
     ],
     "source": "mb-wikidata-en",
     "mbid": "1b6bd9dc-c944-4937-94ec-b2276141fa36",
@@ -3006,7 +3919,13 @@
   },
   "Moreish Idols": {
     "name": "Moreish Idols",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "dream pop",
+      "indie rock",
+      "punk rock",
+      "art punk"
+    ],
     "source": "spotify",
     "mbid": "37915598-b8b0-4f40-8472-338735c26897",
     "type": null,
@@ -3017,7 +3936,12 @@
   },
   "Motorists": {
     "name": "Motorists",
-    "genres": [],
+    "genres": [
+      "power pop",
+      "indie pop",
+      "indie rock",
+      "jangle pop"
+    ],
     "source": "spotify",
     "mbid": "0a89981d-65c5-4848-a563-bba10e9bf2c2",
     "type": "Group",
@@ -3028,7 +3952,11 @@
   },
   "Murkage Dave": {
     "name": "Murkage Dave",
-    "genres": [],
+    "genres": [
+      "rnb",
+      "soul",
+      "pop"
+    ],
     "source": "wiki-direct-en+spotify",
     "mbid": "9f02af13-3bc8-4aef-9d0a-d2996d67cba2",
     "type": "Person",
@@ -3051,7 +3979,10 @@
       "garage",
       "noise",
       "post-punk",
-      "shoegaze"
+      "shoegaze",
+      "crank wave",
+      "post-brexit new wave",
+      "art punk"
     ],
     "source": "wiki-direct-en",
     "mbid": "fc6b2bc2-d50d-46b4-8ac1-edbb414d9719",
@@ -3065,7 +3996,10 @@
     "genres": [
       "noise",
       "post-punk",
-      "shoegaze"
+      "shoegaze",
+      "noise rock",
+      "garage rock",
+      "garage punk"
     ],
     "source": "spotify",
     "mbid": "4a8dadb4-7a08-40ec-abc5-ba296998435a",
@@ -3077,7 +4011,13 @@
   },
   "Nerves": {
     "name": "Nerves",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "punk",
+      "noise rock",
+      "hardcore",
+      "hardcore punk"
+    ],
     "source": "wiki-direct-en",
     "mbid": "0465de68-c6dc-487e-917e-0973f6512538",
     "type": "Group",
@@ -3093,7 +4033,8 @@
       "electronic",
       "alternative dance",
       "synth-pop",
-      "synthpop"
+      "synthpop",
+      "alternative"
     ],
     "source": "mb-wikidata-en",
     "mbid": "f1106b17-dcbb-45f6-b938-199ccfab50cc",
@@ -3104,7 +4045,12 @@
   },
   "Nice Biscuit": {
     "name": "Nice Biscuit",
-    "genres": [],
+    "genres": [
+      "rock",
+      "indie",
+      "psychedelic",
+      "psychedelic rock"
+    ],
     "source": "spotify",
     "mbid": "632cda31-18ca-43b5-8c3b-74e970dc5105",
     "type": "Group",
@@ -3115,7 +4061,12 @@
   },
   "Nightbus": {
     "name": "Nightbus",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "indie pop",
+      "shoegaze",
+      "indie rock"
+    ],
     "source": "spotify",
     "mbid": "208702fb-f566-451a-89bb-8d4362f3c8be",
     "type": "Group",
@@ -3140,7 +4091,9 @@
       "modern classical",
       "ambient",
       "electronic",
-      "minimalism"
+      "minimalism",
+      "piano",
+      "contemporary classical"
     ],
     "source": "mb-wikidata-en",
     "mbid": "d03a54bc-6e07-4c04-a8d4-7fbf2bd07a01",
@@ -3151,7 +4104,13 @@
   },
   "Nina Garcia": {
     "name": "Nina Garcia",
-    "genres": [],
+    "genres": [
+      "free improvisation",
+      "noise",
+      "experimental",
+      "improvisation",
+      "fee improvisation"
+    ],
     "source": "spotify",
     "mbid": "d9668912-bb3c-47af-84af-88e0185b2bd7",
     "type": "Person",
@@ -3168,7 +4127,9 @@
       "hip hop",
       "metal",
       "nu metal",
-      "pop rock"
+      "pop rock",
+      "punk",
+      "rap rock"
     ],
     "source": "mb-wikidata-en",
     "mbid": "6a81fbbc-acea-4221-9199-957842125078",
@@ -3183,7 +4144,11 @@
       "gothic metal",
       "doom metal",
       "heavy metal",
-      "metal"
+      "metal",
+      "experimental",
+      "jazz",
+      "art punk",
+      "nu jazz"
     ],
     "source": "mb-wikidata-en",
     "mbid": "a63df8c3-28e4-41db-bac2-c6c6e8ff8f28",
@@ -3195,7 +4160,11 @@
   "Opus Kink": {
     "name": "Opus Kink",
     "genres": [
-      "post-punk"
+      "post-punk",
+      "crank wave",
+      "art punk",
+      "indie rock",
+      "post-brexit new wave"
     ],
     "source": "mb-wikidata-en+spotify",
     "mbid": "6f8c8536-2cb7-4dbc-aab9-38ff9ff5c789",
@@ -3209,7 +4178,12 @@
   },
   "Oslo Twins": {
     "name": "Oslo Twins",
-    "genres": [],
+    "genres": [
+      "shoegaze",
+      "indie pop",
+      "dream pop",
+      "darkwave"
+    ],
     "source": "spotify",
     "mbid": "aa4ee7db-3067-490c-a801-55f992f43701",
     "type": "Group",
@@ -3220,7 +4194,12 @@
   },
   "Otala": {
     "name": "Otala",
-    "genres": [],
+    "genres": [
+      "experimental",
+      "jazz",
+      "punk rock",
+      "art punk"
+    ],
     "source": "spotify",
     "mbid": "6224433b-ba4e-40e1-9a6c-4672a75eedf7",
     "photo": "https://i.scdn.co/image/ab6761610000e5eb481f1b6c7cdde0e71b6becc0",
@@ -3236,7 +4215,9 @@
       "dance",
       "house",
       "ebm",
-      "techno"
+      "techno",
+      "synthpop",
+      "dance-punk"
     ],
     "source": "wiki-direct-en+spotify",
     "mbid": "3e3c2787-4412-4614-82af-ce903b4d8b96",
@@ -3262,7 +4243,11 @@
     "name": "Paranoid London",
     "genres": [
       "house",
-      "edm"
+      "edm",
+      "acid house",
+      "acid",
+      "electronic",
+      "techno"
     ],
     "source": "spotify",
     "mbid": "76ebdc4a-935e-45bb-a9e9-d1c43eca2c8b",
@@ -3273,7 +4258,11 @@
   },
   "Parker Fans": {
     "name": "Parker Fans",
-    "genres": [],
+    "genres": [
+      "indie",
+      "indie pop",
+      "indie rock"
+    ],
     "source": "spotify",
     "mbid": "504b0b46-1706-4cd3-b9ff-3e988ee5fa5d",
     "photo": "https://i.scdn.co/image/ab6761610000e5ebe5a364ebc54c65cf5452197b",
@@ -3283,7 +4272,13 @@
   },
   "Pearl2": {
     "name": "Pearl2",
-    "genres": [],
+    "genres": [
+      "ambient",
+      "electronic",
+      "trip hop",
+      "experimental",
+      "lo-fi"
+    ],
     "source": "spotify",
     "mbid": "c4cd22c3-a2db-462d-83b9-d31fb3502384",
     "photo": "https://i.scdn.co/image/ab6761610000e5ebafa973d4b6a47b6cffcca341",
@@ -3302,7 +4297,13 @@
   },
   "Pencil": {
     "name": "Pencil",
-    "genres": [],
+    "genres": [
+      "breakcore",
+      "math rock",
+      "lolicore",
+      "indie",
+      "noise rock"
+    ],
     "source": "wiki-direct-en+spotify",
     "mbid": "d5f947b5-99fd-486d-a701-8a0b3a8314ed",
     "photo": "https://i.scdn.co/image/ab6761610000e5ebdf5bceac2f8cb984738e7f4f",
@@ -3314,7 +4315,13 @@
   },
   "Personal Trainer": {
     "name": "Personal Trainer",
-    "genres": [],
+    "genres": [
+      "indie rock",
+      "rock",
+      "crank wave",
+      "punk rock",
+      "indie"
+    ],
     "source": "wiki-direct-en",
     "mbid": "2e84443c-dc23-4b65-922a-f96b8a73d602",
     "type": "Group",
@@ -3329,7 +4336,10 @@
   },
   "Picture Parlour": {
     "name": "Picture Parlour",
-    "genres": [],
+    "genres": [
+      "indie rock",
+      "rock"
+    ],
     "source": "mb-wiki-en",
     "mbid": "f049adf5-ceb8-4466-970f-9c4ffac3caca",
     "type": "Group",
@@ -3347,7 +4357,9 @@
     "genres": [
       "noise rock",
       "post-punk",
-      "synth"
+      "synth",
+      "rock",
+      "indie"
     ],
     "source": "wiki-direct-en",
     "mbid": "80f0925d-8bee-4ab4-95d8-9fb47e36f1d1",
@@ -3361,10 +4373,10 @@
     "genres": [
       "punk",
       "post-punk",
-      "uk",
       "goth",
       "gothic rock",
-      "england"
+      "deathrock",
+      "gothic"
     ],
     "source": "wiki-direct-en+spotify",
     "mbid": "764f0969-6485-4a47-b2e6-73764cfc6978",
@@ -3380,9 +4392,9 @@
     "genres": [
       "post-punk",
       "cold wave",
-      "russian",
       "russian post-punk",
-      "coldwave"
+      "coldwave",
+      "new wave"
     ],
     "source": "mb-wikidata-en",
     "mbid": "3e9e3456-b9ad-41d8-a3d0-0497805e31fc",
@@ -3394,8 +4406,12 @@
   "Pol": {
     "name": "Pol",
     "genres": [
-      "french",
-      "trip-hop"
+      "trip-hop",
+      "ambient",
+      "psychedelic",
+      "post-punk",
+      "dub",
+      "indie rock"
     ],
     "source": "wiki-direct-en",
     "mbid": "43ab255e-b483-40f8-ac36-888b7b5ff010",
@@ -3406,19 +4422,35 @@
   },
   "Pom": {
     "name": "Pom",
-    "genres": [],
+    "genres": [
+      "indie",
+      "guitar virtuoso",
+      "rock"
+    ],
     "source": "mb-only",
     "mbid": "c173f406-f7f0-44a3-becc-555a24db83d2"
   },
   "Pop Vulture": {
     "name": "Pop Vulture",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "garage rock",
+      "new wave",
+      "garage punk",
+      "noise rock"
+    ],
     "source": "mb-only",
     "mbid": "abd3a8d3-97d8-4d95-994a-9b834aef7d82"
   },
   "Porchlight": {
     "name": "Porchlight",
-    "genres": [],
+    "genres": [
+      "indie rock",
+      "punk rock",
+      "art punk",
+      "post-punk",
+      "acute sounds"
+    ],
     "source": "spotify",
     "mbid": "7c391da8-31b2-4acc-a2a3-805994f2c0eb",
     "photo": "https://i.scdn.co/image/ab6761610000e5ebbcf802fbc5295a890476f4b0",
@@ -3434,7 +4466,9 @@
       "post-punk",
       "alternative rock",
       "bedroom",
-      "indie"
+      "indie",
+      "crank wave",
+      "art punk"
     ],
     "source": "mb-wikidata-en",
     "mbid": "e5aa5d68-311e-435e-a143-68165adb05ca",
@@ -3445,7 +4479,13 @@
   },
   "Poté": {
     "name": "Poté",
-    "genres": [],
+    "genres": [
+      "saint lucia",
+      "electronic",
+      "dance",
+      "indie",
+      "electronica"
+    ],
     "source": "wiki-direct-en",
     "mbid": "ba0f7472-5b18-470f-94e0-c311fa68b4aa",
     "type": "Person",
@@ -3455,14 +4495,25 @@
   },
   "Pozi": {
     "name": "Pozi",
-    "genres": [],
+    "genres": [
+      "crank wave",
+      "post-punk",
+      "post-brexit new wave",
+      "indie rock",
+      "art punk"
+    ],
     "source": "mb-only",
     "mbid": "d0b33951-13e0-4fa9-86b4-a621d0652e18",
     "type": "Group"
   },
   "Projector": {
     "name": "Projector",
-    "genres": [],
+    "genres": [
+      "grunge",
+      "indie rock",
+      "trip-hop",
+      "alt rock"
+    ],
     "source": "spotify",
     "mbid": "566a6880-c750-4c30-860f-cffc8741f543",
     "type": "Group",
@@ -3478,7 +4529,10 @@
       "post-punk",
       "art punk",
       "post-punk 2k",
-      "punk blues"
+      "punk blues",
+      "crank wave",
+      "garage rock",
+      "punk"
     ],
     "source": "mb-wikidata-en",
     "mbid": "9efaf639-6332-44b8-94ae-c25896320ca7",
@@ -3491,7 +4545,10 @@
     "name": "Punchbag",
     "genres": [
       "indie pop",
-      "indie rock"
+      "indie rock",
+      "pop",
+      "indie",
+      "alternative"
     ],
     "source": "spotify",
     "mbid": "bc08d9c6-e5f3-4e58-a09a-d97edbf149f2",
@@ -3503,7 +4560,12 @@
   },
   "Punchlove": {
     "name": "Punchlove",
-    "genres": [],
+    "genres": [
+      "shoegaze",
+      "dream pop",
+      "noise pop",
+      "indie rock"
+    ],
     "source": "spotify",
     "mbid": "4098f6aa-ae26-43b8-902c-d4bed99720c0",
     "type": "Group",
@@ -3517,7 +4579,11 @@
     "genres": [
       "dream pop",
       "new wave",
-      "post-punk revival"
+      "post-punk revival",
+      "indie rock",
+      "electronic",
+      "alternative",
+      "krautrock"
     ],
     "source": "spotify",
     "mbid": "7584c7e5-a89c-4096-b36e-5abdaa189ef4",
@@ -3529,7 +4595,10 @@
   },
   "Pyncher": {
     "name": "Pyncher",
-    "genres": [],
+    "genres": [
+      "indie",
+      "post-punk"
+    ],
     "source": "mb-wiki-en+spotify",
     "mbid": "bdd0974f-4dab-4c92-8505-8d2fcf31cf83",
     "type": "Group",
@@ -3542,7 +4611,13 @@
   },
   "Quade": {
     "name": "Quade",
-    "genres": [],
+    "genres": [
+      "ambient",
+      "folk",
+      "experimental",
+      "post-rock",
+      "post-punk"
+    ],
     "source": "wiki-direct-en+spotify",
     "mbid": "643d54df-5355-4e8d-9ed3-820a88ed1101",
     "type": "Group",
@@ -3556,7 +4631,10 @@
   "RIP Magic": {
     "name": "RIP Magic",
     "genres": [
-      "electronic"
+      "electronic",
+      "experimental",
+      "post-punk",
+      "crank wave"
     ],
     "source": "wiki-direct-en+spotify",
     "mbid": "9109582c-cc24-49ae-bc03-ccb9c7c30966",
@@ -3577,7 +4655,11 @@
   },
   "Radio Free Alice": {
     "name": "Radio Free Alice",
-    "genres": [],
+    "genres": [
+      "garage rock",
+      "indie",
+      "indie rock"
+    ],
     "source": "spotify",
     "mbid": "8af999e2-b2f7-4095-af72-ba91b2683a16",
     "type": "Group",
@@ -3588,7 +4670,13 @@
   },
   "Real Farmer": {
     "name": "Real Farmer",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "rock",
+      "indie",
+      "garage punk",
+      "alternative rock"
+    ],
     "source": "spotify",
     "mbid": "86d37606-192d-4704-a171-49cec07ff800",
     "type": "Group",
@@ -3599,7 +4687,12 @@
   },
   "Rallye": {
     "name": "Rallye",
-    "genres": [],
+    "genres": [
+      "hardcore",
+      "punk rock",
+      "bh",
+      "post-hardcore"
+    ],
     "source": "spotify",
     "mbid": "d09bd091-14db-442c-9139-a118d5315729",
     "type": "Group",
@@ -3610,7 +4703,11 @@
   },
   "Really Good Time": {
     "name": "Really Good Time",
-    "genres": [],
+    "genres": [
+      "garage rock",
+      "garage punk",
+      "indie rock"
+    ],
     "source": "spotify",
     "mbid": "1aa193f3-6586-45ae-88c7-7c3eed569e84",
     "type": "Group",
@@ -3621,7 +4718,9 @@
   },
   "Red Ivory": {
     "name": "Red Ivory",
-    "genres": [],
+    "genres": [
+      "post punk"
+    ],
     "source": "spotify",
     "mbid": "90698795-a5d1-4b16-9c1a-d173e9538e27",
     "type": "Group",
@@ -3632,7 +4731,11 @@
   },
   "Rimon": {
     "name": "Rimon",
-    "genres": [],
+    "genres": [
+      "rnb",
+      "soul",
+      "eritrea"
+    ],
     "source": "wiki-direct-en",
     "mbid": "665a6961-bb56-4dcb-ac37-079439ad1fc0",
     "type": "Person",
@@ -3647,7 +4750,12 @@
   },
   "Robbie & Mona": {
     "name": "Robbie & Mona",
-    "genres": [],
+    "genres": [
+      "pop",
+      "indie pop",
+      "yandex music",
+      "upcoming album 2023"
+    ],
     "source": "spotify",
     "mbid": "57e70ca8-fa95-4d96-9970-700dfa74eb66",
     "type": "Group",
@@ -3661,7 +4769,11 @@
     "genres": [
       "hip-hop",
       "jazz punk",
-      "spoken word"
+      "spoken word",
+      "jazz",
+      "experimental",
+      "rock",
+      "clarinet"
     ],
     "source": "spotify",
     "mbid": "6cd83f02-ced2-4828-a0eb-98d97bd70ea1",
@@ -3679,7 +4791,9 @@
       "indie electronic",
       "indie rock",
       "new wave/post-punk revival",
-      "pop"
+      "pop",
+      "indie pop",
+      "lo-fi"
     ],
     "source": "mb-wikidata-en+spotify",
     "mbid": "2244c1f9-773f-4541-a4fe-ee6dc4f2ce60",
@@ -3694,7 +4808,10 @@
   "SHOLTO": {
     "name": "SHOLTO",
     "genres": [
-      "jazz"
+      "jazz",
+      "instrumental",
+      "lo-fi",
+      "composer"
     ],
     "source": "spotify",
     "mbid": "e208a1e0-a1c1-4f57-9e04-4b6f1d19bdbd",
@@ -3707,8 +4824,11 @@
   "SLAG": {
     "name": "SLAG",
     "genres": [
-      "brazil",
-      "hardcore punk"
+      "hardcore punk",
+      "hardcore",
+      "powerviolence",
+      "crossover",
+      "punk"
     ],
     "source": "spotify",
     "mbid": "8d86fe56-9ae8-4ed3-9205-1e8e4945e361",
@@ -3723,7 +4843,9 @@
     "genres": [
       "dream pop",
       "shoegaze",
-      "grunge"
+      "grunge",
+      "alternative rock",
+      "indie rock"
     ],
     "source": "mb-wikidata-en",
     "mbid": "321eaf5a-be21-4faf-a7a0-0a4e59e5ee29",
@@ -3734,7 +4856,11 @@
   },
   "SPILL GOLD": {
     "name": "SPILL GOLD",
-    "genres": [],
+    "genres": [
+      "indie rock",
+      "krautrock",
+      "synthwave"
+    ],
     "source": "spotify",
     "mbid": "81c464bd-965c-420f-8d3b-f091e69278c3",
     "type": "Group",
@@ -3745,7 +4871,12 @@
   },
   "Saint Vincent": {
     "name": "Saint Vincent",
-    "genres": [],
+    "genres": [
+      "indie pop",
+      "singer-songwriter",
+      "indie",
+      "alternative"
+    ],
     "source": "wiki-direct-en",
     "mbid": "e08adce6-e38d-4a55-a9c7-bacdfa6130f0",
     "type": "Person",
@@ -3766,7 +4897,12 @@
   },
   "Saloon Dion": {
     "name": "Saloon Dion",
-    "genres": [],
+    "genres": [
+      "indie rock",
+      "punk rock",
+      "post-punk",
+      "br1stol"
+    ],
     "source": "spotify",
     "mbid": "2e5acdff-d77d-4858-9b6f-e1a5e2b12b15",
     "type": "Group",
@@ -3777,7 +4913,13 @@
   },
   "Sam Akpro": {
     "name": "Sam Akpro",
-    "genres": [],
+    "genres": [
+      "country",
+      "folk",
+      "alternative",
+      "electronic",
+      "rnb"
+    ],
     "source": "spotify",
     "mbid": "44bc4b22-c06a-42ac-9493-c48079831572",
     "type": "Person",
@@ -3793,7 +4935,13 @@
   },
   "Saul Adamczewski": {
     "name": "Saul Adamczewski",
-    "genres": [],
+    "genres": [
+      "folk",
+      "acoustic",
+      "lo-fi",
+      "singer-songwriter",
+      "american primitive guitar"
+    ],
     "source": "wiki-direct-en",
     "mbid": "a2b13a7c-0101-403e-93c3-0833d9020ecb",
     "type": "Person",
@@ -3811,7 +4959,10 @@
     "genres": [
       "post-punk",
       "art punk",
-      "indie rock"
+      "indie rock",
+      "crank wave",
+      "post-brexit new wave",
+      "rock"
     ],
     "source": "mb-wikidata-en",
     "mbid": "3294b9ce-0bef-4080-8ae8-95bad1abd71c",
@@ -3822,7 +4973,11 @@
   },
   "Shanghai Qiutian": {
     "name": "Shanghai Qiutian",
-    "genres": [],
+    "genres": [
+      "instrumental",
+      "math rock",
+      "math-rock"
+    ],
     "source": "spotify",
     "mbid": "153252bd-53a3-4db3-a3a8-b0e5feb24372",
     "type": "Group",
@@ -3833,7 +4988,12 @@
   },
   "She's in Parties": {
     "name": "She's in Parties",
-    "genres": [],
+    "genres": [
+      "garage rock",
+      "rock",
+      "shoegaze",
+      "punk"
+    ],
     "source": "wiki-direct-en",
     "mbid": "d35246c3-87cc-4628-aeea-ea368d20a01d",
     "type": "Group",
@@ -3843,7 +5003,13 @@
   },
   "Sheep": {
     "name": "Sheep",
-    "genres": [],
+    "genres": [
+      "rock",
+      "metal",
+      "hard rock",
+      "alternative",
+      "alternative rock"
+    ],
     "source": "wiki-direct-en+spotify",
     "mbid": "f1fdcaab-d975-48ef-bd0d-ee65f2d238bd",
     "type": "Group",
@@ -3856,7 +5022,11 @@
   },
   "Silver Gore": {
     "name": "Silver Gore",
-    "genres": [],
+    "genres": [
+      "indie pop",
+      "indie rock",
+      "discweekly"
+    ],
     "source": "spotify",
     "mbid": "79d11a90-889d-4300-98c7-ad005fd5fa04",
     "type": "Group",
@@ -3869,7 +5039,10 @@
     "name": "Silverbacks",
     "genres": [
       "indie rock",
-      "post-punk"
+      "post-punk",
+      "crank wave",
+      "art punk",
+      "post-brexit new wave"
     ],
     "source": "wiki-direct-en+spotify",
     "mbid": "85e28ce6-1fa6-4c6e-86fb-b27a81a59b96",
@@ -3900,7 +5073,9 @@
       "ambient pop",
       "noise pop",
       "post-rock",
-      "indie rock"
+      "indie rock",
+      "ambient",
+      "indie"
     ],
     "source": "mb-wikidata-en",
     "mbid": "a16371b9-7d36-497a-a9d4-42b0a0440c5e",
@@ -3912,7 +5087,12 @@
   "Smile": {
     "name": "Smile",
     "genres": [
-      "visual kei"
+      "visual kei",
+      "rock",
+      "classic rock",
+      "hard rock",
+      "brian may",
+      "pre-queen"
     ],
     "source": "wiki-direct-en",
     "mbid": "eda488c0-0581-4342-a3f8-fc76bf753f42",
@@ -3923,7 +5103,11 @@
   },
   "Smudged": {
     "name": "Smudged",
-    "genres": [],
+    "genres": [
+      "krautrock",
+      "electro",
+      "psych"
+    ],
     "source": "wiki-direct-en",
     "mbid": "11fdd37d-7989-4b44-b538-6f9f73264d8e",
     "type": "Group",
@@ -3939,7 +5123,9 @@
       "indie",
       "lo-fi",
       "pop",
-      "queer"
+      "queer",
+      "indie rock",
+      "indie pop"
     ],
     "source": "mb-wikidata-en",
     "mbid": "86cd4d38-857c-42bd-a5da-9acedcab1e01",
@@ -3952,7 +5138,11 @@
     "name": "Snapped Ankles",
     "genres": [
       "dance-punk",
-      "post-punk"
+      "post-punk",
+      "krautrock",
+      "crank wave",
+      "garage rock",
+      "experimental"
     ],
     "source": "mb-wikidata-en",
     "mbid": "9c4da506-4fbd-4001-8bde-d0cff3e2a278",
@@ -3963,7 +5153,12 @@
   },
   "Soft Loft": {
     "name": "Soft Loft",
-    "genres": [],
+    "genres": [
+      "dream pop",
+      "indie pop",
+      "indie",
+      "singer-songwriter"
+    ],
     "source": "spotify",
     "mbid": "499dabc1-47b9-4078-b53f-11ea2cf41a80",
     "type": "Group",
@@ -3985,7 +5180,12 @@
   },
   "Sparkling": {
     "name": "Sparkling",
-    "genres": [],
+    "genres": [
+      "pop",
+      "indie rock",
+      "indie",
+      "girl group"
+    ],
     "source": "mb-wikidata-de+spotify",
     "mbid": "b7e852af-f08b-4378-b469-a06c0d259358",
     "type": "Group",
@@ -3998,7 +5198,13 @@
   },
   "Special Interest": {
     "name": "Special Interest",
-    "genres": [],
+    "genres": [
+      "no wave",
+      "post-punk",
+      "punk",
+      "industrial rock",
+      "noise rock"
+    ],
     "source": "mb-wikidata-en",
     "mbid": "cb0a7ee8-69fe-409c-85ae-820e3f1e46d4",
     "type": "Group",
@@ -4008,7 +5214,10 @@
   },
   "Spinabifida": {
     "name": "Spinabifida",
-    "genres": [],
+    "genres": [
+      "garage rock",
+      "grunge"
+    ],
     "source": "spotify",
     "photo": "https://i.scdn.co/image/ab67616d0000b2730c357aa2f2dcfa3b93e07b2e",
     "photoSmall": "https://i.scdn.co/image/ab67616d000048510c357aa2f2dcfa3b93e07b2e",
@@ -4019,7 +5228,11 @@
     "name": "Speedial",
     "genres": [
       "post-rock",
-      "art rock"
+      "art rock",
+      "math rock",
+      "indie",
+      "indie rock",
+      "avant-garde jazz"
     ],
     "source": "spotify",
     "mbid": "59957ab4-0358-49fb-8839-60cba21fd988",
@@ -4037,7 +5250,9 @@
       "dream pop",
       "space rock revival",
       "shoegaze",
-      "art rock"
+      "art rock",
+      "space rock",
+      "psychedelic"
     ],
     "source": "mb-wikidata-en",
     "mbid": "65041e06-83d2-4987-ae52-c17a915fc82a",
@@ -4048,7 +5263,13 @@
   },
   "Sports Team": {
     "name": "Sports Team",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "crank wave",
+      "indie rock",
+      "art punk",
+      "indie"
+    ],
     "source": "mb-wikidata-en",
     "mbid": "bf5931bd-4cf6-4c64-8c1b-140242238507",
     "type": "Group",
@@ -4061,7 +5282,11 @@
     "genres": [
       "alternative rock",
       "garage punk",
-      "post-punk"
+      "post-punk",
+      "crank wave",
+      "indie rock",
+      "art punk",
+      "riot grrrl"
     ],
     "source": "mb-wikidata-en",
     "mbid": "256e0b36-88cb-453a-9ce4-7b73cb6b882f",
@@ -4078,7 +5303,8 @@
       "krautrock",
       "psychedelic rock",
       "alt-rock",
-      "art punk"
+      "art punk",
+      "crank wave"
     ],
     "source": "mb-wikidata-en",
     "mbid": "5422ef5d-00d4-4c7a-81ab-03cb8fc3cc45",
@@ -4094,7 +5320,10 @@
       "electronic",
       "indie pop",
       "indie rock",
-      "classic pop and rock"
+      "classic pop and rock",
+      "singer-songwriter",
+      "indie",
+      "alternative"
     ],
     "source": "mb-wikidata-en",
     "mbid": "5334edc0-5faf-4ca5-b1df-000de3e1f752",
@@ -4105,7 +5334,11 @@
   },
   "Stay Lunar": {
     "name": "Stay Lunar",
-    "genres": [],
+    "genres": [
+      "shoegaze",
+      "indie rock",
+      "dream pop"
+    ],
     "source": "spotify",
     "mbid": "abefc56e-04f1-4fb1-9902-2b06a9c515c8",
     "type": "Group",
@@ -4116,7 +5349,11 @@
   },
   "Star City": {
     "name": "Star City",
-    "genres": [],
+    "genres": [
+      "disco",
+      "disco funk",
+      "soul"
+    ],
     "source": "wiki-direct-en",
     "mbid": "c2978a3f-311c-48d7-a112-22e6f99c92ca",
     "type": "Group",
@@ -4145,7 +5382,13 @@
   },
   "Stuck": {
     "name": "Stuck",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "noise rock",
+      "crank wave",
+      "egg punk",
+      "post-hardcore"
+    ],
     "source": "wiki-direct-en",
     "mbid": "5cbfc7c0-eeea-44dc-9ef8-fb0e9d07c310",
     "type": "Group",
@@ -4164,7 +5407,13 @@
   },
   "Suck": {
     "name": "Suck",
-    "genres": [],
+    "genres": [
+      "psychedelic rock",
+      "hard rock",
+      "progressive rock",
+      "psychedelic",
+      "south african"
+    ],
     "source": "mb-wikidata-en+spotify",
     "mbid": "13704380-7be6-43d9-9fe1-dbe5dc2e0393",
     "type": "Group",
@@ -4183,7 +5432,9 @@
       "fruit psych",
       "garage rock",
       "indie rock",
-      "krautrock"
+      "krautrock",
+      "psychedelic rock",
+      "psychedelic"
     ],
     "source": "wiki-direct-en+spotify",
     "mbid": "c21a3572-0080-4ef6-8734-b8868c1bad76",
@@ -4199,7 +5450,9 @@
     "name": "Sunken",
     "genres": [
       "atmospheric black metal",
-      "black metal"
+      "black metal",
+      "drone",
+      "post-black metal"
     ],
     "source": "spotify",
     "mbid": "e8c079c6-6bc2-44b8-97e0-2c28c36c4f9d",
@@ -4218,7 +5471,10 @@
   },
   "TV Cult": {
     "name": "TV Cult",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "hardcore punk"
+    ],
     "source": "spotify",
     "mbid": "65705850-ceea-48f6-90ad-9d881aa0e8d6",
     "type": "Group",
@@ -4229,7 +5485,12 @@
   },
   "TVOD": {
     "name": "TVOD",
-    "genres": [],
+    "genres": [
+      "indie",
+      "indie pop",
+      "indie rock",
+      "postpunk"
+    ],
     "source": "spotify",
     "mbid": "b3547cd7-1258-4f24-af48-1b76cb4e1e29",
     "type": null,
@@ -4244,7 +5505,8 @@
       "chamber folk",
       "folktronica",
       "indie folk",
-      "windmill scene"
+      "folk",
+      "heavenly recordings"
     ],
     "source": "mb-wikidata-en",
     "mbid": "d672fa4e-5a17-46bb-9bbd-57e073a90159",
@@ -4259,7 +5521,11 @@
       "indie rock",
       "post-punk 2k",
       "post-punk revival",
-      "synth-pop"
+      "synth-pop",
+      "indie pop",
+      "soft rock",
+      "not george philipp telemann",
+      "pop"
     ],
     "source": "mb-wikidata-en",
     "mbid": "e6726542-4458-48de-b1c7-bafc7ab5a350",
@@ -4270,7 +5536,9 @@
   },
   "Terra Twin": {
     "name": "Terra Twin",
-    "genres": [],
+    "genres": [
+      "alt rock"
+    ],
     "source": "spotify",
     "mbid": "d8a6cf5e-bbfc-46ae-8e37-bb31db0830a7",
     "type": "Group",
@@ -4281,7 +5549,13 @@
   },
   "Test Plan": {
     "name": "Test Plan",
-    "genres": [],
+    "genres": [
+      "experimental",
+      "noise",
+      "no wave",
+      "post-punk",
+      "art punk"
+    ],
     "source": "spotify",
     "mbid": "c13fbd53-3b55-4df0-98e5-115255f6b51c",
     "type": "Group",
@@ -4292,7 +5566,12 @@
   },
   "Texoprint": {
     "name": "Texoprint",
-    "genres": [],
+    "genres": [
+      "shoegaze",
+      "indie",
+      "noise",
+      "post-punk"
+    ],
     "source": "spotify",
     "mbid": "2d8c1317-ff7a-4b44-8781-03b260881b72",
     "type": "Group",
@@ -4305,7 +5584,10 @@
     "name": "The Bug Club",
     "genres": [
       "indie rock",
-      "indie pop"
+      "indie pop",
+      "garage rock",
+      "power pop",
+      "post-punk"
     ],
     "source": "mb-wikidata-en",
     "mbid": "31f07dfd-df64-48dc-856e-9968059b8e35",
@@ -4321,7 +5603,8 @@
       "dream pop",
       "new wave",
       "big music",
-      "gothic rock"
+      "gothic rock",
+      "alternative"
     ],
     "source": "mb-wikidata-en",
     "mbid": "8d07f60f-b9f4-46c0-9c27-31de0fb9b671",
@@ -4332,7 +5615,10 @@
   },
   "The 113": {
     "name": "The 113",
-    "genres": [],
+    "genres": [
+      "indie",
+      "post-punk"
+    ],
     "source": "spotify",
     "mbid": "4c553b8c-884c-4ca6-8eb4-d9a328b2c0c7",
     "type": "Group",
@@ -4343,7 +5629,12 @@
   },
   "The Clockworks": {
     "name": "The Clockworks",
-    "genres": [],
+    "genres": [
+      "punk rock",
+      "garage rock",
+      "garage punk",
+      "indie"
+    ],
     "source": "spotify",
     "mbid": "51616baa-51db-41a0-8a2f-26a00d02ac0a",
     "type": "Group",
@@ -4359,8 +5650,9 @@
       "new wave",
       "post-punk",
       "alternative rock",
-      "british",
-      "goth"
+      "goth",
+      "alternative",
+      "rock"
     ],
     "source": "mb-wikidata-en",
     "mbid": "69ee3720-a7cb-4402-b48d-a02c366f2bcf",
@@ -4374,7 +5666,10 @@
     "genres": [
       "electroclash",
       "indie sleaze",
-      "new rave"
+      "new rave",
+      "electronic",
+      "electropop",
+      "dance punk"
     ],
     "source": "mb-wikidata-en",
     "mbid": "7fe3380a-8e35-48d1-ac5a-174fe6b5060b",
@@ -4386,7 +5681,11 @@
   "The Drin": {
     "name": "The Drin",
     "genres": [
-      "post-punk"
+      "post-punk",
+      "psychedelic",
+      "experimental",
+      "punk rock",
+      "garage rock"
     ],
     "source": "spotify",
     "mbid": "452947b1-01b2-4be6-9420-b45d2d6ad4d5",
@@ -4398,7 +5697,12 @@
   },
   "The Family Battenberg": {
     "name": "The Family Battenberg",
-    "genres": [],
+    "genres": [
+      "garage rock",
+      "rock",
+      "alternative",
+      "indie rock"
+    ],
     "source": "spotify",
     "mbid": "39497feb-5dac-46eb-8400-5e7307d4e839",
     "type": null,
@@ -4409,7 +5713,12 @@
   },
   "The Grogans": {
     "name": "The Grogans",
-    "genres": [],
+    "genres": [
+      "surf",
+      "surf rock",
+      "rock",
+      "garage rock"
+    ],
     "source": "wiki-direct-en+spotify",
     "mbid": "07c7e786-9ab7-4371-bd11-78a129f379f0",
     "type": "Group",
@@ -4433,7 +5742,9 @@
   },
   "The Ib": {
     "name": "The Ib",
-    "genres": [],
+    "genres": [
+      "creepshow"
+    ],
     "source": "wiki-direct-en",
     "mbid": "62784fa9-9301-42f4-90d3-4cf4b911a125",
     "type": "Group",
@@ -4442,7 +5753,13 @@
   },
   "The Itch": {
     "name": "The Itch",
-    "genres": [],
+    "genres": [
+      "mod",
+      "electronic",
+      "hard rock",
+      "rock",
+      "synthpop"
+    ],
     "source": "spotify",
     "mbid": "ffd9b907-89a6-4087-9790-ebb270c4a898",
     "type": "Group",
@@ -4458,7 +5775,12 @@
   },
   "The Judges": {
     "name": "The Judges",
-    "genres": [],
+    "genres": [
+      "gabber",
+      "garage rock",
+      "hardcore",
+      "hardcore techno"
+    ],
     "source": "wiki-direct-en",
     "mbid": "82417e00-0206-473c-904d-e8422deb9722",
     "type": "Group",
@@ -4472,7 +5794,8 @@
       "glam rock",
       "indie rock",
       "baroque pop",
-      "pop rock"
+      "pop rock",
+      "alternative"
     ],
     "source": "mb-wikidata-en",
     "mbid": "2f0c90b1-84d5-47f1-ad75-ad8d30f53f70",
@@ -4488,7 +5811,10 @@
       "glam rock",
       "indie rock",
       "rock",
-      "vyrzukhisuc-artiest"
+      "vyrzukhisuc-artiest",
+      "power pop",
+      "soft rock",
+      "pop rock"
     ],
     "source": "mb-wikidata-en",
     "mbid": "f32d94e8-8d55-4ee2-9077-53d1c024a03b",
@@ -4501,7 +5827,10 @@
     "name": "The Lounge Society",
     "genres": [
       "post-punk",
-      "windmill scene"
+      "crank wave",
+      "art punk",
+      "indie rock",
+      "dance-punk"
     ],
     "source": "wiki-direct-en+spotify",
     "mbid": "2dedfbcd-3ad5-4f23-988a-b4454730a969",
@@ -4544,7 +5873,10 @@
       "post-punk",
       "post-punk 2k",
       "post-punk revival",
-      "windmill scene"
+      "crank wave",
+      "art punk",
+      "indie rock",
+      "post-brexit new wave"
     ],
     "source": "mb-wikidata-en",
     "mbid": "41e30723-07ab-40fd-8f6b-983981a76d8b",
@@ -4561,7 +5893,9 @@
       "avant-garde",
       "cello",
       "folk rock",
-      "indie folk"
+      "indie folk",
+      "folk",
+      "punk"
     ],
     "source": "wiki-direct-en",
     "mbid": "79f00775-ee27-4975-9b58-72f55448dc08",
@@ -4574,7 +5908,8 @@
     "name": "The Orchestra (For Now)",
     "genres": [
       "art rock",
-      "progressive rock"
+      "progressive rock",
+      "post-punk"
     ],
     "source": "mb-wikidata-en",
     "mbid": "22df1cd3-86c2-4499-93e6-6926be487ac1",
@@ -4587,7 +5922,8 @@
     "name": "The Orchestra (for now)",
     "genres": [
       "art rock",
-      "progressive rock"
+      "progressive rock",
+      "post-punk"
     ],
     "source": "mb-wikidata-en",
     "mbid": "22df1cd3-86c2-4499-93e6-6926be487ac1",
@@ -4599,7 +5935,10 @@
   "The Orielles": {
     "name": "The Orielles",
     "genres": [
-      "indie rock"
+      "indie rock",
+      "dream pop",
+      "indie pop",
+      "rutracker"
     ],
     "source": "mb-wikidata-en",
     "mbid": "75c1c4ee-8b0f-450a-bd50-cda91fdf0a6a",
@@ -4611,9 +5950,11 @@
   "The Paranoyds": {
     "name": "The Paranoyds",
     "genres": [
-      "awesome",
       "garage rock",
-      "post-punk"
+      "post-punk",
+      "punk rock",
+      "punk",
+      "garage"
     ],
     "source": "spotify",
     "mbid": "649cc6ea-8edc-4632-8e18-336af9581be6",
@@ -4627,7 +5968,9 @@
     "name": "The Psychotic Monks",
     "genres": [
       "psychedelic rock",
-      "rock"
+      "rock",
+      "noise rock",
+      "garage rock"
     ],
     "source": "spotify",
     "mbid": "c9faf802-45b0-44fc-ba9e-6bb17a9f9335",
@@ -4639,7 +5982,11 @@
   },
   "The Ringards": {
     "name": "The Ringards",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "punk rock",
+      "art punk"
+    ],
     "source": "mb-only",
     "mbid": "a789b5db-880e-44bf-acd6-80e1d13b833e",
     "type": "Group"
@@ -4652,7 +5999,9 @@
       "post-punk revival",
       "new wave",
       "rock",
-      "alternative rock music"
+      "alternative rock music",
+      "indie",
+      "alternative"
     ],
     "source": "mb-wikidata-en",
     "mbid": "f181961b-20f7-459e-89de-920ef03c7ed0",
@@ -4668,7 +6017,9 @@
       "post-punk",
       "rock",
       "rock and indie",
-      "scottish"
+      "shoegaze",
+      "post-rock",
+      "indie"
     ],
     "source": "mb-wikidata-en",
     "mbid": "d44d63b8-3da4-4f7d-aba1-a05ba8941b44",
@@ -4679,7 +6030,13 @@
   },
   "The Wheel": {
     "name": "The Wheel",
-    "genres": [],
+    "genres": [
+      "indie",
+      "folk",
+      "singer-songwriter",
+      "acoustic",
+      "hard rock"
+    ],
     "source": "wiki-direct-en+spotify",
     "mbid": "84e4841e-9cd0-478b-a986-5949e97928ca",
     "type": "Group",
@@ -4692,7 +6049,11 @@
   },
   "The Youth Play": {
     "name": "The Youth Play",
-    "genres": [],
+    "genres": [
+      "shoegaze",
+      "alternative",
+      "alternative rock"
+    ],
     "source": "spotify",
     "mbid": "08c4ce07-63b6-4dc7-88cf-3e5b947cf8ec",
     "type": "Group",
@@ -4703,7 +6064,12 @@
   },
   "Tirage": {
     "name": "Tirage",
-    "genres": [],
+    "genres": [
+      "electronic",
+      "house",
+      "deep-house",
+      "deep house"
+    ],
     "source": "wiki-direct-en",
     "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Louis_Levy_1.jpg/330px-Louis_Levy_1.jpg",
     "summary": "Paradis is a French electronic music duo consisting of Simon Mény and Pierre Rousseau. The duo was latest signed to Universal label Barclay. They grew to fame after releasing their first 12\" single on Beats In Space titled Parfait Tirage featuring a cover of Alain Souchon's \"La Ballade de Jim\". The duo have appeared on the French DJ scene with sets at Nuits Sonores and Rex Club.",
@@ -4715,7 +6081,11 @@
       "special purpose",
       "special purpose artist",
       "musical",
-      "cast"
+      "cast",
+      "hardcore",
+      "chaotic hardcore",
+      "christian hardcore",
+      "christian"
     ],
     "source": "mb-wikidata-en",
     "mbid": "a0ef7e1d-44ff-4039-9435-7d5fefdeecc9",
@@ -4731,7 +6101,13 @@
   },
   "They Hate Change": {
     "name": "They Hate Change",
-    "genres": [],
+    "genres": [
+      "rap",
+      "hip-hop",
+      "electronic",
+      "hip hop",
+      "acid jazz"
+    ],
     "source": "mb-wikidata-en+spotify",
     "mbid": "655e9772-27c1-4aba-843d-acabfd29f8a8",
     "type": "Group",
@@ -4759,7 +6135,11 @@
   },
   "Tramhaus": {
     "name": "Tramhaus",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "rock",
+      "indie"
+    ],
     "source": "spotify",
     "mbid": "dace0d40-f90f-4b3b-99da-aa99be756920",
     "type": "Group",
@@ -4801,7 +6181,9 @@
       "experimental rock",
       "punk blues",
       "alternative",
-      "art-punk"
+      "art-punk",
+      "noise rock",
+      "rock"
     ],
     "source": "mb-wikidata-en",
     "mbid": "a7a3399e-2d9a-4c3b-9ada-7e861aed1cb3",
@@ -4812,7 +6194,11 @@
   },
   "Truthpaste": {
     "name": "Truthpaste",
-    "genres": [],
+    "genres": [
+      "indie",
+      "folk",
+      "indie folk"
+    ],
     "source": "spotify",
     "mbid": "e6c87347-046b-46eb-a190-4d35c8352671",
     "type": "Group",
@@ -4823,7 +6209,9 @@
   },
   "Tummy Ache": {
     "name": "Tummy Ache",
-    "genres": [],
+    "genres": [
+      "t1234 found on radio - check more"
+    ],
     "source": "mb-only",
     "mbid": "30255d79-09f2-43d3-b8f6-c996036e47e0",
     "type": null
@@ -4832,7 +6220,12 @@
     "name": "Tummyache",
     "genres": [
       "alternative rock",
-      "singer-songwriter"
+      "singer-songwriter",
+      "punk",
+      "rock",
+      "noise rock",
+      "indie rock",
+      "alternative"
     ],
     "source": "spotify",
     "mbid": "e97ac907-678b-41ad-9ea8-b7d243c0c417",
@@ -4844,7 +6237,13 @@
   },
   "UGLY": {
     "name": "UGLY",
-    "genres": [],
+    "genres": [
+      "sludge",
+      "jazz",
+      "doom",
+      "hardcore",
+      "crossover"
+    ],
     "source": "wiki-direct-en",
     "mbid": "bfc1304c-b6e1-43ec-b952-a643732b5c8e",
     "type": "Group",
@@ -4854,7 +6253,12 @@
   },
   "Unschooling": {
     "name": "Unschooling",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "indie rock",
+      "math rock",
+      "art punk"
+    ],
     "source": "spotify",
     "mbid": "f659488d-9fab-4851-aec8-6ebe78977985",
     "type": "Group",
@@ -4865,7 +6269,13 @@
   },
   "Ugly": {
     "name": "Ugly",
-    "genres": [],
+    "genres": [
+      "sludge",
+      "jazz",
+      "doom",
+      "hardcore",
+      "crossover"
+    ],
     "source": "wiki-direct-en",
     "mbid": "bfc1304c-b6e1-43ec-b952-a643732b5c8e",
     "type": "Group",
@@ -4875,7 +6285,12 @@
   },
   "University": {
     "name": "University",
-    "genres": [],
+    "genres": [
+      "math rock",
+      "garage rock",
+      "punk",
+      "noise rock"
+    ],
     "source": "spotify",
     "mbid": "e671a93e-e6a0-4144-aefd-7c96d4a7c33a",
     "type": "Group",
@@ -4891,7 +6306,13 @@
   },
   "Van Zon": {
     "name": "Van Zon",
-    "genres": [],
+    "genres": [
+      "emo",
+      "folk",
+      "experimental",
+      "indie rock",
+      "post-punk"
+    ],
     "source": "spotify",
     "mbid": "0b04be45-42f8-46bc-b207-c76c2aae31e0",
     "type": "Group",
@@ -4902,7 +6323,13 @@
   },
   "Velvetine": {
     "name": "Velvetine",
-    "genres": [],
+    "genres": [
+      "trance",
+      "vocal trance",
+      "anjunabeats",
+      "progressive trance",
+      "uplifting trance"
+    ],
     "source": "spotify",
     "mbid": "ac9f1d36-fbac-4a2c-8759-a30574fe8715",
     "type": "Group",
@@ -4913,7 +6340,12 @@
   },
   "Van Houten": {
     "name": "Van Houten",
-    "genres": [],
+    "genres": [
+      "shoegaze",
+      "indie pop",
+      "dream pop",
+      "indie rock"
+    ],
     "source": "spotify",
     "mbid": "c527b2f4-572e-477c-bf22-ba51b49fff85",
     "type": "Group",
@@ -4928,7 +6360,11 @@
       "new wave",
       "punk",
       "rave",
-      "synth-pop"
+      "synth-pop",
+      "post-punk",
+      "crank wave",
+      "post-brexit new wave",
+      "darkwave"
     ],
     "source": "spotify",
     "mbid": "d4bc4880-00d6-4e38-95fa-e84ea4737899",
@@ -4944,7 +6380,10 @@
       "alternative rock",
       "pop rock",
       "indie pop",
-      "indie rock"
+      "indie rock",
+      "indie",
+      "alternative",
+      "rock"
     ],
     "source": "mb-wikidata-en",
     "mbid": "9fae44ec-b95c-4b0f-a0a6-f0008613eabf",
@@ -4955,7 +6394,11 @@
   },
   "Warhaus": {
     "name": "Warhaus",
-    "genres": [],
+    "genres": [
+      "indie rock",
+      "rock",
+      "indie"
+    ],
     "source": "mb-wikidata-de+spotify",
     "mbid": "d9fccd7c-a14c-4c1a-8a3b-17d05b2f549c",
     "type": "Person",
@@ -4969,7 +6412,11 @@
   "Water From Your Eyes": {
     "name": "Water From Your Eyes",
     "genres": [
-      "indie pop"
+      "indie pop",
+      "indie rock",
+      "new wave",
+      "experimental",
+      "post-punk"
     ],
     "source": "mb-wikidata-en",
     "mbid": "09f91305-e193-48af-92e3-252b3dd5e718",
@@ -4986,7 +6433,9 @@
       "indie rock",
       "neo-psychedelia",
       "rock",
-      "rock and roll"
+      "rock and roll",
+      "crank wave",
+      "post-punk"
     ],
     "source": "mb-wikidata-en",
     "mbid": "9ba47f16-a4b1-4f34-8a5d-7a14d319c1fa",
@@ -4997,7 +6446,11 @@
   },
   "Wax Head": {
     "name": "Wax Head",
-    "genres": [],
+    "genres": [
+      "garage rock",
+      "psychedelic rock",
+      "punk rock"
+    ],
     "source": "spotify",
     "mbid": "f12f583b-c178-46a8-8060-674a42062638",
     "type": "Group",
@@ -5010,7 +6463,11 @@
     "name": "Weatherday",
     "genres": [
       "emo",
-      "indie rock"
+      "indie rock",
+      "noise pop",
+      "lo-fi",
+      "indie",
+      "shoegaze"
     ],
     "source": "mb-wikidata-en",
     "mbid": "eea5d1b3-d4b9-45a9-b8cd-c480fd259a3e",
@@ -5021,7 +6478,10 @@
   },
   "Welly": {
     "name": "Welly",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "art punk"
+    ],
     "source": "wiki-direct-en",
     "mbid": "b2f5b24f-4146-417f-b6e0-e8e9cc4a495a",
     "type": "Group",
@@ -5031,7 +6491,12 @@
   },
   "Web": {
     "name": "Web",
-    "genres": [],
+    "genres": [
+      "jazz rock",
+      "progressive rock",
+      "thrash metal",
+      "art rock"
+    ],
     "source": "mb-wikidata-en+spotify",
     "mbid": "084dd158-4c46-4ea2-80d1-4148cd2830f6",
     "type": "Group",
@@ -5045,7 +6510,10 @@
   "Westside Cowboy": {
     "name": "Westside Cowboy",
     "genres": [
-      "indie rock"
+      "indie rock",
+      "alt-country",
+      "indie",
+      "americana"
     ],
     "source": "wiki-direct-en",
     "mbid": "243e9a4d-f824-4ec2-8967-09907f954c56",
@@ -5062,7 +6530,9 @@
       "art pop",
       "bittersweet",
       "bubblegrunge",
-      "chill wave"
+      "chill wave",
+      "martial industrial",
+      "neoclassical"
     ],
     "source": "spotify",
     "mbid": "277b4d0a-b8eb-47da-b688-f64d8bde85e8",
@@ -5078,9 +6548,9 @@
       "alternative rock",
       "indie rock",
       "dream pop",
-      "british",
       "indie pop",
-      "noise pop"
+      "noise pop",
+      "indie"
     ],
     "source": "mb-wikidata-en",
     "mbid": "3547f34a-db02-4ab7-b4a0-380e1ef951a9",
@@ -5097,7 +6567,9 @@
       "female fronted",
       "indie pop",
       "post-punk 2k",
-      "windmill scene"
+      "post-punk",
+      "crank wave",
+      "indie"
     ],
     "source": "mb-wikidata-en",
     "mbid": "90744b3e-363a-458e-8da1-e3e392a489c4",
@@ -5108,7 +6580,11 @@
   },
   "World News": {
     "name": "World News",
-    "genres": [],
+    "genres": [
+      "indie rock",
+      "indie pop",
+      "jangle pop"
+    ],
     "source": "spotify",
     "mbid": "49211211-44e2-41e2-8ea2-2dd3a5fd0a3c",
     "type": "Group",
@@ -5121,7 +6597,10 @@
     "name": "Wombo",
     "genres": [
       "indie rock",
-      "post-punk"
+      "post-punk",
+      "crank wave",
+      "art punk",
+      "psychedelic rock"
     ],
     "source": "wiki-direct-en+spotify",
     "mbid": "46b02238-8b8e-457b-8ff5-56452a1d5842",
@@ -5137,8 +6616,12 @@
     "name": "Wunderhorse",
     "genres": [
       "rock",
-      "seen live",
-      "tge24"
+      "tge24",
+      "indie rock",
+      "alternative rock",
+      "indie",
+      "grunge",
+      "post-punk"
     ],
     "source": "wiki-direct-en",
     "mbid": "5126db33-86ad-469d-88fb-4158350e1515",
@@ -5155,7 +6638,9 @@
       "gangsta rap",
       "southern hip hop",
       "alternative hip hop",
-      "underground hip hop"
+      "underground hip hop",
+      "powerviolence",
+      "grindcore"
     ],
     "source": "mb-wikidata-en",
     "mbid": "4ce1c576-305a-4b82-82fa-5e5359056219",
@@ -5171,7 +6656,10 @@
       "post-punk",
       "alternative punk",
       "dance-punk",
-      "post-punk 2k"
+      "post-punk 2k",
+      "crank wave",
+      "spoken word",
+      "art punk"
     ],
     "source": "mb-wikidata-en",
     "mbid": "c69af97b-4d3b-4f72-9746-829b6b9d5f88",
@@ -5182,7 +6670,12 @@
   },
   "YARD": {
     "name": "YARD",
-    "genres": [],
+    "genres": [
+      "techno",
+      "lounge",
+      "noise",
+      "idm"
+    ],
     "source": "wiki-direct-en",
     "mbid": "684c6e8a-88e1-4345-bf9f-ffcb7b7f2b7c",
     "type": "Person",
@@ -5192,7 +6685,13 @@
   },
   "Yabba": {
     "name": "Yabba",
-    "genres": [],
+    "genres": [
+      "dub",
+      "reggae",
+      "jamaica",
+      "rock",
+      "garage rock"
+    ],
     "source": "spotify",
     "mbid": "b768db5b-0ca6-4dd9-a65b-d66ba65e1131",
     "type": null,
@@ -5203,7 +6702,12 @@
   },
   "Yeahrs": {
     "name": "Yeahrs",
-    "genres": [],
+    "genres": [
+      "shoegaze",
+      "grunge",
+      "hardcore",
+      "punk"
+    ],
     "source": "spotify",
     "mbid": "7ae6b9a7-11e3-4ef5-a1f1-e55ab13dbcd2",
     "type": "Group",
@@ -5214,7 +6718,13 @@
   },
   "Yowl": {
     "name": "Yowl",
-    "genres": [],
+    "genres": [
+      "post-punk",
+      "crank wave",
+      "post-brexit new wave",
+      "indie rock",
+      "art punk"
+    ],
     "source": "mb-only",
     "mbid": "3a5b4e7b-ac9e-469e-ac84-af27a5d27bee",
     "type": "Group"
@@ -5222,7 +6732,12 @@
   "ZZZAHARA": {
     "name": "ZZZAHARA",
     "genres": [
-      "indie rock"
+      "indie rock",
+      "shoegaze",
+      "indie pop",
+      "synthpop",
+      "pop",
+      "noise pop"
     ],
     "source": "spotify",
     "mbid": "ba95e737-134e-4fb2-ae2f-9db0cd9890e2",
@@ -5240,7 +6755,9 @@
       "neo-psychedelia",
       "neo-psychedelic",
       "alternative",
-      "alternative dance"
+      "alternative dance",
+      "psychedelic rock",
+      "psychedelic"
     ],
     "source": "mb-wikidata-en",
     "mbid": "0b336c55-c3e9-4dab-9c96-bc10d7a54ef3",
@@ -5256,7 +6773,12 @@
   },
   "Zac Lawrence": {
     "name": "Zac Lawrence",
-    "genres": [],
+    "genres": [
+      "indie rock",
+      "folk",
+      "post-punk",
+      "folk rock"
+    ],
     "source": "spotify",
     "mbid": "2f60cec2-77c3-4b16-b06b-3cef5309463c",
     "type": "Person",
@@ -5272,7 +6794,10 @@
       "alternative pop",
       "electronic",
       "indie rock",
-      "indietronica"
+      "indietronica",
+      "pop",
+      "indie",
+      "alternative"
     ],
     "source": "mb-wikidata-de+spotify",
     "mbid": "d7c1cfab-a75e-42e9-bde8-f4e0c031243e",
@@ -5286,7 +6811,11 @@
   },
   "caroline": {
     "name": "caroline",
-    "genres": [],
+    "genres": [
+      "electronic",
+      "indie",
+      "electronica"
+    ],
     "source": "mb-wikidata-en",
     "mbid": "5d4a025e-4499-428a-93e8-7dd3a2d767d0",
     "type": "Person",
@@ -5295,7 +6824,11 @@
   },
   "Zo Lief": {
     "name": "Zo Lief",
-    "genres": [],
+    "genres": [
+      "dream pop",
+      "indie pop",
+      "indie"
+    ],
     "source": "spotify",
     "mbid": "f8adaafe-9c14-4a40-bba7-0574df0a1f75",
     "type": null,
@@ -5306,7 +6839,11 @@
   },
   "chest.": {
     "name": "chest.",
-    "genres": [],
+    "genres": [
+      "indie rock",
+      "post-punk",
+      "french rock"
+    ],
     "source": "spotify",
     "mbid": "eaef344f-a746-4088-9623-bc2fbba758af",
     "type": "Group",
@@ -5328,7 +6865,13 @@
   },
   "cruush": {
     "name": "cruush",
-    "genres": [],
+    "genres": [
+      "shoegaze",
+      "dream pop",
+      "indie",
+      "rock",
+      "alternative rock"
+    ],
     "source": "spotify",
     "mbid": "435365b9-2a50-41e6-9611-e44b0eebbcda",
     "type": "Group",
@@ -5341,7 +6884,12 @@
     "name": "leather.head",
     "genres": [
       "art rock",
-      "experimental rock"
+      "experimental rock",
+      "post-punk",
+      "emo",
+      "art punk",
+      "experimental",
+      "indie"
     ],
     "source": "mb-only",
     "mbid": "6108972f-6789-4444-b0fd-b6ed896831e6",
@@ -5349,7 +6897,13 @@
   },
   "marcel": {
     "name": "marcel",
-    "genres": [],
+    "genres": [
+      "country",
+      "downtempo",
+      "lounge",
+      "electronic",
+      "atmospheric"
+    ],
     "source": "wiki-direct-en",
     "mbid": "e2d6f247-5fbe-401f-a56e-a3734d03d134",
     "type": "Person",
@@ -5361,7 +6915,9 @@
     "name": "toe",
     "genres": [
       "post-rock",
-      "math rock"
+      "math rock",
+      "instrumental",
+      "post rock"
     ],
     "source": "mb-wikidata-en",
     "mbid": "7ea8a523-b33d-4944-ad31-fad25a81d603",
@@ -5372,7 +6928,11 @@
   },
   "万年青年旅店": {
     "name": "万年青年旅店",
-    "genres": [],
+    "genres": [
+      "rock",
+      "progressive rock",
+      "art rock"
+    ],
     "source": "wiki-direct-zh",
     "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Omnipotent_Youth_Society_in_Fuzhou_20190101.jpg/330px-Omnipotent_Youth_Society_in_Fuzhou_20190101.jpg",
     "summary": "万能青年旅店，是中国河北石家庄的一支独立摇滚乐队，主要由董亚千、史立、姬赓和冯江等多名成员组成，其成员流动性较大。在1996年乐队成立时叫做The Nico，2002年时更改为现名称。2010年出版首张同名专辑《万能青年旅店》。时隔十年后，在2020年出版第二张专辑《冀西南林路行》。\n",
@@ -5380,7 +6940,12 @@
   },
   "upsammy": {
     "name": "upsammy",
-    "genres": [],
+    "genres": [
+      "idm",
+      "techno",
+      "house",
+      "ambient"
+    ],
     "source": "spotify",
     "mbid": "36124745-211c-446d-a51d-523742844d80",
     "type": "Person",
@@ -5391,7 +6956,12 @@
   },
   "落日飞车": {
     "name": "落日飞车",
-    "genres": [],
+    "genres": [
+      "indie rock",
+      "indie",
+      "alternative",
+      "indie pop"
+    ],
     "source": "mb-wikidata-zh+spotify",
     "mbid": "75c5edb5-796d-46f3-bac3-9b59da658023",
     "type": "Group",
