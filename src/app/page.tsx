@@ -1219,6 +1219,30 @@ function HomeTab({ gigs, setGigs, lang, showForm, setShowForm, user, profile }: 
   const [hasSetlist, setHasSetlist] = useState(false);
   const [sortBy, setSortBy] = useState<SortBy>("date-desc");
   const [selectedGig, setSelectedGig] = useState<Gig | null>(null);
+  const [expandedYears, setExpandedYears] = useState<Set<string>>(new Set());
+  const [expandedMonths, setExpandedMonths] = useState<Set<string>>(new Set());
+  const collapseInit = useRef(false);
+
+  useEffect(() => {
+    if (collapseInit.current || gigs.length === 0) return;
+    collapseInit.current = true;
+    const latest = [...gigs].sort((a, b) => b.date.localeCompare(a.date))[0];
+    const y = latest.date.slice(0, 4);
+    const m = Number(latest.date.slice(5, 7)) - 1;
+    setExpandedYears(new Set([y]));
+    setExpandedMonths(new Set([`${y}-${m}`]));
+  }, [gigs]);
+
+  const toggleYear = (y: string) => setExpandedYears(prev => {
+    const next = new Set(prev);
+    if (next.has(y)) next.delete(y); else next.add(y);
+    return next;
+  });
+  const toggleMonth = (key: string) => setExpandedMonths(prev => {
+    const next = new Set(prev);
+    if (next.has(key)) next.delete(key); else next.add(key);
+    return next;
+  });
 
   const years = Array.from(new Set(gigs.map(g => g.date.slice(0, 4)))).sort((a, b) => Number(b) - Number(a));
   const allTags = Array.from(new Set(gigs.flatMap(g => g.tags)));
@@ -1466,35 +1490,57 @@ function HomeTab({ gigs, setGigs, lang, showForm, setShowForm, user, profile }: 
         </div>
       ) : (
         <div className="space-y-6">
-          {grouped.map(({ year, months, count }) => (
-            <div key={year} className="space-y-4">
-              <p className="text-base font-bold text-gray-700 dark:text-slate-200 px-1">
-                {year} <span className="text-xs font-medium text-gray-400 dark:text-slate-500">· {count} {t.shows}</span>
-              </p>
-              {months.map(({ month, weeks, count: monthCount }) => (
-                <div key={month} className="space-y-3">
-                  <p className="text-xs font-semibold text-gray-500 dark:text-slate-400 uppercase tracking-wide px-1">
-                    {t.stats.months[month]} <span className="text-gray-300 dark:text-slate-600 normal-case font-normal">· {monthCount} {t.shows}</span>
-                  </p>
-                  {weeks.map(({ weekStart, days }) => (
-                    <div key={weekStart} className="space-y-2">
-                      <p className="text-[11px] text-gray-300 dark:text-slate-600 px-1">{weekRangeLabel(weekStart, lang)}</p>
-                      <div className="space-y-3">
-                        {days.map(({ date, gigs }) => (
-                          <div key={date} className="space-y-1.5">
-                            <p className="text-xs font-medium text-gray-500 dark:text-slate-400 px-1">{dayHeaderLabel(date, lang)}</p>
-                            <div className="space-y-2.5">
-                              {gigs.map(gig => <GigCard key={gig.id} gig={gig} onClick={() => setSelectedGig(gig)} lang={lang} hideDate />)}
-                            </div>
+          {grouped.map(({ year, months, count }) => {
+            const forceOpen = !!search.trim() || hasActiveFilter;
+            const yearOpen = forceOpen || expandedYears.has(year);
+            return (
+              <div key={year} className="space-y-4">
+                <button
+                  type="button"
+                  onClick={() => !forceOpen && toggleYear(year)}
+                  disabled={forceOpen}
+                  className={`flex items-baseline gap-2 px-1 w-full text-left ${forceOpen ? "" : "cursor-pointer group"}`}
+                >
+                  <span className={`text-gray-400 dark:text-slate-500 text-xs transition-transform ${yearOpen ? "rotate-90" : ""}`}>▸</span>
+                  <span className="text-base font-bold text-gray-700 dark:text-slate-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">{year}</span>
+                  <span className="text-xs font-medium text-gray-400 dark:text-slate-500">· {count} {t.shows}</span>
+                </button>
+                {yearOpen && months.map(({ month, weeks, count: monthCount }) => {
+                  const monthKey = `${year}-${month}`;
+                  const monthOpen = forceOpen || expandedMonths.has(monthKey);
+                  return (
+                    <div key={month} className="space-y-3">
+                      <button
+                        type="button"
+                        onClick={() => !forceOpen && toggleMonth(monthKey)}
+                        disabled={forceOpen}
+                        className={`flex items-baseline gap-2 px-1 w-full text-left ${forceOpen ? "" : "cursor-pointer group"}`}
+                      >
+                        <span className={`text-gray-300 dark:text-slate-600 text-[10px] transition-transform ${monthOpen ? "rotate-90" : ""}`}>▸</span>
+                        <span className="text-xs font-semibold text-gray-500 dark:text-slate-400 uppercase tracking-wide group-hover:text-indigo-500 transition-colors">{t.stats.months[month]}</span>
+                        <span className="text-xs text-gray-300 dark:text-slate-600 normal-case font-normal">· {monthCount} {t.shows}</span>
+                      </button>
+                      {monthOpen && weeks.map(({ weekStart, days }) => (
+                        <div key={weekStart} className="space-y-2">
+                          <p className="text-[11px] text-gray-300 dark:text-slate-600 px-1">{weekRangeLabel(weekStart, lang)}</p>
+                          <div className="space-y-3">
+                            {days.map(({ date, gigs }) => (
+                              <div key={date} className="space-y-1.5">
+                                <p className="text-xs font-medium text-gray-500 dark:text-slate-400 px-1">{dayHeaderLabel(date, lang)}</p>
+                                <div className="space-y-2.5">
+                                  {gigs.map(gig => <GigCard key={gig.id} gig={gig} onClick={() => setSelectedGig(gig)} lang={lang} hideDate />)}
+                                </div>
+                              </div>
+                            ))}
                           </div>
-                        ))}
-                      </div>
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
-              ))}
-            </div>
-          ))}
+                  );
+                })}
+              </div>
+            );
+          })}
         </div>
       )}
 
