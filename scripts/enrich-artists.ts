@@ -18,7 +18,7 @@ const FORCE = process.argv.includes("--force");
 const ONLY_IDX = process.argv.indexOf("--only");
 const ONLY = ONLY_IDX >= 0 ? new Set(process.argv[ONLY_IDX + 1].split(",").map(s => s.trim())) : null;
 
-const sleep = (ms: number) => new Promise(r => setTimeout(r, ms));
+const sleep = (ms: number) => new Promise<void>(r => setTimeout(r, ms));
 
 // Global MB rate limiter: serialized via a promise chain so concurrent workers don't race.
 // Each caller appends sleep(1100) to the chain and awaits the prior tail.
