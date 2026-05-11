@@ -680,6 +680,18 @@ function GigDetailModal({ gig, lang, onClose, onUpdate, onDelete }: {
     onClose();
   };
 
+  const handleRate = async (rating: number) => {
+    if (rating === gig.rating) return;
+    const updated: Gig = { ...gig, rating };
+    onUpdate(updated);
+    await updateGigById(gig.id, {
+      artist: updated.artist, venue: updated.venue, date: updated.date,
+      city: updated.city, country: updated.country, tags: updated.tags,
+      rating: updated.rating, notes: updated.notes, price: updated.price,
+      currency: updated.currency, companions: updated.companions, setlist: updated.setlist,
+    });
+  };
+
   return (
     <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center" onClick={onClose}>
       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
@@ -736,7 +748,7 @@ function GigDetailModal({ gig, lang, onClose, onUpdate, onDelete }: {
                 {[dateStr, gig.venue, gig.city, gig.country].filter(Boolean).join("  ·  ")}
               </p>
 
-              <StarRating value={gig.rating} size="lg" />
+              <StarRating value={gig.rating} size="lg" onChange={handleRate} />
 
               {/* Artist genres (from Wikipedia/MusicBrainz, distinct styling from user tags) */}
               {meta?.genres?.length ? (
