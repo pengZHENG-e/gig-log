@@ -827,6 +827,55 @@ function GigDetailModal({ gig, lang, onClose, onUpdate, onDelete }: {
   );
 }
 
+// ─── ArtistAvatar ────────────────────────────────────────────────────────────
+
+function ArtistAvatar({ name, size = 40 }: { name: string; size?: number }) {
+  const meta = useArtistMeta(name);
+  const [failed, setFailed] = useState(false);
+  const hasPhoto = !!meta?.photo && !failed;
+
+  // Stable color seeded by artist name for the initials fallback.
+  const hue = ((): number => {
+    let h = 0;
+    for (let i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) | 0;
+    return Math.abs(h) % 360;
+  })();
+  const initials = name
+    .replace(/\s*\(.*?\)\s*/g, "")
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map(w => w[0]?.toUpperCase() ?? "")
+    .join("") || name.slice(0, 1).toUpperCase();
+
+  return (
+    <div
+      className="rounded-full overflow-hidden shrink-0 flex items-center justify-center font-semibold text-white"
+      style={{
+        width: size,
+        height: size,
+        fontSize: Math.round(size * 0.4),
+        background: hasPhoto ? undefined : `linear-gradient(135deg, hsl(${hue} 65% 55%), hsl(${(hue + 40) % 360} 65% 45%))`,
+      }}
+      aria-hidden={!hasPhoto}
+    >
+      {hasPhoto ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={meta!.photo!}
+          alt={name}
+          className="w-full h-full object-cover"
+          loading="lazy"
+          referrerPolicy="no-referrer"
+          onError={() => setFailed(true)}
+        />
+      ) : (
+        <span>{initials}</span>
+      )}
+    </div>
+  );
+}
+
 // ─── GigCard ─────────────────────────────────────────────────────────────────
 
 function GigCard({ gig, onClick, lang }: { gig: Gig; onClick: () => void; lang: Lang }) {
@@ -837,6 +886,7 @@ function GigCard({ gig, onClick, lang }: { gig: Gig; onClick: () => void; lang: 
   return (
     <div onClick={onClick} className="w-full text-left bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-4 border border-gray-100 dark:border-slate-700 hover:border-indigo-300 dark:hover:border-indigo-600 hover:shadow-md transition-all active:scale-[0.99] cursor-pointer">
       <div className="flex justify-between items-start gap-3">
+        <ArtistAvatar name={gig.artist} size={44} />
         <div className="flex-1 min-w-0">
           <p className="font-bold text-base leading-snug truncate">{gig.artist}</p>
           <p className="text-sm text-gray-400 dark:text-slate-500 truncate mt-0.5">
