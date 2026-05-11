@@ -5,10 +5,13 @@ import { useEffect, useState } from "react";
 export interface ArtistMeta {
   name: string;
   photo?: string;
+  photoSmall?: string;
   genres: string[];
   summary?: string;
   wiki?: string;
   mbid?: string;
+  spotifyId?: string;
+  spotifyUrl?: string;
   type?: string;
   source?: string;
 }

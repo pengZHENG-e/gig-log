@@ -17,7 +17,11 @@
   "ACIDE ACIDE": {
     "name": "ACIDE ACIDE",
     "genres": [],
-    "source": "none"
+    "source": "spotify",
+    "photo": "https://i.scdn.co/image/ab67616d0000b273d8838ed0fb05a83c4bd38866",
+    "photoSmall": "https://i.scdn.co/image/ab67616d00004851d8838ed0fb05a83c4bd38866",
+    "spotifyId": "3eD1tgyd7F1hwEzA3XBsyt",
+    "spotifyUrl": "https://open.spotify.com/artist/3eD1tgyd7F1hwEzA3XBsyt"
   },
   "AGILE": {
     "name": "AGILE",
@@ -32,9 +36,13 @@
   "Abdomen": {
     "name": "Abdomen",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "4195eae5-78a1-42ab-8970-17677fc12143",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebdcbd449e3701bebef4bc9cc5",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178dcbd449e3701bebef4bc9cc5",
+    "spotifyId": "1tSw2S5jNhTVxKVZfvmY2F",
+    "spotifyUrl": "https://open.spotify.com/artist/1tSw2S5jNhTVxKVZfvmY2F"
   },
   "Ade": {
     "name": "Ade",
@@ -60,9 +68,12 @@
   "Aerial Salad": {
     "name": "Aerial Salad",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "30be4dae-121e-4219-b366-cec72eae4724",
-    "type": "Group"
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb290efcc9ad980b3f2cf4dfe6",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178290efcc9ad980b3f2cf4dfe6",
+    "spotifyId": "7eq7Gy7wawqSKSYMiN4m3e",
+    "spotifyUrl": "https://open.spotify.com/artist/7eq7Gy7wawqSKSYMiN4m3e"
   },
   "Ain't": {
     "name": "Ain't",
@@ -102,9 +113,13 @@
   "Alien Chicks": {
     "name": "Alien Chicks",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "61f22fec-c4fc-4e2a-8bb9-b9d0a04864ab",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb81569308a0abdd28875c9460",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17881569308a0abdd28875c9460",
+    "spotifyId": "1V2a5Mkw4VP93kP1vrB4T4",
+    "spotifyUrl": "https://open.spotify.com/artist/1V2a5Mkw4VP93kP1vrB4T4"
   },
   "Alvilda": {
     "name": "Alvilda",
@@ -112,9 +127,13 @@
       "france",
       "power pop"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "e89abc53-6dc5-4212-bc65-8d1d9f6ff4c2",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb457e0d2b1216950e9b0d5fb8",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178457e0d2b1216950e9b0d5fb8",
+    "spotifyId": "7dUKQAwqu3OZo3Sjt95K31",
+    "spotifyUrl": "https://open.spotify.com/artist/7dUKQAwqu3OZo3Sjt95K31"
   },
   "Anjimile": {
     "name": "Anjimile",
@@ -161,9 +180,13 @@
   "Arthur Fu Bandini": {
     "name": "Arthur Fu Bandini",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "3c8485bc-2e12-4e29-8877-f147756b3834",
-    "type": "Person"
+    "type": "Person",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebc4004d4268fe9fec30701847",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178c4004d4268fe9fec30701847",
+    "spotifyId": "5RHZbVrO1bz65cDowg1vQQ",
+    "spotifyUrl": "https://open.spotify.com/artist/5RHZbVrO1bz65cDowg1vQQ"
   },
   "Astrid Sonne": {
     "name": "Astrid Sonne",
@@ -180,21 +203,33 @@
   "Atom Atom": {
     "name": "Atom Atom",
     "genres": [],
-    "source": "none"
+    "source": "spotify",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb8e6a0ebf3f14850b2506a31a",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1788e6a0ebf3f14850b2506a31a",
+    "spotifyId": "7gBpNpY64z0ATg2MEOuz3V",
+    "spotifyUrl": "https://open.spotify.com/artist/7gBpNpY64z0ATg2MEOuz3V"
   },
   "Automotion": {
     "name": "Automotion",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "c98bbdfa-cad8-4dd4-bee8-5cdf7806cf65",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb8bf2ca26df3daf665dae88f4",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1788bf2ca26df3daf665dae88f4",
+    "spotifyId": "7kfVFt1EDkqF4xCzMfIUDY",
+    "spotifyUrl": "https://open.spotify.com/artist/7kfVFt1EDkqF4xCzMfIUDY"
   },
   "BEACHTAPE": {
     "name": "BEACHTAPE",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "cd04be9c-d2d8-48bf-9af3-bb9a527fa952",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb1af88b71586766c0d124d28b",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1781af88b71586766c0d124d28b",
+    "spotifyId": "731xbI3Me3lWV8e1JOZMGU",
+    "spotifyUrl": "https://open.spotify.com/artist/731xbI3Me3lWV8e1JOZMGU"
   },
   "BELMONDO": {
     "name": "BELMONDO",
@@ -209,9 +244,7 @@
   "Bande a Part": {
     "name": "Bande a Part",
     "genres": [],
-    "source": "mb-only",
-    "mbid": "9befe40f-027c-4cc3-a6fe-fcda65ea95db",
-    "type": "Group"
+    "source": "error"
   },
   "Bar Italia": {
     "name": "Bar Italia",
@@ -232,9 +265,13 @@
   "Basht.": {
     "name": "Basht.",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "eefe0ce9-822e-4814-be32-d5fc0f83db2e",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebb9ee7b7658a83fb43e007df9",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178b9ee7b7658a83fb43e007df9",
+    "spotifyId": "0bIaFZHuLgWlw8UiE9qBAE",
+    "spotifyUrl": "https://open.spotify.com/artist/0bIaFZHuLgWlw8UiE9qBAE"
   },
   "Beak": {
     "name": "Beak",
@@ -273,18 +310,26 @@
   "Beige Banquet": {
     "name": "Beige Banquet",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "4d25f8ee-a782-4e1c-a79b-5492ff5a16a0",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebceebbeed72fc58b69695fdb9",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178ceebbeed72fc58b69695fdb9",
+    "spotifyId": "1RD0sw23ETXTCQRmDHsmbW",
+    "spotifyUrl": "https://open.spotify.com/artist/1RD0sw23ETXTCQRmDHsmbW"
   },
   "Belmondo": {
     "name": "Belmondo",
     "genres": [],
-    "source": "wiki-direct-en",
+    "source": "wiki-direct-en+spotify",
     "mbid": "07853156-439e-45f9-a29d-e0e912af6d43",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb30b6c6fd7babd6c9767bc08e",
     "summary": "Belmondo is a surname. Notable people with the surname include:Jean-Paul Belmondo (1933–2021), French actor\nHis son, Paul Belmondo, a racing driver\nHis father, Paul Belmondo (sculptor)\nStefania Belmondo, Italian cross-country skier\nStéphane Belmondo, French musician\nVittorio Belmondo, Italian racing driver\n",
-    "wiki": "https://en.wikipedia.org/wiki/Belmondo"
+    "wiki": "https://en.wikipedia.org/wiki/Belmondo",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17830b6c6fd7babd6c9767bc08e",
+    "spotifyId": "3LDKqGmw6GyxO81YdtMAgl",
+    "spotifyUrl": "https://open.spotify.com/artist/3LDKqGmw6GyxO81YdtMAgl"
   },
   "Benefits": {
     "name": "Benefits",
@@ -304,16 +349,24 @@
   "Better Joy": {
     "name": "Better Joy",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "beb6863f-bb01-4ce8-a4ed-bd75a696f860",
-    "type": "Person"
+    "type": "Person",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb1115ee8ecc39a89bc8ef6783",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1781115ee8ecc39a89bc8ef6783",
+    "spotifyId": "4ERGM46KkPIw35YncC6PGL",
+    "spotifyUrl": "https://open.spotify.com/artist/4ERGM46KkPIw35YncC6PGL"
   },
   "Bible Club": {
     "name": "Bible Club",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "bb43727e-b6b5-4dba-9fe7-c399675b1012",
-    "type": null
+    "type": null,
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb8a253d0a3daf795ddf6d4bba",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1788a253d0a3daf795ddf6d4bba",
+    "spotifyId": "6o0TuDUeaxV6qUpT1LNgtk",
+    "spotifyUrl": "https://open.spotify.com/artist/6o0TuDUeaxV6qUpT1LNgtk"
   },
   "Big Red": {
     "name": "Big Red",
@@ -346,16 +399,24 @@
   "Bingo Fury": {
     "name": "Bingo Fury",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "3e4feeee-d5ad-495d-b7c2-6457dfe5b058",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb0c8b3caacaa674bd8b330c8f",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1780c8b3caacaa674bd8b330c8f",
+    "spotifyId": "0yBFPjYypBODQ9d8XUXial",
+    "spotifyUrl": "https://open.spotify.com/artist/0yBFPjYypBODQ9d8XUXial"
   },
   "Bishopskin": {
     "name": "Bishopskin",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "1927d60c-ba5b-4f84-bd71-734bfa4fef66",
-    "type": null
+    "type": null,
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb38cf464f11bd1221c09ec3bc",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17838cf464f11bd1221c09ec3bc",
+    "spotifyId": "3SEjJtdvn6dqnCkVIvWgK5",
+    "spotifyUrl": "https://open.spotify.com/artist/3SEjJtdvn6dqnCkVIvWgK5"
   },
   "Black Country, New Road": {
     "name": "Black Country, New Road",
@@ -377,9 +438,13 @@
   "Black Fondu": {
     "name": "Black Fondu",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "a9e69a24-1428-42f9-9b74-5f179198990b",
-    "type": null
+    "type": null,
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebe7a9b228859de953142290dd",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178e7a9b228859de953142290dd",
+    "spotifyId": "5WunDwdY4e0nWZXHOeFLF1",
+    "spotifyUrl": "https://open.spotify.com/artist/5WunDwdY4e0nWZXHOeFLF1"
   },
   "Black Midi": {
     "name": "Black Midi",
@@ -413,9 +478,13 @@
   "Bleech 9:3": {
     "name": "Bleech 9:3",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "77127115-2daf-4ca8-81c2-c3acb4ce0c31",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb6cdd6d36277940282b76858a",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1786cdd6d36277940282b76858a",
+    "spotifyId": "2S6eJYUlnmZL5XOaC3nvRL",
+    "spotifyUrl": "https://open.spotify.com/artist/2S6eJYUlnmZL5XOaC3nvRL"
   },
   "Blue Bendy": {
     "name": "Blue Bendy",
@@ -430,23 +499,35 @@
   "Blue Slate": {
     "name": "Blue Slate",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "96c40a01-fe4f-4241-a769-a5b4fd35bbe6",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb156d510faf346aad14960825",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178156d510faf346aad14960825",
+    "spotifyId": "5zExcYSTt7HvimLkiRk0Cp",
+    "spotifyUrl": "https://open.spotify.com/artist/5zExcYSTt7HvimLkiRk0Cp"
   },
   "Bo Gritz": {
     "name": "Bo Gritz",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "0476da23-51fb-4d41-9656-7465813464f2",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb4c78ac074952a3e7b3ec8bf1",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1784c78ac074952a3e7b3ec8bf1",
+    "spotifyId": "2G7zpdk3T6B6EjRK54TwwQ",
+    "spotifyUrl": "https://open.spotify.com/artist/2G7zpdk3T6B6EjRK54TwwQ"
   },
   "Body Horror": {
     "name": "Body Horror",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "194c412e-a454-469d-a40f-82f658061506",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb60c192520b6b4f4c903c35a2",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17860c192520b6b4f4c903c35a2",
+    "spotifyId": "5takkgqbLe2iOg02wbdcyl",
+    "spotifyUrl": "https://open.spotify.com/artist/5takkgqbLe2iOg02wbdcyl"
   },
   "Bolis Pupul": {
     "name": "Bolis Pupul",
@@ -478,9 +559,13 @@
   "Bug Teeth": {
     "name": "Bug Teeth",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "cfc23bcd-16d0-4af7-b7c0-f3805e0eb44a",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebd4a65a400ff2f54dc0d02049",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178d4a65a400ff2f54dc0d02049",
+    "spotifyId": "3b90Lpnlon3MrNSPo1a0VD",
+    "spotifyUrl": "https://open.spotify.com/artist/3b90Lpnlon3MrNSPo1a0VD"
   },
   "Butterfly Bulldozer": {
     "name": "Butterfly Bulldozer",
@@ -488,25 +573,37 @@
       "art rock",
       "post-punk"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "2e4725f3-3ba4-44cb-ae15-3afbe33ca2bd",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebbe2b9d574212fa8e174ae05d",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178be2b9d574212fa8e174ae05d",
+    "spotifyId": "7Cwsd5hcKnevIMxmGxYXtm",
+    "spotifyUrl": "https://open.spotify.com/artist/7Cwsd5hcKnevIMxmGxYXtm"
   },
   "Butch Kassidy": {
     "name": "Butch Kassidy",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "c53751b4-ba21-456b-bbb7-d749a34e58a3",
-    "type": null
+    "type": null,
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb50ea99e032d95de6349714f9",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17850ea99e032d95de6349714f9",
+    "spotifyId": "0mDTM9lWOAmhmR40Df5Fsr",
+    "spotifyUrl": "https://open.spotify.com/artist/0mDTM9lWOAmhmR40Df5Fsr"
   },
   "C Turtle": {
     "name": "C Turtle",
     "genres": [
       "lo-fi"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "43d5c257-9ed4-402b-b515-ea94908f1de3",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb5c46e2c383c85586c7378a11",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1785c46e2c383c85586c7378a11",
+    "spotifyId": "4JoZT9uT2cj9DQ7i23pn4h",
+    "spotifyUrl": "https://open.spotify.com/artist/4JoZT9uT2cj9DQ7i23pn4h"
   },
   "CHAMGELIANI SISTERS & FRIENDS: GEORGIAN POLYPHONIC SONGS": {
     "name": "CHAMGELIANI SISTERS & FRIENDS: GEORGIAN POLYPHONIC SONGS",
@@ -516,25 +613,37 @@
   "CVC": {
     "name": "CVC",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "a9c2c991-3d78-4ea1-8d96-40389f792af4",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebc7540f6f5d1987b4c4e984e5",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178c7540f6f5d1987b4c4e984e5",
+    "spotifyId": "4UVp2DRjYXq2ZWQwA5QLuD",
+    "spotifyUrl": "https://open.spotify.com/artist/4UVp2DRjYXq2ZWQwA5QLuD"
   },
   "CLAMM": {
     "name": "CLAMM",
     "genres": [
       "rock"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "f7e5fc72-a1dc-41bc-8a26-a6ee41ac6b58",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb1024514f205131190a5e3a8b",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1781024514f205131190a5e3a8b",
+    "spotifyId": "2QYx4UUKqLe1OUWFkjclqH",
+    "spotifyUrl": "https://open.spotify.com/artist/2QYx4UUKqLe1OUWFkjclqH"
   },
   "Car boot sale": {
     "name": "Car boot sale",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "a2bed50f-313a-4afa-bfe2-ca53a1ac3a50",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebf8f6875f97dd6c825bfeefbe",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178f8f6875f97dd6c825bfeefbe",
+    "spotifyId": "2hHAEpcLh1gGU2pYJRuhI7",
+    "spotifyUrl": "https://open.spotify.com/artist/2hHAEpcLh1gGU2pYJRuhI7"
   },
   "Cameron Winter": {
     "name": "Cameron Winter",
@@ -555,9 +664,13 @@
   "Carsick": {
     "name": "Carsick",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "242940bb-0600-4bfe-a1c0-efb1ab583fec",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb52d4cca9a3aa6cc57e2ee951",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17852d4cca9a3aa6cc57e2ee951",
+    "spotifyId": "6FtPotTHovfdRI7wA6YPyH",
+    "spotifyUrl": "https://open.spotify.com/artist/6FtPotTHovfdRI7wA6YPyH"
   },
   "Cardinals": {
     "name": "Cardinals",
@@ -583,18 +696,26 @@
   "Children Of The Pope": {
     "name": "Children Of The Pope",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "8958b2ac-8854-4c52-b3b3-e5b5044ffa05",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb6a24813edadb0c4c695cad1d",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1786a24813edadb0c4c695cad1d",
+    "spotifyId": "7n4iT7FHaAt2od6MZMPqQE",
+    "spotifyUrl": "https://open.spotify.com/artist/7n4iT7FHaAt2od6MZMPqQE"
   },
   "Chaos in the CBD": {
     "name": "Chaos in the CBD",
     "genres": [
       "deep house"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "ae534b5f-95e5-40d9-9ce0-75e4b777cad1",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebece3850887a441bcc9e1453f",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178ece3850887a441bcc9e1453f",
+    "spotifyId": "0QOQc6jEsPX5Y45TV0hXQy",
+    "spotifyUrl": "https://open.spotify.com/artist/0QOQc6jEsPX5Y45TV0hXQy"
   },
   "Chinese Football": {
     "name": "Chinese Football",
@@ -613,18 +734,26 @@
   "Children of the Pope": {
     "name": "Children of the Pope",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "8958b2ac-8854-4c52-b3b3-e5b5044ffa05",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb6a24813edadb0c4c695cad1d",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1786a24813edadb0c4c695cad1d",
+    "spotifyId": "7n4iT7FHaAt2od6MZMPqQE",
+    "spotifyUrl": "https://open.spotify.com/artist/7n4iT7FHaAt2od6MZMPqQE"
   },
   "Chloe Qisha": {
     "name": "Chloe Qisha",
     "genres": [],
-    "source": "mb-wikidata-en",
+    "source": "mb-wikidata-en+spotify",
     "mbid": "fffa2bd2-2382-44b8-8f94-27b1fbe9eb58",
     "type": "Person",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb740b19d69464e1a80cd4dbdb",
     "summary": "Chloe Qi Sha Lim, known professionally as Chloe Qisha, is a Malaysian-born singer. She was included in the BBC's Sound of 2026 shortlist. She is based in London.",
-    "wiki": "https://en.wikipedia.org/wiki/Chloe_Qisha"
+    "wiki": "https://en.wikipedia.org/wiki/Chloe_Qisha",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178740b19d69464e1a80cd4dbdb",
+    "spotifyId": "1WNmfSqydnt1FDJKg3l6lw",
+    "spotifyUrl": "https://open.spotify.com/artist/1WNmfSqydnt1FDJKg3l6lw"
   },
   "Christian Music": {
     "name": "Christian Music",
@@ -638,16 +767,24 @@
   "Clay Pigeon Shooting": {
     "name": "Clay Pigeon Shooting",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "9d64530b-b0fd-49af-a38e-3166cafcd631",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb2d31f89ec48405d2ee846a45",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1782d31f89ec48405d2ee846a45",
+    "spotifyId": "6WjCE1tKIbRzkIsQFkjXV9",
+    "spotifyUrl": "https://open.spotify.com/artist/6WjCE1tKIbRzkIsQFkjXV9"
   },
   "Cliffords": {
     "name": "Cliffords",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "18b364b6-7b4b-458d-9d23-71354320aaec",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb9beccda725d9d2c30fc7ff1b",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1789beccda725d9d2c30fc7ff1b",
+    "spotifyId": "2JIXE3g9E0kfeFWhpKPIja",
+    "spotifyUrl": "https://open.spotify.com/artist/2JIXE3g9E0kfeFWhpKPIja"
   },
   "Clara Bach": {
     "name": "Clara Bach",
@@ -661,20 +798,28 @@
     "genres": [
       "post-punk"
     ],
-    "source": "mb-wikidata-en",
+    "source": "mb-wikidata-en+spotify",
     "mbid": "644ca6ea-a2ff-40b5-bd24-9df719e799ff",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb3646d00eb806c1f7c3196247",
     "summary": "Cola is a post-punk band from Montreal, Quebec, Canada. The band consists of Tim Darcy, Ben Stidworthy (bass), and Evan Cartwright (drums).",
-    "wiki": "https://en.wikipedia.org/wiki/Cola_(band)"
+    "wiki": "https://en.wikipedia.org/wiki/Cola_(band)",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1783646d00eb806c1f7c3196247",
+    "spotifyId": "1KCSUZBJy1bAsIz7wUYkd8",
+    "spotifyUrl": "https://open.spotify.com/artist/1KCSUZBJy1bAsIz7wUYkd8"
   },
   "Coach Party": {
     "name": "Coach Party",
     "genres": [],
-    "source": "mb-wikidata-en",
+    "source": "mb-wikidata-en+spotify",
     "mbid": "ec44206a-c3cc-419d-9ef9-08971c1297dd",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb16ae01f0b84dedab833c1463",
     "summary": "Coach Party is a British four-piece indie rock band formed on the Isle of Wight, England in 2019. The band is composed of lead singer and bassist Jess Eastwood, guitarists Joe Perry and Steph Norris, and drummer Guy Page.",
-    "wiki": "https://en.wikipedia.org/wiki/Coach_Party"
+    "wiki": "https://en.wikipedia.org/wiki/Coach_Party",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17816ae01f0b84dedab833c1463",
+    "spotifyId": "4trP4C2bZ0TqMUxw0tLRAZ",
+    "spotifyUrl": "https://open.spotify.com/artist/4trP4C2bZ0TqMUxw0tLRAZ"
   },
   "Clémence Violence": {
     "name": "Clémence Violence",
@@ -692,23 +837,35 @@
   "Council Popstar": {
     "name": "Council Popstar",
     "genres": [],
-    "source": "none"
+    "source": "spotify",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebdc128328e0bcca886f9cf148",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178dc128328e0bcca886f9cf148",
+    "spotifyId": "5QQNURNGuKPQtLA2jH4rvQ",
+    "spotifyUrl": "https://open.spotify.com/artist/5QQNURNGuKPQtLA2jH4rvQ"
   },
   "Cowboyy": {
     "name": "Cowboyy",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "ec19bb9a-2231-4da3-8a2d-c726d319747a",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebb2588e158228d000bb254398",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178b2588e158228d000bb254398",
+    "spotifyId": "65TVwNWUoKyfvlaxLLJQGh",
+    "spotifyUrl": "https://open.spotify.com/artist/65TVwNWUoKyfvlaxLLJQGh"
   },
   "Cooper T": {
     "name": "Cooper T",
     "genres": [],
-    "source": "wiki-direct-en",
+    "source": "wiki-direct-en+spotify",
     "mbid": "d09aadc3-6cdd-4600-ab8f-8ece12bd9cc8",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb99307342fc420e5e9386185b",
     "summary": "Cooper Terry was an American-born Italian blues singer, guitarist and harmonica player.",
-    "wiki": "https://en.wikipedia.org/wiki/Cooper_Terry"
+    "wiki": "https://en.wikipedia.org/wiki/Cooper_Terry",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17899307342fc420e5e9386185b",
+    "spotifyId": "7t6usUnb0OZ2r0pi3nvdmB",
+    "spotifyUrl": "https://open.spotify.com/artist/7t6usUnb0OZ2r0pi3nvdmB"
   },
   "Crack Cloud": {
     "name": "Crack Cloud",
@@ -747,9 +904,13 @@
       "post-punk",
       "synth pop"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "708f4e0b-4f34-4b62-93d8-23de5cfeed44",
-    "type": "Person"
+    "type": "Person",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb66aa5cb039a9a77111ece7aa",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17866aa5cb039a9a77111ece7aa",
+    "spotifyId": "6lrYlq9d2alpuagPfXzSne",
+    "spotifyUrl": "https://open.spotify.com/artist/6lrYlq9d2alpuagPfXzSne"
   },
   "Cumgirl8": {
     "name": "Cumgirl8",
@@ -771,16 +932,24 @@
   "Cruush": {
     "name": "Cruush",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "435365b9-2a50-41e6-9611-e44b0eebbcda",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebf554ed34d9ea713588fea8ee",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178f554ed34d9ea713588fea8ee",
+    "spotifyId": "09SorScmrKs8yZMG9hdr6N",
+    "spotifyUrl": "https://open.spotify.com/artist/09SorScmrKs8yZMG9hdr6N"
   },
   "Curser": {
     "name": "Curser",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "05ec4921-d23c-4d40-8959-8f0e4e513c30",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebc01a3ae2371bbd32b22e9dd1",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178c01a3ae2371bbd32b22e9dd1",
+    "spotifyId": "1gEA35NM4LKYz4aaU9eHGI",
+    "spotifyUrl": "https://open.spotify.com/artist/1gEA35NM4LKYz4aaU9eHGI"
   },
   "DITZ": {
     "name": "DITZ",
@@ -793,16 +962,24 @@
   "DBA!": {
     "name": "DBA!",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "5a9007ea-c437-49a9-813a-1e2425d086dd",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebd374da3ad48a8735b2abecbd",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178d374da3ad48a8735b2abecbd",
+    "spotifyId": "63sv2157LiQM4j3aTSkayw",
+    "spotifyUrl": "https://open.spotify.com/artist/63sv2157LiQM4j3aTSkayw"
   },
   "DEADLETTER": {
     "name": "DEADLETTER",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "f62f5f75-f6a2-42ea-a8b2-9732ca1be53c",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eba91988267db622a564a29ac8",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178a91988267db622a564a29ac8",
+    "spotifyId": "4MfUQ99z2kgMnl9hAwffBx",
+    "spotifyUrl": "https://open.spotify.com/artist/4MfUQ99z2kgMnl9hAwffBx"
   },
   "Dartz": {
     "name": "Dartz",
@@ -811,16 +988,24 @@
       "garage rock",
       "new zealand"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "b62e977d-5a98-437d-945e-f3cfb9e76f73",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb943a3bf36e9fec57a848df8f",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178943a3bf36e9fec57a848df8f",
+    "spotifyId": "0ekrcj2YAoYh52dJzcvKJi",
+    "spotifyUrl": "https://open.spotify.com/artist/0ekrcj2YAoYh52dJzcvKJi"
   },
   "Deadletter": {
     "name": "Deadletter",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "f62f5f75-f6a2-42ea-a8b2-9732ca1be53c",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eba91988267db622a564a29ac8",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178a91988267db622a564a29ac8",
+    "spotifyId": "4MfUQ99z2kgMnl9hAwffBx",
+    "spotifyUrl": "https://open.spotify.com/artist/4MfUQ99z2kgMnl9hAwffBx"
   },
   "Deary": {
     "name": "Deary",
@@ -849,9 +1034,13 @@
   "Demuja": {
     "name": "Demuja",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "6898219e-41d2-4c5e-9aeb-a9e1463ccd10",
-    "type": "Person"
+    "type": "Person",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb1daf4def1a70bbeb6086f027",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1781daf4def1a70bbeb6086f027",
+    "spotifyId": "1LfqhJiCiHfVzrBOVaBXc1",
+    "spotifyUrl": "https://open.spotify.com/artist/1LfqhJiCiHfVzrBOVaBXc1"
   },
   "Dictator": {
     "name": "Dictator",
@@ -866,25 +1055,37 @@
     "genres": [
       "post-punk"
     ],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "da9c1ec9-6ac1-4cfb-b24d-1932e22b7b37",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebc9a48b4f90ab6ff3803f3f3d",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178c9a48b4f90ab6ff3803f3f3d",
+    "spotifyId": "14aKkOrkqm6amS81rUMZPg",
+    "spotifyUrl": "https://open.spotify.com/artist/14aKkOrkqm6amS81rUMZPg"
   },
   "Didi Han": {
     "name": "Didi Han",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "6b9dc54f-d59d-4242-a6b8-583e4a65fc7e",
-    "type": "Person"
+    "type": "Person",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebdfaf91a7943fe16132a28ceb",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178dfaf91a7943fe16132a28ceb",
+    "spotifyId": "2j74J6dIUd8X3x6UKH3pZF",
+    "spotifyUrl": "https://open.spotify.com/artist/2j74J6dIUd8X3x6UKH3pZF"
   },
   "Difference": {
     "name": "Difference",
     "genres": [],
-    "source": "wiki-direct-en",
+    "source": "wiki-direct-en+spotify",
     "mbid": "330c7598-5ec1-450e-a9d8-43b6f006874f",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab67616d0000b273b9fbceeb838234ef24421d20",
     "summary": "Days Difference was an American pop rock band that formed in Virginia Beach, Virginia, in 2004. The quartet consists of Jeremy Smith, Jonathan Smith, Micah Ricks and Jeremiah Ricks. The group released their debut album Numbers in 2007. Their self-titled album Days Difference was released on October 6, 2009, and marks the group's first major release on the Universal Motown Records label. In 2011, the band was signed to Universal Republic Records for the release of their next album. The band officially announced in September 2013 that they had been broken up since 2012.",
-    "wiki": "https://en.wikipedia.org/wiki/Days_Difference"
+    "wiki": "https://en.wikipedia.org/wiki/Days_Difference",
+    "photoSmall": "https://i.scdn.co/image/ab67616d00004851b9fbceeb838234ef24421d20",
+    "spotifyId": "0DLuFr2T8EvRJROHAJvskW",
+    "spotifyUrl": "https://open.spotify.com/artist/0DLuFr2T8EvRJROHAJvskW"
   },
   "Ditz": {
     "name": "Ditz",
@@ -1288,9 +1489,13 @@
   "Folly Group": {
     "name": "Folly Group",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "b92500c4-be02-4efc-aa85-83c134a2feff",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebf46413744ae1ec6e2261fd3d",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178f46413744ae1ec6e2261fd3d",
+    "spotifyId": "39RnqcMpFSK4e7tbODSsaP",
+    "spotifyUrl": "https://open.spotify.com/artist/39RnqcMpFSK4e7tbODSsaP"
   },
   "Foals": {
     "name": "Foals",
@@ -4473,10 +4678,14 @@
   "落日飞车": {
     "name": "落日飞车",
     "genres": [],
-    "source": "mb-wikidata-zh",
+    "source": "mb-wikidata-zh+spotify",
     "mbid": "75c5edb5-796d-46f3-bac3-9b59da658023",
     "type": "Group",
+    "photo": "https://i.scdn.co/image/ab67616d0000b2739b650e2ae8c54e4ff4dd407c",
     "summary": "落日飛車 是於2009年成立的台灣樂團，由主唱兼吉他手國國、貝斯手弘禮、鍵盤手小干、薩克斯手浩庭和鼓手尊龍共五人組成。\n",
-    "wiki": "https://zh.wikipedia.org/wiki/%E8%90%BD%E6%97%A5%E9%A3%9B%E8%BB%8A"
+    "wiki": "https://zh.wikipedia.org/wiki/%E8%90%BD%E6%97%A5%E9%A3%9B%E8%BB%8A",
+    "photoSmall": "https://i.scdn.co/image/ab67616d000048519b650e2ae8c54e4ff4dd407c",
+    "spotifyId": "7wTFRSUv788d2ooZoWzrQt",
+    "spotifyUrl": "https://open.spotify.com/artist/7wTFRSUv788d2ooZoWzrQt"
   }
 }

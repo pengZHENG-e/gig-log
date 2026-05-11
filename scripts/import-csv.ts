@@ -67,7 +67,7 @@ const records = rows.map(r => ({
   venue: r.venue || "",
   city: r.city || "",
   country: r.country || "",
-  rating: r.rating ? Math.min(5, Math.max(1, Number(r.rating))) : 5,
+  rating: r.rating ? Math.min(5, Math.max(0, Number(r.rating))) : 0,
   price: r.price ? Number(r.price) : null,
   currency: r.currency || "EUR",
   tags: r.tags ? r.tags.split(";").map(s => s.trim()).filter(Boolean) : [],

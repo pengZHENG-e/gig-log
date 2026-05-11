@@ -229,20 +229,76 @@ async function findWikiByName(name: string, lang = "en"): Promise<{ title: strin
   return;
 }
 
+// ─── Spotify (fallback after Wikipedia for missing photos) ────────────────
+
+let spotifyToken: { token: string; expires: number } | null = null;
+async function getSpotifyToken(): Promise<string | null> {
+  const id = process.env.SPOTIFY_CLIENT_ID;
+  const secret = process.env.SPOTIFY_CLIENT_SECRET;
+  if (!id || !secret) return null;
+  if (spotifyToken && Date.now() < spotifyToken.expires - 60000) return spotifyToken.token;
+  const r = await fetch("https://accounts.spotify.com/api/token", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+      Authorization: "Basic " + Buffer.from(`${id}:${secret}`).toString("base64"),
+    },
+    body: "grant_type=client_credentials",
+  });
+  if (!r.ok) return null;
+  const d: any = await r.json();
+  spotifyToken = { token: d.access_token, expires: Date.now() + (d.expires_in ?? 3600) * 1000 };
+  return spotifyToken.token;
+}
+
+interface SpotifyResult {
+  photo?: string;
+  photoSmall?: string;
+  spotifyId?: string;
+  spotifyUrl?: string;
+  nameMatched: string;
+}
+
+async function fetchSpotify(name: string): Promise<SpotifyResult | undefined> {
+  const token = await getSpotifyToken();
+  if (!token) return;
+  const url = `https://api.spotify.com/v1/search?q=${encodeURIComponent(name)}&type=artist&limit=5`;
+  const r = await fetch(url, { headers: { Authorization: `Bearer ${token}` } });
+  if (!r.ok) return;
+  const data: any = await r.json();
+  const items: any[] = data?.artists?.items ?? [];
+  if (!items.length) return;
+  // Require exact case-insensitive name match — Spotify has too many same-name artists to trust ranking alone.
+  const exact = items.find((a: any) => String(a.name).toLowerCase().trim() === name.toLowerCase().trim());
+  if (!exact) return;
+  const imgs: any[] = exact.images ?? [];
+  if (!imgs.length) return;
+  return {
+    photo: imgs[0]?.url,
+    photoSmall: imgs[2]?.url ?? imgs[1]?.url ?? imgs[0]?.url,
+    spotifyId: exact.id,
+    spotifyUrl: exact.external_urls?.spotify,
+    nameMatched: exact.name,
+  };
+}
+
 // ─── Main ─────────────────────────────────────────────────────────────────
 
 interface ArtistMeta {
   name: string;
   photo?: string;
+  photoSmall?: string;
   genres: string[];
   summary?: string;
   wiki?: string;
   mbid?: string;
+  spotifyId?: string;
+  spotifyUrl?: string;
   type?: string;
   source: string;
 }
 
-async function enrichOne(name: string): Promise<ArtistMeta> {
+async function enrichOneImpl(name: string): Promise<ArtistMeta> {
   const meta: ArtistMeta = { name, genres: [], source: "" };
   try {
     const mb = await fetchMB(name);
@@ -280,9 +336,32 @@ async function enrichOne(name: string): Promise<ArtistMeta> {
     meta.summary = wiki.summary;
     meta.wiki = wiki.url;
     meta.source = source || (mb.id ? "mb-only" : "none");
+
+    // 4. Spotify fallback — only if we still don't have a photo. Exact-name match required.
+    if (!meta.photo) {
+      const sp = await fetchSpotify(name);
+      if (sp) {
+        meta.photo = sp.photo;
+        meta.photoSmall = sp.photoSmall;
+        meta.spotifyId = sp.spotifyId;
+        meta.spotifyUrl = sp.spotifyUrl;
+        meta.source = meta.source === "mb-only" || meta.source === "none" ? "spotify" : `${meta.source}+spotify`;
+      }
+    }
   } catch (e: any) {
     console.error(`  ! error for "${name}": ${e.message}`);
     meta.source = "error";
+  }
+  return meta;
+}
+
+// Retry once on transient socket errors / source=error.
+async function enrichOne(name: string): Promise<ArtistMeta> {
+  let meta = await enrichOneImpl(name);
+  if (meta.source === "error") {
+    await sleep(1500);
+    const retry = await enrichOneImpl(name);
+    if (retry.source !== "error") meta = retry;
   }
   return meta;
 }

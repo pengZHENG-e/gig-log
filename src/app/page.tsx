@@ -313,7 +313,7 @@ function rowToGig(row: Record<string, unknown>): Gig {
     city: (row.city as string) ?? "",
     country: (row.country as string) ?? "",
     tags: (row.tags as string[]) ?? [],
-    rating: (row.rating as number) ?? 5,
+    rating: (row.rating as number) ?? 0,
     notes: (row.notes as string) ?? "",
     price: row.price != null ? (row.price as number) : undefined,
     currency: (row.currency as string) ?? "CNY",
@@ -408,7 +408,7 @@ function rowToImportGig(row: Record<string, string>): Omit<Gig, "id"> | null {
     const field = HEADER_MAP[key.trim().toLowerCase()] ?? HEADER_MAP[key.trim()];
     if (!field) continue;
     const v = val.trim();
-    if (field === "rating") g.rating = Math.min(5, Math.max(1, Number(v) || 5));
+    if (field === "rating") g.rating = v ? Math.min(5, Math.max(0, Number(v) || 0)) : 0;
     else if (field === "price") g.price = v ? Number(v) : undefined;
     else if (field === "tags" || field === "companions" || field === "setlist")
       (g as Record<string, string[]>)[field] = v ? v.split(";").map(s => s.trim()).filter(Boolean) : [];
@@ -418,7 +418,7 @@ function rowToImportGig(row: Record<string, string>): Omit<Gig, "id"> | null {
   return {
     artist: g.artist, date: g.date,
     venue: g.venue ?? "", city: g.city ?? "", country: g.country ?? "",
-    rating: g.rating ?? 5, notes: g.notes ?? "",
+    rating: g.rating ?? 0, notes: g.notes ?? "",
     price: g.price, currency: g.currency ?? "CNY",
     tags: g.tags ?? [], companions: g.companions ?? [], setlist: g.setlist ?? [],
   };
@@ -539,7 +539,7 @@ function GigForm({ initial, onSave, onCancel, lang, editMode = false }: {
   const t = i18n[lang].form;
   const blank: Omit<Gig, "id"> = {
     artist: "", venue: "", date: "", city: "", country: "",
-    tags: [], rating: 5, notes: "", price: undefined, currency: "CNY",
+    tags: [], rating: 0, notes: "", price: undefined, currency: "CNY",
     companions: [], setlist: [],
   };
   const [form, setForm] = useState<Omit<Gig, "id">>(initial ?? blank);
@@ -832,7 +832,8 @@ function GigDetailModal({ gig, lang, onClose, onUpdate, onDelete }: {
 function ArtistAvatar({ name, size = 40 }: { name: string; size?: number }) {
   const meta = useArtistMeta(name);
   const [failed, setFailed] = useState(false);
-  const hasPhoto = !!meta?.photo && !failed;
+  const photoUrl = meta?.photoSmall ?? meta?.photo;
+  const hasPhoto = !!photoUrl && !failed;
 
   // Stable color seeded by artist name for the initials fallback.
   const hue = ((): number => {
@@ -862,7 +863,7 @@ function ArtistAvatar({ name, size = 40 }: { name: string; size?: number }) {
       {hasPhoto ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          src={meta!.photo!}
+          src={photoUrl!}
           alt={name}
           className="w-full h-full object-cover"
           loading="lazy"
@@ -880,7 +881,7 @@ function ArtistAvatar({ name, size = 40 }: { name: string; size?: number }) {
 
 function GigCard({ gig, onClick, lang }: { gig: Gig; onClick: () => void; lang: Lang }) {
   const dateStr = new Date(gig.date + "T00:00:00").toLocaleDateString(lang === "zh" ? "zh-CN" : "en-GB", {
-    year: "numeric", month: "short", day: "numeric",
+    weekday: "short", year: "numeric", month: "short", day: "numeric",
   });
 
   return (
@@ -1151,6 +1152,36 @@ function SettingsMenu({ lang, dark, onToggleLang, onToggleDark, onExport, onSign
   );
 }
 
+// ─── Date grouping helpers ────────────────────────────────────────────────────
+
+// Returns ISO week start (Monday) for a YYYY-MM-DD date string.
+function weekStartOf(dateStr: string): string {
+  const d = new Date(dateStr + "T00:00:00");
+  const dow = d.getDay();
+  d.setDate(d.getDate() + (dow === 0 ? -6 : 1 - dow));
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
+}
+
+function weekRangeLabel(weekStart: string, lang: Lang): string {
+  const start = new Date(weekStart + "T00:00:00");
+  const end = new Date(start);
+  end.setDate(end.getDate() + 6);
+  const locale = lang === "zh" ? "zh-CN" : "en-GB";
+  if (lang === "zh") {
+    const sm = start.getMonth() + 1, sd = start.getDate();
+    const em = end.getMonth() + 1, ed = end.getDate();
+    return sm === em ? `${sm}月${sd}–${ed}日` : `${sm}月${sd}日 – ${em}月${ed}日`;
+  }
+  const sameMonth = start.getMonth() === end.getMonth();
+  const endStr = end.toLocaleDateString(locale, { day: "numeric", month: "short" });
+  if (sameMonth) return `${start.getDate()} – ${endStr}`;
+  const startStr = start.toLocaleDateString(locale, { day: "numeric", month: "short" });
+  return `${startStr} – ${endStr}`;
+}
+
 // ─── HomeTab ─────────────────────────────────────────────────────────────────
 
 function HomeTab({ gigs, setGigs, lang, showForm, setShowForm, user, profile }: {
@@ -1196,11 +1227,45 @@ function HomeTab({ gigs, setGigs, lang, showForm, setShowForm, user, profile }: 
       return b.date.localeCompare(a.date);
     });
 
-  const byYear: Record<string, Gig[]> = {};
+  type WeekBucket = { weekStart: string; gigs: Gig[] };
+  type MonthBucket = { month: number; weeks: WeekBucket[]; count: number };
+  type YearBucket = { year: string; months: MonthBucket[]; count: number };
+  const grouped: YearBucket[] = [];
   if (sortBy === "date-desc" || sortBy === "date-asc") {
-    filtered.forEach(g => { const y = g.date.slice(0, 4); (byYear[y] ||= []).push(g); });
+    const asc = sortBy === "date-asc";
+    const yMap = new Map<string, Map<number, Map<string, Gig[]>>>();
+    for (const g of filtered) {
+      const y = g.date.slice(0, 4);
+      const m = Number(g.date.slice(5, 7)) - 1;
+      const ws = weekStartOf(g.date);
+      if (!yMap.has(y)) yMap.set(y, new Map());
+      const mMap = yMap.get(y)!;
+      if (!mMap.has(m)) mMap.set(m, new Map());
+      const wMap = mMap.get(m)!;
+      if (!wMap.has(ws)) wMap.set(ws, []);
+      wMap.get(ws)!.push(g);
+    }
+    const cmp = <T extends string | number>(a: T, b: T) =>
+      (a < b ? -1 : a > b ? 1 : 0) * (asc ? 1 : -1);
+    for (const y of [...yMap.keys()].sort(cmp)) {
+      const mMap = yMap.get(y)!;
+      const months: MonthBucket[] = [];
+      let yearCount = 0;
+      for (const m of [...mMap.keys()].sort(cmp)) {
+        const wMap = mMap.get(m)!;
+        const weeks: WeekBucket[] = [];
+        let monthCount = 0;
+        for (const ws of [...wMap.keys()].sort(cmp)) {
+          const gigs = wMap.get(ws)!;
+          weeks.push({ weekStart: ws, gigs });
+          monthCount += gigs.length;
+        }
+        months.push({ month: m, weeks, count: monthCount });
+        yearCount += monthCount;
+      }
+      grouped.push({ year: y, months, count: yearCount });
+    }
   }
-  const groupedYears = Object.keys(byYear).sort((a, b) => sortBy === "date-asc" ? Number(a) - Number(b) : Number(b) - Number(a));
 
   const resetFilters = () => {
     setFilterYear(""); setFilterTags([]); setFilterVenue("");
@@ -1249,7 +1314,7 @@ function HomeTab({ gigs, setGigs, lang, showForm, setShowForm, user, profile }: 
             lang={lang}
             onSave={addGig}
             onCancel={() => setShowForm(false)}
-            initial={{ artist: "", venue: "", date: "", city: profile.city, country: profile.country, tags: [], rating: 5, notes: "", price: undefined, currency: profile.currency, companions: [], setlist: [] }}
+            initial={{ artist: "", venue: "", date: "", city: profile.city, country: profile.country, tags: [], rating: 0, notes: "", price: undefined, currency: profile.currency, companions: [], setlist: [] }}
           />
         </div>
       )}
@@ -1372,16 +1437,30 @@ function HomeTab({ gigs, setGigs, lang, showForm, setShowForm, user, profile }: 
           {filtered.map(gig => <GigCard key={gig.id} gig={gig} onClick={() => setSelectedGig(gig)} lang={lang} />)}
         </div>
       ) : (
-        groupedYears.map(year => (
-          <div key={year}>
-            <p className="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wide mb-2 px-1">
-              {year} · {byYear[year].length} {t.shows}
-            </p>
-            <div className="space-y-2.5">
-              {byYear[year].map(gig => <GigCard key={gig.id} gig={gig} onClick={() => setSelectedGig(gig)} lang={lang} />)}
+        <div className="space-y-6">
+          {grouped.map(({ year, months, count }) => (
+            <div key={year} className="space-y-4">
+              <p className="text-base font-bold text-gray-700 dark:text-slate-200 px-1">
+                {year} <span className="text-xs font-medium text-gray-400 dark:text-slate-500">· {count} {t.shows}</span>
+              </p>
+              {months.map(({ month, weeks, count: monthCount }) => (
+                <div key={month} className="space-y-3">
+                  <p className="text-xs font-semibold text-gray-500 dark:text-slate-400 uppercase tracking-wide px-1">
+                    {t.stats.months[month]} <span className="text-gray-300 dark:text-slate-600 normal-case font-normal">· {monthCount} {t.shows}</span>
+                  </p>
+                  {weeks.map(({ weekStart, gigs }) => (
+                    <div key={weekStart} className="space-y-2">
+                      <p className="text-[11px] text-gray-300 dark:text-slate-600 px-1">{weekRangeLabel(weekStart, lang)}</p>
+                      <div className="space-y-2.5">
+                        {gigs.map(gig => <GigCard key={gig.id} gig={gig} onClick={() => setSelectedGig(gig)} lang={lang} />)}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ))}
             </div>
-          </div>
-        ))
+          ))}
+        </div>
       )}
 
       {/* Detail modal */}
@@ -1814,7 +1893,8 @@ function StatsTab({ gigs, lang, onPickGig }: { gigs: Gig[]; lang: Lang; onPickGi
   // ── Key metrics (all time) ──
   const artists = new Set(gigs.map(g => g.artist)).size;
   const cities = new Set(gigs.map(g => g.city).filter(Boolean)).size;
-  const avgRating = (gigs.reduce((s, g) => s + g.rating, 0) / gigs.length).toFixed(1);
+  const rated = gigs.filter(g => g.rating > 0);
+  const avgRating = rated.length ? (rated.reduce((s, g) => s + g.rating, 0) / rated.length).toFixed(1) : "—";
   const spend: Record<string, number> = {};
   gigs.filter(g => g.price != null).forEach(g => { spend[g.currency] = (spend[g.currency] || 0) + (g.price ?? 0); });
 
@@ -1893,7 +1973,7 @@ function StatsTab({ gigs, lang, onPickGig }: { gigs: Gig[]; lang: Lang; onPickGi
           { label: t.total, value: gigs.length },
           { label: t.artists, value: artists },
           { label: t.cities, value: cities },
-          { label: t.avgRating, value: avgRating + " ★" },
+          { label: t.avgRating, value: avgRating === "—" ? "—" : avgRating + " ★" },
         ].map(({ label, value }) => (
           <div key={label} className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-slate-700 text-center">
             <div className="text-3xl font-bold text-indigo-600 dark:text-indigo-400">{value}</div>
