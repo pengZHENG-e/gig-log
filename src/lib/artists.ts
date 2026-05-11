@@ -22,7 +22,9 @@ let pending: Promise<Record<string, ArtistMeta>> | null = null;
 async function load(): Promise<Record<string, ArtistMeta>> {
   if (cache) return cache;
   if (pending) return pending;
-  pending = fetch("/artists.json", { cache: "force-cache" })
+  // no-cache: always revalidate with origin (sends If-Modified-Since, gets 304 when unchanged).
+  // The previous force-cache value pinned old artists.json on every browser that loaded it.
+  pending = fetch("/artists.json", { cache: "no-cache" })
     .then(r => (r.ok ? r.json() : {}))
     .then(d => (cache = d as Record<string, ArtistMeta>))
     .catch(() => (cache = {}));
