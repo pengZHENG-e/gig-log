@@ -2246,6 +2246,7 @@ function StatsTab({ gigs, lang, onPickGig }: { gigs: Gig[]; lang: Lang; onPickGi
                 <span className={`text-sm font-bold w-6 text-center shrink-0 ${i === 0 ? "text-yellow-400" : i === 1 ? "text-gray-400" : i === 2 ? "text-amber-600" : "text-gray-300 dark:text-slate-600"}`}>
                   {i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : `${i + 1}`}
                 </span>
+                <ArtistAvatar name={displayName} size={32} />
                 <span className="flex-1 text-sm font-medium truncate">{displayName}</span>
                 <span className="text-xs text-gray-400 dark:text-slate-500 shrink-0">{t.lastSeen} {new Date(lastDate + "T00:00:00").toLocaleDateString(lang === "zh" ? "zh-CN" : "en-GB", { month: "short", day: "numeric", year: "2-digit" })}</span>
                 <span className="text-sm font-bold text-indigo-600 dark:text-indigo-400 shrink-0 w-10 text-right">{count}×</span>
