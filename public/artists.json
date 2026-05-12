@@ -5,17 +5,15 @@
       "grunge",
       "post grunge",
       "punk",
-      "sonic",
-      "alternative",
-      "rock",
-      "post-grunge"
+      "sonic"
     ],
-    "source": "wiki-direct-en",
+    "source": "spotify",
     "mbid": "a4cfa920-2737-47ae-b6a8-5be3632872c4",
     "type": "Group",
-    "photo": "https://upload.wikimedia.org/wikipedia/en/7/7b/Siouxsie_and_the_Banshees_-_Mittageisen.png",
-    "summary": "\"Mittageisen\" is a song by English rock band Siouxsie and the Banshees. It originally appeared on the band's 1978 debut album The Scream as \"Metal Postcard (Mittageisen)\"; the track was re-recorded in 1979, this time with the lyrics sung in German, and released as a single in West Germany with \"Love in a Void\" on the b-side. That September the song was given a UK release by record label Polydor as a double A-side single.",
-    "wiki": "https://en.wikipedia.org/wiki/Mittageisen"
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebe681ddb02f2140225c5e2960",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178e681ddb02f2140225c5e2960",
+    "spotifyId": "3ha9mtXhb0Ia40lnrU2cOI",
+    "spotifyUrl": "https://open.spotify.com/artist/3ha9mtXhb0Ia40lnrU2cOI"
   },
   "ACIDE ACIDE": {
     "name": "ACIDE ACIDE",
@@ -28,19 +26,14 @@
   },
   "AGILE": {
     "name": "AGILE",
-    "genres": [
-      "screamo",
-      "emo",
-      "skramz",
-      "experimental",
-      "drag"
-    ],
-    "source": "wiki-direct-en",
+    "genres": [],
+    "source": "spotify",
     "mbid": "3e265ba3-7898-4068-b81a-dfa8fca0e255",
     "type": "Person",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Charliehunter.jpg/330px-Charliehunter.jpg",
-    "summary": "Charlie Hunter is an American guitarist, composer, producer and bandleader. First coming to prominence in the early 1990s, Hunter plays custom-made seven - and eight-string guitars on which he simultaneously plays bass lines, chords, and melodies. Critic Sean Westergaard described Hunter's technique as \"mind-boggling...he's an agile improviser with an ear for great tone, and always has excellent players alongside him in order to make great music, not to show off.\" Hunter's technique is rooted in the styles of jazz guitarists Joe Pass and Tuck Andress, two of his biggest influences, who blended bass notes with melody in a way that created the illusion of two guitars.",
-    "wiki": "https://en.wikipedia.org/wiki/Charlie_Hunter"
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebd20005d05c559671b42e7753",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178d20005d05c559671b42e7753",
+    "spotifyId": "1gt0O7jczIgAG49NAtaGt2",
+    "spotifyUrl": "https://open.spotify.com/artist/1gt0O7jczIgAG49NAtaGt2"
   },
   "Abdomen": {
     "name": "Abdomen",
@@ -61,25 +54,15 @@
   },
   "Ade": {
     "name": "Ade",
-    "genres": [
-      "death metal",
-      "technical death metal",
-      "brutal death metal",
-      "folk metal"
-    ],
-    "source": "wiki-direct-en",
+    "genres": [],
+    "source": "mb-only",
     "mbid": "7403da94-4d7f-4f36-a8a1-eb6e5cc788ce",
-    "type": "Group",
-    "summary": "\n\nAdrian Shaw, frequently known as Ade Shaw, is a musician primarily working in the psychedelic field. He has a long history dating back to the 1960s working with such acts as Hawkwind, Country Joe McDonald, Arthur Brown, and the Deviants. Shaw played bass for former Tyrannosaurus Rex percussionist Steve Peregrin Took's band in 1974 and three years later, while appearing with Hawkwind on the former other half of Tyrannosaurus Rex Marc Bolan's TV show, was himself invited to join T.Rex; however Bolan's death very shortly thereafter prevented this.",
-    "wiki": "https://en.wikipedia.org/wiki/Ade_Shaw"
+    "type": "Group"
   },
   "Adult DVD": {
     "name": "Adult DVD",
     "genres": [
-      "dance-rock",
-      "post-punk",
-      "indie rock",
-      "synthpunk"
+      "dance-rock"
     ],
     "source": "wiki-direct-en",
     "mbid": "3daddca6-34a3-47b1-91a5-a1bff99c98dc",
@@ -104,17 +87,11 @@
   "Ain't": {
     "name": "Ain't",
     "genres": [
-      "rock",
-      "post-punk",
-      "indie rock",
-      "electronic",
-      "shoegaze"
+      "rock"
     ],
-    "source": "wiki-direct-en",
+    "source": "mb-only",
     "mbid": "932420a3-11cf-457d-a9ef-ad981ff71ffc",
-    "type": "Group",
-    "summary": "\"The Party Ain't Over Yet\" is a song written by John David and recorded by American country singer Patty Loveless for her 1997 album, Long Stretch of Lonesome. The song was later covered and released as a single by the British rock band Status Quo in 2005. It was included on the album of the same name.",
-    "wiki": "https://en.wikipedia.org/wiki/The_Party_Ain't_Over_Yet_(song)"
+    "type": "Group"
   },
   "Air": {
     "name": "Air",
@@ -192,12 +169,7 @@
   },
   "Antony Szmierek": {
     "name": "Antony Szmierek",
-    "genres": [
-      "spoken word",
-      "electronic",
-      "indie",
-      "hip-hop"
-    ],
+    "genres": [],
     "source": "wiki-direct-en",
     "mbid": "4e892967-3080-4a28-840f-66717360e535",
     "type": "Person",
@@ -298,19 +270,14 @@
   },
   "BELMONDO": {
     "name": "BELMONDO",
-    "genres": [
-      "hungarian",
-      "rap",
-      "alternative",
-      "rock",
-      "hungarian rock"
-    ],
-    "source": "wiki-direct-en",
+    "genres": [],
+    "source": "spotify",
     "mbid": "07853156-439e-45f9-a29d-e0e912af6d43",
     "type": "Group",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Stephane_Belmondo_by_Geraldine_Aresteanu.jpg/330px-Stephane_Belmondo_by_Geraldine_Aresteanu.jpg",
-    "summary": "Stéphane Belmondo is a French jazz trumpeter, flugelhornist, and drummer. Including recordings made with his brother Lionel Belmondo and Yusef Lateef, he won the best French album category (L'Album français de l'année) in 2003, 2004 and 2005, and the best artist award (L'Artiste ou la Formation instrumentale française de l'année) in 2003 and 2004. in the French Victoires du Jazz awards. Along with his brother, he is noted for tribute albums that involve the musicians being honored.",
-    "wiki": "https://en.wikipedia.org/wiki/St%C3%A9phane_Belmondo"
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb30b6c6fd7babd6c9767bc08e",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17830b6c6fd7babd6c9767bc08e",
+    "spotifyId": "3LDKqGmw6GyxO81YdtMAgl",
+    "spotifyUrl": "https://open.spotify.com/artist/3LDKqGmw6GyxO81YdtMAgl"
   },
   "Bande a Part": {
     "name": "Bande a Part",
@@ -355,13 +322,7 @@
   },
   "Beak": {
     "name": "Beak",
-    "genres": [
-      "idm",
-      "electronic",
-      "post-metal",
-      "sludge",
-      "sludge metal"
-    ],
+    "genres": [],
     "source": "wiki-direct-en",
     "mbid": "1ac4a875-e98a-4a45-a8dc-106157b80cf5",
     "type": "Person",
@@ -417,13 +378,7 @@
   },
   "Belmondo": {
     "name": "Belmondo",
-    "genres": [
-      "hungarian",
-      "rap",
-      "alternative",
-      "rock",
-      "hungarian rock"
-    ],
+    "genres": [],
     "source": "wiki-direct-en+spotify",
     "mbid": "07853156-439e-45f9-a29d-e0e912af6d43",
     "type": "Group",
@@ -488,25 +443,20 @@
   },
   "Big Red": {
     "name": "Big Red",
-    "genres": [
-      "dancehall",
-      "reggae",
-      "ragga",
-      "rap"
-    ],
-    "source": "wiki-direct-en",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Aaron_Dessner_at_Way_Out_West_2014.jpg/330px-Aaron_Dessner_at_Way_Out_West_2014.jpg",
-    "summary": "Aaron Brooking Dessner is an American musician. He is best known as a founding member of the rock band the National, with whom he has recorded ten studio albums; a co-founder of the indie rock duo Big Red Machine, teaming with Bon Iver's Justin Vernon; and a collaborator on Taylor Swift's critically acclaimed studio albums Folklore and Evermore, both of which contended for the Grammy Award for Album of the Year in 2021 and 2022, respectively, with the former winning the accolade; as well as The Tortured Poets Department (2024).",
-    "wiki": "https://en.wikipedia.org/wiki/Aaron_Dessner"
+    "genres": [],
+    "source": "mb-wikidata-fr+spotify",
+    "mbid": "6e0a6d34-b60f-4c78-9654-317588799aa6",
+    "type": "Person",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebaa56d015f24258ffcb0b9022",
+    "summary": "Big Red, de son vrai nom Stéphane Joachim, né le 4 janvier 1972 en France, est un rappeur et chanteur français.",
+    "wiki": "https://fr.wikipedia.org/wiki/Big_Red",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178aa56d015f24258ffcb0b9022",
+    "spotifyId": "26WTl77DrAt9IDNihQmZMW",
+    "spotifyUrl": "https://open.spotify.com/artist/26WTl77DrAt9IDNihQmZMW"
   },
   "Big Special": {
     "name": "Big Special",
-    "genres": [
-      "post-punk",
-      "crank wave",
-      "punk rock",
-      "punk blues"
-    ],
+    "genres": [],
     "source": "wiki-direct-en",
     "mbid": "38d929d1-502d-486e-947a-00d6e4194039",
     "type": "Group",
@@ -516,12 +466,7 @@
   },
   "Bilk": {
     "name": "Bilk",
-    "genres": [
-      "punk",
-      "rock",
-      "alternative",
-      "indie"
-    ],
+    "genres": [],
     "source": "wiki-direct-en",
     "mbid": "5a220a45-b945-4abf-badd-98b8581d1070",
     "type": "Group",
@@ -617,19 +562,11 @@
   "Blank": {
     "name": "Blank",
     "genres": [
-      "electro",
-      "emo",
-      "futurepop",
-      "ebm",
-      "dark electro",
-      "electronic"
+      "electro"
     ],
-    "source": "wiki-direct-en",
+    "source": "mb-only",
     "mbid": "fb975e3d-181c-46fd-bb43-512e052942d0",
-    "type": "Group",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/TheFaintLive2008-01.jpg/330px-TheFaintLive2008-01.jpg",
-    "summary": "The Faint is an American indie rock band from Omaha, Nebraska, whose members blend dance-punk, post-punk revival, and new wave influences within the Saddle Creek Records collective. Founded in 1995 as Norman Bailer by vocalist Todd Fink, drummer Clark Baechle, and multi-instrumentalist Joel Petersen, the project briefly featured Bright Eyes frontman Conor Oberst before solidifying its lineup and touring alongside labelmates. The synth-driven albums Blank-Wave Arcade 1999 and Danse Macabre 2001 earned the group an underground following on the United States club circuit.",
-    "wiki": "https://en.wikipedia.org/wiki/The_Faint"
+    "type": "Group"
   },
   "Bleech 9:3": {
     "name": "Bleech 9:3",
@@ -650,13 +587,7 @@
   },
   "Blue Bendy": {
     "name": "Blue Bendy",
-    "genres": [
-      "indie rock",
-      "art rock",
-      "post-punk",
-      "alternative",
-      "art punk"
-    ],
+    "genres": [],
     "source": "wiki-direct-en",
     "mbid": "734e5ba9-f148-4d93-9e3d-526bf172ceb6",
     "type": "Group",
@@ -733,19 +664,14 @@
   },
   "Bucket": {
     "name": "Bucket",
-    "genres": [
-      "skate punk",
-      "punk rock",
-      "skatepunk",
-      "melodic punk",
-      "shoegaze"
-    ],
-    "source": "wiki-direct-en",
+    "genres": [],
+    "source": "spotify",
     "mbid": "3508781f-1588-4304-9f2a-b2fbdd9ec93e",
     "type": "Group",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Buckethead%2C_2006.jpg/330px-Buckethead%2C_2006.jpg",
-    "summary": "Brian Patrick Carroll, known professionally as Buckethead, is an American guitarist.",
-    "wiki": "https://en.wikipedia.org/wiki/Buckethead"
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb24cf3f7cdb678a6297b0bf70",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17824cf3f7cdb678a6297b0bf70",
+    "spotifyId": "5HUAFNOOk3m5FvqQW2rMfI",
+    "spotifyUrl": "https://open.spotify.com/artist/5HUAFNOOk3m5FvqQW2rMfI"
   },
   "Bug Teeth": {
     "name": "Bug Teeth",
@@ -867,30 +793,24 @@
   "Cameron Winter": {
     "name": "Cameron Winter",
     "genres": [
-      "singer-songwriter",
-      "indie folk",
       "chamber folk",
       "contemporary folk",
-      "indie"
+      "indie folk",
+      "singer-songwriter"
     ],
-    "source": "wiki-direct-en",
+    "source": "mb-wiki-en",
+    "mbid": "79c6b6f4-cb92-4f03-a1ef-82e7aa4eddbb",
+    "type": "Person",
     "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Cameron_Winter_with_Geese%2C_Boston_2024_%28cropped2%29.jpg/330px-Cameron_Winter_with_Geese%2C_Boston_2024_%28cropped2%29.jpg",
     "summary": "Cameron Winter is an American musician who fronts the rock band Geese. He released his debut solo album, Heavy Metal, in 2024.",
     "wiki": "https://en.wikipedia.org/wiki/Cameron_Winter"
   },
   "Chad": {
     "name": "Chad",
-    "genres": [
-      "lounge",
-      "chillout",
-      "electronic",
-      "electronica",
-      "trip hop"
-    ],
-    "source": "wiki-direct-en",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/a/a0/%D0%A7%D0%B0%D0%B4.jpg",
-    "summary": "Chad Robert Kroeger is a Canadian musician who is best known for being the lead singer, lead guitarist, primary songwriter, and founding member of the rock band Nickelback. In addition to his work with Nickelback, Kroeger has been involved with a variety of collaborations, appearing as a guest musician in several songs and has contributed in both production and songwriting. He has co-written several songs for other artists and films.",
-    "wiki": "https://en.wikipedia.org/wiki/Chad_Kroeger"
+    "genres": [],
+    "source": "mb-only",
+    "mbid": "c4a78db9-bc9c-43b9-ac57-c682ad769f6d",
+    "type": "Person"
   },
   "Carsick": {
     "name": "Carsick",
@@ -908,34 +828,28 @@
   },
   "Cardinals": {
     "name": "Cardinals",
-    "genres": [
-      "electronic",
-      "indie",
-      "indie rock",
-      "vocal",
-      "relaxing"
-    ],
-    "source": "wiki-direct-en",
-    "photo": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Aviewofotherwindows.jpg/330px-Aviewofotherwindows.jpg",
-    "summary": "A View of Other Windows is a coffee table photo-book by American musician Neal Casal documenting his time spent in the alt-country band Ryan Adams & the Cardinals from 2005 to 2009. Released on February 22, 2010 through Abrams Books, the book contains an introduction by Ryan Adams, and features written contributions from bandmates, Jon Graboff, Brad Pemberton and Chris Feinstein, throughout. Grateful Dead founding member and bass guitarist Phil Lesh wrote the book's afterword.",
-    "wiki": "https://en.wikipedia.org/wiki/Ryan_Adams_%26_the_Cardinals%3A_A_View_of_Other_Windows"
+    "genres": [],
+    "source": "spotify",
+    "mbid": "f72a72cd-7dbb-4250-a1ad-ca569e1e54a3",
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebfa1665c9e1421ab000c0a6bc",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178fa1665c9e1421ab000c0a6bc",
+    "spotifyId": "0qmHQLCyJrgGFtqLDSRHJ4",
+    "spotifyUrl": "https://open.spotify.com/artist/0qmHQLCyJrgGFtqLDSRHJ4"
   },
   "Chalk": {
     "name": "Chalk",
     "genres": [
       "dance-punk",
-      "post-punk",
-      "noise rock",
-      "indie",
-      "acoustic",
-      "emo"
+      "post-punk"
     ],
-    "source": "wiki-direct-en",
+    "source": "spotify",
     "mbid": "d8339825-470a-4dde-9792-d5c724e14e18",
     "type": "Group",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Seven_Sisters_3.jpg/330px-Seven_Sisters_3.jpg",
-    "summary": "Chalk is a soft, white, porous, sedimentary carbonate rock. It is a form of limestone composed of the mineral calcite and originally formed under the sea by the accumulation and lithification of hard parts of organisms, mostly microscopic plankton, which had settled to the sea floor. Chalk is common throughout Western Europe, where deposits underlie parts of France, and steep cliffs are often seen where they meet the sea in places such as the Dover cliffs on the Kent coast of the English Channel.",
-    "wiki": "https://en.wikipedia.org/wiki/Chalk"
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb766ab9a90b06c644573fd874",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178766ab9a90b06c644573fd874",
+    "spotifyId": "3qa9pv6B0dmiBVETLQOCpi",
+    "spotifyUrl": "https://open.spotify.com/artist/3qa9pv6B0dmiBVETLQOCpi"
   },
   "Children Of The Pope": {
     "name": "Children Of The Pope",
@@ -1104,15 +1018,14 @@
   },
   "Clothing": {
     "name": "Clothing",
-    "genres": [
-      "psychedelic",
-      "indie pop",
-      "indie rock"
-    ],
-    "source": "wiki-direct-en",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/2023_Rock_im_Park_-_Bring_Me_The_Horizon_-_Oliver_Sykes_-_by_2eight_-_ZSC5724.jpg/330px-2023_Rock_im_Park_-_Bring_Me_The_Horizon_-_Oliver_Sykes_-_by_2eight_-_ZSC5724.jpg",
-    "summary": "Oliver Scott Sykes, known professionally as Oli Sykes is an English musician, and the lead vocalist and primary lyricist of the rock band Bring Me the Horizon. He founded apparel company Drop Dead Clothing and opened a vegan dinnery in Sheffield.",
-    "wiki": "https://en.wikipedia.org/wiki/Oli_Sykes"
+    "genres": [],
+    "source": "spotify",
+    "mbid": "5ffb3012-4a73-4d45-9002-2e6a952d6822",
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb6dfd6148ad2fddfeb3a52515",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1786dfd6148ad2fddfeb3a52515",
+    "spotifyId": "5EHcF3h1NIxCuuvhFJP08H",
+    "spotifyUrl": "https://open.spotify.com/artist/5EHcF3h1NIxCuuvhFJP08H"
   },
   "Council Popstar": {
     "name": "Council Popstar",
@@ -1142,18 +1055,11 @@
   },
   "Cooper T": {
     "name": "Cooper T",
-    "genres": [
-      "classic blues",
-      "blues",
-      "acoustic blues",
-      "steel guitar"
-    ],
-    "source": "wiki-direct-en+spotify",
+    "genres": [],
+    "source": "spotify",
     "mbid": "d09aadc3-6cdd-4600-ab8f-8ece12bd9cc8",
     "type": "Group",
     "photo": "https://i.scdn.co/image/ab6761610000e5eb99307342fc420e5e9386185b",
-    "summary": "Cooper Terry was an American-born Italian blues singer, guitarist and harmonica player.",
-    "wiki": "https://en.wikipedia.org/wiki/Cooper_Terry",
     "photoSmall": "https://i.scdn.co/image/ab6761610000f17899307342fc420e5e9386185b",
     "spotifyId": "7t6usUnb0OZ2r0pi3nvdmB",
     "spotifyUrl": "https://open.spotify.com/artist/7t6usUnb0OZ2r0pi3nvdmB"
@@ -1179,19 +1085,15 @@
     "genres": [
       "hip hop",
       "nu metal",
-      "trap",
-      "2001 era gamecube pit music",
-      "rap",
-      "phonk",
-      "hip-hop",
-      "east coast rap"
+      "trap"
     ],
-    "source": "wiki-direct-en",
+    "source": "spotify",
     "mbid": "ed296c51-4009-4403-ae8b-138507ef8118",
     "type": "Person",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Plastic_Crimewave.jpg/330px-Plastic_Crimewave.jpg",
-    "summary": "Plastic Crimewave, otherwise known as Steve Krakow, is a Chicago-based illustrator and writer, avant-garde musician, music historian and impresario. He is the editor of Drag City-published magazine Galactic Zoo Dossier, eponymous front man for Plastic Crimewave Syndicate and co-member of Spiral Galaxy, founder of the Million Tongues Festival, and Vision Celestial Guitarkestra. He writes and illustrates the \"Secret History of Chicago Music\" comic in the Chicago Reader and co-hosts WGN-AM's Secret History of Chicago Music series. He runs the Drag City imprint label, Galactic Zoo Disk and Guerssen records imprint Galactic Zoo Archive.",
-    "wiki": "https://en.wikipedia.org/wiki/Plastic_Crimewave"
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb92ab795d15d839a786239c9b",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17892ab795d15d839a786239c9b",
+    "spotifyId": "3Shc59fDGVjTyCRldcR7o1",
+    "spotifyUrl": "https://open.spotify.com/artist/3Shc59fDGVjTyCRldcR7o1"
   },
   "Crush of Souls": {
     "name": "Crush of Souls",
@@ -1264,13 +1166,11 @@
   "DITZ": {
     "name": "DITZ",
     "genres": [
-      "post-punk",
-      "noise rock",
-      "crank wave",
-      "post-hardcore",
-      "post-brexit new wave"
+      "noise rock"
     ],
     "source": "wiki-direct-en",
+    "mbid": "bd0f9f45-22c2-4566-b2cc-3c255ceb6e76",
+    "type": "Group",
     "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Ditz_at_Mutations_Festival_Brighton%2C_7_November_2025_03.jpg/330px-Ditz_at_Mutations_Festival_Brighton%2C_7_November_2025_03.jpg",
     "summary": "Ditz are an English rock band that formed in Brighton in 2016. The band consists of Cal Francis (vocals), Caleb Remnant (bass), Anton Mocock (Guitar), Jack Looker (Guitar), Sam Evans (Drums).",
     "wiki": "https://en.wikipedia.org/wiki/Ditz_(band)"
@@ -1349,15 +1249,15 @@
     "name": "Deary",
     "genres": [
       "dream pop",
-      "shoegaze",
-      "indie",
-      "pop",
-      "alternative"
+      "shoegaze"
     ],
-    "source": "wiki-direct-en",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/DigsyDeary.jpg/330px-DigsyDeary.jpg",
-    "summary": "Peter Deary is an English musician and singer-songwriter.",
-    "wiki": "https://en.wikipedia.org/wiki/Peter_Deary"
+    "source": "spotify",
+    "mbid": "51107035-3471-449f-ad3c-f8a5f535239d",
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebbbb04a9bcaab0738a64e3cd3",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178bbb04a9bcaab0738a64e3cd3",
+    "spotifyId": "5Pir3nnrulz7WMyC9bFhkL",
+    "spotifyUrl": "https://open.spotify.com/artist/5Pir3nnrulz7WMyC9bFhkL"
   },
   "Deliluh": {
     "name": "Deliluh",
@@ -1402,16 +1302,15 @@
   "Dictator": {
     "name": "Dictator",
     "genres": [
-      "funeral doom",
-      "dark ambient",
-      "black metal",
-      "doom metal",
-      "funeral doom metal"
+      "black metal"
     ],
-    "source": "wiki-direct-en",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/The_Corntias_1977_London_Jill_Furmanovski.jpg/330px-The_Corntias_1977_London_Jill_Furmanovski.jpg",
-    "summary": "The Cortinas were a Bristol-based punk rock band, originally active between 1976 and 1978. Guitarist Nick Sheppard went on to play with the Clash. In 2001, the band's debut single, \"Fascist Dictator\", was included in a leading British music magazine's list of the best punk-rock singles of all time.",
-    "wiki": "https://en.wikipedia.org/wiki/The_Cortinas_(punk_band)"
+    "source": "spotify",
+    "mbid": "9656518a-6813-4252-b59a-c3aeffd193e8",
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb1abb8ea3e414a5fa1df11a7f",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1781abb8ea3e414a5fa1df11a7f",
+    "spotifyId": "6s3XH0VddJvfm3evFlfEq7",
+    "spotifyUrl": "https://open.spotify.com/artist/6s3XH0VddJvfm3evFlfEq7"
   },
   "Death Bells": {
     "name": "Death Bells",
@@ -1449,17 +1348,11 @@
   },
   "Difference": {
     "name": "Difference",
-    "genres": [
-      "hardcore",
-      "straight edge",
-      "vegan"
-    ],
-    "source": "wiki-direct-en+spotify",
+    "genres": [],
+    "source": "spotify",
     "mbid": "330c7598-5ec1-450e-a9d8-43b6f006874f",
     "type": "Group",
     "photo": "https://i.scdn.co/image/ab67616d0000b273b9fbceeb838234ef24421d20",
-    "summary": "Days Difference was an American pop rock band that formed in Virginia Beach, Virginia, in 2004. The quartet consists of Jeremy Smith, Jonathan Smith, Micah Ricks and Jeremiah Ricks. The group released their debut album Numbers in 2007. Their self-titled album Days Difference was released on October 6, 2009, and marks the group's first major release on the Universal Motown Records label. In 2011, the band was signed to Universal Republic Records for the release of their next album. The band officially announced in September 2013 that they had been broken up since 2012.",
-    "wiki": "https://en.wikipedia.org/wiki/Days_Difference",
     "photoSmall": "https://i.scdn.co/image/ab67616d00004851b9fbceeb838234ef24421d20",
     "spotifyId": "0DLuFr2T8EvRJROHAJvskW",
     "spotifyUrl": "https://open.spotify.com/artist/0DLuFr2T8EvRJROHAJvskW"
@@ -1467,11 +1360,7 @@
   "Ditz": {
     "name": "Ditz",
     "genres": [
-      "noise rock",
-      "post-punk",
-      "crank wave",
-      "post-hardcore",
-      "post-brexit new wave"
+      "noise rock"
     ],
     "source": "wiki-direct-en",
     "mbid": "bd0f9f45-22c2-4566-b2cc-3c255ceb6e76",
@@ -1530,11 +1419,7 @@
     "name": "Do Nothing",
     "genres": [
       "indie rock",
-      "post-punk revival",
-      "post-punk",
-      "crank wave",
-      "art punk",
-      "post-brexit new wave"
+      "post-punk revival"
     ],
     "source": "wiki-direct-en+spotify",
     "mbid": "5fabd96a-db39-4698-8098-b9de5062ee79",
@@ -1748,29 +1633,20 @@
   },
   "Enola": {
     "name": "Enola",
-    "genres": [
-      "indonesia",
-      "techno",
-      "shoegaze",
-      "electronic",
-      "tech house"
-    ],
-    "source": "wiki-direct-en",
+    "genres": [],
+    "source": "spotify",
     "mbid": "18cc303b-668c-4810-b8b5-3b24377a95b1",
     "type": "Group",
-    "photo": "https://upload.wikimedia.org/wikipedia/en/6/61/Enola_Gay_-_OMD_-_CD_Single.jpg",
-    "summary": "\"Enola Gay\" is an anti-war song by the English electronic band Orchestral Manoeuvres in the Dark (OMD), and the only single taken from their second studio album Organisation (1980). Written by lead vocalist and bassist Andy McCluskey, it addresses the atomic bombing of Hiroshima by the aircraft Enola Gay on 6 August 1945, toward the conclusion of World War II. As is typical of early OMD singles, the song features a melodic synthesizer break instead of a sung chorus.",
-    "wiki": "https://en.wikipedia.org/wiki/Enola_Gay_(song)"
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb5caa86e04dc124ab65a168a7",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1785caa86e04dc124ab65a168a7",
+    "spotifyId": "0JwAxa5LS26N0e6wEedRnB",
+    "spotifyUrl": "https://open.spotify.com/artist/0JwAxa5LS26N0e6wEedRnB"
   },
   "Enola Gay": {
     "name": "Enola Gay",
     "genres": [
-      "punk",
-      "post-punk",
-      "hardcore",
-      "hardcore punk",
-      "power metal",
-      "noise rock"
+      "denmark",
+      "punk"
     ],
     "source": "wiki-direct-en",
     "mbid": "b7b27e00-abf6-4ad2-aac8-ad419a3aee7b",
@@ -1817,19 +1693,10 @@
   },
   "FEET": {
     "name": "FEET",
-    "genres": [
-      "indie",
-      "folk",
-      "silesia",
-      "indie rock",
-      "nie da sie ukryc kurwa disko polo"
-    ],
-    "source": "wiki-direct-en",
+    "genres": [],
+    "source": "mb-only",
     "mbid": "e9e02b3f-67d1-42de-9fd4-ef351da13aca",
-    "type": "Group",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Chris_Barnes.jpg/330px-Chris_Barnes.jpg",
-    "summary": "Chris Barnes is an American death metal vocalist, lyricist and producer who currently serves as the frontman of Six Feet Under. Artistically, he is noted for his low guttural vocals and explicitly violent lyrics.",
-    "wiki": "https://en.wikipedia.org/wiki/Chris_Barnes_(musician)"
+    "type": "Group"
   },
   "FEWS": {
     "name": "FEWS",
@@ -1859,17 +1726,11 @@
       "art rock",
       "dance-punk",
       "indie rock",
-      "post-punk",
-      "crank wave",
-      "new wave",
-      "post-brexit new wave"
+      "post-punk"
     ],
-    "source": "wiki-direct-en",
+    "source": "mb-only",
     "mbid": "58fce927-d15b-4d5d-9fc5-9f4a22c7acfd",
-    "type": "Group",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Bud_Shank.jpg/330px-Bud_Shank.jpg",
-    "summary": "Clifford Everett \"Bud\" Shank Jr. was an American alto saxophonist and flautist. He rose to prominence in the early 1950s playing lead alto and flute in Stan Kenton's Innovations in Modern Music Orchestra and throughout the decade worked in various small jazz combos. He spent the 1960s as a first-call studio musician in Hollywood. In the 1970s and 1980s, he performed regularly with the L. A. Four. Shank ultimately abandoned the flute to focus exclusively on playing jazz on the alto saxophone. He also recorded on tenor and baritone sax. His most famous recording is probably the version of \"Harlem Nocturne\" used as the theme song in Mickey Spillane's Mike Hammer. He is also known for the soundtrack recordings with his group to the surfing films of Bruce Brown in the late 1950s and early 1960s, and for the alto flute solo on the song \"California Dreamin'\" recorded by the Mamas & the Papas in 1965.",
-    "wiki": "https://en.wikipedia.org/wiki/Bud_Shank"
+    "type": "Group"
   },
   "FREAK IT OUT": {
     "name": "FREAK IT OUT",
@@ -1922,19 +1783,10 @@
   },
   "Fez": {
     "name": "Fez",
-    "genres": [
-      "jazz",
-      "free jazz",
-      "indie",
-      "neo-psychedelia",
-      "free"
-    ],
-    "source": "wiki-direct-en",
+    "genres": [],
+    "source": "mb-only",
     "mbid": "0e0b3bfd-1bdd-4228-8140-52f65731964f",
-    "type": "Group",
-    "photo": "https://upload.wikimedia.org/wikipedia/en/2/24/LCD_Soundsystem_-_North_American_Scum.png",
-    "summary": "\"North American Scum\" is a song by American rock band LCD Soundsystem. It was released as the lead single from their second studio album, Sound of Silver, on February 26, 2007 as a digital download and on other formats on March 5, 2007. It peaked at number 24 on the Belgian Flanders Tip chart and number 40 on the UK Singles Chart. The song was also frequently used to open up The Ron and Fez Show on XM Satellite Radio and was also featured in the 2008 film Step Brothers as well as the video games Saints Row 2 and Top Spin 4.",
-    "wiki": "https://en.wikipedia.org/wiki/North_American_Scum"
+    "type": "Group"
   },
   "Fiep": {
     "name": "Fiep",
@@ -2018,12 +1870,7 @@
   },
   "Floodlights": {
     "name": "Floodlights",
-    "genres": [
-      "indie rock",
-      "post-punk",
-      "alternative",
-      "seen live more than once"
-    ],
+    "genres": [],
     "source": "wiki-direct-en+spotify",
     "mbid": "31b575d4-11ce-472a-a892-4cc847f8f5f0",
     "type": "Group",
@@ -2037,9 +1884,7 @@
   "Florence Road": {
     "name": "Florence Road",
     "genres": [
-      "indie rock",
-      "power pop",
-      "indie pop"
+      "indie rock"
     ],
     "source": "wiki-direct-en",
     "mbid": "9b189d1b-3d6d-41d1-9053-cf29a487a75e",
@@ -2050,18 +1895,11 @@
   },
   "Flytrap": {
     "name": "Flytrap",
-    "genres": [
-      "rapcore",
-      "heavy metal",
-      "nu metal",
-      "estonian metal"
-    ],
-    "source": "wiki-direct-en+spotify",
+    "genres": [],
+    "source": "spotify",
     "mbid": "70a64d68-efc4-4e69-a500-8969d6cadc00",
     "type": "Group",
     "photo": "https://i.scdn.co/image/ab6761610000e5eb777c346ca7aaaeee099a5487",
-    "summary": "Venus Flytrap was a Thai pop music group made up of five young transgender women. The members were selected from 200 applicants during an audition in 2005 by Sony BMG Music Entertainment, which also promotes the group and provided it with a recording contract.",
-    "wiki": "https://en.wikipedia.org/wiki/Venus_Flytrap_(group)",
     "photoSmall": "https://i.scdn.co/image/ab6761610000f178777c346ca7aaaeee099a5487",
     "spotifyId": "1IXGH0mY6qgjTYTKo0nN3O",
     "spotifyUrl": "https://open.spotify.com/artist/1IXGH0mY6qgjTYTKo0nN3O"
@@ -2216,18 +2054,14 @@
   },
   "Gans": {
     "name": "Gans",
-    "genres": [
-      "power metal",
-      "heavy metal",
-      "metal",
-      "swedish metal"
-    ],
-    "source": "wiki-direct-en",
+    "genres": [],
+    "source": "spotify",
     "mbid": "8e5c16ed-5bd1-4614-bede-41f594abf8d8",
     "type": "Group",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/David-Gans-01.jpg/330px-David-Gans-01.jpg",
-    "summary": "David Gans is an American musician, songwriter, and music journalist. He is a guitarist, and is known for incisive, literate songwriting. He is also noted for his music loop work, often creating spontaneous compositions in performance. He is the co-author of the book Playing in the Band: An Oral and Visual Portrait of the Grateful Dead, and the host of the weekly syndicated radio show The Grateful Dead Hour. He currently co-hosts a radio show with Gary Lambert on Sirius XM's The Grateful Dead Channel called Tales from the Golden Road, a call-in show about the Grateful Dead.",
-    "wiki": "https://en.wikipedia.org/wiki/David_Gans_(musician)"
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb19f48d0f1dd52c3b844b4920",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17819f48d0f1dd52c3b844b4920",
+    "spotifyId": "05PzzXnIetN4rWDlYv23SK",
+    "spotifyUrl": "https://open.spotify.com/artist/05PzzXnIetN4rWDlYv23SK"
   },
   "Geordie Greep": {
     "name": "Geordie Greep",
@@ -2382,13 +2216,7 @@
   },
   "Godcaster": {
     "name": "Godcaster",
-    "genres": [
-      "art punk",
-      "punk",
-      "psychedelic",
-      "indie rock",
-      "noise rock"
-    ],
+    "genres": [],
     "source": "wiki-direct-en+spotify",
     "mbid": "6570d5e0-9dbf-4998-9212-aefe30d5be6b",
     "type": "Group",
@@ -2416,19 +2244,10 @@
   },
   "Goo": {
     "name": "Goo",
-    "genres": [
-      "grindcore",
-      "punk",
-      "hardcore",
-      "indie pop",
-      "indie rock"
-    ],
-    "source": "wiki-direct-en",
+    "genres": [],
+    "source": "mb-only",
     "mbid": "f38aca45-2c4c-4069-9614-fa69f77c06de",
-    "type": "Person",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/John_Rzeznik_of_The_Goo_Goo_Dolls_performing_in_Syracuse%2C_New_York_in_2023.jpg/330px-John_Rzeznik_of_The_Goo_Goo_Dolls_performing_in_Syracuse%2C_New_York_in_2023.jpg",
-    "summary": "John Joseph Theodore Rzeznik is an American musician, singer, songwriter, and producer. He is best known as the founder, guitarist and frontman of the rock band Goo Goo Dolls, with whom he has recorded several chart-topping hits, including \"Iris\", \"Slide\", and \"Name\".",
-    "wiki": "https://en.wikipedia.org/wiki/John_Rzeznik"
+    "type": "Person"
   },
   "Grandmas House": {
     "name": "Grandmas House",
@@ -2478,13 +2297,7 @@
   },
   "Ha the Unclear": {
     "name": "Ha the Unclear",
-    "genres": [
-      "indie",
-      "alternative",
-      "pop",
-      "indie pop",
-      "flying nun"
-    ],
+    "genres": [],
     "source": "wiki-direct-en",
     "mbid": "6243e44a-2eb5-4cdb-bbc8-39056a184a91",
     "type": "Group",
@@ -2557,13 +2370,7 @@
   },
   "Heartworms": {
     "name": "Heartworms",
-    "genres": [
-      "post-punk",
-      "indie pop",
-      "indie",
-      "gothic rock",
-      "indie rock"
-    ],
+    "genres": [],
     "source": "wiki-direct-en",
     "mbid": "6a102993-6cd6-4d67-b681-c61ab8f14415",
     "type": "Group",
@@ -2610,17 +2417,15 @@
     "name": "Highschool",
     "genres": [
       "indie rock",
-      "post-punk",
-      "crank wave",
-      "indie",
-      "indie pop"
+      "post-punk"
     ],
-    "source": "wiki-direct-en",
+    "source": "spotify",
     "mbid": "3c077b00-f48b-4868-a487-8851a503358b",
     "type": "Group",
-    "photo": "https://upload.wikimedia.org/wikipedia/en/0/02/Teddybears_STHLM_-_Rock_%27n%27_Roll_Highschool_Coverart.png",
-    "summary": "Rock 'n' Roll Highschool is the third studio album by Teddybears STHLM. It was released in 2000 by MVG. This marks the band's transition from punk rock to electronic music",
-    "wiki": "https://en.wikipedia.org/wiki/Rock_'n'_Roll_Highschool"
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebddc734f9d9f55f5757fdfb69",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178ddc734f9d9f55f5757fdfb69",
+    "spotifyId": "7AG5dB8Dc3yFhzeQaAsxUb",
+    "spotifyUrl": "https://open.spotify.com/artist/7AG5dB8Dc3yFhzeQaAsxUb"
   },
   "Honeyglaze": {
     "name": "Honeyglaze",
@@ -2639,13 +2444,7 @@
   },
   "Home Counties": {
     "name": "Home Counties",
-    "genres": [
-      "post-punk",
-      "crank wave",
-      "post-brexit new wave",
-      "indie rock",
-      "dance-punk"
-    ],
+    "genres": [],
     "source": "wiki-direct-en",
     "mbid": "557f0eee-6413-4752-81bb-992b2ef061af",
     "type": "Group",
@@ -2712,19 +2511,14 @@
   },
   "Hot Wax": {
     "name": "Hot Wax",
-    "genres": [
-      "dub",
-      "post-punk",
-      "industrial",
-      "experimental",
-      "electronic"
-    ],
-    "source": "wiki-direct-en",
+    "genres": [],
+    "source": "spotify",
     "mbid": "ec0201ac-50e2-47ba-8736-d9bffe48852e",
     "type": "Group",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mark_Stewart_The_Pop_Group_10_March_2015_-_16630102530.jpg/330px-Mark_Stewart_The_Pop_Group_10_March_2015_-_16630102530.jpg",
-    "summary": "Mark Stewart was an English singer and founding member of the Pop Group. A pioneer of post-punk and industrial music, he recorded for On-U Sound Records, Mute Records, eMERGENCY heARTS, Future Noise Music, and Crippled Dick Hot Wax!",
-    "wiki": "https://en.wikipedia.org/wiki/Mark_Stewart_(English_musician)"
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb382d864cf8d7ff61d185187d",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178382d864cf8d7ff61d185187d",
+    "spotifyId": "5fuhiMpT8eRTcA6VDsE3BD",
+    "spotifyUrl": "https://open.spotify.com/artist/5fuhiMpT8eRTcA6VDsE3BD"
   },
   "Hotel Lux": {
     "name": "Hotel Lux",
@@ -2787,19 +2581,15 @@
     "name": "Hutch",
     "genres": [
       "hardcore punk",
-      "punk",
-      "hardcore",
-      "punk rock",
-      "funny",
-      "folk",
-      "spoken word"
+      "punk"
     ],
-    "source": "wiki-direct-en",
+    "source": "spotify",
     "mbid": "f77fceea-4c44-4cd3-8145-cda9f1589033",
     "type": "Group",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/James_%22Hutch%22_Hutchinson-American_Bassist.JPG/330px-James_%22Hutch%22_Hutchinson-American_Bassist.JPG",
-    "summary": "James \"Hutch\" Hutchinson is an American session bassist best known for his work with Bonnie Raitt. Though his work takes him nearly everywhere he primarily resides in Studio City, Los Angeles, California, and Haiku-Pauwela, Hawaii.",
-    "wiki": "https://en.wikipedia.org/wiki/James_Hutchinson_(musician)"
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebac1d4a351033a8c141eae06e",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178ac1d4a351033a8c141eae06e",
+    "spotifyId": "00FgLYdfWCLb6eBbUY6EFQ",
+    "spotifyUrl": "https://open.spotify.com/artist/00FgLYdfWCLb6eBbUY6EFQ"
   },
   "IDLES": {
     "name": "IDLES",
@@ -2821,18 +2611,14 @@
   },
   "Humour": {
     "name": "Humour",
-    "genres": [
-      "crank wave",
-      "post-hardcore",
-      "alternative rock",
-      "rock"
-    ],
-    "source": "wiki-direct-en",
+    "genres": [],
+    "source": "spotify",
     "mbid": "ebde0870-c1a3-4b10-a528-66b4841a6096",
     "type": "Group",
-    "photo": "https://upload.wikimedia.org/wikipedia/en/thumb/0/07/The_Cows_1992.jpg/330px-The_Cows_1992.jpg",
-    "summary": "Cows were a noise rock band from Minneapolis, Minnesota who formed in 1986 and disbanded in 1998. The band’s music mixed punk rock with surreal humour and copious amounts of noise played through distorted amplifiers and trumpet bleats, codifying them as a noise rock band. Throughout their career Cows released nine studio albums, all but one on the Minneapolis-based label Amphetamine Reptile Records. A star in honor of the Cows is on the outside mural of First Avenue.",
-    "wiki": "https://en.wikipedia.org/wiki/Cows_(band)"
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb9122e982f78b7ce4047fb72c",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1789122e982f78b7ce4047fb72c",
+    "spotifyId": "5ErUNpyxSBAdjZaKlefsUr",
+    "spotifyUrl": "https://open.spotify.com/artist/5ErUNpyxSBAdjZaKlefsUr"
   },
   "Ideal Living": {
     "name": "Ideal Living",
@@ -2853,19 +2639,11 @@
   },
   "Japanese Television": {
     "name": "Japanese Television",
-    "genres": [
-      "psychedelic rock",
-      "space rock",
-      "garage rock",
-      "surf rock",
-      "alternative rock"
-    ],
-    "source": "wiki-direct-en+spotify",
+    "genres": [],
+    "source": "spotify",
     "mbid": "b08f1f0d-cd7a-4c40-8bdd-f73244d6c616",
     "type": "Group",
     "photo": "https://i.scdn.co/image/ab6761610000e5ebec8e41fbc28b4215e2fca0e7",
-    "summary": "Television in Japan was introduced in 1939. However, experiments date back to the 1920s, with Kenjiro Takayanagi's pioneering experiments in electronic television. Television broadcasting was halted by World War II, after which regular television broadcasting began in 1950. After Japan developed the first HDTV systems in the 1960s, MUSE/Hi-Vision was introduced in the 1970s.",
-    "wiki": "https://en.wikipedia.org/wiki/Television_in_Japan",
     "photoSmall": "https://i.scdn.co/image/ab6761610000f178ec8e41fbc28b4215e2fca0e7",
     "spotifyId": "5LLn18vxU1UTY1ypouVGNW",
     "spotifyUrl": "https://open.spotify.com/artist/5LLn18vxU1UTY1ypouVGNW"
@@ -2941,13 +2719,7 @@
   },
   "Jesse Jo Stark": {
     "name": "Jesse Jo Stark",
-    "genres": [
-      "rock",
-      "blues",
-      "indie rock",
-      "indie",
-      "singer-songwriter"
-    ],
+    "genres": [],
     "source": "wiki-direct-en",
     "mbid": "9c322880-187b-44c9-9020-4d707fbc6ac1",
     "type": "Person",
@@ -2997,9 +2769,7 @@
       "dance",
       "electronica",
       "experimental hip hop",
-      "glitch hop",
-      "experimental",
-      "electronic"
+      "glitch hop"
     ],
     "source": "wiki-direct-en",
     "mbid": "34ebe14b-113c-4004-9625-77cb6b13b27d",
@@ -3011,11 +2781,7 @@
   "Jonah Yano": {
     "name": "Jonah Yano",
     "genres": [
-      "alternative r&b",
-      "electronic",
-      "jazz",
-      "neo-soul",
-      "jazz pop"
+      "alternative r&b"
     ],
     "source": "wiki-direct-en+spotify",
     "mbid": "86da1981-9d9a-49d5-b2f2-f968132e2a46",
@@ -3045,19 +2811,11 @@
   },
   "KEG": {
     "name": "KEG",
-    "genres": [
-      "crank wave",
-      "post-punk",
-      "garage rock",
-      "indie rock",
-      "post-brexit new wave"
-    ],
-    "source": "wiki-direct-en+spotify",
+    "genres": [],
+    "source": "spotify",
     "mbid": "e447dc02-d59c-442e-b2eb-1cdd6c230867",
     "type": "Group",
     "photo": "https://i.scdn.co/image/ab6761610000e5eb0dc9278260ec4e146607c731",
-    "summary": "Frederic Homer Johnson, known professionally as Keg Johnson, was an American jazz trombonist.",
-    "wiki": "https://en.wikipedia.org/wiki/Keg_Johnson",
     "photoSmall": "https://i.scdn.co/image/ab6761610000f1780dc9278260ec4e146607c731",
     "spotifyId": "5CiQ9m8dPZ3eEV8c2DdHuq",
     "spotifyUrl": "https://open.spotify.com/artist/5CiQ9m8dPZ3eEV8c2DdHuq"
@@ -3080,16 +2838,11 @@
   },
   "Kickboy": {
     "name": "Kickboy",
-    "genres": [
-      "crank wave",
-      "post-brexit new wave"
-    ],
-    "source": "wiki-direct-en+spotify",
+    "genres": [],
+    "source": "spotify",
     "mbid": "fb57371f-56d3-444a-9e5d-c44df59bab6d",
     "type": null,
     "photo": "https://i.scdn.co/image/ab6761610000e5ebd1cccbb56ba566c4f9845e4e",
-    "summary": "Claude Bessy, also known as Kickboy Face, was a French writer, magazine editor, singer, video producer, and painter. He is noted as an early organizer in the Los Angeles punk scene in the mid-1970s and was involved in the British post-punk scene in the 1980s.",
-    "wiki": "https://en.wikipedia.org/wiki/Claude_Bessy_(writer)",
     "photoSmall": "https://i.scdn.co/image/ab6761610000f178d1cccbb56ba566c4f9845e4e",
     "spotifyId": "5mQg1OqLe4tAlSnHn1jbFM",
     "spotifyUrl": "https://open.spotify.com/artist/5mQg1OqLe4tAlSnHn1jbFM"
@@ -3144,19 +2897,14 @@
   },
   "Knives": {
     "name": "Knives",
-    "genres": [
-      "halftime",
-      "post-hardcore",
-      "rapcore",
-      "rap metal",
-      "death n roll"
-    ],
-    "source": "wiki-direct-en",
+    "genres": [],
+    "source": "spotify",
     "mbid": "26523296-ee2c-4896-beb6-6d32fff8a974",
     "type": "Group",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Todd_Smith_%28musician%29_%28cropped%29.jpg/330px-Todd_Smith_%28musician%29_%28cropped%29.jpg",
-    "summary": "Todd Edward Smith is an American singer, songwriter and guitarist who most notably fronts the rock band Dog Fashion Disco. He is also involved with the bands Polkadot Cadaver, Knives Out!, Beyond Paranoid, and his solo project El-Creepo!",
-    "wiki": "https://en.wikipedia.org/wiki/Todd_Smith_(musician)"
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebe13f5c97ff109d527ca8c1b0",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178e13f5c97ff109d527ca8c1b0",
+    "spotifyId": "2YoHhPouaTT96k3dUQ8WZK",
+    "spotifyUrl": "https://open.spotify.com/artist/2YoHhPouaTT96k3dUQ8WZK"
   },
   "LASWERK - Jazz": {
     "name": "LASWERK - Jazz",
@@ -3165,13 +2913,7 @@
   },
   "L'objectif": {
     "name": "L'objectif",
-    "genres": [
-      "crank wave",
-      "post-punk",
-      "post-brexit new wave",
-      "indie rock",
-      "art punk"
-    ],
+    "genres": [],
     "source": "wiki-direct-en",
     "mbid": "040d6b21-d0c7-432a-8040-5d6f546e3d79",
     "type": null,
@@ -3183,18 +2925,15 @@
     "name": "Krokodil",
     "genres": [
       "psychedelic rock",
-      "rock",
-      "krautrock",
-      "progressive rock",
-      "blues rock",
-      "psychedelic"
+      "rock"
     ],
-    "source": "wiki-direct-en",
+    "source": "spotify",
     "mbid": "01a6d199-bbab-4191-83d6-4a6289ff907f",
     "type": "Group",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/VivaXElRock19-11_%28cropped%29.jpg/330px-VivaXElRock19-11_%28cropped%29.jpg",
-    "summary": "Alessandro \"Alex\" Giovanni Venturella is a British musician who is the current bassist for American heavy metal band Slipknot. He previously has served as a lead guitarist for Krokodil and Cry for Silence. Earlier in his career, he was the touring guitar tech for Mastodon's Brent Hinds, Coheed and Cambria, Architects, and Fightstar.",
-    "wiki": "https://en.wikipedia.org/wiki/Alessandro_Venturella"
+    "photo": "https://i.scdn.co/image/ab67616d0000b273fc029d2f90ac64253c52498e",
+    "photoSmall": "https://i.scdn.co/image/ab67616d00004851fc029d2f90ac64253c52498e",
+    "spotifyId": "2oNdyLX6qiVvNGbBNaON20",
+    "spotifyUrl": "https://open.spotify.com/artist/2oNdyLX6qiVvNGbBNaON20"
   },
   "LES ATLANTIDES": {
     "name": "LES ATLANTIDES",
@@ -3272,19 +3011,14 @@
   },
   "Ladylike": {
     "name": "Ladylike",
-    "genres": [
-      "indie rock",
-      "power pop",
-      "shoegaze",
-      "indie pop",
-      "dream pop"
-    ],
-    "source": "wiki-direct-en",
+    "genres": [],
+    "source": "spotify",
     "mbid": "b46076a3-46cf-44cb-9297-6672a00a1cd0",
     "type": "Group",
-    "photo": "https://upload.wikimedia.org/wikipedia/en/a/ae/Monroseladylikealbumcover.png",
-    "summary": "Ladylike is the fourth and final studio album by German pop trio Monrose. It was released by Starwatch Music in association with Cheyenne Records and the Warner Music Group on 11 June 2010 in German-speaking Europe. Conceived during a hiatus which allowed each member to launch solo projects, production of the album began in mid-2009. Unlike their previous material, recording of Ladylike was not rushed, with sessions also taking place in New York City. Monrose reteamed with frequent collaborators Pete Kirtley, Tim Hawes, and Obi Mhondera to work on the album, while upcoming producers such as Tuneverse and Alexander Geringas were also consulted.",
-    "wiki": "https://en.wikipedia.org/wiki/Ladylike"
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb649e824fea7d9f23cd38f1b5",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178649e824fea7d9f23cd38f1b5",
+    "spotifyId": "6u8UBNI8HFEPxpaQYBquZ9",
+    "spotifyUrl": "https://open.spotify.com/artist/6u8UBNI8HFEPxpaQYBquZ9"
   },
   "Lambrini Girls": {
     "name": "Lambrini Girls",
@@ -3336,13 +3070,7 @@
   },
   "Legss": {
     "name": "Legss",
-    "genres": [
-      "post-punk",
-      "crank wave",
-      "post-brexit new wave",
-      "indie rock",
-      "art punk"
-    ],
+    "genres": [],
     "source": "wiki-direct-en",
     "mbid": "393a2879-2d1f-4ae0-92cf-a2c3a540d0e1",
     "type": "Group",
@@ -3597,18 +3325,14 @@
   },
   "MOULD": {
     "name": "MOULD",
-    "genres": [
-      "punk rock",
-      "punk",
-      "doom metal",
-      "post-punk"
-    ],
-    "source": "wiki-direct-en",
+    "genres": [],
+    "source": "spotify",
     "mbid": "758c7b15-0774-4313-a822-52bb1cf04df9",
     "type": "Group",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Bob_Mould.jpg/330px-Bob_Mould.jpg",
-    "summary": "Robert Arthur Mould is an American musician, principally known for his work as guitarist, vocalist, and songwriter for alternative rock bands Hüsker Dü in the 1980s and Sugar in the 1990s.",
-    "wiki": "https://en.wikipedia.org/wiki/Bob_Mould"
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb5552b1efce364e4c1da3f7f8",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1785552b1efce364e4c1da3f7f8",
+    "spotifyId": "4YKVTOc7KjZfuAfvaCHKqo",
+    "spotifyUrl": "https://open.spotify.com/artist/4YKVTOc7KjZfuAfvaCHKqo"
   },
   "Makeshift Art Bar": {
     "name": "Makeshift Art Bar",
@@ -3743,31 +3467,18 @@
   },
   "Martial Arts": {
     "name": "Martial Arts",
-    "genres": [
-      "power pop",
-      "jangle pop",
-      "the beach boys",
-      "meh"
-    ],
-    "source": "wiki-direct-en+spotify",
+    "genres": [],
+    "source": "spotify",
     "mbid": "17bc5a71-547d-440d-85a5-16ed0d55e4f3",
     "type": "Group",
     "photo": "https://i.scdn.co/image/ab6761610000e5ebc144fb7ae0c7ada7c989d40f",
-    "summary": "Robin Black is a Canadian combat analyst and sports commentator. He formerly competed in mixed martial arts, and previously had a career as a glam rock musician. Robin Black has commentated for most major combat sports organizations in the world such as Bellator MMA, ONE Championship, Brave Combat Federation, Karate Combat, World Lethwei Championship in Myanmar and ACB in Russia.",
-    "wiki": "https://en.wikipedia.org/wiki/Robin_Black",
     "photoSmall": "https://i.scdn.co/image/ab6761610000f178c144fb7ae0c7ada7c989d40f",
     "spotifyId": "6Io0X7BBqmDmJLaKbEq14E",
     "spotifyUrl": "https://open.spotify.com/artist/6Io0X7BBqmDmJLaKbEq14E"
   },
   "Mary in the Junkyard": {
     "name": "Mary in the Junkyard",
-    "genres": [
-      "art rock",
-      "indie rock",
-      "post-punk",
-      "alternative",
-      "alternative rock"
-    ],
+    "genres": [],
     "source": "wiki-direct-en+spotify",
     "mbid": "64367341-4bc2-493c-8e5d-ce17841c8a7a",
     "type": "Group",
@@ -3803,16 +3514,12 @@
       "alternative dance",
       "avant-folk",
       "dance-pop",
-      "experimental electronic",
-      "electronic",
-      "indie"
+      "experimental electronic"
     ],
-    "source": "wiki-direct-en+spotify",
+    "source": "spotify",
     "mbid": "b130500a-a0d0-4eb5-a764-66b1233e35d6",
     "type": "Group",
     "photo": "https://i.scdn.co/image/ab6761610000e5ebb4253d66d994918bec5e5ade",
-    "summary": "Mermaid Chunky is a London-based duo, Moina Moin and Freya Tate, signed to DFA Records. Moin plays saxophone, Tate plays keyboards and drives the drum machine. Pitchfork named their second LP, Slif Slaf Slof one of the \"10 New Albums You Should Listen To Now\" in 2024 and NME called Slif Slaf Slof \"brilliantly eccentric, funny and inventive avant-pop.\" Metal Magazine describes their music as an \"eclectic storm of electro, jazz, experimental pop, and folk.\"",
-    "wiki": "https://en.wikipedia.org/wiki/Mermaid_Chunky",
     "photoSmall": "https://i.scdn.co/image/ab6761610000f178b4253d66d994918bec5e5ade",
     "spotifyId": "5IVLihKRLMZ5RHzSPa7cAI",
     "spotifyUrl": "https://open.spotify.com/artist/5IVLihKRLMZ5RHzSPa7cAI"
@@ -3851,18 +3558,11 @@
   },
   "Mince": {
     "name": "Mince",
-    "genres": [
-      "electronic",
-      "chillout",
-      "experimental",
-      "vancouver"
-    ],
-    "source": "wiki-direct-en+spotify",
+    "genres": [],
+    "source": "spotify",
     "mbid": "09aa04d4-51bf-4b00-a198-72c541bd6ac5",
     "type": "Group",
     "photo": "https://i.scdn.co/image/ab6761610000e5eb6a4f5231482be8007a6b1b27",
-    "summary": "Johnny Mince was an American swing jazz clarinetist.",
-    "wiki": "https://en.wikipedia.org/wiki/Johnny_Mince",
     "photoSmall": "https://i.scdn.co/image/ab6761610000f1786a4f5231482be8007a6b1b27",
     "spotifyId": "7y1hRXZnRy0bd8QpQzGH8R",
     "spotifyUrl": "https://open.spotify.com/artist/7y1hRXZnRy0bd8QpQzGH8R"
@@ -3952,11 +3652,7 @@
   },
   "Murkage Dave": {
     "name": "Murkage Dave",
-    "genres": [
-      "rnb",
-      "soul",
-      "pop"
-    ],
+    "genres": [],
     "source": "wiki-direct-en+spotify",
     "mbid": "9f02af13-3bc8-4aef-9d0a-d2996d67cba2",
     "type": "Person",
@@ -3979,17 +3675,11 @@
       "garage",
       "noise",
       "post-punk",
-      "shoegaze",
-      "crank wave",
-      "post-brexit new wave",
-      "art punk"
+      "shoegaze"
     ],
-    "source": "wiki-direct-en",
+    "source": "mb-only",
     "mbid": "fc6b2bc2-d50d-46b4-8ac1-edbb414d9719",
-    "type": "Group",
-    "photo": "https://upload.wikimedia.org/wikipedia/en/b/b4/Tangent-250x250.jpg",
-    "summary": "Fear of a Black Tangent is the fourth studio album by American rapper Busdriver. It was originally released on Mush Records in 2005. In Europe, it was released on Big Dada.",
-    "wiki": "https://en.wikipedia.org/wiki/Fear_of_a_Black_Tangent"
+    "type": "Group"
   },
   "Naked Lungs": {
     "name": "Naked Lungs",
@@ -4011,19 +3701,14 @@
   },
   "Nerves": {
     "name": "Nerves",
-    "genres": [
-      "post-punk",
-      "punk",
-      "noise rock",
-      "hardcore",
-      "hardcore punk"
-    ],
-    "source": "wiki-direct-en",
+    "genres": [],
+    "source": "spotify",
     "mbid": "0465de68-c6dc-487e-917e-0973f6512538",
     "type": "Group",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Paul_Collins.jpg/330px-Paul_Collins.jpg",
-    "summary": "Paul Vincent Collins is an American writer, author, music producer, and multi-instrumentalist. He is best known for his work in the power pop groups The Nerves, The Breakaways and The Beat.",
-    "wiki": "https://en.wikipedia.org/wiki/Paul_Collins_(musician)"
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb7f6a66bf5141fe680d30a211",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1787f6a66bf5141fe680d30a211",
+    "spotifyId": "4oZHD9a5Wf8vZWHTrPWKdO",
+    "spotifyUrl": "https://open.spotify.com/artist/4oZHD9a5Wf8vZWHTrPWKdO"
   },
   "New Order": {
     "name": "New Order",
@@ -4210,17 +3895,16 @@
   "PVA": {
     "name": "PVA",
     "genres": [
-      "electronic",
-      "futurepop",
+      "synth-pop",
+      "acid house",
       "dance",
-      "house",
       "ebm",
-      "techno",
-      "synthpop",
-      "dance-punk"
+      "electroclash",
+      "electronic"
     ],
-    "source": "wiki-direct-en+spotify",
+    "source": "mb-wikidata-en+spotify",
     "mbid": "3e3c2787-4412-4614-82af-ce903b4d8b96",
+    "type": "Group",
     "photo": "https://i.scdn.co/image/ab6761610000e5ebdacc68db3dc018dc4cc48b64",
     "summary": "PVA is an English music band formed in South London in 2017, consisting of Ella Harris, Josh Baxter and Louis Satchell.",
     "wiki": "https://en.wikipedia.org/wiki/PVA_(band)",
@@ -4297,31 +3981,18 @@
   },
   "Pencil": {
     "name": "Pencil",
-    "genres": [
-      "breakcore",
-      "math rock",
-      "lolicore",
-      "indie",
-      "noise rock"
-    ],
-    "source": "wiki-direct-en+spotify",
+    "genres": [],
+    "source": "spotify",
     "mbid": "d5f947b5-99fd-486d-a701-8a0b3a8314ed",
+    "type": "Person",
     "photo": "https://i.scdn.co/image/ab6761610000e5ebdf5bceac2f8cb984738e7f4f",
-    "summary": "Edwin Pouncey, also known by the nom de plume Savage Pencil, is an English comics artist, musician, and music journalist.",
-    "wiki": "https://en.wikipedia.org/wiki/Savage_Pencil",
     "photoSmall": "https://i.scdn.co/image/ab6761610000f178df5bceac2f8cb984738e7f4f",
     "spotifyId": "0WpuiEplimtEOyXv5SGurF",
     "spotifyUrl": "https://open.spotify.com/artist/0WpuiEplimtEOyXv5SGurF"
   },
   "Personal Trainer": {
     "name": "Personal Trainer",
-    "genres": [
-      "indie rock",
-      "rock",
-      "crank wave",
-      "punk rock",
-      "indie"
-    ],
+    "genres": [],
     "source": "wiki-direct-en",
     "mbid": "2e84443c-dc23-4b65-922a-f96b8a73d602",
     "type": "Group",
@@ -4357,29 +4028,29 @@
     "genres": [
       "noise rock",
       "post-punk",
-      "synth",
-      "rock",
-      "indie"
+      "synth"
     ],
-    "source": "wiki-direct-en",
+    "source": "spotify",
     "mbid": "80f0925d-8bee-4ab4-95d8-9fb47e36f1d1",
     "type": "Group",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Sdp_2015_m%C3%BCnchen_1.jpg/330px-Sdp_2015_m%C3%BCnchen_1.jpg",
-    "summary": "SDP, an abbreviation of Stonedeafproduction, is a German pop/hip hop duo made up of singer and producer Vincent Stein and singer and guitarist Dag-Alexis Kopplin. The duo is signed to the Berliner Plattenbau label.",
-    "wiki": "https://en.wikipedia.org/wiki/SDP_(duo)"
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb08e44c4bcd540d9d2f55e5c9",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17808e44c4bcd540d9d2f55e5c9",
+    "spotifyId": "0Pekue0830gXpof0ngQVFH",
+    "spotifyUrl": "https://open.spotify.com/artist/0Pekue0830gXpof0ngQVFH"
   },
   "Play Dead": {
     "name": "Play Dead",
     "genres": [
-      "punk",
-      "post-punk",
-      "goth",
       "gothic rock",
-      "deathrock",
-      "gothic"
+      "post-punk",
+      "banbury",
+      "england",
+      "goth",
+      "oxford"
     ],
-    "source": "wiki-direct-en+spotify",
+    "source": "mb-wikidata-en+spotify",
     "mbid": "764f0969-6485-4a47-b2e6-73764cfc6978",
+    "type": "Group",
     "photo": "https://i.scdn.co/image/ab67616d0000b273e4b8299157cc98a65f1bd315",
     "summary": "Play Dead were an English rock band from Oxford formed in 1980 by Rob Hickson, Pete Waddleton, Mark \"Wiff\" Smith and Re-Vox.",
     "wiki": "https://en.wikipedia.org/wiki/Play_Dead_(band)",
@@ -4406,19 +4077,12 @@
   "Pol": {
     "name": "Pol",
     "genres": [
-      "trip-hop",
-      "ambient",
-      "psychedelic",
-      "post-punk",
-      "dub",
-      "indie rock"
+      "french",
+      "trip-hop"
     ],
-    "source": "wiki-direct-en",
+    "source": "mb-only",
     "mbid": "43ab255e-b483-40f8-ac36-888b7b5ff010",
-    "type": "Person",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Kamil_Bednarek%2C_Pokolenia_Wolno%C5%9Bci_11.jpg/330px-Kamil_Bednarek%2C_Pokolenia_Wolno%C5%9Bci_11.jpg",
-    "summary": "Kamil Bednarek is a Polish reggae and dancehall vocalist, songwriter, composer and musician. He is best known as the runner-up in the third series of Mam talent!.",
-    "wiki": "https://en.wikipedia.org/wiki/Kamil_Bednarek"
+    "type": "Person"
   },
   "Pom": {
     "name": "Pom",
@@ -4479,19 +4143,10 @@
   },
   "Poté": {
     "name": "Poté",
-    "genres": [
-      "saint lucia",
-      "electronic",
-      "dance",
-      "indie",
-      "electronica"
-    ],
-    "source": "wiki-direct-en",
+    "genres": [],
+    "source": "mb-only",
     "mbid": "ba0f7472-5b18-470f-94e0-c311fa68b4aa",
-    "type": "Person",
-    "photo": "https://upload.wikimedia.org/wikipedia/en/c/cd/Single_artwork_for_the_Gorillaz_song_Tranz.jpg",
-    "summary": "\"Tranz\" is a song by British virtual band Gorillaz. It was released on 14 September 2018 with a music video as the sixth and final single from their sixth studio album, The Now Now. On 28 September 2018, a remix of the song by British electronic musician Poté was released. The song charted at #16 on the Billboard's Hot Rock Songs.",
-    "wiki": "https://en.wikipedia.org/wiki/Tranz"
+    "type": "Person"
   },
   "Pozi": {
     "name": "Pozi",
@@ -4611,19 +4266,11 @@
   },
   "Quade": {
     "name": "Quade",
-    "genres": [
-      "ambient",
-      "folk",
-      "experimental",
-      "post-rock",
-      "post-punk"
-    ],
-    "source": "wiki-direct-en+spotify",
+    "genres": [],
+    "source": "spotify",
     "mbid": "643d54df-5355-4e8d-9ed3-820a88ed1101",
     "type": "Group",
     "photo": "https://i.scdn.co/image/ab6761610000e5ebad822fb2a573186ef6c99770",
-    "summary": "Satanicide are an American, New York City-based mock metal/glam metal band formed in 1999 that styles themselves and their music to represent, tongue-in-cheek, the heavy metal music scene of the 1980s in New Jersey. Self-described as portraying a lifestyle \"where the mullet and kick-ass rock 'n' roll still live\", the members sport big hair and spandex and leather stagewear. As part of their presentation, Santanicide plays party anthems and power ballads with a mixture of satire and affection. In 2003, the group were described in The Drama Review as an \"irreverent, demonic death-metal turned glam turned cock-rock band\". The original four member band consists of frontman Dale \"Devlin Mayhem\" May, guitarist Phil \"Aleister Cradley\" Costello, drummer Andrew \"Sloth Vader\" Griffiths, and bassist Pemberton \"The Baron Klaus Von Goaten\" Roach. Pemberton was replaced by bassist Jake \"Vargas Von Goaten\" Garcia in 2003, who was subsequently replaced by Drew Thurlow, followed by Patrick Quade.",
-    "wiki": "https://en.wikipedia.org/wiki/Satanicide",
     "photoSmall": "https://i.scdn.co/image/ab6761610000f178ad822fb2a573186ef6c99770",
     "spotifyId": "3jRUNsEZI2Zb06hF326tBX",
     "spotifyUrl": "https://open.spotify.com/artist/3jRUNsEZI2Zb06hF326tBX"
@@ -4631,10 +4278,7 @@
   "RIP Magic": {
     "name": "RIP Magic",
     "genres": [
-      "electronic",
-      "experimental",
-      "post-punk",
-      "crank wave"
+      "electronic"
     ],
     "source": "wiki-direct-en+spotify",
     "mbid": "9109582c-cc24-49ae-bc03-ccb9c7c30966",
@@ -4731,17 +4375,14 @@
   },
   "Rimon": {
     "name": "Rimon",
-    "genres": [
-      "rnb",
-      "soul",
-      "eritrea"
-    ],
-    "source": "wiki-direct-en",
+    "genres": [],
+    "source": "spotify",
     "mbid": "665a6961-bb56-4dcb-ac37-079439ad1fc0",
     "type": "Person",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Dana_berger.jpg/330px-Dana_berger.jpg",
-    "summary": "Dana Berger is an Israeli singer-songwriter and occasional actress. She is also a graduate of the Rimon School of Jazz and Contemporary Music. Berger came to fame in the 1990s, appearing on the popular TV show Inyan Shel Zman. After becoming well known, she released a number of albums, among them the widely popular album Ad Ha'Katze, which was certified platinum and went on to sell over 60,000 copies in Israel.",
-    "wiki": "https://en.wikipedia.org/wiki/Dana_Berger"
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebddbb45617a27f7b28c14d7b1",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178ddbb45617a27f7b28c14d7b1",
+    "spotifyId": "4DtUsfaVQBhypuwYmobdSm",
+    "spotifyUrl": "https://open.spotify.com/artist/4DtUsfaVQBhypuwYmobdSm"
   },
   "Roxy Girl": {
     "name": "Roxy Girl",
@@ -4871,12 +4512,7 @@
   },
   "Saint Vincent": {
     "name": "Saint Vincent",
-    "genres": [
-      "indie pop",
-      "singer-songwriter",
-      "indie",
-      "alternative"
-    ],
+    "genres": [],
     "source": "wiki-direct-en",
     "mbid": "e08adce6-e38d-4a55-a9c7-bacdfa6130f0",
     "type": "Person",
@@ -4935,13 +4571,7 @@
   },
   "Saul Adamczewski": {
     "name": "Saul Adamczewski",
-    "genres": [
-      "folk",
-      "acoustic",
-      "lo-fi",
-      "singer-songwriter",
-      "american primitive guitar"
-    ],
+    "genres": [],
     "source": "wiki-direct-en",
     "mbid": "a2b13a7c-0101-403e-93c3-0833d9020ecb",
     "type": "Person",
@@ -4988,12 +4618,7 @@
   },
   "She's in Parties": {
     "name": "She's in Parties",
-    "genres": [
-      "garage rock",
-      "rock",
-      "shoegaze",
-      "punk"
-    ],
+    "genres": [],
     "source": "wiki-direct-en",
     "mbid": "d35246c3-87cc-4628-aeea-ea368d20a01d",
     "type": "Group",
@@ -5003,19 +4628,11 @@
   },
   "Sheep": {
     "name": "Sheep",
-    "genres": [
-      "rock",
-      "metal",
-      "hard rock",
-      "alternative",
-      "alternative rock"
-    ],
-    "source": "wiki-direct-en+spotify",
+    "genres": [],
+    "source": "spotify",
     "mbid": "f1fdcaab-d975-48ef-bd0d-ee65f2d238bd",
     "type": "Group",
     "photo": "https://i.scdn.co/image/ab6761610000e5eb2ede878136398159c410d944",
-    "summary": "Bruce Turgon is an American bass guitarist, guitarist, vocalist, songwriter and producer. Bruce has played in several bands throughout his career including: Foreigner, The Lou Gramm Band, Shadow King, Steve Stevens, Warrior, Black Sheep and Showcase.",
-    "wiki": "https://en.wikipedia.org/wiki/Bruce_Turgon",
     "photoSmall": "https://i.scdn.co/image/ab6761610000f1782ede878136398159c410d944",
     "spotifyId": "1y8zVPVwBdLUb6XaMeOwsj",
     "spotifyUrl": "https://open.spotify.com/artist/1y8zVPVwBdLUb6XaMeOwsj"
@@ -5039,10 +4656,7 @@
     "name": "Silverbacks",
     "genres": [
       "indie rock",
-      "post-punk",
-      "crank wave",
-      "art punk",
-      "post-brexit new wave"
+      "post-punk"
     ],
     "source": "wiki-direct-en+spotify",
     "mbid": "85e28ce6-1fa6-4c6e-86fb-b27a81a59b96",
@@ -5087,12 +4701,7 @@
   "Smile": {
     "name": "Smile",
     "genres": [
-      "visual kei",
-      "rock",
-      "classic rock",
-      "hard rock",
-      "brian may",
-      "pre-queen"
+      "visual kei"
     ],
     "source": "wiki-direct-en",
     "mbid": "eda488c0-0581-4342-a3f8-fc76bf753f42",
@@ -5103,17 +4712,14 @@
   },
   "Smudged": {
     "name": "Smudged",
-    "genres": [
-      "krautrock",
-      "electro",
-      "psych"
-    ],
-    "source": "wiki-direct-en",
+    "genres": [],
+    "source": "spotify",
     "mbid": "11fdd37d-7989-4b44-b538-6f9f73264d8e",
     "type": "Group",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Kat_Bjelland_1992_%28crop%29.jpg/330px-Kat_Bjelland_1992_%28crop%29.jpg",
-    "summary": "Kinderwhore is a fashion style most notably worn by some female grunge and alternative rock musicians in the US during the early to mid-1990s. The style is characterized through the combination of cute, feminine fashion items like babydoll and Peter Pan collared dresses, with more adult aspects like smudged red lipstick and dark eye makeup. It has its origins in the mid-1980s band Pagan Babies, which featured future Babes in Toyland vocalist/guitarist Kat Bjelland and future Hole vocalist/guitarist Courtney Love, who lived together and shared clothes. Following the band's disbandment, the two's subsequent bands achieved significant mainstream success and led to the fashion being popularised amongst the general public and being referenced by high fashion designers including Marc Jacobs.",
-    "wiki": "https://en.wikipedia.org/wiki/Kinderwhore"
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb68956183b25c8afd27c7418f",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17868956183b25c8afd27c7418f",
+    "spotifyId": "6f0EyrNSov8s8uYRUwTHRm",
+    "spotifyUrl": "https://open.spotify.com/artist/6f0EyrNSov8s8uYRUwTHRm"
   },
   "Snail Mail": {
     "name": "Snail Mail",
@@ -5349,17 +4955,14 @@
   },
   "Star City": {
     "name": "Star City",
-    "genres": [
-      "disco",
-      "disco funk",
-      "soul"
-    ],
-    "source": "wiki-direct-en",
+    "genres": [],
+    "source": "spotify",
     "mbid": "c2978a3f-311c-48d7-a112-22e6f99c92ca",
     "type": "Group",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/BradySeals.jpg/330px-BradySeals.jpg",
-    "summary": "Brady Seals is an American country music artist. He is the cousin of Jim Seals and Dan Seals, Johnny Duncan, the nephew of Troy Seals. Seals made his debut in 1988 as co-lead vocalist and keyboardist in the sextet Little Texas, with whom he recorded until his departure in late 1994. Between then and 2002, he recorded as a solo singer, releasing three studio albums and charting in the Top 40 on the country charts with \"Another You, Another Me\". In 2002, Seals formed a quartet called Hot Apple Pie, in which he has recorded one studio album and charted three singles. A fourth solo album, Play Time, was released in 2009 via Star City.",
-    "wiki": "https://en.wikipedia.org/wiki/Brady_Seals"
+    "photo": "https://i.scdn.co/image/ab67616d0000b2733ce6ded3cf57a1ad99642605",
+    "photoSmall": "https://i.scdn.co/image/ab67616d000048513ce6ded3cf57a1ad99642605",
+    "spotifyId": "10MvrIw3nVwfA2z2RQolMl",
+    "spotifyUrl": "https://open.spotify.com/artist/10MvrIw3nVwfA2z2RQolMl"
   },
   "Structures": {
     "name": "Structures",
@@ -5382,19 +4985,10 @@
   },
   "Stuck": {
     "name": "Stuck",
-    "genres": [
-      "post-punk",
-      "noise rock",
-      "crank wave",
-      "egg punk",
-      "post-hardcore"
-    ],
-    "source": "wiki-direct-en",
+    "genres": [],
+    "source": "mb-only",
     "mbid": "5cbfc7c0-eeea-44dc-9ef8-fb0e9d07c310",
-    "type": "Group",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Saint_Asonia_Rotr_2015_%28109533995%29.jpeg/330px-Saint_Asonia_Rotr_2015_%28109533995%29.jpeg",
-    "summary": "Corey French Lowery is an American musician, songwriter, record producer and engineer. He is the guitarist and backing vocalist for South African rock band Seether, and a former member of Saint Asonia, Stuck Mojo, Stereomud, Eye Empire, and Dark New Day. He is the brother of Clint Lowery.",
-    "wiki": "https://en.wikipedia.org/wiki/Corey_Lowery"
+    "type": "Group"
   },
   "Sunbrella": {
     "name": "Sunbrella",
@@ -5432,9 +5026,7 @@
       "fruit psych",
       "garage rock",
       "indie rock",
-      "krautrock",
-      "psychedelic rock",
-      "psychedelic"
+      "krautrock"
     ],
     "source": "wiki-direct-en+spotify",
     "mbid": "c21a3572-0080-4ef6-8734-b8868c1bad76",
@@ -5713,12 +5305,7 @@
   },
   "The Grogans": {
     "name": "The Grogans",
-    "genres": [
-      "surf",
-      "surf rock",
-      "rock",
-      "garage rock"
-    ],
+    "genres": [],
     "source": "wiki-direct-en+spotify",
     "mbid": "07c7e786-9ab7-4371-bd11-78a129f379f0",
     "type": "Group",
@@ -5742,14 +5329,10 @@
   },
   "The Ib": {
     "name": "The Ib",
-    "genres": [
-      "creepshow"
-    ],
-    "source": "wiki-direct-en",
+    "genres": [],
+    "source": "mb-only",
     "mbid": "62784fa9-9301-42f4-90d3-4cf4b911a125",
-    "type": "Group",
-    "summary": "Ib Niels Carl Glindemann Nielsen was a Danish jazz musician and the leader of the Ib Glindemann Orchestra. Saxophonist Stan Getz frequently appeared with them as a guest star when he was in Europe.",
-    "wiki": "https://en.wikipedia.org/wiki/Ib_Glindemann"
+    "type": "Group"
   },
   "The Itch": {
     "name": "The Itch",
@@ -5775,18 +5358,14 @@
   },
   "The Judges": {
     "name": "The Judges",
-    "genres": [
-      "gabber",
-      "garage rock",
-      "hardcore",
-      "hardcore techno"
-    ],
-    "source": "wiki-direct-en",
+    "genres": [],
+    "source": "spotify",
     "mbid": "82417e00-0206-473c-904d-e8422deb9722",
     "type": "Group",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Orup_2014-02-21_002.jpg/330px-Orup_2014-02-21_002.jpg",
-    "summary": "Hans Thomas Eriksson, known by his stage name Orup, is a Swedish singer, songwriter and musician who enjoyed major success in his native country and Scandinavia in the late 1980s and early 1990s with songs like \"Jag blir hellre jagad av vargar\", \"Regn hos mej\", \"M.B.\", \"Då står pojkarna på rad\", \"Magaluf\", and \"Stockholm\". Orup has also written several songs for other performers. He wrote the winning song of Melodifestivalen 2004, \"Det gör ont\" performed by Lena Philipsson. He was one of the judges on X Factor in 2012. Orup also took part in season 5 of the Swedish TV-show Så mycket bättre, broadcast on TV4.",
-    "wiki": "https://en.wikipedia.org/wiki/Orup"
+    "photo": "https://i.scdn.co/image/ab67616d0000b273281b61766684711bc66f0b69",
+    "photoSmall": "https://i.scdn.co/image/ab67616d00004851281b61766684711bc66f0b69",
+    "spotifyId": "0KzvkkDp7iK2eUICIYQy6N",
+    "spotifyUrl": "https://open.spotify.com/artist/0KzvkkDp7iK2eUICIYQy6N"
   },
   "The Last Dinner Party": {
     "name": "The Last Dinner Party",
@@ -5827,10 +5406,7 @@
     "name": "The Lounge Society",
     "genres": [
       "post-punk",
-      "crank wave",
-      "art punk",
-      "indie rock",
-      "dance-punk"
+      "windmill scene"
     ],
     "source": "wiki-direct-en+spotify",
     "mbid": "2dedfbcd-3ad5-4f23-988a-b4454730a969",
@@ -5893,9 +5469,7 @@
       "avant-garde",
       "cello",
       "folk rock",
-      "indie folk",
-      "folk",
-      "punk"
+      "indie folk"
     ],
     "source": "wiki-direct-en",
     "mbid": "79f00775-ee27-4975-9b58-72f55448dc08",
@@ -6030,13 +5604,7 @@
   },
   "The Wheel": {
     "name": "The Wheel",
-    "genres": [
-      "indie",
-      "folk",
-      "singer-songwriter",
-      "acoustic",
-      "hard rock"
-    ],
+    "genres": [],
     "source": "wiki-direct-en+spotify",
     "mbid": "84e4841e-9cd0-478b-a986-5949e97928ca",
     "type": "Group",
@@ -6064,16 +5632,8 @@
   },
   "Tirage": {
     "name": "Tirage",
-    "genres": [
-      "electronic",
-      "house",
-      "deep-house",
-      "deep house"
-    ],
-    "source": "wiki-direct-en",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Louis_Levy_1.jpg/330px-Louis_Levy_1.jpg",
-    "summary": "Paradis is a French electronic music duo consisting of Simon Mény and Pierre Rousseau. The duo was latest signed to Universal label Barclay. They grew to fame after releasing their first 12\" single on Beats In Space titled Parfait Tirage featuring a cover of Alain Souchon's \"La Ballade de Jim\". The duo have appeared on the French DJ scene with sets at Nuits Sonores and Rex Club.",
-    "wiki": "https://en.wikipedia.org/wiki/Paradis_(duo)"
+    "genres": [],
+    "source": "none"
   },
   "Theatre": {
     "name": "Theatre",
@@ -6237,19 +5797,10 @@
   },
   "UGLY": {
     "name": "UGLY",
-    "genres": [
-      "sludge",
-      "jazz",
-      "doom",
-      "hardcore",
-      "crossover"
-    ],
-    "source": "wiki-direct-en",
+    "genres": [],
+    "source": "mb-only",
     "mbid": "bfc1304c-b6e1-43ec-b952-a643732b5c8e",
-    "type": "Group",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Ugly_Kid_Joe_au_Hellfest_2022_%28cropped%29.jpg/330px-Ugly_Kid_Joe_au_Hellfest_2022_%28cropped%29.jpg",
-    "summary": "Ugly Kid Joe is an American hard rock band from Isla Vista, California, formed in 1989. The band's name spoofs the glam metal band Pretty Boy Floyd's name.",
-    "wiki": "https://en.wikipedia.org/wiki/Ugly_Kid_Joe"
+    "type": "Group"
   },
   "Unschooling": {
     "name": "Unschooling",
@@ -6269,19 +5820,10 @@
   },
   "Ugly": {
     "name": "Ugly",
-    "genres": [
-      "sludge",
-      "jazz",
-      "doom",
-      "hardcore",
-      "crossover"
-    ],
-    "source": "wiki-direct-en",
+    "genres": [],
+    "source": "mb-only",
     "mbid": "bfc1304c-b6e1-43ec-b952-a643732b5c8e",
-    "type": "Group",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Ugly_Kid_Joe_au_Hellfest_2022_%28cropped%29.jpg/330px-Ugly_Kid_Joe_au_Hellfest_2022_%28cropped%29.jpg",
-    "summary": "Ugly Kid Joe is an American hard rock band from Isla Vista, California, formed in 1989. The band's name spoofs the glam metal band Pretty Boy Floyd's name.",
-    "wiki": "https://en.wikipedia.org/wiki/Ugly_Kid_Joe"
+    "type": "Group"
   },
   "University": {
     "name": "University",
@@ -6478,10 +6020,7 @@
   },
   "Welly": {
     "name": "Welly",
-    "genres": [
-      "post-punk",
-      "art punk"
-    ],
+    "genres": [],
     "source": "wiki-direct-en",
     "mbid": "b2f5b24f-4146-417f-b6e0-e8e9cc4a495a",
     "type": "Group",
@@ -6510,10 +6049,7 @@
   "Westside Cowboy": {
     "name": "Westside Cowboy",
     "genres": [
-      "indie rock",
-      "alt-country",
-      "indie",
-      "americana"
+      "indie rock"
     ],
     "source": "wiki-direct-en",
     "mbid": "243e9a4d-f824-4ec2-8967-09907f954c56",
@@ -6597,10 +6133,7 @@
     "name": "Wombo",
     "genres": [
       "indie rock",
-      "post-punk",
-      "crank wave",
-      "art punk",
-      "psychedelic rock"
+      "post-punk"
     ],
     "source": "wiki-direct-en+spotify",
     "mbid": "46b02238-8b8e-457b-8ff5-56452a1d5842",
@@ -6616,12 +6149,8 @@
     "name": "Wunderhorse",
     "genres": [
       "rock",
-      "tge24",
-      "indie rock",
-      "alternative rock",
-      "indie",
-      "grunge",
-      "post-punk"
+      "seen live",
+      "tge24"
     ],
     "source": "wiki-direct-en",
     "mbid": "5126db33-86ad-469d-88fb-4158350e1515",
@@ -6670,18 +6199,10 @@
   },
   "YARD": {
     "name": "YARD",
-    "genres": [
-      "techno",
-      "lounge",
-      "noise",
-      "idm"
-    ],
-    "source": "wiki-direct-en",
+    "genres": [],
+    "source": "mb-only",
     "mbid": "684c6e8a-88e1-4345-bf9f-ffcb7b7f2b7c",
-    "type": "Person",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Jack_Endino_01.jpg/330px-Jack_Endino_01.jpg",
-    "summary": "Jack Endino is an American producer and musician based in Seattle, Washington. Long associated with Seattle label Sub Pop and the grunge movement, Endino worked on seminal albums from bands including Mudhoney, Soundgarden and Nirvana. He was also the guitarist for Seattle band Skin Yard, which was active between 1985 and 1992. He played guitar in Sky Cries Mary on three albums, from 2018-2024.",
-    "wiki": "https://en.wikipedia.org/wiki/Jack_Endino"
+    "type": "Person"
   },
   "Yabba": {
     "name": "Yabba",
@@ -6897,19 +6418,14 @@
   },
   "marcel": {
     "name": "marcel",
-    "genres": [
-      "country",
-      "downtempo",
-      "lounge",
-      "electronic",
-      "atmospheric"
-    ],
-    "source": "wiki-direct-en",
+    "genres": [],
+    "source": "spotify",
     "mbid": "e2d6f247-5fbe-401f-a56e-a3734d03d134",
     "type": "Person",
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Marcel_Jacob_promo_01.jpg/330px-Marcel_Jacob_promo_01.jpg",
-    "summary": "Marcel Karl Jacob was a Swedish musician, best known as the founder, chief songwriter, and bassist of the hard rock band Talisman. For a brief period, he also played in the band Europe and with Yngwie Malmsteen. Jacob was also a skilled lead guitarist, occasionally playing guitar solos on albums where he felt the guitarist did not perform to his standards.",
-    "wiki": "https://en.wikipedia.org/wiki/Marcel_Jacob"
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb54a0142bdc39aa89ffc5cb62",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17854a0142bdc39aa89ffc5cb62",
+    "spotifyId": "3xu1RkEm6bCSzW7xDrbp0O",
+    "spotifyUrl": "https://open.spotify.com/artist/3xu1RkEm6bCSzW7xDrbp0O"
   },
   "toe": {
     "name": "toe",
@@ -6928,11 +6444,7 @@
   },
   "万年青年旅店": {
     "name": "万年青年旅店",
-    "genres": [
-      "rock",
-      "progressive rock",
-      "art rock"
-    ],
+    "genres": [],
     "source": "wiki-direct-zh",
     "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Omnipotent_Youth_Society_in_Fuzhou_20190101.jpg/330px-Omnipotent_Youth_Society_in_Fuzhou_20190101.jpg",
     "summary": "万能青年旅店，是中国河北石家庄的一支独立摇滚乐队，主要由董亚千、史立、姬赓和冯江等多名成员组成，其成员流动性较大。在1996年乐队成立时叫做The Nico，2002年时更改为现名称。2010年出版首张同名专辑《万能青年旅店》。时隔十年后，在2020年出版第二张专辑《冀西南林路行》。\n",

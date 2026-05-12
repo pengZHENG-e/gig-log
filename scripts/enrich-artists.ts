@@ -179,11 +179,13 @@ async function fetchWiki(title: string, lang = "en"): Promise<WikiResult> {
   };
 }
 
-// Confirm a wikipedia page title is actually about the artist by checking its summary for music-related signals.
+// Confirm a wikipedia page title is actually about the artist by checking its summary for STRONG music signals.
+// Single-word genres like "rock"/"pop"/"folk" are too ambiguous — they match non-music articles
+// (e.g. the "Chalk" wiki summary about sedimentary rock matched the old regex).
 function summaryLooksMusical(extract: string | undefined, lang: string): boolean {
   if (!extract) return false;
   if (lang === "zh") return /乐队|樂團|歌手|音樂|音乐|樂團|乐团|乐手|樂手|專輯|专辑|唱片|主唱/.test(extract);
-  return /\b(band|musician|singer|songwriter|rapper|composer|guitarist|drummer|bassist|vocalist|musical group|recording artist|music duo|hip hop|rock|pop|electronic|jazz|punk|metal|folk|indie)\b/i.test(extract);
+  return /\b(band|musician|singer|songwriter|rapper|composer|guitarist|drummer|bassist|vocalist|musical group|recording artist|music duo|hip[ -]hop|punk rock|rock band|metal band|indie rock|indie pop|post-punk|new wave|pop music|rock music|folk music|electronic music)\b/i.test(extract);
 }
 
 // Try direct article fetch with disambiguation suffixes (parallel) before falling back to fuzzy search.
@@ -217,12 +219,16 @@ async function findWikiByName(name: string, lang = "en"): Promise<{ title: strin
   const nLow = name.toLowerCase();
   for (const { h, res } of verified) {
     if (res.summary && summaryLooksMusical(res.summary, lang)) {
-      const tLow = h.title.toLowerCase();
-      const shared = lang === "zh"
-        ? [...name].filter(c => h.title.includes(c)).length / [...name].length
-        : 0;
-      if (tLow.includes(nLow) || res.summary.toLowerCase().includes(nLow) || shared >= 0.5) {
-        return { title: h.title, result: res };
+      const tLow = String(h.title).toLowerCase();
+      if (lang === "zh") {
+        const shared = [...name].filter(c => h.title.includes(c)).length / [...name].length;
+        if (shared >= 0.5) return { title: h.title, result: res };
+      } else {
+        // Strict: title must be exactly the name, or "{name} (disambiguation)".
+        // Avoids "Chalk" → "Chalkley Beeson" via substring match.
+        if (tLow === nLow || tLow.startsWith(nLow + " (")) {
+          return { title: h.title, result: res };
+        }
       }
     }
   }
