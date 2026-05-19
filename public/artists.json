@@ -351,10 +351,7 @@
   },
   "Bedroom Vacation": {
     "name": "Bedroom Vacation",
-    "genres": [
-      "indie",
-      "indie rock"
-    ],
+    "genres": [],
     "source": "mb-only",
     "mbid": "fb73f3ce-453d-4f46-9600-c7beddacd146",
     "type": "Group"
@@ -1262,9 +1259,7 @@
   "Deliluh": {
     "name": "Deliluh",
     "genres": [
-      "art rock",
-      "post-punk",
-      "experimental"
+      "art rock"
     ],
     "source": "mb-only",
     "mbid": "eb56c5c5-fe66-420e-9e26-19e8cee5b080",
@@ -1272,13 +1267,7 @@
   },
   "Deep Tan": {
     "name": "Deep Tan",
-    "genres": [
-      "post-punk",
-      "crank wave",
-      "post-brexit new wave",
-      "new wave",
-      "art punk"
-    ],
+    "genres": [],
     "source": "mb-only",
     "mbid": "2ba993ec-2606-4505-a3bb-f401ab688def",
     "type": "Group"
@@ -1439,12 +1428,7 @@
   "Dr Sure's Unusual Practice": {
     "name": "Dr Sure's Unusual Practice",
     "genres": [
-      "spotify boycott",
-      "post-punk",
-      "new wave",
-      "art punk",
-      "punk rock",
-      "egg punk"
+      "spotify boycott"
     ],
     "source": "mb-only",
     "mbid": "95ea4b79-8c45-4696-8413-8f92019de03f",
@@ -1521,11 +1505,7 @@
     "genres": [
       "hard rock",
       "blues rock",
-      "heavy psych",
-      "classic rock",
-      "stoner rock",
-      "heavy metal",
-      "early metal"
+      "heavy psych"
     ],
     "source": "mb-wikidata-en",
     "mbid": "b2828b9e-98c0-4624-8e0f-f423bd141efb",
@@ -1694,9 +1674,13 @@
   "FEET": {
     "name": "FEET",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "e9e02b3f-67d1-42de-9fd4-ef351da13aca",
-    "type": "Group"
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb1f7a5cc89026b43534a1d3bf",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1781f7a5cc89026b43534a1d3bf",
+    "spotifyId": "7HeBQpJ3UmyybgEvqfdRAE",
+    "spotifyUrl": "https://open.spotify.com/artist/7HeBQpJ3UmyybgEvqfdRAE"
   },
   "FEWS": {
     "name": "FEWS",
@@ -2083,10 +2067,8 @@
   "Ghost Woman": {
     "name": "Ghost Woman",
     "genres": [
-      "psychedelic rock",
-      "rock",
-      "indie rock",
-      "post-punk"
+      "blues rock",
+      "garage rock"
     ],
     "source": "mb-only",
     "mbid": "9086fc25-28e8-442c-8af6-64c6f254cbfa",
@@ -2795,14 +2777,14 @@
   },
   "Jon K": {
     "name": "Jon K",
-    "genres": [
-      "house",
-      "indie",
-      "techno"
-    ],
-    "source": "mb-only",
+    "genres": [],
+    "source": "spotify",
     "mbid": "e734c9b3-8922-4bcb-969b-0752f313f578",
-    "type": null
+    "type": null,
+    "photo": "https://i.scdn.co/image/ab67616d0000b2731c524c80df0ccd4c59ac5b8d",
+    "photoSmall": "https://i.scdn.co/image/ab67616d000048511c524c80df0ccd4c59ac5b8d",
+    "spotifyId": "7mTKfxjZU6aQJXVYHmkXu9",
+    "spotifyUrl": "https://open.spotify.com/artist/7mTKfxjZU6aQJXVYHmkXu9"
   },
   "Keziah Jones & Philippe Cohen Solal": {
     "name": "Keziah Jones & Philippe Cohen Solal",
@@ -2965,11 +2947,7 @@
   "LIFE": {
     "name": "LIFE",
     "genres": [
-      "hip hop",
-      "crust",
-      "screamo",
-      "hardcore",
-      "crust punk"
+      "hip hop"
     ],
     "source": "mb-only",
     "mbid": "f2e99aa1-4861-4b8f-b55e-bd088c0715ea",
@@ -2999,9 +2977,7 @@
     "genres": [
       "art punk",
       "new wave",
-      "post-punk",
-      "garage rock",
-      "indie rock"
+      "post-punk"
     ],
     "source": "mb-wikidata-en",
     "mbid": "a03666b0-23ba-455f-bc74-1e8a7140fed3",
@@ -3666,7 +3642,11 @@
   "Nasty Joe": {
     "name": "Nasty Joe",
     "genres": [],
-    "source": "none"
+    "source": "spotify",
+    "photo": "https://i.scdn.co/image/ab67616d0000b27372975c053185758bb07ace24",
+    "photoSmall": "https://i.scdn.co/image/ab67616d0000485172975c053185758bb07ace24",
+    "spotifyId": "6yhQUqqE3xLIIw5BNNUBtv",
+    "spotifyUrl": "https://open.spotify.com/artist/6yhQUqqE3xLIIw5BNNUBtv"
   },
   "Mush": {
     "name": "Mush",
@@ -3916,7 +3896,8 @@
     "name": "Ottis Coeur",
     "genres": [],
     "source": "mb-only",
-    "mbid": "dd153001-c3b5-4e2f-81e3-596237e8e991"
+    "mbid": "dd153001-c3b5-4e2f-81e3-596237e8e991",
+    "type": "Group"
   },
   "Panic Shake": {
     "name": "Panic Shake",
@@ -4086,25 +4067,17 @@
   },
   "Pom": {
     "name": "Pom",
-    "genres": [
-      "indie",
-      "guitar virtuoso",
-      "rock"
-    ],
+    "genres": [],
     "source": "mb-only",
-    "mbid": "c173f406-f7f0-44a3-becc-555a24db83d2"
+    "mbid": "c173f406-f7f0-44a3-becc-555a24db83d2",
+    "type": "Group"
   },
   "Pop Vulture": {
     "name": "Pop Vulture",
-    "genres": [
-      "post-punk",
-      "garage rock",
-      "new wave",
-      "garage punk",
-      "noise rock"
-    ],
+    "genres": [],
     "source": "mb-only",
-    "mbid": "abd3a8d3-97d8-4d95-994a-9b834aef7d82"
+    "mbid": "abd3a8d3-97d8-4d95-994a-9b834aef7d82",
+    "type": "Group"
   },
   "Porchlight": {
     "name": "Porchlight",
@@ -4144,19 +4117,17 @@
   "Poté": {
     "name": "Poté",
     "genres": [],
-    "source": "mb-only",
+    "source": "spotify",
     "mbid": "ba0f7472-5b18-470f-94e0-c311fa68b4aa",
-    "type": "Person"
+    "type": "Person",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb9301fb1427f388bbbf2be53a",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1789301fb1427f388bbbf2be53a",
+    "spotifyId": "4mHvZlo1KyW4kW3F1FE1q5",
+    "spotifyUrl": "https://open.spotify.com/artist/4mHvZlo1KyW4kW3F1FE1q5"
   },
   "Pozi": {
     "name": "Pozi",
-    "genres": [
-      "crank wave",
-      "post-punk",
-      "post-brexit new wave",
-      "indie rock",
-      "art punk"
-    ],
+    "genres": [],
     "source": "mb-only",
     "mbid": "d0b33951-13e0-4fa9-86b4-a621d0652e18",
     "type": "Group"
@@ -5556,11 +5527,7 @@
   },
   "The Ringards": {
     "name": "The Ringards",
-    "genres": [
-      "post-punk",
-      "punk rock",
-      "art punk"
-    ],
+    "genres": [],
     "source": "mb-only",
     "mbid": "a789b5db-880e-44bf-acd6-80e1d13b833e",
     "type": "Group"
@@ -5769,9 +5736,7 @@
   },
   "Tummy Ache": {
     "name": "Tummy Ache",
-    "genres": [
-      "t1234 found on radio - check more"
-    ],
+    "genres": [],
     "source": "mb-only",
     "mbid": "30255d79-09f2-43d3-b8f6-c996036e47e0",
     "type": null
@@ -6239,13 +6204,7 @@
   },
   "Yowl": {
     "name": "Yowl",
-    "genres": [
-      "post-punk",
-      "crank wave",
-      "post-brexit new wave",
-      "indie rock",
-      "art punk"
-    ],
+    "genres": [],
     "source": "mb-only",
     "mbid": "3a5b4e7b-ac9e-469e-ac84-af27a5d27bee",
     "type": "Group"
@@ -6332,11 +6291,7 @@
   },
   "caroline": {
     "name": "caroline",
-    "genres": [
-      "electronic",
-      "indie",
-      "electronica"
-    ],
+    "genres": [],
     "source": "mb-wikidata-en",
     "mbid": "5d4a025e-4499-428a-93e8-7dd3a2d767d0",
     "type": "Person",
@@ -6405,12 +6360,7 @@
     "name": "leather.head",
     "genres": [
       "art rock",
-      "experimental rock",
-      "post-punk",
-      "emo",
-      "art punk",
-      "experimental",
-      "indie"
+      "experimental rock"
     ],
     "source": "mb-only",
     "mbid": "6108972f-6789-4444-b0fd-b6ed896831e6",
@@ -6483,5 +6433,217 @@
     "photoSmall": "https://i.scdn.co/image/ab67616d000048519b650e2ae8c54e4ff4dd407c",
     "spotifyId": "7wTFRSUv788d2ooZoWzrQt",
     "spotifyUrl": "https://open.spotify.com/artist/7wTFRSUv788d2ooZoWzrQt"
+  },
+  "1000 Rabbits": {
+    "name": "1000 Rabbits",
+    "genres": [],
+    "source": "spotify",
+    "mbid": "925c910a-122b-4c6a-8128-84862fd04f8c",
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eba09f3fe8ba0a73a7c297094e",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178a09f3fe8ba0a73a7c297094e",
+    "spotifyId": "6KouMFgMa5zEeyXaeg6fvA",
+    "spotifyUrl": "https://open.spotify.com/artist/6KouMFgMa5zEeyXaeg6fvA"
+  },
+  "Adele Dazeem": {
+    "name": "Adele Dazeem",
+    "genres": [],
+    "source": "spotify",
+    "mbid": "51087656-2eb9-4170-adf0-aa4155cc4387",
+    "type": null,
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb13c4243dba6af863fe63b833",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17813c4243dba6af863fe63b833",
+    "spotifyId": "2Nuu96rnFvGb6vol06jbLr",
+    "spotifyUrl": "https://open.spotify.com/artist/2Nuu96rnFvGb6vol06jbLr"
+  },
+  "Blood Wizzard": {
+    "name": "Blood Wizzard",
+    "genres": [],
+    "source": "none"
+  },
+  "Girl Group": {
+    "name": "Girl Group",
+    "genres": [],
+    "source": "mb-wiki-en+spotify",
+    "mbid": "682a71b1-7780-448a-ab97-596b91d80c2d",
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb9c5bba3d225d4b4bd45542bb",
+    "summary": "Girl Group are a British-Norwegian band based in Liverpool, consisting of members Katya Birkeland, Lily Christlow, Thea Gundersen, Mia Halvorsen and Maria Tollisen. After becoming friends whilst attending the Liverpool Institute for Performing Arts, they made their debut in 2023. They have since released the extended plays Think They're Looking, Let's Perform in 2025 and Little Sticky Pictures in 2026.",
+    "wiki": "https://en.wikipedia.org/wiki/Girl_Group_(band)",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1789c5bba3d225d4b4bd45542bb",
+    "spotifyId": "4v9htNDv5ZTWn8JiMZx7S4",
+    "spotifyUrl": "https://open.spotify.com/artist/4v9htNDv5ZTWn8JiMZx7S4"
+  },
+  "Jennifer Walton": {
+    "name": "Jennifer Walton",
+    "genres": [],
+    "source": "wiki-direct-en",
+    "mbid": "d193f3e0-6a9a-4ddf-99d2-6e7beeabc22a",
+    "type": "Person",
+    "photo": "https://upload.wikimedia.org/wikipedia/en/9/99/Icarus_Cryalot.jpg",
+    "summary": "Icarus is the debut EP of Cryalot, a solo project by Kero Kero Bonito vocalist Sarah Midori Perry, released 2 September 2022 by AWAL.",
+    "wiki": "https://en.wikipedia.org/wiki/Icarus_(EP)"
+  },
+  "Little Grandad": {
+    "name": "Little Grandad",
+    "genres": [],
+    "source": "spotify",
+    "mbid": "4d60a679-0156-43c2-8bcd-fc19fb99060c",
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb11529e85f3cabb95836ecf69",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17811529e85f3cabb95836ecf69",
+    "spotifyId": "1Mgr4JJnFwPk3FHbu09wAl",
+    "spotifyUrl": "https://open.spotify.com/artist/1Mgr4JJnFwPk3FHbu09wAl"
+  },
+  "Maddie Ashman": {
+    "name": "Maddie Ashman",
+    "genres": [],
+    "source": "spotify",
+    "mbid": "f69b0161-4c19-4e2d-9ff6-d14d55042b56",
+    "type": "Person",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebe8d53bef58257bdc064a044e",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178e8d53bef58257bdc064a044e",
+    "spotifyId": "0kUfq7dUYNktJeT3OgFhtO",
+    "spotifyUrl": "https://open.spotify.com/artist/0kUfq7dUYNktJeT3OgFhtO"
+  },
+  "Night Swimming": {
+    "name": "Night Swimming",
+    "genres": [
+      "dream pop"
+    ],
+    "source": "spotify",
+    "mbid": "50724a56-1549-4c18-8851-c52023277efe",
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebd66d965c2273065db004fef5",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178d66d965c2273065db004fef5",
+    "spotifyId": "3e2PXYMu8ijWVUZOhgU018",
+    "spotifyUrl": "https://open.spotify.com/artist/3e2PXYMu8ijWVUZOhgU018"
+  },
+  "RHE DSM IV": {
+    "name": "RHE DSM IV",
+    "genres": [],
+    "source": "none"
+  },
+  "Ringards": {
+    "name": "Ringards",
+    "genres": [],
+    "source": "spotify",
+    "mbid": "a789b5db-880e-44bf-acd6-80e1d13b833e",
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb86ca12f5ea541691a9ad42d7",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17886ca12f5ea541691a9ad42d7",
+    "spotifyId": "2ZdOF65gPaO3xW7DsUXlZ7",
+    "spotifyUrl": "https://open.spotify.com/artist/2ZdOF65gPaO3xW7DsUXlZ7"
+  },
+  "SILVERWINGKILLER": {
+    "name": "SILVERWINGKILLER",
+    "genres": [],
+    "source": "spotify",
+    "mbid": "83c235a2-d929-4822-89e2-944b0a22ba0f",
+    "type": null,
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebc30cf7945199c84ff4087efa",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178c30cf7945199c84ff4087efa",
+    "spotifyId": "01fAmVDgOqwXenvB9TWVCu",
+    "spotifyUrl": "https://open.spotify.com/artist/01fAmVDgOqwXenvB9TWVCu"
+  },
+  "Skinner": {
+    "name": "Skinner",
+    "genres": [],
+    "source": "spotify",
+    "mbid": "8040f58f-d3ef-4e13-9196-66e119ec51a5",
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb56948f09d8e720cede034933",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17856948f09d8e720cede034933",
+    "spotifyId": "2Se7imfs8bxem8G6oVNABJ",
+    "spotifyUrl": "https://open.spotify.com/artist/2Se7imfs8bxem8G6oVNABJ"
+  },
+  "Soft": {
+    "name": "Soft",
+    "genres": [],
+    "source": "wiki-direct-en+spotify",
+    "mbid": "f6d996cd-d9dd-4b3b-b877-e691824ce4e9",
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebaa4082632db933b48141fbbc",
+    "summary": "Soft is an American indie rock band from New York City.",
+    "wiki": "https://en.wikipedia.org/wiki/Soft_(band)",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178aa4082632db933b48141fbbc",
+    "spotifyId": "1Qt3C5zY63E7EYJvkVlL5W",
+    "spotifyUrl": "https://open.spotify.com/artist/1Qt3C5zY63E7EYJvkVlL5W"
+  },
+  "The Bernadettes Maries": {
+    "name": "The Bernadettes Maries",
+    "genres": [],
+    "source": "none"
+  },
+  "Sword II": {
+    "name": "Sword II",
+    "genres": [],
+    "source": "wiki-direct-en+spotify",
+    "mbid": "0c9d1ed2-8896-4e05-a2c1-a317ef8f064e",
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb0fdc295fdc1d8701e7e2d999",
+    "summary": "Sword II is an American rock band composed of Mari González, Certain Zuko, and Travis Arnold. They are based in Atlanta, Georgia.",
+    "wiki": "https://en.wikipedia.org/wiki/Sword_II",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1780fdc295fdc1d8701e7e2d999",
+    "spotifyId": "0JYwNChldP4Ad3OC6U83zi",
+    "spotifyUrl": "https://open.spotify.com/artist/0JYwNChldP4Ad3OC6U83zi"
+  },
+  "The Family Men": {
+    "name": "The Family Men",
+    "genres": [],
+    "source": "spotify",
+    "mbid": "a75ddcdc-80b1-478f-aaa6-225844c0a8ac",
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb47e04bfe40fed89c81118d7f",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f17847e04bfe40fed89c81118d7f",
+    "spotifyId": "1ANDjinr8OtamQ6TCV2HBG",
+    "spotifyUrl": "https://open.spotify.com/artist/1ANDjinr8OtamQ6TCV2HBG"
+  },
+  "The North": {
+    "name": "The North",
+    "genres": [],
+    "source": "spotify",
+    "mbid": "3a32cfef-8400-4018-a349-ab8901b01f4a",
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebb44fb7fdd89f4082f4decc51",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178b44fb7fdd89f4082f4decc51",
+    "spotifyId": "2DOGRYfLhyYwjyBNeYIM6v",
+    "spotifyUrl": "https://open.spotify.com/artist/2DOGRYfLhyYwjyBNeYIM6v"
+  },
+  "Yaang": {
+    "name": "Yaang",
+    "genres": [
+      "alternative dance",
+      "alternative rock",
+      "dance-punk",
+      "post-punk"
+    ],
+    "source": "spotify",
+    "mbid": "cd9d5554-a52b-4e6f-a03c-cb1529e12ca0",
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebed2d264b4c369fbfc44b738d",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178ed2d264b4c369fbfc44b738d",
+    "spotifyId": "35CNODI0rTcPk946a2fXP0",
+    "spotifyUrl": "https://open.spotify.com/artist/35CNODI0rTcPk946a2fXP0"
+  },
+  "a.gris": {
+    "name": "a.gris",
+    "genres": [],
+    "source": "spotify",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb644a5c8a3cce7da370200c14",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178644a5c8a3cce7da370200c14",
+    "spotifyId": "7rfnPqFnq2zKeTe55Dv96m",
+    "spotifyUrl": "https://open.spotify.com/artist/7rfnPqFnq2zKeTe55Dv96m"
+  },
+  "triage": {
+    "name": "triage",
+    "genres": [],
+    "source": "spotify",
+    "mbid": "dd7032ef-3b97-47ee-8a4b-0a55e3daf417",
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb0b4ef66ad6a44048f1deb331",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f1780b4ef66ad6a44048f1deb331",
+    "spotifyId": "2oCn9rsy1Pt7Jgkwk56Zf9",
+    "spotifyUrl": "https://open.spotify.com/artist/2oCn9rsy1Pt7Jgkwk56Zf9"
   }
 }
