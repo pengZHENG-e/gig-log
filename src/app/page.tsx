@@ -6,6 +6,8 @@ import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { useArtistMeta } from "@/lib/artists";
 import type { User } from "@supabase/supabase-js";
+import { CategoryView } from "@/components/CategoryView";
+import { CATEGORIES, CATEGORY_CONFIGS, type Category } from "@/lib/categories";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -40,7 +42,7 @@ interface Gig {
 
 const i18n = {
   zh: {
-    appName: "Gig Tracker",
+    appName: "Solaris",
     add: "+ 记录",
     langToggle: "EN",
     signOut: "退出登录",
@@ -168,7 +170,7 @@ const i18n = {
     dark: "🌙", light: "☀️",
   },
   en: {
-    appName: "Gig Tracker",
+    appName: "Solaris",
     add: "+ Add",
     langToggle: "中文",
     signOut: "Sign out",
@@ -2409,6 +2411,8 @@ export default function App() {
   const [lang, setLang] = useState<Lang>("zh");
   const [dark, setDark] = useState(false);
   const [tab, setTab] = useState<Tab>("home");
+  const [category, setCategory] = useState<Category>("gigs");
+  const [year, setYear] = useState<string>(String(new Date().getFullYear()));
   const [showForm, setShowForm] = useState(false);
   const [cmdkOpen, setCmdkOpen] = useState(false);
   const [globalGig, setGlobalGig] = useState<Gig | null>(null);
@@ -2429,8 +2433,12 @@ export default function App() {
   useEffect(() => {
     const savedLang = localStorage.getItem("gig-lang") as Lang;
     const savedDark = localStorage.getItem("gig-dark");
+    const savedCategory = localStorage.getItem("solaris-category") as Category | null;
+    const savedYear = localStorage.getItem("solaris-year");
     if (savedLang) setLang(savedLang);
     if (savedDark === "1") { setDark(true); document.documentElement.classList.add("dark"); }
+    if (savedCategory && CATEGORIES.includes(savedCategory)) setCategory(savedCategory);
+    if (savedYear) setYear(savedYear);
 
     supabase.auth.getSession().then(({ data }) => {
       const u = data.session?.user ?? null;
@@ -2458,6 +2466,9 @@ export default function App() {
     });
   }, [user]);
 
+  useEffect(() => { localStorage.setItem("solaris-category", category); }, [category]);
+  useEffect(() => { localStorage.setItem("solaris-year", year); }, [year]);
+
   const toggleLang = () => {
     const next: Lang = lang === "zh" ? "en" : "zh";
     setLang(next); localStorage.setItem("gig-lang", next);
@@ -2477,16 +2488,32 @@ export default function App() {
   );
   if (!user) return null;
 
+  const yearOptions = (() => {
+    const gigYears = gigs.map(g => g.date.slice(0, 4));
+    const now = new Date().getFullYear();
+    const all = new Set<string>(gigYears);
+    for (let y = now; y >= now - 4; y--) all.add(String(y));
+    return Array.from(all).sort((a, b) => Number(b) - Number(a));
+  })();
+
+  const isGigs = category === "gigs";
+
   return (
     <div className="max-w-xl mx-auto px-4 pb-24 pt-5 min-h-screen">
       {/* Header */}
-      <div className="flex items-center justify-between mb-5">
-        <h1 className="text-xl font-bold tracking-tight">{t.appName}</h1>
+      <div className="flex items-center justify-between mb-4">
+        <h1 className="text-xl font-bold tracking-tight">
+          <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            {t.appName}
+          </span>
+        </h1>
         <div className="flex items-center gap-2">
-          <button onClick={() => setCmdkOpen(true)} aria-label="Search"
-            className="h-9 w-9 flex items-center justify-center bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 text-gray-500 dark:text-slate-400 rounded-xl hover:border-indigo-400 transition-colors">
-            ⌕
-          </button>
+          {isGigs && (
+            <button onClick={() => setCmdkOpen(true)} aria-label="Search"
+              className="h-9 w-9 flex items-center justify-center bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 text-gray-500 dark:text-slate-400 rounded-xl hover:border-indigo-400 transition-colors">
+              ⌕
+            </button>
+          )}
           <SettingsMenu
             lang={lang} dark={dark}
             onToggleLang={toggleLang}
@@ -2496,7 +2523,7 @@ export default function App() {
             onProfile={() => setShowProfile(true)}
             onImport={() => setShowImport(true)}
           />
-          {tab === "home" && (
+          {(isGigs ? tab === "home" : true) && (
             <button onClick={() => setShowForm(v => !v)}
               className="h-9 px-4 bg-indigo-600 text-white rounded-xl text-sm font-medium hover:bg-indigo-700 shadow-sm transition-colors">
               {t.add}
@@ -2505,15 +2532,63 @@ export default function App() {
         </div>
       </div>
 
+      {/* Category switcher */}
+      <div className="flex gap-1.5 overflow-x-auto pb-2 mb-3 -mx-1 px-1" style={{ scrollbarWidth: "none" }}>
+        {CATEGORIES.map(c => {
+          const cfg = CATEGORY_CONFIGS[c];
+          const active = category === c;
+          return (
+            <button
+              key={c}
+              onClick={() => { setCategory(c); setShowForm(false); }}
+              className={`shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-medium transition-colors ${
+                active
+                  ? "bg-indigo-600 text-white shadow-sm"
+                  : "bg-white dark:bg-slate-800 text-gray-500 dark:text-slate-400 border border-gray-200 dark:border-slate-700 hover:border-indigo-400"
+              }`}
+            >
+              <span>{cfg.emoji}</span>
+              <span>{cfg.label[lang]}</span>
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Year picker (non-gigs only — Gigs has its own filters) */}
+      {!isGigs && (
+        <div className="flex items-center justify-end mb-3 gap-2">
+          <span className="text-xs text-gray-400 dark:text-slate-500">{lang === "zh" ? "年份" : "Year"}</span>
+          <select
+            value={year}
+            onChange={e => setYear(e.target.value)}
+            className="text-sm bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-indigo-400 cursor-pointer"
+          >
+            <option value="all">{lang === "zh" ? "全部" : "All time"}</option>
+            {yearOptions.map(y => <option key={y} value={y}>{y}</option>)}
+          </select>
+        </div>
+      )}
+
       {/* Content */}
-      {loadingGigs ? (
-        <div className="text-center py-24 text-gray-400 dark:text-slate-500">{t.loading}</div>
+      {isGigs ? (
+        loadingGigs ? (
+          <div className="text-center py-24 text-gray-400 dark:text-slate-500">{t.loading}</div>
+        ) : (
+          <>
+            {tab === "home" && <HomeTab gigs={gigs} setGigs={setGigs} lang={lang} showForm={showForm} setShowForm={setShowForm} user={user} profile={profile} />}
+            {tab === "stats" && <StatsTab gigs={gigs} lang={lang} onPickGig={g => setGlobalGig(g)} />}
+            {tab === "recap" && <RecapTab gigs={gigs} lang={lang} />}
+          </>
+        )
       ) : (
-        <>
-          {tab === "home" && <HomeTab gigs={gigs} setGigs={setGigs} lang={lang} showForm={showForm} setShowForm={setShowForm} user={user} profile={profile} />}
-          {tab === "stats" && <StatsTab gigs={gigs} lang={lang} onPickGig={g => setGlobalGig(g)} />}
-          {tab === "recap" && <RecapTab gigs={gigs} lang={lang} />}
-        </>
+        <CategoryView
+          category={category}
+          user={user}
+          lang={lang}
+          year={year}
+          showForm={showForm}
+          setShowForm={setShowForm}
+        />
       )}
 
       {showImport && user && (
@@ -2545,15 +2620,17 @@ export default function App() {
         />
       )}
 
-      {/* Bottom nav */}
-      <nav className="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-slate-800/90 backdrop-blur border-t border-gray-200 dark:border-slate-700 flex safe-bottom">
-        {([["home", t.nav.home], ["stats", t.nav.stats], ["recap", t.nav.recap]] as [Tab, string][]).map(([key, label]) => (
-          <button key={key} onClick={() => { setTab(key); if (key !== "home") setShowForm(false); }}
-            className={`flex-1 py-3.5 text-sm font-medium transition-colors ${tab === key ? "text-indigo-600 dark:text-indigo-400" : "text-gray-400 dark:text-slate-500"}`}>
-            {label}
-          </button>
-        ))}
-      </nav>
+      {/* Bottom nav — only for Gigs (its rich Log/Stats/Recap) */}
+      {isGigs && (
+        <nav className="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-slate-800/90 backdrop-blur border-t border-gray-200 dark:border-slate-700 flex safe-bottom">
+          {([["home", t.nav.home], ["stats", t.nav.stats], ["recap", t.nav.recap]] as [Tab, string][]).map(([key, label]) => (
+            <button key={key} onClick={() => { setTab(key); if (key !== "home") setShowForm(false); }}
+              className={`flex-1 py-3.5 text-sm font-medium transition-colors ${tab === key ? "text-indigo-600 dark:text-indigo-400" : "text-gray-400 dark:text-slate-500"}`}>
+              {label}
+            </button>
+          ))}
+        </nav>
+      )}
     </div>
   );
 }

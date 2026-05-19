@@ -2,10 +2,10 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Gig Tracker",
-  description: "Track every live show you've ever been to",
+  title: "Solaris",
+  description: "Your personal hub — gigs, films, diary, people, expositions, traveling.",
   manifest: "/manifest.json",
-  appleWebApp: { capable: true, statusBarStyle: "default", title: "Gig Tracker" },
+  appleWebApp: { capable: true, statusBarStyle: "default", title: "Solaris" },
 };
 
 export const viewport: Viewport = {

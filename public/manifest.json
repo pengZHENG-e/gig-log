@@ -1,7 +1,7 @@
 {
-  "name": "Gig Tracker",
-  "short_name": "Gig Tracker",
-  "description": "Track every live show you've ever been to",
+  "name": "Solaris",
+  "short_name": "Solaris",
+  "description": "Your personal hub — gigs, films, diary, people, expositions, traveling.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f9fafb",
