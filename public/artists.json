@@ -6456,11 +6456,6 @@
     "spotifyId": "2Nuu96rnFvGb6vol06jbLr",
     "spotifyUrl": "https://open.spotify.com/artist/2Nuu96rnFvGb6vol06jbLr"
   },
-  "Blood Wizzard": {
-    "name": "Blood Wizzard",
-    "genres": [],
-    "source": "none"
-  },
   "Girl Group": {
     "name": "Girl Group",
     "genres": [],
@@ -6519,11 +6514,6 @@
     "spotifyId": "3e2PXYMu8ijWVUZOhgU018",
     "spotifyUrl": "https://open.spotify.com/artist/3e2PXYMu8ijWVUZOhgU018"
   },
-  "RHE DSM IV": {
-    "name": "RHE DSM IV",
-    "genres": [],
-    "source": "none"
-  },
   "Ringards": {
     "name": "Ringards",
     "genres": [],
@@ -6569,11 +6559,6 @@
     "photoSmall": "https://i.scdn.co/image/ab6761610000f178aa4082632db933b48141fbbc",
     "spotifyId": "1Qt3C5zY63E7EYJvkVlL5W",
     "spotifyUrl": "https://open.spotify.com/artist/1Qt3C5zY63E7EYJvkVlL5W"
-  },
-  "The Bernadettes Maries": {
-    "name": "The Bernadettes Maries",
-    "genres": [],
-    "source": "none"
   },
   "Sword II": {
     "name": "Sword II",
@@ -6645,5 +6630,38 @@
     "photoSmall": "https://i.scdn.co/image/ab6761610000f1780b4ef66ad6a44048f1deb331",
     "spotifyId": "2oCn9rsy1Pt7Jgkwk56Zf9",
     "spotifyUrl": "https://open.spotify.com/artist/2oCn9rsy1Pt7Jgkwk56Zf9"
+  },
+  "Blood Wizard": {
+    "name": "Blood Wizard",
+    "genres": [],
+    "source": "spotify",
+    "mbid": "f2737c5c-918a-47f2-9166-012cb02ea6b5",
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5eb649001e402f213dcb942d819",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178649001e402f213dcb942d819",
+    "spotifyId": "60XRtGmul45VSNNKt9mZhp",
+    "spotifyUrl": "https://open.spotify.com/artist/60XRtGmul45VSNNKt9mZhp"
+  },
+  "The Bernadette Maries": {
+    "name": "The Bernadette Maries",
+    "genres": [],
+    "source": "spotify",
+    "mbid": "c30985b9-12b3-474d-b3b2-3b65ae1efcb1",
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebaca59e0ce336a8c5665c93f6",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178aca59e0ce336a8c5665c93f6",
+    "spotifyId": "5vUEg9AV9lTt9a5IJhabs8",
+    "spotifyUrl": "https://open.spotify.com/artist/5vUEg9AV9lTt9a5IJhabs8"
+  },
+  "The DSM IV": {
+    "name": "The DSM IV",
+    "genres": [],
+    "source": "spotify",
+    "mbid": "26754d3d-a5ff-432a-a177-32c10f85453d",
+    "type": "Group",
+    "photo": "https://i.scdn.co/image/ab6761610000e5ebb974475f1e240605bc1c1562",
+    "photoSmall": "https://i.scdn.co/image/ab6761610000f178b974475f1e240605bc1c1562",
+    "spotifyId": "3ndko6rrkItKQAhuOKoN3J",
+    "spotifyUrl": "https://open.spotify.com/artist/3ndko6rrkItKQAhuOKoN3J"
   }
 }
